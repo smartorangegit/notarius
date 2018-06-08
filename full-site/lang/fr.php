@@ -6,4 +6,5 @@ return array(
     'lng.admin'=> 'Le Admin Section',
     'lng.user'=> 'Le User Section',
     'lng.pages' => 'LE Старицы',
+    'lng.tesy' => 'Le tes by Mate'
 );
