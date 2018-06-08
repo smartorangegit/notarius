@@ -1,0 +1,145 @@
+ <div class="container">  
+    <ul class="page-name">
+        <li class="page-name__item">'Завірено'</li>
+        <li id="page-Item-Name" class="page-name__item page-name__item_font_regular"><?=__('lng.about')?></li>
+    </ul>
+</div>
+<!--<h1>Список всех услуг</h1>-->
+<!--<table>-->
+    <!--<th>Id</th>-->
+    <!--<th>Name</th>-->
+    <!--<th>Description</th>-->
+  <!--<?php foreach($data['servicesList'] as $item){ ?>-->
+    <!--<tr>-->
+        <!--<td><?=$item['id'];?></td>-->
+        <!--<td><?=$item['name'];?></td>-->
+        <!--<td><?=$item['description'];?></td>-->
+    <!--</tr>-->
+  <!--<?}?>-->
+<!--</table>-->
+<section class="categories services-page-categories">
+    <div class="container categories-container">
+        <h2 class="section-heading section-heading_left services-page-categories__section-heading">Нотариальные услуги</h2>
+
+        <ul class="categories-type">
+            <?foreach($data['catList'] as $sListMain){?>
+            <li class="categories-type__item">
+                <svg class="categories-type__icon" style="fill: rgb(255, 255, 255);"><use xlink:href="#icon-<?=$sListMain['id']?>"></use></svg>
+                <a href="#" id="id-<?=$sListMain['id']?>" onclick="catServClick(this.id)" class="categories-type__link "
+                   data-name="<?=$sListMain['name'];?>">
+                    <?=$sListMain['name'];?>
+                </a>
+            </li>
+            <?}?>
+        </ul>
+        <script>
+            function catServClick(id){
+                var test = document.getElementById(id);
+                var massCat = {
+                    catName: test.dataset.name,
+                    catID: id
+                };
+                $.ajax({
+                    data: massCat,
+                    url: '/webroot/getServiceList.php',
+                    method: 'POST', // or GET
+                    success: function (msg) {
+                        console.log(msg);
+                        var msg2 = JSON.parse(msg);
+                        $(document.getElementById("servicesOnMain")).empty();
+                        msg2.SList.forEach(function(element) {
+                            var ul = document.getElementById("servicesOnMain");
+                            var a  = document.createElement("a");
+                            var li = document.createElement("li");
+                            console.log(element);
+                            li.setAttribute('id', element.id);
+                            li.setAttribute('class', "categories-subspecies__item");
+
+                            $("ul.categories-subspecies-wrap>li").css( "display", "list-item" );
+
+
+                            a.appendChild(document.createTextNode(element.name));
+                            a.setAttribute('class', "categories-subspecies__link");
+                            a.setAttribute('href', "/notaries/?serviceName="+element.id);
+                            a.setAttribute('href', "/notaries/?serviceName="+element.id);
+                            ul.appendChild(li);
+                            li.appendChild(a);
+                        });
+
+
+
+                    }
+                });
+
+            }
+            var z = {
+                catName: '1',
+                catID: 'zzz',
+                ajax_data: '1'
+            };
+            // для отправки данных в контроллер и получанеия ответа в js/json формате отправляем
+            // методом гет, дабы он обошел рендер станицы и вернул только данные с контроллера
+            $.ajax({
+                data: z,
+                url: '/services/index',
+                method: 'GET', // or GET
+                success: function (msg) {
+                    console.log(msg);
+                    var T = JSON.parse(msg);
+                    var io = document.getElementById("page-Item-Name");
+                    var az  = document.createElement("a");
+                   // io.appendChild(document.createTextNode(T.catID))
+                    //io.appendChild(az);
+                }
+            });
+        </script>
+
+        <ul class="categories-subspecies-wrap">
+            <li class="categories-subspecies-wrap__item categories-subspecies-wrap__item_active" >
+                <ul class="categories-subspecies" id="servicesOnMain">
+                    <?foreach($data['servicesList'] as $SL){?>
+                    <li class="categories-subspecies__item">
+                        <a href="/notaries/?serviceName=<?=$SL['id']?>" class="categories-subspecies__link"><?=$SL['name']?></a>
+                    </li>
+                    <?}?>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="form-wrap services-page-form-wrap">
+            <form method="post" action="" class="form">
+                <div class="form-container">
+                    <div class="form__select-wrap">
+                        <input type="text" id="select" name="service" class="form__input form__select-info" placeholder="Выберите услугу" style="display: none">
+                        <input id="form__select-label" type="text" class="form__input form__select" placeholder="Выберите услугу" required disabled>
+                        <label for="form__select-label" class="form__label"></label>
+                    </div>
+                    <div class="form__date-wrap">
+                        <input id="form__date-label" class="form__input form__date" type="date" placeholder="Выберите дату" required>
+                        <label for="form__date-label" class="form__label"></label>
+                    </div>
+                    <div class="form__time-wrap">
+                        <input id="form__time-label" class="form__input form__time" type="time" placeholder="Выберите время" required>
+                        <label for="form__time-label" class="form__label"></label>
+                    </div>
+                    <input class="form__input form__phone" name="regNum" type="text" placeholder="Укажите Ваш телефон" required>
+                </div>
+                <div class="form__checkbox-wrap">
+                    <input type="checkbox" id="form__checkbox" class="form__checkbox">
+                    <label for="form__checkbox" class="form__checkbox-label"></label>
+                    <p class="form__text">С выездом</p>
+                </div>
+                <button class="form__button" type="submit">Подобрать<br>нотариуса</button>
+            </form>
+            <div class="select-menu form-select-menu select-menu_border">
+                <ul class="select-menu-list">
+                    <?foreach($data['servicesListTOP'] as $item){?>
+                        <li id="<?=$item['id'];?>" class="select-menu-list__item">
+                            <?=$item['name'];?>
+                        </li>
+                    <?}?>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

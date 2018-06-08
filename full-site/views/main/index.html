@@ -1,0 +1,425 @@
+
+    <h1 class="head__heading">Профессиональный <br> <span class="head__heading_bold">подбор нотариуса</span>. <br> В офисе или с выездом к Вам</h1>
+    <div class="form-wrap head__form-wrap">
+        <form action="" method="post" class="form head__form">
+            <div class="form-container">
+                <div class="form__select-wrap">
+                    <input type="text" id="select" name="service" class="form__input form__select-info" placeholder="Выберите услугу" style="display: none">
+                    <a href="#head__form-wrap" class="form__anchor">
+                        <input id="form__select-label" type="text" class="form__input form__select" placeholder="Выберите услугу" disabled>
+                        <label for="form__select-label" class="form__label"></label>
+                    </a>
+                </div>
+                <div class="form__date-wrap">
+                    <input id="form__date-label" class="form__input form__date" type="date" placeholder="Выберите дату">
+                    <label for="form__date-label" class="form__label"></label>
+                </div>
+                <div class="form__time-wrap">
+                    <input id="form__time-label" class="form__input form__time" type="time" placeholder="Выберите время">
+                    <label for="form__time-label" class="form__label"></label>
+                </div>
+                <input class="form__input form__phone" type="tel" name="regNum" placeholder="Укажите Ваш телефон" required>
+            </div>
+            <div class="form__checkbox-wrap">
+                <input type="checkbox" id="form__checkbox" name="homeCheck" class="form__checkbox">
+                <label for="form__checkbox" class="form__checkbox-label"></label>
+                <p class="form__text">С выездом</p>
+            </div>
+            <button class="form__button" type="submit">Подобрать<br>нотариуса</button>
+        </form>
+        <div class="select-menu form-select-menu">
+            <ul class="select-menu-list">
+                <?foreach($data['getServices'] as $item){?>
+                    <li id="<?=$item['id'];?>" class="select-menu-list__item">
+                        <?=$item['name'];?>
+                    </li>
+                <?}?>
+            </ul>
+            <ul class="select-menu-drop-list-wrap">
+            </ul>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+</section>
+<!-- END__HEAD -->
+
+<!-- TUTORIAL -->
+<section class="tutorial" id="tutorial">
+    <div class="tutorial-header">
+        <div class="container tutorial-header-container">
+            <img src="img/main/cogwheel-outline copy.png" alt="icon" class="tutorial-header__icon">
+            <h2 class="tutorial-header__heading">
+                Как это работает
+            </h2>
+        </div>
+    </div>
+    <div class="container">
+        <ul class="tutorial-list">
+            <li class="tutorial-list__item tutorial-list__item_1 animation-js slide-bottom">
+                <div class="tutorial-list__icon-wrap">
+                    <svg class="tutorial-list__icon"><use xlink:href="#quiz"></use></svg>
+                </div>
+                <p class="tutorial-list__text"><span class="font-style_normal">Выберите услугу, для которой Вам нужен нотариус.</span> <br>
+                    Например, оформление доверенности или продажа </p>
+            </li>
+            <li class="tutorial-list__item tutorial-list__item_2 animation-js slide-bottom">
+                <div class="tutorial-list__icon-wrap tutorial-list__icon-wrap_wide">  
+                    <svg class="tutorial-list__icon"><use xlink:href="#calendar"></use></svg>
+                </div>
+                <p class="tutorial-list__text"><span class="font-style_normal">Выберите дату и место проведения.</span> <br>
+                    Мы подберем удобную локацию, куда Вам удобно приехать или нотариус может выехать к Вам в офис.</p>
+            </li>
+            <li class="tutorial-list__item tutorial-list__item_3 animation-js slide-bottom">
+                <div class="tutorial-list__icon-wrap">
+                     <svg class="tutorial-list__icon"><use xlink:href="#class-reward"></use></svg>
+                </div>
+                <p class="tutorial-list__text">Наши менеджеры подберут лучшего нотариуса для Вас. </p>
+            </li>
+        </ul>
+    </div>
+</section>
+<!-- END__TUTORIAL -->
+
+<!-- WORKERS -->
+<section class="workers">
+    <div class="container">
+        <h2 class="section-heading workers__section-heading">Наши лучшие нотариусы</h2>
+        <div class="workers-slider-wrap animation-js fade">
+            <ul class="workers-slider">
+                <?foreach($data['notaryList'] as $nList){?>
+                <li class="workers-slider__item clearfix">
+                    <div class="workers-slider__photo-wrap">
+                        <?if($nList['profPhoto']){?>
+                        <a href="/notaries/profile/<?php echo $nList['userID']?>/">
+                            <img src="/webroot/uploads/<?=$nList['login']?>/photo/<?=$nList['profPhoto']?>" alt="" class="workers-slider__photo">
+                        </a>
+                        <?}else{?>
+                            <a href="/notaries/profile/<?php echo $nList['userID']?>/">
+                            <img src="/img/man.png" alt="" class="workers-slider__photo">
+                            </a>
+                        <?}?>
+                    </div>
+                    <div class="workers-slider-info-wrap">
+                        <div class="workers-slider-info__name">
+                            <a href="/notaries/profile/<?php echo $nList['userID']?>/">
+                                <?=$nList['fName'].' '.$nList['sName'].' '.$nList['mName']?>
+                            </a>
+                        </div>
+                        <div class="workers-slider-info">
+                            <ul class="workers-slider-info-list">
+                                <li class="workers-slider-info-list__item">
+                                    <svg class="workers-slider-info-list__icon"><use xlink:href="#star_main_page"></use></svg>
+                                    <p class="workers-slider-info-list__text"><span class="workers-slider-info-list__text_medium">Рейтинг:</span><?=round($nList['rating'])?>/5</p>
+                                </li>
+                                <li class="workers-slider-info-list__item">
+                                   <svg class="workers-slider-info-list__icon"><use xlink:href="#car"></use></svg>
+                                    <p class="workers-slider-info-list__text"><span class="workers-slider-info-list__text_medium">Возможность выезда:</span> <br><?if($nList['poweredByExit']==1){echo "Да";}else{echo "Нет";}?></p>
+                                </li>
+                                <li class="workers-slider-info-list__item">
+                                    <svg class="workers-slider-info-list__icon"><use xlink:href="#point"></use></svg>
+                                    <p class="workers-slider-info-list__text">м.<?=$nList['metroName'];?></p>
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="/notaries/profile/<?php echo $nList['userID']?>/#review">
+                            <button  class="workers-slider__button">смотреть отзывы</button>
+                    </a>
+                    </div>
+                    <!-- <div class="workers-slider__footer">
+                        <a href="/notaries/profile/<?php echo $nList['userID']?>/">
+                            <?=$nList['fName'].' '.$nList['sName'].' '.$nList['mName']?>
+                        </a>
+                    </div> -->
+
+                </li>
+                <?}?>
+            </ul>
+            <button class="workers-slider-nav workers-slider-nav__next">
+                <img src="img/main/workers-slider-next.png" alt="next" class="workers-slider-nav__image">
+            </button>
+            <button class="workers-slider-nav workers-slider-nav__prev">
+                <img src="img/main/workers-slider-next.png" alt="next" class="workers-slider-nav__image">
+            </button>
+        </div>
+
+        <button class="site-button workers__button">
+            <a href="/notary/users/register/">Вы нотариус?</a>
+        </button>
+        <a href="/notaries/" class="section-link workers__section-link">Все <?=$data['notaryCount'][0]['count'];?> нотариуса</a>
+    </div>
+</section>
+<!-- END__WORKERS -->
+
+<!-- ADVANTAGES -->
+<section class="advantages">
+    <div class="container advantages__container">
+        <div class="advantages__left animation-js slide-left">
+            <ul class="advantages-list">
+                <li class="advantages-list__item">
+                    <svg class="advantages-list__icon"><use xlink:href="#stopwatch"></use></svg>
+                    <p class="advantages-list__text"><span class="font-style_normal">Оперативность.</span> Поиск нотариуса для Ваших нужд. Вы сможете провести сделку уже через 2 часа.</p>
+                </li>
+                <li class="advantages-list__item">
+                    <svg class="advantages-list__icon"><use xlink:href="#clock_travel"></use></svg>
+                    <p class="advantages-list__text"><span class="font-style_normal">Экономия времени.</span> Нотариус может приехать к Вам в офис. Не тратьте время на пробки.</p>
+                </li>
+                <li class="advantages-list__item">
+                    <svg class="advantages-list__icon"><use xlink:href="#shield"></use></svg>
+                    <p class="advantages-list__text"><span class="font-style_normal">Фиксированная цена.</span> Услуги нашего сайта для Вас бесплатны. Вы платите такую же цену, как если бы сами пошли к нотариусу.</p>
+                </li>
+                <li class="advantages-list__item">
+                    <svg class="advantages-list__icon"><use xlink:href="#user"></use></svg>
+                    <p class="advantages-list__text"><span class="font-style_normal">Надежность.</span> Нотариусы проверяются нашими специалистами. Также пользователи сайта оценивают нотариусов на сайте.</p>
+                </li>
+            </ul>
+        </div>
+        <div class="advantages__right animation-js slide-right">
+            <svg class="advantages__icon"><use xlink:href="#thumb_up"></use></svg>
+            <p class="advantages__text">Преимущества <br> работы с нами</p>
+        </div>
+    </div>
+</section>
+<!-- END__ADVANTAGES -->
+
+<!-- SHARE -->
+<section class="share">
+    <div class="container">
+        <h2 class="section-heading share__section-heading">Акции и скидки</h2>
+        <div class="share-slider-wrap animation-js fade">
+            <ul class="share-slider">
+                <li class="share-slider__item">
+                    <img src="img/main/slider2-image.jpg" alt="image" class="share-slider__image">
+                    <div class="slider-content share-slider-content">
+                        <p class="share-slider__title">500 грн</p>
+                        <p class="share-slider__descript">Скидки на все нотариальные услуги <br> 15% при условии заказа не менее...</p>
+                        <div class="share-slider__discounts">15%</div>
+                        <a href="/pages/view/promotions-and-discounts/" class="share-slider__link">Получить скидку</a>
+                    </div>
+                </li>
+                <li class="share-slider__item">
+                    <img src="img/main/slider2-image.jpg" alt="image" class="share-slider__image">
+                    <div class="slider-content share-slider-content">
+                        <p class="share-slider__title">500 грн</p>
+                        <p class="share-slider__descript">Скидки на все нотариальные услуги <br> 15% при условии заказа не менее...</p>
+                        <div class="share-slider__discounts">15%</div>
+                        <a href="/pages/view/promotions-and-discounts/" class="share-slider__link">Получить скидку</a>
+                    </div>
+                </li>
+                <li class="share-slider__item">
+                    <img src="img/main/slider2-image.jpg" alt="image" class="share-slider__image">
+                    <div class="slider-content share-slider-content">
+                        <p class="share-slider__title">500 грн</p>
+                        <p class="share-slider__descript">Скидки на все нотариальные услуги <br> 15% при условии заказа не менее...</p>
+                        <div class="share-slider__discounts">15%</div>
+                        <a href="/pages/view/promotions-and-discounts/" class="share-slider__link">Получить скидку</a>
+                    </div>
+                </li>
+            </ul>
+
+            <button class="share-slider-nav share-slider-nav__next">
+                <img src="img/main/slider-white-nav.png" alt="next" class="workers-slider-nav__image">
+            </button>
+            <button class="share-slider-nav share-slider-nav__prev">
+                <img src="img/main/slider-white-nav.png" alt="next" class="workers-slider-nav__image">
+            </button>
+        </div>
+        <a href="/pages/view/promotions-and-discounts/" class="section-link share__section-link">Все акции и скидки</a>
+    </div>
+</section>
+<!-- END__SHARE -->
+
+<!-- SERVICES -->
+<section class="services">
+    <h2 class="section-heading services__section-heading">Услуги</h2>
+    <div class="container">
+        <div class="services-slider-wrap animation-js fade">
+            <ul class="services-slider">
+                <li class="services-slider__item">
+                    <img src="img/main/services-slider-image.jpg" alt="image" class="services-slider__image">
+                    <div class="slider-content services-slider-content">
+                        <div class="services-slider-descript">
+                            <p class="services-slider-descript__text">Свидетельство верности копий документов</p>
+                            <a href="/services/" class="services-slider-descript__link">Смотреть подробнее</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="services-slider__item">
+                    <img src="img/main/services-slider-image.jpg" alt="image" class="services-slider__image">
+                    <div class="slider-content services-slider-content">
+                        <div class="services-slider-descript">
+                            <p class="services-slider-descript__text">Свидетельство верности копий документов</p>
+                            <a href="/services/" class="services-slider-descript__link">Смотреть подробнее</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="services-slider__item">
+                    <img src="img/main/services-slider-image.jpg" alt="image" class="services-slider__image">
+                    <div class="slider-content services-slider-content">
+                        <div class="services-slider-descript">
+                            <p class="services-slider-descript__text">Свидетельство верности копий документов</p>
+                            <a href="/services/" class="services-slider-descript__link">Смотреть подробнее</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <a href="/services/" class="section-link services__section-link">Смотреть все <?=$data['serviceCount'][0]['count'];?> нотариальные услуги</a>
+    </div>
+</section>
+<!-- END__SERVICES -->
+
+<!-- CATEGORIES -->
+<section class="categories">
+    <div class="container categories-container">
+        <h2 class="section-heading categories__section-heading">Категории нотариальных услуг</h2>
+        <div class="categories-animation-wrap animation-js slide-top">
+            <ul class="categories-type">
+                <?foreach($data['serviceCatList'] as $sListMain){?>
+                <li class="categories-type__item">
+                    <svg class="categories-type__icon" style="fill: rgb(255, 255, 255);"><use xlink:href="#icon-<?=$sListMain['id']?>"></use></svg>
+                    <a href="#" id="id-<?=$sListMain['id']?>" onclick="catServClick(this.id)" class="categories-type__link"
+                       data-name="<?=$sListMain['name'];?>">
+                        <?=$sListMain['name'];?>
+                    </a>
+                </li>
+                <?}?>
+                <script>
+                    function catServClick(id){
+                        var test = document.getElementById(id);
+                        var massCat = {
+                            catName: test.dataset.name,
+                            catID: id
+                        };
+                        $.ajax({
+                            data: massCat,
+                            url: '/webroot/getServiceList.php',
+                            method: 'POST', // or GET
+                            success: function (msg) {
+                                console.log(msg);
+                                var msg2 = JSON.parse(msg);
+                                $(document.getElementById("servicesOnMain")).empty();
+                                msg2.SList.forEach(function(element) {
+                                    var ul = document.getElementById("servicesOnMain");
+                                    var a  = document.createElement("a");
+                                    var li = document.createElement("li");
+                                         console.log(element);
+                                    li.setAttribute('id', element.id);
+                                    li.setAttribute('class', "categories-subspecies__item");
+
+                                    $("ul.categories-subspecies-wrap>li").css( "display", "list-item" );
+
+
+                                    a.appendChild(document.createTextNode(element.name));
+                                    a.setAttribute('class', "categories-subspecies__link");
+                                    a.setAttribute('href', "/notaries/?serviceName="+element.id);
+                                    a.setAttribute('href', "/notaries/?serviceName="+element.id);
+                                    ul.appendChild(li);
+                                    li.appendChild(a);
+                                });
+
+
+
+                            }
+                        });
+
+                    }
+                </script>
+
+            </ul>
+
+            <ul class="categories-subspecies-wrap">
+                <li class="categories-subspecies-wrap__item categories-subspecies-wrap__item_active" >
+                    <ul class="categories-subspecies" id="servicesOnMain">
+                        <?foreach($data['getServicesFull'] as $SL){?>
+                        <li class="categories-subspecies__item">
+                            <a href="/notaries/?serviceName=<?=$SL['id']?>" class="categories-subspecies__link"><?=$SL['name']?></a>
+                        </li>
+                        <?}?>
+                    </ul>
+            </ul>
+        <div>
+    </div>
+</section>
+<!-- END__CATEGORIES -->
+
+
+<!-- QUESTION -->
+<?=$data['FAQ']['content']?>
+<!-- END__QUESTION -->
+
+<!-- ENTRY -->
+<section class="entry">
+    <div class="slider-content entry-content">
+        <p class="entry__text animation-js bounce">С нами удобно!</p>
+        <p class="entry__text entry__text-complex animation-js bounce">
+            до
+            <span class="entry__text_big">30%</span>
+            <span class="entry__text_height">скидка при записи <br> через ZAVIRENO</span>
+        </p>
+        <ul class="entry-icon-list animation-js bounce">
+            <li class="entry-icon-list__item">
+                <svg class="entry-icon-list-sprite"><use xlink:href="#cellphone"></use></svg>
+                <p class="entry-icon-list__text">звонить не <br> нужно</p>
+            </li>
+            <li class="entry-icon-list__item">
+                <svg class="entry-icon-list-sprite"><use xlink:href="#sms"></use></svg>
+                <p class="entry-icon-list__text">СМС подтверждение и <br> напоминание о записи</p>
+            </li>
+            <li class="entry-icon-list__item">
+                <svg class="entry-icon-list-sprite"><use xlink:href="#calendar_2"></use></svg>
+                <p class="entry-icon-list__text">выбор удобной даты и времени онлайн</p>
+            </li>
+        </ul>
+        <form action="/pages/view/promotions-and-discounts/" method="post">
+        <button type="submit" class="site-button entry__button">Записаться со скидкой</button>
+        </form>
+    </div>
+</section>
+<!-- END__ENTRY -->
+
+<!-- ORDER -->
+<section class="order">
+    <div class="container">
+        <h2 class="section-heading order__section-heading">Закажите услугу нотариуса прямо сейчас</h2>
+        <div class="form-wrap order-form-wrap">
+            <form action="" method="post" class="form head__form">
+                <div class="form-container">
+                    <div class="form__select-wrap">
+                        <input type="text" id="select2" name="service" class="form__input form__select-info" placeholder="Выберите услугу" style="display: none" >
+                        <input id="form__select-label_bottom" type="text" class="form__input form__select" placeholder="Выберите услугу" required disabled>
+                        <label for="form__select-label_bottom" class="form__label"></label>
+                    </div>
+                    <div class="form__date-wrap">
+                        <input id="form__date-label_bottom" class="form__input form__date" type="date" name="dateOf" placeholder="Выберите дату" required>
+                        <label for="form__date-label_bottom" class="form__label"></label>
+                    </div>
+                    <div class="form__time-wrap">
+                        <input id="form__time-label_bottom" class="form__input form__time" type="time" name="timeOf" placeholder="Выберите время" required>
+                        <label for="form__time-label_bottom" class="form__label"></label>
+                    </div>
+                    <input class="form__input form__phone" type="tel" name="regNum" placeholder="Укажите Ваш телефон" required>
+                </div>
+                <div class="form__checkbox-wrap">
+                    <input type="checkbox" id="form__checkbox2" name="homeCheck" class="form__checkbox">
+                    <label for="form__checkbox2" class="form__checkbox-label"></label>
+                    <p class="form__text">С выездом</p>
+                </div>
+                <button class="form__button" type="submit">Подобрать<br>нотариуса</button>
+            </form>
+            <div class="select-menu form-select-menu">
+                <ul class="select-menu-list">
+                    <?foreach($data['getServices'] as $item){?>
+                        <li id="<?=$item['id'];?>" class="select-menu-list__item">
+                            <?=$item['name'];?>
+                        </li>
+                    <?}?>
+                </ul>
+            </div>
+        </div>
+        <button class="site-button workers__button">
+            <a href="/notary/users/register/">Вы нотариус?</a>
+        </button>
+    </div>
+</section>

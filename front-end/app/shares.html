@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/datapick-classic.time.css" rel="stylesheet">
+    <link href="css/datapick-classic.date.css" rel="stylesheet">
+    <link href="css/datapick-classic.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css"/>
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="import" href="symbol-defs.html">
+    <title>shares</title>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+      <!-- include SVG-sprite -->
+      <div w3-include-html="include/sprite.html"></div>  
+      <!-- /// -->
+
+      <section class="head gray-head">
+        <div class="container head-container">
+          <header class="header services-page-header">
+            <svg class="hamburger-open hamburger-open_gray""><use xlink:href="#menu"></use></svg>
+            <a href="#" class="header__link"><img src="img/zavireno_gray.png" alt="image" class="header__image"></a>
+            <div class="hamburger-content">
+              <button class="header__button header__button_gray header__button-question">Подобрать нотариуса</button>
+              <div class="social header__social">
+                <ul class="social-list">
+                  <li class="social-list__item">
+                    <a href="#" class="social-list__link">
+                      <svg class="social-list__icon social-list__icon_white social-list__icon_viber"><use xlink:href="#viber"></use></svg>
+                    </a>
+                  </li>
+                  <li class="social-list__item">
+                    <a href="#" class="social-list__link">
+                    <svg class="social-list__icon social-list__icon_white social-list__icon_facebook"><use xlink:href="#facebook"></use></svg>
+                    </a>
+                  </li>
+                  <li class="social-list__item">
+                    <a href="#" class="social-list__link">
+                      <svg class="social-list__icon social-list__icon_white social-list__icon_telegram"><use xlink:href="#telegram"></use></svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <ul class="menu header__menu">
+                <li class="menu__item">
+                  <a href="" class="menu__link menu__link_gray">о нас</a>
+                </li>
+                <li class="menu__item menu__item-drop">
+                  <a href="#" class="menu__link menu__link-drop menu__link_gray">как это работает</a>
+                  <ul class="menu-drop menu-drop_border_gray">
+                   <li class="menu-drop__item">
+                      <a href="tutorial-heading" name="tutorial-heading" class="menu-drop__link menu__link_gray">для клиентов</a>
+                    </li>
+                    <li class="menu-drop__item">
+                      <a href="" class="menu-drop__link menu__link_gray">для нотариусов</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="menu__item">
+                  <a href="" class="menu__link menu__link_gray">преимущества</a>
+                </li>
+                <li class="menu__item">
+                  <a href="services.html" class="menu__link menu__link_gray">услуги</a>
+                </li>
+                <li class="menu__item">
+                  <a href="" class="menu__link menu__link_gray">нотариусы</a>
+                </li>
+                <li class="menu__item">
+                  <a href="" class="menu__link menu__link_gray">вопросы</a>
+                </li>
+                <li class="menu__item">
+                  <a href="contact.html" class="menu__link menu__link_gray">контакты</a>
+                </li>
+              </ul>
+              <svg class="hamburger-cansel"><use xlink:href="#cancel"></use></svg>
+
+            </div>
+            <button class="header__button header__button_gray header__button-enter">Вход</button>
+
+            <div class="sign-in header__sign-in">
+              <div class="sign-in__button-wrap">
+                <button class="sign-in__button sign-in-user__button sign-in__button_active">Клиент</button>
+                <button class="sign-in-notary__button sign-in__button">Нотариус</button>
+              </div>
+
+              <div class="sign-in-user-form-wrap">
+                <label for="sign-in-login" class="sign-in__label">Логин</label>
+                <input id="sign-in-login" class="sign-in__input" type="text">
+
+                <label for="sign-in-login" class="sign-in__label">Пароль</label>
+                <input id="sign-in-login" class="sign-in__input" type="text">
+              </div>
+
+              <div class="sign-in-notary-form-wrap">
+                <label for="sign-in-login" class="sign-in__label">Логин</label>
+                <input id="sign-in-login" class="sign-in__input" type="text">
+
+                <label for="sign-in-login" class="sign-in__label">Пароль</label>
+                <input id="sign-in-login" class="sign-in__input" type="text">
+              </div>
+              <div class="sign-in-regist">
+                <button class="site-button sign-in-regist__button">Войти</button>
+                <a href="" class="sign-in-regist__link">или зарегестрироватся</a>
+              </div>
+
+              <a href="password.html" class="sign-in__link">Забыли пароль?</a>
+            </div>
+
+            <div class="log-in">
+              <div class="log-in__button-wrap">
+                <button class="log-in__button log-in__button_active">Клиент</button>
+                <button class="log-in__button"><a href="http://notarius.smarto.com.ua/">Нотариус</a></button>
+              </div>
+
+              <label for="log-in-login" class="log-in__label">Логин</label>
+              <input id="log-in-login" class="log-in__input" type="text">
+
+              <label for="log-in-login" class="log-in__label">Пароль</label>
+              <input id="log-in-login" class="log-in__input" type="text">
+                
+              <div class="log-in-regist">
+                <button class="site-button log-in-regist__button">Регистрация</button>
+              </div>
+            </div>
+          </header>
+          <ul class="page-name page-name_long">
+            <li class="page-name__item">услуги</li>
+            <li class="page-name__item">нотариусы</li>
+            <li class="page-name__item page-name__item_long page-name__item_font_regular">Нотариусов Нотариус Нотариусович</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="shares-form-wrap">
+        <div class="shares-form-container">
+          <form action="" class="shares-form">
+            <div class="shares-form__offer-wrap">
+              <input type="text" id="select" name="service" class="shares-form__offer-info" placeholder="Выберите услугу" style="display: none">
+              <input type="text" class="shares-form__input shares-form__offer" value="Поиск предложения">
+              <div class="shares-select-menu shares-offer-select-menu select-menu">
+                <ul class="select-menu-list shares-form-select-menu-list">
+                  <li class="select-menu-list__item" id="off1">
+                    Удостоверение договора
+                  </li>
+                  <li class="select-menu-list__item" id="off2">
+                    Удостоверение доверенности
+                  </li>
+                  <li class="select-menu-list__item" id="off3">
+                    Наследство
+                  </li>
+                  <li class="select-menu-list__item" id="off4">
+                    Завещания
+                  </li>
+                  <li class="select-menu-list__item" id="off5">
+                    Свидетельствование достоверности подписи на документах
+                  </li>
+                  <li class="select-menu-list__item">
+                    Другие нотариальные действия
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="shares-form__search-wrap">
+              <input type="text" class="shares-form__input shares-form__search" placeholder="Введите название акционного преложения">
+            </div>
+            <div class="shares-form__district-wrap">
+              <input type="text" id="select" name="service" class="shares-form__district-info" placeholder="Выберите услугу" style="display: none">
+              <input type="text" class="shares-form__input shares-form__district" value="Выберите район">
+                <div class="shares-select-menu shares-district-select-menu select-menu">
+                  <ul class="select-menu-list shares-form-select-menu-list">
+                    <li class="select-menu-list__item" id="dis1">
+                      Днепровский
+                    </li>
+                    <li class="select-menu-list__item" id="dis2">
+                      Дарницкий
+                    </li>
+                    <li class="select-menu-list__item" id="dis3">
+                      Харьковский
+                    </li>
+                    <li class="select-menu-list__item" id="dis4">
+                      Печерский
+                    </li>
+                    <li class="select-menu-list__item" id="dis5">
+                      Голосеевский
+                    </li>
+                    <li class="select-menu-list__item">
+                      Оболонский
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            <button class="site-button shares-form__button">Найти</button>
+          </form>
+        </div>
+      </section>
+
+
+      <section class="share shares-page-share">
+        <div class="container">
+          <div class="share-slider-wrap shares-page-slider-wrap">
+            <ul class="share-slider">
+              <li class="share-slider__item">
+                <img src="img/main/slider2-image.jpg" alt="image" class="share-slider__image">
+                <div class="slider-content share-slider-content">
+                  <p class="share-slider__title">500 грн</p>
+                  <p class="share-slider__descript">Скидки на все нотариальные услуги <br> 15% при условии заказа не менее...</p>
+                  <div class="share-slider__discounts">15%</div>
+                  <a href="#" class="share-slider__link">Получить скидку</a>
+                </div>
+              </li>
+              <li class="share-slider__item">
+                <img src="img/main/slider2-image.jpg" alt="image" class="share-slider__image">
+                <div class="slider-content share-slider-content">
+                  <p class="share-slider__title">500 грн</p>
+                  <p class="share-slider__descript">Скидки на все нотариальные услуги <br> 15% при условии заказа не менее...</p>
+                  <div class="share-slider__discounts">15%</div>
+                  <a href="#" class="share-slider__link">Получить скидку</a>
+                </div>
+              </li>
+              <li class="share-slider__item">
+                <img src="img/main/slider2-image.jpg" alt="image" class="share-slider__image">
+                <div class="slider-content share-slider-content">
+                  <p class="share-slider__title">500 грн</p>
+                  <p class="share-slider__descript">Скидки на все нотариальные услуги <br> 15% при условии заказа не менее...</p>
+                  <div class="share-slider__discounts">15%</div>
+                  <a href="#" class="share-slider__link">Получить скидку</a>
+                </div>
+              </li>
+            </ul>
+
+            <button class="share-slider-nav share-slider-nav__next">
+              <img src="img/main/slider-white-nav.png" alt="next" class="workers-slider-nav__image">
+            </button>
+            <button class="share-slider-nav share-slider-nav__prev">
+              <img src="img/main/slider-white-nav.png" alt="next" class="workers-slider-nav__image">
+            </button>
+          </div>
+          <p class="shares-page-share__text">
+            Найдено <span class="shares-page-share__text_regular">32 акционных предложения</span>
+          </p>
+        </div>
+      </section>
+
+      <section class="shares-list-wrap">
+        <div class="container">
+          <div class="pagination-wrap-js">
+            <ul class="shares-list">
+              <li data-star="3" class="shares-list__item">
+
+                <div class="shares-list__meta">
+                  <input class="shares-list__meta-input" type="hidden" value="Услуга" name="servName">
+                  <input class="shares-list__meta-input" type="hidden" value="3" name="servID">
+                  <input class="shares-list__meta-input" type="hidden" value="500" name="cost">
+                  <input class="shares-list__meta-input" type="hidden" value="250" name="fCost">
+                  <input class="shares-list__meta-input" type="hidden" value="3" name="notaryID">
+                </div>
+
+                <div class="shares-list-title">
+                  <div class="shares-list-title__text">
+                    <p class="shares-list-title__name">Заверение договора “купли-продажи” с консультацией</p>
+                    <div class="shares-list-title-meta">
+                      <p class="shares-list-title-meta__zavireno">Только через “ZAVIRENO”</p>
+                      <p class="shares-list-title-meta__date">Действует до 28.03.2018</p>
+                    </div>
+                  </div>
+                  <div class="shares-list-title__price-wrap">
+                    <div class="shares-list-title__price">
+                      <p class="shares-list-title__old-price">500грн</p>
+                      <p class="shares-list-title__new-price">250грн</p>
+                    </div>
+                    <div class="shares-list-title__discount">50%</div>
+                  </div>
+                </div>
+                <div class="shares-list-notary">
+                  <div class="shares-list-notary-info clearfix">
+                    <img src="img/shares/photo.jpg" alt="photo" class="shares-list-notary-info__photo">
+                    <p class="shares-list-notary-info__name">Беляев Алексей Геннадиевич</p>
+                    <div class="shares-list-notary-info-raiting">
+                      <p class="shares-list-notary-info-raiting__text">Рейтинг: </p>
+                      <div class="star shares-list-notary-info-raiting__star">
+                        <div class="star__block star__white"></div>
+                        <div class="star__block star__color"></div>
+                      </div>
+                      <a href="#" class="shares-list-notary-info-raiting__link">15 отзывов</a>
+                    </div>
+                    <div class="shares-list-notary-info-location">
+                      <img src="img/shares/location.png" alt="icon" class="shares-list-notary-info-location__icon">
+                      <p class="shares-list-notary-info-location__text">ул. Пушкина, дом Колотушкина, 15А</p>
+                      <a href="#" class="shares-list-notary-info-location__link">м. Выставочный центр </a>
+                      <p class="shares-list-notary-info-location__text shares-list-notary-info-location__text_gray">(Голосеевский рн. Татарка)</p>
+                      <a href="#" class="shares-list-notary-info-location__link shares-list-notary-info-location__link-map">показать на карте</a>
+                    </div>
+                  </div>
+                  <button class="shares-list-notary__button site-button">Записаться</button>
+                </div>
+              </li>
+
+              <li data-star="3" class="shares-list__item">
+
+                <div class="shares-list__meta">
+                  <input class="shares-list__meta-input" type="hidden" value="Услуга" name="servName">
+                  <input class="shares-list__meta-input" type="hidden" value="2" name="servID">
+                  <input class="shares-list__meta-input" type="hidden" value="700" name="cost">
+                  <input class="shares-list__meta-input" type="hidden" value="250" name="fCost">
+                  <input class="shares-list__meta-input" type="hidden" value="3" name="notaryID">
+                </div>
+
+                <div class="shares-list-title">
+                  <div class="shares-list-title__text">
+                    <p class="shares-list-title__name">Покупка квартиры</p>
+                    <div class="shares-list-title-meta">
+                      <p class="shares-list-title-meta__zavireno">Только через “ZAVIRENO”</p>
+                      <p class="shares-list-title-meta__date">Действует до 28.03.2018</p>
+                    </div>
+                  </div>
+                  <div class="shares-list-title__price-wrap">
+                    <div class="shares-list-title__price">
+                      <p class="shares-list-title__old-price">500грн</p>
+                      <p class="shares-list-title__new-price">250грн</p>
+                    </div>
+                    <div class="shares-list-title__discount">50%</div>
+                  </div>
+                </div>
+                <div class="shares-list-notary">
+                  <div class="shares-list-notary-info clearfix">
+                    <img src="img/shares/photo.jpg" alt="photo" class="shares-list-notary-info__photo">
+                    <p class="shares-list-notary-info__name">Беляев Алексей Геннадиевич</p>
+                    <div class="shares-list-notary-info-raiting">
+                      <p class="shares-list-notary-info-raiting__text">Рейтинг: </p>
+                      <div class="star shares-list-notary-info-raiting__star">
+                        <div class="star__block star__white"></div>
+                        <div class="star__block star__color"></div>
+                      </div>
+                      <a href="#" class="shares-list-notary-info-raiting__link">15 отзывов</a>
+                    </div>
+                    <div class="shares-list-notary-info-location">
+                      <img src="img/shares/location.png" alt="icon" class="shares-list-notary-info-location__icon">
+                      <p class="shares-list-notary-info-location__text">ул. Пушкина, дом Колотушкина, 15А</p>
+                      <a href="#" class="shares-list-notary-info-location__link">м. Выставочный центр </a>
+                      <p class="shares-list-notary-info-location__text shares-list-notary-info-location__text_gray">(Голосеевский рн. Татарка)</p>
+                      <a href="#" class="shares-list-notary-info-location__link shares-list-notary-info-location__link-map">показать на карте</a>
+                    </div>
+                  </div>
+                  <button class="shares-list-notary__button site-button">Записаться</button>
+                </div>
+              </li>
+
+              <li data-star="3" class="shares-list__item">
+
+                <div class="shares-list__meta">
+                  <input class="shares-list__meta-input" type="hidden" value="Услуга" name="servName">
+                  <input class="shares-list__meta-input" type="hidden" value="2" name="servID">
+                  <input class="shares-list__meta-input" type="hidden" value="700" name="cost">
+                  <input class="shares-list__meta-input" type="hidden" value="250" name="fCost">
+                  <input class="shares-list__meta-input" type="hidden" value="3" name="notaryID">
+                </div>
+
+                <div class="shares-list-title">
+                  <div class="shares-list-title__text">
+                    <p class="shares-list-title__name">Покупка квартиры</p>
+                    <div class="shares-list-title-meta">
+                      <p class="shares-list-title-meta__zavireno">Только через “ZAVIRENO”</p>
+                      <p class="shares-list-title-meta__date">Действует до 28.03.2018</p>
+                    </div>
+                  </div>
+                  <div class="shares-list-title__price-wrap">
+                    <div class="shares-list-title__price">
+                      <p class="shares-list-title__old-price">500грн</p>
+                      <p class="shares-list-title__new-price">250грн</p>
+                    </div>
+                    <div class="shares-list-title__discount">50%</div>
+                  </div>
+                </div>
+                <div class="shares-list-notary">
+                  <div class="shares-list-notary-info clearfix">
+                    <img src="img/shares/photo.jpg" alt="photo" class="shares-list-notary-info__photo">
+                    <p class="shares-list-notary-info__name">Беляев Алексей Геннадиевич</p>
+                    <div class="shares-list-notary-info-raiting">
+                      <p class="shares-list-notary-info-raiting__text">Рейтинг: </p>
+                      <div class="star shares-list-notary-info-raiting__star">
+                        <div class="star__block star__white"></div>
+                        <div class="star__block star__color"></div>
+                      </div>
+                      <a href="#" class="shares-list-notary-info-raiting__link">15 отзывов</a>
+                    </div>
+                    <div class="shares-list-notary-info-location">
+                      <img src="img/shares/location.png" alt="icon" class="shares-list-notary-info-location__icon">
+                      <p class="shares-list-notary-info-location__text">ул. Пушкина, дом Колотушкина, 15А</p>
+                      <a href="#" class="shares-list-notary-info-location__link">м. Выставочный центр </a>
+                      <p class="shares-list-notary-info-location__text shares-list-notary-info-location__text_gray">(Голосеевский рн. Татарка)</p>
+                      <a href="#" class="shares-list-notary-info-location__link shares-list-notary-info-location__link-map">показать на карте</a>
+                    </div>
+                  </div>
+                  <button class="shares-list-notary__button site-button">Записаться</button>
+                </div>
+              </li>
+
+              <li data-star="3" class="shares-list__item">
+
+                <div class="shares-list__meta">
+                  <input class="shares-list__meta-input" type="hidden" value="Услуга" name="servName">
+                  <input class="shares-list__meta-input" type="hidden" value="2" name="servID">
+                  <input class="shares-list__meta-input" type="hidden" value="700" name="cost">
+                  <input class="shares-list__meta-input" type="hidden" value="250" name="fCost">
+                  <input class="shares-list__meta-input" type="hidden" value="3" name="notaryID">
+                </div>
+
+                <div class="shares-list-title">
+                  <div class="shares-list-title__text">
+                    <p class="shares-list-title__name">Покупка квартиры</p>
+                    <div class="shares-list-title-meta">
+                      <p class="shares-list-title-meta__zavireno">Только через “ZAVIRENO”</p>
+                      <p class="shares-list-title-meta__date">Действует до 28.03.2018</p>
+                    </div>
+                  </div>
+                  <div class="shares-list-title__price-wrap">
+                    <div class="shares-list-title__price">
+                      <p class="shares-list-title__old-price">500грн</p>
+                      <p class="shares-list-title__new-price">250грн</p>
+                    </div>
+                    <div class="shares-list-title__discount">50%</div>
+                  </div>
+                </div>
+                <div class="shares-list-notary">
+                  <div class="shares-list-notary-info clearfix">
+                    <img src="img/shares/photo.jpg" alt="photo" class="shares-list-notary-info__photo">
+                    <p class="shares-list-notary-info__name">Беляев Алексей Геннадиевич</p>
+                    <div class="shares-list-notary-info-raiting">
+                      <p class="shares-list-notary-info-raiting__text">Рейтинг: </p>
+                      <div class="star shares-list-notary-info-raiting__star">
+                        <div class="star__block star__white"></div>
+                        <div class="star__block star__color"></div>
+                      </div>
+                      <a href="#" class="shares-list-notary-info-raiting__link">15 отзывов</a>
+                    </div>
+                    <div class="shares-list-notary-info-location">
+                      <!-- <img src="img/shares/location.png" alt="icon" class="shares-list-notary-info-location__icon"> -->
+                      <svg class="shares-list-notary-info-location__icon"><use xlink:href="#point"></use></svg>
+                      <p class="shares-list-notary-info-location__text">ул. Пушкина, дом Колотушкина, 15А</p>
+                      <a href="#" class="shares-list-notary-info-location__link">м. Выставочный центр </a>
+                      <p class="shares-list-notary-info-location__text shares-list-notary-info-location__text_gray">(Голосеевский рн. Татарка)</p>
+                      <a href="#" class="shares-list-notary-info-location__link shares-list-notary-info-location__link-map">показать на карте</a>
+                    </div>
+                  </div>
+                  <button class="shares-list-notary__button site-button">Записаться</button>
+                </div>
+              </li>
+
+              <li data-star="3" class="shares-list__item">
+
+                <div class="shares-list__meta">
+                  <input class="shares-list__meta-input" type="hidden" value="Услуга" name="servName">
+                  <input class="shares-list__meta-input" type="hidden" value="2" name="servID">
+                  <input class="shares-list__meta-input" type="hidden" value="700" name="cost">
+                  <input class="shares-list__meta-input" type="hidden" value="250" name="fCost">
+                  <input class="shares-list__meta-input" type="hidden" value="3" name="notaryID">
+                </div>
+
+                <div class="shares-list-title">
+                  <div class="shares-list-title__text">
+                    <p class="shares-list-title__name">Покупка квартиры</p>
+                    <div class="shares-list-title-meta">
+                      <p class="shares-list-title-meta__zavireno">Только через “ZAVIRENO”</p>
+                      <p class="shares-list-title-meta__date">Действует до 28.03.2018</p>
+                    </div>
+                  </div>
+                  <div class="shares-list-title__price-wrap">
+                    <div class="shares-list-title__price">
+                      <p class="shares-list-title__old-price">500грн</p>
+                      <p class="shares-list-title__new-price">250грн</p>
+                    </div>
+                    <div class="shares-list-title__discount">50%</div>
+                  </div>
+                </div>
+                <div class="shares-list-notary">
+                  <div class="shares-list-notary-info clearfix">
+                    <img src="img/shares/photo.jpg" alt="photo" class="shares-list-notary-info__photo">
+                    <p class="shares-list-notary-info__name">Беляев Алексей Геннадиевич</p>
+                    <div class="shares-list-notary-info-raiting">
+                      <p class="shares-list-notary-info-raiting__text">Рейтинг: </p>
+                      <div class="star shares-list-notary-info-raiting__star">
+                        <div class="star__block star__white"></div>
+                        <div class="star__block star__color"></div>
+                      </div>
+                      <a href="#" class="shares-list-notary-info-raiting__link">15 отзывов</a>
+                    </div>
+                    <div class="shares-list-notary-info-location">
+                      <img src="img/shares/location.png" alt="icon" class="shares-list-notary-info-location__icon">
+                      <p class="shares-list-notary-info-location__text">ул. Пушкина, дом Колотушкина, 15А</p>
+                      <a href="#" class="shares-list-notary-info-location__link">м. Выставочный центр </a>
+                      <p class="shares-list-notary-info-location__text shares-list-notary-info-location__text_gray">(Голосеевский рн. Татарка)</p>
+                      <a href="#" class="shares-list-notary-info-location__link shares-list-notary-info-location__link-map">показать на карте</a>
+                    </div>
+                  </div>
+                  <button class="shares-list-notary__button site-button">Записаться</button>
+                </div>
+              </li>
+
+              <li data-star="3" class="shares-list__item">
+
+                <div class="shares-list__meta">
+                  <input class="shares-list__meta-input" type="hidden" value="Услуга" name="servName">
+                  <input class="shares-list__meta-input" type="hidden" value="2" name="servID">
+                  <input class="shares-list__meta-input" type="hidden" value="700" name="cost">
+                  <input class="shares-list__meta-input" type="hidden" value="250" name="fCost">
+                  <input class="shares-list__meta-input" type="hidden" value="3" name="notaryID">
+                </div>
+
+                <div class="shares-list-title">
+                  <div class="shares-list-title__text">
+                    <p class="shares-list-title__name">Покупка квартиры</p>
+                    <div class="shares-list-title-meta">
+                      <p class="shares-list-title-meta__zavireno">Только через “ZAVIRENO”</p>
+                      <p class="shares-list-title-meta__date">Действует до 28.03.2018</p>
+                    </div>
+                  </div>
+                  <div class="shares-list-title__price-wrap">
+                    <div class="shares-list-title__price">
+                      <p class="shares-list-title__old-price">500грн</p>
+                      <p class="shares-list-title__new-price">250грн</p>
+                    </div>
+                    <div class="shares-list-title__discount">50%</div>
+                  </div>
+                </div>
+                <div class="shares-list-notary">
+                  <div class="shares-list-notary-info clearfix">
+                    <img src="img/shares/photo.jpg" alt="photo" class="shares-list-notary-info__photo">
+                    <p class="shares-list-notary-info__name">Беляев Алексей Геннадиевич</p>
+                    <div class="shares-list-notary-info-raiting">
+                      <p class="shares-list-notary-info-raiting__text">Рейтинг: </p>
+                      <div class="star shares-list-notary-info-raiting__star">
+                        <div class="star__block star__white"></div>
+                        <div class="star__block star__color"></div>
+                      </div>
+                      <a href="#" class="shares-list-notary-info-raiting__link">15 отзывов</a>
+                    </div>
+                    <div class="shares-list-notary-info-location">
+                      <img src="img/shares/location.png" alt="icon" class="shares-list-notary-info-location__icon">
+                      <p class="shares-list-notary-info-location__text">ул. Пушкина, дом Колотушкина, 15А</p>
+                      <a href="#" class="shares-list-notary-info-location__link">м. Выставочный центр </a>
+                      <p class="shares-list-notary-info-location__text shares-list-notary-info-location__text_gray">(Голосеевский рн. Татарка)</p>
+                      <a href="#" class="shares-list-notary-info-location__link shares-list-notary-info-location__link-map">показать на карте</a>
+                    </div>
+                  </div>
+                  <button class="shares-list-notary__button site-button">Записаться</button>
+                </div>
+              </li>
+
+              <li data-star="3" class="shares-list__item">
+
+                <div class="shares-list__meta">
+                  <input class="shares-list__meta-input" type="hidden" value="Услуга" name="servName">
+                  <input class="shares-list__meta-input" type="hidden" value="2" name="servID">
+                  <input class="shares-list__meta-input" type="hidden" value="700" name="cost">
+                  <input class="shares-list__meta-input" type="hidden" value="250" name="fCost">
+                  <input class="shares-list__meta-input" type="hidden" value="3" name="notaryID">
+                </div>
+
+                <div class="shares-list-title">
+                  <div class="shares-list-title__text">
+                    <p class="shares-list-title__name">Покупка квартиры</p>
+                    <div class="shares-list-title-meta">
+                      <p class="shares-list-title-meta__zavireno">Только через “ZAVIRENO”</p>
+                      <p class="shares-list-title-meta__date">Действует до 28.03.2018</p>
+                    </div>
+                  </div>
+                  <div class="shares-list-title__price-wrap">
+                    <div class="shares-list-title__price">
+                      <p class="shares-list-title__old-price">500грн</p>
+                      <p class="shares-list-title__new-price">250грн</p>
+                    </div>
+                    <div class="shares-list-title__discount">50%</div>
+                  </div>
+                </div>
+                <div class="shares-list-notary">
+                  <div class="shares-list-notary-info clearfix">
+                    <img src="img/shares/photo.jpg" alt="photo" class="shares-list-notary-info__photo">
+                    <p class="shares-list-notary-info__name">Беляев Алексей Геннадиевич</p>
+                    <div class="shares-list-notary-info-raiting">
+                      <p class="shares-list-notary-info-raiting__text">Рейтинг: </p>
+                      <div class="star shares-list-notary-info-raiting__star">
+                        <div class="star__block star__white"></div>
+                        <div class="star__block star__color"></div>
+                      </div>
+                      <a href="#" class="shares-list-notary-info-raiting__link">15 отзывов</a>
+                    </div>
+                    <div class="shares-list-notary-info-location">
+                      <img src="img/shares/location.png" alt="icon" class="shares-list-notary-info-location__icon">
+                      <p class="shares-list-notary-info-location__text">ул. Пушкина, дом Колотушкина, 15А</p>
+                      <a href="#" class="shares-list-notary-info-location__link">м. Выставочный центр </a>
+                      <p class="shares-list-notary-info-location__text shares-list-notary-info-location__text_gray">(Голосеевский рн. Татарка)</p>
+                      <a href="#" class="shares-list-notary-info-location__link shares-list-notary-info-location__link-map">показать на карте</a>
+                    </div>
+                  </div>
+                  <button class="shares-list-notary__button site-button">Записаться</button>
+                </div>
+              </li>
+            </ul>
+
+            <div class="pagination shares-pagination">
+              <a href="#" class="pagination__nav pagination__nav_prev shares-pagination__nav_prev">
+                <svg class="pagination__nav-icon pagination__nav-icon_rotate"><use xlink:href="#right-arrow"></use></svg> 
+                <span class="pagination__nav-text">предыдущие 5</span> 
+              </a>
+              <ul class="pagination-num shares-pagination-num">
+                <li class="pagination-num__item pagination-num__item_active">
+                  1
+                </li>
+              </ul>
+              <a href="#" class="pagination__nav pagination__nav_next shares-pagination__nav_next">
+                <span class="pagination__nav-text">следующие 5</span>
+                <svg class="pagination__nav-icon"><use xlink:href="#right-arrow"></use></svg>  
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="shares-popup-form">
+        <div class="form-wrap popup-form-wrap">
+              <form action="" class="form form_vertical">
+                <div class="form-container popup-form-container">
+                  <div class="form__select-wrap popup-form-input">
+                    <input type="text" id="select" name="service" class="form__input form__select-info" style="display: none">
+                    <input type="text" class="form__input form__select popup-form-input__input" placeholder="Выберите услугу">
+                  </div>
+                  <div class="form__date-wrap popup-form-input">
+                    <input class="form__input form__date popup-form-input__input" type="date" placeholder="Выберите дату">
+                  </div>
+                  <div class="form__time-wrap popup-form-input">
+                    <input class="form__input form__time popup-form-input__input" type="time" placeholder="Выберите время">
+                  </div>
+                  <input class="form__input form__phone popup-form-input popup-form-input__phone" type="text" placeholder="Укажите Ваш телефон">
+                </div>
+                <div class="popup-form__checkbox-wrap">
+                  <input type="checkbox" id="shares-popup-form__checkbox" class="popup-form__checkbox form__checkbox">
+                  <label for="shares-popup-form__checkbox" class="form__label"></label>
+                  <p class="form__text">С виездом</p>
+                </div>
+                <button class="form__button popup-form__button" type="submit">Подобрать нотариуса</button>
+              </form>
+              <div class="select-menu form-select-menu popup-form-select-menu">
+                <ul class="select-menu-list">
+                  <li class="select-menu-list__item select-menu-list__item_active" id="s1">
+                    Удостоверение договора
+                  </li>
+                  <li class="select-menu-list__item" id="s2">
+                    Удостоверение доверенности
+                  </li>
+                  <li class="select-menu-list__item" id="s3">
+                    Наследство
+                  </li>
+                  <li class="select-menu-list__item" id="s4">
+                    Завещания
+                  </li>
+                  <li class="select-menu-list__item" id="s5">
+                    Свидетельствование достоверности подписи на документах
+                  </li>
+                  <li class="select-menu-list__item" id="s6">
+                    Другие нотариальные действия
+                  </li>
+                </ul>
+              </div>
+              <img src="img/cancel.png" alt="cansel" class="popup-form__icon">
+        </div>
+      </section>
+      
+      <div class="footer-clear"></div>
+      <footer class="footer">
+          <div class="container">
+            <div class="footer-list-wrap">
+              <ul class="footer-list footer-services-list">
+                <li class="footer-list__item footer-list__heading footer-services-list__heading">
+                  Сервис
+                </li>
+                <li class="footer-list__item">
+                  <a href="#" class="footer-list__link">О нас</a>
+                </li>
+                <li class="footer-list__item">
+                  <a href="#" class="footer-list__link">О рейтинге</a>
+                </li>
+                <li class="footer-list__item">
+                  <a href="#" class="footer-list__link">Партнерам</a>
+                </li>
+                <li class="footer-list__item">
+                  <a href="#" class="footer-list__link">Правила сервиса</a>
+                </li>
+                <li class="footer-list__item">
+                  <a href="#" class="footer-list__link">Политика конфиденциальности</a>
+                </li>
+              </ul>
+
+              <ul class="footer-list footer-client-list">
+                <li class="footer-list__item footer-list__heading footer-client-list__heading">
+                  Клентам
+                </li>
+                <li class="footer-list__item">
+                  <a href="#" class="footer-list__link">Нотариусы</a>
+                </li>
+                <li class="footer-list__item">
+                  <a href="#" class="footer-list__link">Акции и скидки</a>
+                </li>
+                <li class="footer-list__item">
+                  <a href="#" class="footer-list__link">Нотариальные услуги</a>
+                </li>
+              </ul>
+
+              <ul class="footer-list footer-phone-list">
+                <li class="footer-list__item footer-list__heading footer-phone-list__heading">
+                  Звоните нам
+                </li>
+                <li class="footer-list__item">
+                  С  Пн.-Вс. с 9:00 до 20:00
+                </li>
+                <li class="footer-list__item">
+                  <a href="tel:+3 8 (044) 990 60 08" class="footer-list__link footer-phone-list__link">+3 8 (044) 990 60 08</a>
+                  <a href="tel:+3 8 (097) 555 99 99" class="footer-list__link">+3 8 (097) 555 99 99</a>
+                </li>
+                <li class="footer-list__item">
+                  <a href="tel:+3 8 (093) 555 99 99" class="footer-list__link footer-phone-list__link">+3 8 (093) 555 99 99</a>
+                  <a href="tel:+38 (095) 555 99 99" class="footer-list__link">+3 8 (095) 555 99 99</a>
+                </li>
+              </ul>
+            </div>
+
+            <p class="footer__copyright">Zavireno, 2018 Все права защищены.</p>
+            <p class="footer__text">Использование материалов разрешено только при наличии активной ссылки на источник</p>
+            <div class="smart-orange">
+              <p class="smart-orange__text">Сайт разработан компанией</p>
+              <a href="http://smartorange.com.ua/" target="_blanc" class="smart-orange__link">
+                <img src="img/logo1.svg" alt="smart-orange" class="smart-orange__image">
+              </a>
+            </div>
+          </div>
+      </footer>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/libraries/datapicker/picker.js"></script>
+    <script src="js/libraries/datapicker/picker.time.js"></script>
+    <script src="js/libraries/datapicker/picker.date.js"></script>
+    <script src="js/libraries/slick.min.js"></script>
+    <script src="js/libraries/jquery.maskedinput.min.js"></script>
+    <script src="js/w3-html-include.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/shares.js"></script>
+    <script src="js/pagination.js"></script>
+
+  </body>
+</html>

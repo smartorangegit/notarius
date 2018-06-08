@@ -1,0 +1,381 @@
+.shares-page-share {
+	padding: 30px 0 0 0;
+	box-shadow: none;
+
+	&__text {
+		color: $dark-gray;
+		font: 1rem Roboto-Thin, Arial, sans-serif;
+		margin-bottom: 15px;
+
+		&_regular {
+			color: $dark-blue;
+			font-family: Roboto-Regular, Arial, sans-serif;
+		}
+	}
+}
+
+.shares-page-slider-wrap {
+	margin-bottom: 25px;
+}
+
+
+.shares-form {
+	width: 100%;
+	height: 100%;
+	@include flex(center, flex-sart);
+
+	&-wrap {
+		margin-top: 15px;
+		width: 100%;
+		padding: 20px 0;
+		background-color: #9D9FA6;
+	}
+
+	&-container {
+		position: relative;
+		width: 850/1400*100%;
+		height: 50px;
+		margin: 0 auto;
+		background-color: #fff; 
+		@include flex(center, flex-sart);
+		border-radius: 3px;
+	}
+
+	&__input {
+		position: relative;
+		border: none;
+		color: $dark-gray;
+		font: 1rem Roboto-Regular, Arial, sans-serif;
+	}
+
+	&__offer {
+		width: 82%;
+		height: 100%;
+		outline: none;
+		cursor: pointer;
+
+		&-wrap {
+			position: relative;
+			margin-left: 25/850*100%;
+			position: relative;
+			width: 177/850*100%;
+			height: 20px;
+
+			&:after {
+				position: absolute;
+				right: 15px;
+				top: 50%;
+				transform: translateY(-50%);
+				content: "";
+				border-style: solid;
+				border-width: 8px 5px 0 5px;
+				border-color: $dark-gray transparent transparent transparent; 
+				z-index: 2;
+			}
+		}
+	}
+
+	&__search {
+		width: 100%;
+		height: 100%;
+
+		&-wrap {
+			position: relative;
+			padding: 0 10px;
+			height: 20px;
+			width: 335/850*100%;
+			margin-right: 10px;
+			border-right: 1px solid $dark-gray;
+			border-left: 1px solid $dark-gray;
+			box-sizing: border-box;
+		}
+
+		&::-webkit-input-placeholder {color: #9D9FA6; font-family: Roboto-Thin, Arial, sans-serif;};
+		&::-moz-placeholder          {color: #9D9FA6; font-family: Roboto-Thin, Arial, sans-serif;};
+		&:-moz-placeholder           {color: #9D9FA6; font-family: Roboto-Thin, Arial, sans-serif;};
+		&:-ms-input-placeholder      {color: #9D9FA6; font-family: Roboto-Thin, Arial, sans-serif;};
+	}
+
+	&__district {
+		width: 82%;
+		height: 100%;
+		outline: none;
+		cursor: pointer;
+
+		&-wrap {
+			margin-right: 30/850*100%;
+			position: relative;
+			height: 20px;
+			width: 145/850*100%;
+
+			&:after {
+				position: absolute;
+				right: 10/145*100%;
+				top: 50%;
+				transform: translateY(-50%);
+				content: "";
+				border-style: solid;
+				border-width: 8px 5px 0 5px;
+				border-color: $dark-gray transparent transparent transparent; 
+				z-index: 2;
+			}
+		}
+	}
+
+	&__button {
+		height: 32px;
+		width: 100/850*100%;
+		color: #fff;
+		font: 1rem Roboto-Regular, Arial, sans-serif;
+		background-color: $dark-blue;
+		transition: all 0.2s;
+
+		&:hover {
+			background-color: $btn-hover;	
+		}
+	}
+}
+
+.shares-select-menu {
+	top: 70px;
+	border: 1px solid $dark-gray;
+	border-radius: 3px;
+
+	&:after {
+		display: none;
+	}
+
+	&-list {
+		width: 80%;
+	}
+}
+
+.shares-district-select-menu {
+	left: -80%;
+	width: 350px;
+}
+
+.shares-offer-select-menu {
+	width: 250px;
+}
+
+.shares-list {
+	position: relative;
+	margin-bottom: 65px;
+	width: 100%;
+
+	&__meta {
+		display: none;
+	}
+
+	&__item {
+		width: 100%;
+		margin-bottom: 30px;
+		padding: 0 28px;
+		border: 1px solid #9D9FA6;
+		box-sizing: border-box;
+		display: flex;
+		flex-direction: column;
+
+		&:nth-child(n+6) {
+			display: none;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&-title {
+		width: 100%;
+		padding: 7px 0;
+		@include flex(flex-start, space-between);
+		border-bottom: 1px solid #9D9FA6;
+
+		&__text {
+			width: 65%;
+		}
+
+		&__name {
+			margin: 20px 0 14px 0;
+			color: $dark-blue;
+			font: 24/16*1rem Roboto-Light, Arial, sans-serif;
+			font-weight: 600;
+		}
+
+		&-meta {
+			@include flex(center, flex-start);
+
+			&__zavireno {
+				width: 200/600*100%;
+				height: 25px;
+				margin-right: 14px;
+				@include flex(center, center);
+				color: $dark-blue;
+				font: 12/16*1rem Roboto-Light, Arial, sans-serif;
+				font-weight: 600;
+				border: 1px solid $blue;
+				border-radius: 10px;
+			} 
+
+			&__date {
+				color: #9D9FA6;
+				font: 12/16*1rem Roboto-Light, Arial, sans-serif;
+			}
+		}
+
+		&__price {
+			&-wrap {
+				@include flex(center, flex-start);
+			}
+		}
+
+		&__old-price {
+			position: relative;
+			color: #9D9FA6;
+			font: 36/16*1rem Roboto-Light, Arial, sans-serif;
+			
+			&:after {
+				position: absolute;
+				top: 50%;
+				left: 0;
+				right: 0;
+				transform: translateY(-50%);
+				width: 100%;
+				height: 2px;
+				background-color: #9D9FA6;
+				content: " "; 
+			}
+		}
+
+		&__new-price {
+			color: $dark-blue;
+			font: 36/16*1rem Roboto-Light, Arial, sans-serif;
+		}
+
+		&__discount {
+			width: 120px;
+			height: 120px;
+			margin-left: 10px;
+			@include flex(center, center);
+			background-color: #fff;
+			border: 1px solid #00CDE2;
+			border-radius: 50%;
+			color: #00CDE2;
+			font: 48/16*1rem Roboto-Light, Arial, sans-serif;
+		}
+	}
+
+
+	&-notary {
+		padding-top: 14px;
+		padding-bottom: 7px;
+		@include flex(flex-start, space-between);
+
+		&-info {
+
+			&__photo {
+				float: left;
+				width: 95px;
+				height: 95px;
+				margin-right: 12px;
+			}
+
+			&__name {
+				margin-top: 12px;
+				margin-bottom: 10px;
+				color: $dark-gray;
+				font: 1rem Roboto-Regular, Arial, sans-serif;
+			}
+
+			&-raiting {
+				float: left;
+				margin-bottom: 15px;
+				@include flex(center, flex-start);
+
+				&__text {
+					color: $dark-gray;
+					font: 14/16*1rem Roboto-Thin, Arial, sans-serif;
+					font-weight: 600;
+				}
+			}
+
+			&-location {
+				float: left;
+
+				&__icon {
+					width: 15px;
+					height: 20px;
+					fill: $blue;
+					float: left;
+					margin-right: 10px;
+				}
+
+				&__text {
+					float: left;
+					margin-right: 5px;
+					color: $dark-gray;
+					font: 14/16*1rem Roboto-Thin, Arial, sans-serif;
+					font-weight: 600;
+
+					&_gray {
+						color: #9D9FA6;
+						font-weight: 400;
+						clear: right;
+					}
+				}
+			}
+		}
+
+		&__button {
+			margin-top: 40px;
+			width: 267/1140*100%;
+			height: 60px;
+			background-color: $dark-blue;
+			color: #fff;
+			font: 30/16*1rem Roboto-Light, Arial, sans-serif;
+			transition: all 0.2s;
+
+			&:hover {
+				background-color: $btn-hover;
+			}
+		}
+	}
+}
+
+a.shares-list-notary-info-raiting__link {
+	float: left;
+	margin-left: 12px;
+	color: $dark-blue;
+	font: 14/16*1rem Roboto-Thin, Arial, sans-serif;
+	border-bottom: 1px solid $dark-blue;
+}
+
+a.shares-list-notary-info-location__link {
+	margin-right: 7px;
+	color: $dark-blue;
+	font: 14/16*1rem Roboto-Thin, Arial, sans-serif;
+	border-bottom: 1px solid $dark-blue;
+
+	&-map {
+		float: left;
+		font-size: 11/16*1rem;
+		margin-left: 25/695*100%;
+	}
+}
+
+.shares-pagination {
+	margin-bottom: 55px;
+}
+
+.shares-popup-form {
+	display: none;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	width: 100%;
+	min-height: 100vh;
+	z-index: 200;
+	background-color: rgba(0, 0, 0, 0.7);
+}

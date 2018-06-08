@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/datapick-classic.time.css" rel="stylesheet">
+    <link href="css/datapick-classic.date.css" rel="stylesheet">
+    <link href="css/datapick-classic.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css"/>
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="import" href="symbol-defs.html">
+    <title>client-page</title>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+      <!-- include SVG-sprite -->
+      <div w3-include-html="include/sprite.html"></div>  
+      <!-- /// -->
+
+      <section class="head gray-head">
+        <div class="container head-container">
+          <header class="header services-page-header">
+            <svg class="hamburger-open hamburger-open_gray""><use xlink:href="#menu"></use></svg>
+            <a href="#" class="header__link"><img src="img/zavireno_gray.png" alt="image" class="header__image"></a>
+            <div class="hamburger-content">
+              <button class="header__button header__button_gray header__button-question">Подобрать нотариуса</button>
+              <div class="social header__social">
+                <ul class="social-list">
+                  <li class="social-list__item">
+                    <a href="#" class="social-list__link">
+                      <svg class="social-list__icon social-list__icon_white social-list__icon_viber"><use xlink:href="#viber"></use></svg>
+                    </a>
+                  </li>
+                  <li class="social-list__item">
+                    <a href="#" class="social-list__link">
+                    <svg class="social-list__icon social-list__icon_white social-list__icon_facebook"><use xlink:href="#facebook"></use></svg>
+                    </a>
+                  </li>
+                  <li class="social-list__item">
+                    <a href="#" class="social-list__link">
+                      <svg class="social-list__icon social-list__icon_white social-list__icon_telegram"><use xlink:href="#telegram"></use></svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <ul class="menu header__menu">
+                <li class="menu__item">
+                  <a href="" class="menu__link menu__link_gray">о нас</a>
+                </li>
+                <li class="menu__item menu__item-drop">
+                  <a href="#" class="menu__link menu__link-drop menu__link_gray">как это работает</a>
+                  <ul class="menu-drop menu-drop_border_gray">
+                   <li class="menu-drop__item">
+                      <a href="tutorial-heading" name="tutorial-heading" class="menu-drop__link menu__link_gray">для клиентов</a>
+                    </li>
+                    <li class="menu-drop__item">
+                      <a href="" class="menu-drop__link menu__link_gray">для нотариусов</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="menu__item">
+                  <a href="" class="menu__link menu__link_gray">преимущества</a>
+                </li>
+                <li class="menu__item">
+                  <a href="services.html" class="menu__link menu__link_gray">услуги</a>
+                </li>
+                <li class="menu__item">
+                  <a href="" class="menu__link menu__link_gray">нотариусы</a>
+                </li>
+                <li class="menu__item">
+                  <a href="" class="menu__link menu__link_gray">вопросы</a>
+                </li>
+                <li class="menu__item">
+                  <a href="contact.html" class="menu__link menu__link_gray">контакты</a>
+                </li>
+              </ul>
+              <svg class="hamburger-cansel"><use xlink:href="#cancel"></use></svg>
+
+            </div>
+
+            <div class="head-client">
+               <p class="client-name ">Александ</p>
+               <ul class="client-menu head__client-menu">
+                 <li class="client-menu__item">
+                  <a href="" class="client-menu__link">Личные данные</a>
+                </li>
+                 <li class="client-menu__item">
+                  <a href="#document" class="client-menu__link">Мои документы</a>
+                </li>
+                <li class="client-menu__item">
+                  <a href="#notary-video" class="client-menu__link">Мои видео</a>
+                </li>
+                <li class="client-menu__item">
+                  <a href="#notary-services" class="client-menu__link">Мои услуги</a>
+                </li>
+                <li class="client-menu__item">
+                  <a href="#orders" class="client-menu__link">Мои заказы</a>
+                </li>
+                 <li class="client-menu__item ">
+                  <a href="" class="client-menu__link client-menu__exit">Выход</a>
+                </li>
+               </ul>
+             </div>
+          </header>
+          <ul class="page-name page-name_long">
+            <li class="page-name__item">услуги</li>
+            <li class="page-name__item">нотариусы</li>
+            <li class="page-name__item page-name__item_long page-name__item_font_regular">Нотариусов Нотариус Нотариусович</li>
+          </ul>
+        </div>
+      </section>
+
+
+      <section class="personal-data-wrap">
+        <div class="container container_border-bottom">
+          <h2 class="section-heading client-page__section-heading personal-data__section-heading">Личные данные</h2>
+          <div class="personal-data">
+            <ul class="client-menu personal-data__client-menu">
+              <li class="client-menu__item">
+                <a href="#" class="client-menu__link">Личные данные</a>
+              </li>
+              <li class="client-menu__item">
+                <a href="#document" class="client-menu__link">Мои документы</a>
+              </li>
+              <li class="client-menu__item">
+                <a href="#orders" class="client-menu__link">Мои заказы</a>
+              </li>
+              <li class="client-menu__item">
+                <a href="#my-notary" class="client-menu__link">Мои нотариусы</a>
+              </li>
+              <li class="client-menu__item">
+                <a href="" class="client-menu__link">Мои акции</a>
+              </li>
+            </ul>
+
+            <div class="editing personal-data__editing">
+              <p class="personal-data__subheading editing__subheading">Редактирование личных данных</p>
+              <div class="editing-name">
+                <label for="editing-name" class="editing-name__label editing__label">Имя: </label>
+                <input id="editing-name" class="editing-name__input editing__input" type="text" placeholder="Имя">
+                <svg class="editing__icon"><use xlink:href="#pencil"></use></svg>
+              </div>
+              <div class="editing-date">
+                <label for="editing-date" class="editing-date__label editing__label">Дата рождения: </label>
+                <input id="editing-date" class="editing-date__input editing__input" type="date" placeholder="18.04.1980">
+                <svg class="editing__icon"><use xlink:href="#pencil"></use></svg>
+              </div>
+              <div class="editing-gender">
+                <span class="editing-gender__label editing__label">Пол: <span class="editing__label_thin">мужской</span></span>
+                <svg class="editing-gender__icon editing__icon"><use xlink:href="#pencil"></use></svg>
+                <div class="editing-gender-radio__male"> М
+                  <input id="editing-gender__male" class="editing-gender-radio__input" type="radio" name="gender"  value="М">
+                  <label for="editing-gender__male" class="editing-gender-radio__label"></label>
+                </div>
+                <div class="editing-gender-radio__female"> Ж
+                  <input id="editing-gender__female" class="editing-gender-radio__input" type="radio" name="gender" value="М">
+                  <label for="editing-gender__female" class="editing-gender-radio__label"></label>
+                </div>
+              </div>
+              <div class="editing-mail">
+                  <label for="editing-mail" class="editing-mail__label editing__label">Email: </label>
+                  <input id="editing-mail" class="editing-mail__input editing__input" type="text" placeholder="alex.sobko@gmail.com">
+                  <svg class="editing__icon"><use xlink:href="#pencil"></use></svg>
+                </div>
+                <div class="editing-phone">
+                  <label for="editing-phone" class="editing-phone__label editing__label">Телефон: </label>
+                  <input id="editing-phone" class="editing-phone__input editing__input" type="text" placeholder="+3 8 (099) 999-9999">
+                  <svg class="editing__icon"><use xlink:href="#pencil"></use></svg>
+                </div>
+            </div>
+
+            <div class="personal-data-password">
+              <p class="personal-data__subheading personal-data-password__subheading">Смена пароля</p>
+              <label for="personal-data-password__old" class="personal-data-password__old personal-data-password__label">Старий пароль: </label>
+              <input id="personal-data-password__old" class="personal-data-password__old personal-data-password__input" type="password">
+
+              <label for="personal-data-password__new" class="personal-data-password__new personal-data-password__label">Новый пароль: </label>
+              <input id="personal-data-password__new" class="personal-data-password__new personal-data-password__input" type="password">
+
+              <label for="personal-data-password__confirm" class="personal-data-password__confirm personal-data-password__label">Подтвердите новый пароль: </label>
+              <input id="personal-data-password__confirm" class="personal-data-password__confirm personal-data-password__input" type="password">
+            </div>
+            <a href="#" class="personal-data__link">Выход</a>
+          </div>
+          <button class="site-button personal-data__button">Сохранить</button>
+        </div>
+      </section>
+
+
+      <section id="document" class="document">
+        <div class="container">
+          <h2 class="section-heading client-page__section-heading document__section-heading">Мои документы</h2>
+          <div class="document-container">
+            <div class="document-add">
+              <ul class="document-add-list">
+                <li class="document-add-list__item">
+                  <div class="document-add-list__name-wrap">
+                    <span class="document-add-list__name">Документы для нотариуса для нотариуса</span>
+                    <img src="img/client-page/remove.png" alt="remove" class="document-add-list__icon">
+                  </div>
+                  <p class="document-add-list__size">1 Кб .png</p>
+                </li>
+              </ul>
+              <div class="document-add-buttons">
+                <div class="document-add-buttons__add">
+                  <label for="document-add__file" class="document-add-buttons__label"></label>
+                  <input id="document-add__file" class="document-add-buttons__input" type="file" multiple>
+                  <p class="document-add-buttons__text"><span class="document-add-buttons__text_regular">Добавить  файл</span> <br> до 2 Гб</p>
+                </div>
+                <button class="site-button document-add-buttons__load">Загрузить</button>
+              </div>
+            </div>
+            <div class="document-show">
+              <ul class="document-show-list">
+                <li class="document-show-list__item">
+                  <div class="document-show-list-image">
+                    <div class="document-show-list-image-background">
+                      <svg class="document-show-list-image-background__icon"><use xlink:href="#magnifying"></use></svg>
+                    </div> 
+                    <img src="img/client-page/doc2.jpg" alt="doc-image" class="document-show-list-image__image">
+                  </div>
+                  <input type="text" class="document-show-list__input" value="document">
+                </li>
+                <li class="document-show-list__item">
+                  <div class="document-show-list-image">
+                    <div class="document-show-list-image-background">
+                      <svg class="document-show-list-image-background__icon"><use xlink:href="#magnifying"></use></svg>
+                    </div> 
+                    <img src="img/client-page/doc.jpg" alt="doc-image" class="document-show-list-image__image">
+                  </div>
+                  <input type="text" class="document-show-list__input" value="document">
+                </li>
+                <li class="document-show-list__item">
+                  <div class="document-show-list-image">
+                    <div class="document-show-list-image-background">
+                      <svg class="document-show-list-image-background__icon"><use xlink:href="#magnifying"></use></svg>
+                    </div> 
+                    <img src="img/client-page/doc2.jpg" alt="doc-image" class="document-show-list-image__image">
+                  </div>
+                 <input type="text" class="document-show-list__input" value="document">
+                </li>
+                <li class="document-show-list__item">
+                  <div class="document-show-list-image">
+                    <div class="document-show-list-image-background">
+                      <svg class="document-show-list-image-background__icon"><use xlink:href="#magnifying"></use></svg>
+                    </div> 
+                    <img src="img/client-page/doc.jpg" alt="doc-image" class="document-show-list-image__image">
+                  </div>
+                  <input type="text" class="document-show-list__input" value="document">
+                </li>
+                <li class="document-show-list__item">
+                  <div class="document-show-list-image">
+                    <div class="document-show-list-image-background">
+                      <svg class="document-show-list-image-background__icon"><use xlink:href="#magnifying"></use></svg>
+                    </div> 
+                    <img src="img/main/Photo.jpg" alt="doc-image" class="document-show-list-image__image">
+                  </div>
+                  <input type="text" class="document-show-list__input" value="document">
+                </li>
+                
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="orders" class="сlient-page-orders">
+        <div class="container">
+          <h2 class="section-heading client-page__section-heading сlient-page-orders__section-heading">Мои заказы</h2>
+           <div class="form-wrap сlient-page-orders__form-wrap card-order__form-wrap">
+            <form action="" class="form">
+              <div class="form-container">
+                <div class="form__select-wrap">
+                  <input type="text" id="select" name="service" class="form__input form__select-info" placeholder="Выберите услугу" style="display: none">
+                  <input type="text" class="form__input form__select" placeholder="Выберите услугу">
+                </div>
+                <div class="form__date-wrap">
+                  <input class="form__input form__date" type="date" placeholder="Выберите дату">
+                </div>
+                <input class="form__input form__phone" type="text" placeholder="Укажите Ваш телефон">
+              </div>
+              <input type="checkbox" id="form__checkbox" class="form__checkbox">
+              <label for="form__checkbox" class="form__label">С виездом</label>
+              <button class="form__button" type="submit">Подобрать<br>нотариуса</button>
+            </form>
+            <div class="select-menu">
+              <ul class="select-menu-list">
+                <li class="select-menu-list__item select-menu-list__item_active">
+                  Удостоверение договора
+                </li>
+                <li class="select-menu-list__item">
+                  Удостоверение доверенности
+                </li>
+                <li class="select-menu-list__item">
+                  Наследство
+                </li>
+                <li class="select-menu-list__item">
+                  Завещания
+                </li>
+                <li class="select-menu-list__item">
+                  Свидетельствование достоверности
+                  <br> подписи на документах
+                </li>
+                <li class="select-menu-list__item">
+                  Другие нотариальные действия
+                </li>
+              </ul>
+
+              <ul class="select-menu-drop-list-wrap">
+                <li class="select-menu-drop-list-wrap__item select-menu-drop-list-wrap__item_active">
+                  <ul class="select-menu-drop-list">
+                    <li class="select-menu-drop-list__item">купли-продажи, дарения, мены... <br> недвижемого имущества</li>
+                    <li class="select-menu-drop-list__item">купли-продажи, дарения транспортных средств</li>
+                    <li class="select-menu-drop-list__item">наследственных договоров</li>
+                    <li class="select-menu-drop-list__item">аренды недвижемого имущества</li>
+                    <li class="select-menu-drop-list__item">раздела имущества</li>
+                    <li class="select-menu-drop-list__item">учредительных договоров</li>
+                    <li class="select-menu-drop-list__item">ипотеки, залога</li>
+                    <li class="select-menu-drop-list__item">пожизненного содержания <br> (досмотра)</li>
+                    <li class="select-menu-drop-list__item">управления имуществом</li>
+                    <li class="select-menu-drop-list__item">займа</li>
+                  </ul>
+                </li>
+                <li class="select-menu-drop-list-wrap__item">
+                  <ul class="select-menu-drop-list">
+                    <li class="select-menu-drop-list__item">купли-продажи, дарения, мены... <br> недвижемого имущества</li>
+                    <li class="select-menu-drop-list__item">купли-продажи, дарения транспортных средств</li>
+                    <li class="select-menu-drop-list__item">наследственных договоров</li>
+                    <li class="select-menu-drop-list__item">аренды недвижемого имущества</li>
+                    <li class="select-menu-drop-list__item">раздела имущества</li>
+                    <li class="select-menu-drop-list__item">учредительных договоров</li>
+                    <li class="select-menu-drop-list__item">ипотеки, залога</li>
+                    <li class="select-menu-drop-list__item">пожизненного содержания <br> (досмотра)</li>
+                    <li class="select-menu-drop-list__item">управления имуществом</li>
+                    <li class="select-menu-drop-list__item">займа</li>
+                  </ul>
+                </li>
+                <li class="select-menu-drop-list-wrap__item">
+                  <ul class="select-menu-drop-list">
+                    <li class="select-menu-drop-list__item">купли-продажи, дарения, мены... <br> недвижемого имущества</li>
+                    <li class="select-menu-drop-list__item">купли-продажи, дарения транспортных средств</li>
+                    <li class="select-menu-drop-list__item">наследственных договоров</li>
+                    <li class="select-menu-drop-list__item">аренды недвижемого имущества</li>
+                    <li class="select-menu-drop-list__item">раздела имущества</li>
+                    <li class="select-menu-drop-list__item">учредительных договоров</li>
+                    <li class="select-menu-drop-list__item">ипотеки, залога</li>
+                    <li class="select-menu-drop-list__item">пожизненного содержания <br> (досмотра)</li>
+                    <li class="select-menu-drop-list__item">управления имуществом</li>
+                    <li class="select-menu-drop-list__item">займа</li>
+                  </ul>
+                </li>
+                <li class="select-menu-drop-list-wrap__item">
+                  <ul class="select-menu-drop-list">
+                    <li class="select-menu-drop-list__item">купли-продажи, дарения, мены... <br> недвижемого имущества</li>
+                    <li class="select-menu-drop-list__item">купли-продажи, дарения транспортных средств</li>
+                    <li class="select-menu-drop-list__item">наследственных договоров</li>
+                    <li class="select-menu-drop-list__item">аренды недвижемого имущества</li>
+                    <li class="select-menu-drop-list__item">раздела имущества</li>
+                    <li class="select-menu-drop-list__item">учредительных договоров</li>
+                    <li class="select-menu-drop-list__item">ипотеки, залога</li>
+                    <li class="select-menu-drop-list__item">пожизненного содержания <br> (досмотра)</li>
+                    <li class="select-menu-drop-list__item">управления имуществом</li>
+                    <li class="select-menu-drop-list__item">займа</li>
+                  </ul>
+                </li>
+                <li class="select-menu-drop-list-wrap__item">
+                  <ul class="select-menu-drop-list">
+                    <li class="select-menu-drop-list__item">купли-продажи, дарения, мены... <br> недвижемого имущества</li>
+                    <li class="select-menu-drop-list__item">купли-продажи, дарения транспортных средств</li>
+                    <li class="select-menu-drop-list__item">наследственных договоров</li>
+                    <li class="select-menu-drop-list__item">аренды недвижемого имущества</li>
+                    <li class="select-menu-drop-list__item">раздела имущества</li>
+                    <li class="select-menu-drop-list__item">учредительных договоров</li>
+                    <li class="select-menu-drop-list__item">ипотеки, залога</li>
+                    <li class="select-menu-drop-list__item">пожизненного содержания <br> (досмотра)</li>
+                    <li class="select-menu-drop-list__item">управления имуществом</li>
+                    <li class="select-menu-drop-list__item">займа</li>
+                  </ul>
+                </li>
+                <li class="select-menu-drop-list-wrap__item" >
+                  <ul class="select-menu-drop-list">
+                    <li class="select-menu-drop-list__item">купли-продажи, дарения, мены... <br> недвижемого имущества</li>
+                    <li class="select-menu-drop-list__item">купли-продажи, дарения транспортных средств</li>
+                    <li class="select-menu-drop-list__item">наследственных договоров</li>
+                    <li class="select-menu-drop-list__item">аренды недвижемого имущества</li>
+                    <li class="select-menu-drop-list__item">раздела имущества</li>
+                    <li class="select-menu-drop-list__item">учредительных договоров</li>
+                    <li class="select-menu-drop-list__item">ипотеки, залога</li>
+                    <li class="select-menu-drop-list__item">пожизненного содержания <br> (досмотра)</li>
+                    <li class="select-menu-drop-list__item">управления имуществом</li>
+                    <li class="select-menu-drop-list__item">займа</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <ul class="orders-name-list">
+            <li class="orders-name-list__item orders-name-list__item_active">
+              <a href="#" class="orders-name-list__link orders-name-list__link_active">Все</a>
+            </li>
+            <li class="orders-name-list__item">
+              <a href="#" class="orders-name-list__link">Назначенные</a>
+            </li>
+          </ul>
+
+          <ul class="order-table-list">
+            <li class="order-table-list__item order-table-list__item_active">
+              <ul class="order-table-head order-table__row">
+                <li class="order-table-head__item order-table-head__item_wide">услуга</th>
+                <li class="order-table-head__item order-table-head__item_middle">дата</th>
+                <li class="order-table-head__item order-table-head__item_middle">вермя</th>
+                <li class="order-table-head__item order-table-head__item_middle">сумма</th>
+                <li class="order-table-head__item order-table-head__item_small">статус</th>
+              </ul>
+              <div class="order-table-wrap">
+                <table  class="order-table">
+                  <tbody class="order-table-body">
+                    <tr class="order-table__row">
+                      <td class="order-table__cell order-table__cell_wide">Покупка квартиры</td>
+                      <td class="order-table__cell order-table__cell_middle">17.03.2018</td>
+                      <td class="order-table__cell order-table__cell_middle">16:30</td>
+                      <td class="order-table__cell order-table__cell_middle">500 грн.</td>
+                      <td data-status="1" class="order-status order-table__cell order-table__cell_narrow">новый</td>
+                    </tr>
+                    <tr class="order-table__row">
+                      <td class="order-table__cell order-table__cell_wide">Покупка квартиры</td>
+                      <td class="order-table__cell order-table__cell_middle">17.03.2018</td>
+                      <td class="order-table__cell order-table__cell_middle">16:30</td>
+                      <td class="order-table__cell order-table__cell_middle">500 грн.</td>
+                      <td data-status="1" class="order-status order-table__cell order-table__cell_narrow">новый</td>
+                    </tr>
+                    <tr class="order-table__row">
+                      <td class="order-table__cell order-table__cell_wide">Покупка квартиры</td>
+                      <td class="order-table__cell order-table__cell_middle">17.03.2018</td>
+                      <td class="order-table__cell order-table__cell_middle">16:30</td>
+                      <td class="order-table__cell order-table__cell_middle">500 грн.</td>
+                      <td data-status="1" class="order-status order-table__cell order-table__cell_narrow">новый</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </li>
+            <li class="order-table-list__item">
+              <ul class="order-table-head order-table__row">
+                <li class="order-table-head__item order-table__cell_wide">услуга</li>
+                <li class="order-table-head__item order-table__cell_small">дата</li>
+                <li class="order-table-head__item order-table__cell_small">вермя</li>
+                <li class="order-table-head__item order-table__cell_small">сумма</li>
+                <li class="order-table-head__item order-table__cell_middle">оплата</li>
+                <li class="order-table-head__item order-table__cell_wide">исполнитель</li>
+                <li class="order-table-head__item order-table__cell_narrow">статус</li>
+                <li class="order-table-head__item order-table__cell_small" style="font-size: 0.8rem; width: 7.4%;">Календарь</li>
+                <li class="order-table-head__item order-table__cell_small" style="font-size: 0.8rem; width: 7.4%;">Коммен - <br>тарий</li>
+              </ul>
+              <div class="order-table-wrap">
+                <table  class="order-table">
+                  <tbody class="order-table-body">
+                    <tr class="order-table__row">
+                      <td class="order-table__cell order-table__cell_wide">Покупка квартиры</td>
+                      <td class="order-table__cell order-table__cell_small">17.03.2018</td>
+                      <td class="order-table__cell order-table__cell_small">16:30</td>
+                      <td class="order-table__cell order-table__cell_small">500 грн.</td>
+                      <td class="order-table__cell order-table__cell_pay order-table__cell_middle">не оплачен <button class="site-button order-table__button">Оплатить</button></td>
+                      <td class="order-table__cell order-table__cell_wide"><a href="#" class="order-table__link">Каракула Акула Вакуловна</a></td>
+                      <td data-status="2" class="order-status order-table__cell order-table__cell_green order-table__cell_narrow">отменено</td>
+                      <td data-status="2" class="order-status order-table__cell order-table__cell_green order-table__cell_narrow">В календарь</td>
+                      <td data-status="2" class="order-status order-table__cell order-table__cell_green order-table__cell_narrow">Остаить отзыв</td>
+                    </tr>
+                    <tr class="order-table__row">
+                      <td class="order-table__cell order-table__cell_wide">Покупка квартиры</td>
+                      <td class="order-table__cell order-table__cell_small">17.03.2018</td>
+                      <td class="order-table__cell order-table__cell_small">16:30</td>
+                      <td class="order-table__cell order-table__cell_small">500 грн.</td>
+                      <td class="order-table__cell order-table__cell_pay order-table__cell_middle">не оплачен <button class="site-button order-table__button">Оплатить</button></td>
+                      <td class="order-table__cell order-table__cell_wide"><a href="#" class="order-table__link">Каракула Акула Вакуловна</a></td>
+                      <td data-status="2" class="order-status order-table__cell order-table__cell_green order-table__cell_narrow">отменено</td>
+                      <td data-status="2" class="order-status order-table__cell order-table__cell_green order-table__cell_narrow">В календарь</td>
+                      <td data-status="2" class="order-status order-table__cell order-table__cell_green order-table__cell_narrow">Остаить отзыв</td>
+                    </tr>
+                    <tr class="order-table__row">
+                      <td class="order-table__cell order-table__cell_wide">Покупка квартиры</td>
+                      <td class="order-table__cell order-table__cell_small">17.03.2018</td>
+                      <td class="order-table__cell order-table__cell_small">16:30</td>
+                      <td class="order-table__cell order-table__cell_small">500 грн.</td>
+                      <td class="order-table__cell order-table__cell_pay order-table__cell_middle">не оплачен <button class="site-button order-table__button">Оплатить</button></td>
+                      <td class="order-table__cell order-table__cell_wide"><a href="#" class="order-table__link">Каракула Акула Вакуловна</a></td>
+                      <td data-status="2" class="order-status order-table__cell order-table__cell_green order-table__cell_narrow">отменено</td>
+                      <td data-status="2" class="order-status order-table__cell order-table__cell_green order-table__cell_narrow">В календарь</td>
+                      <td data-status="2" class="order-status order-table__cell order-table__cell_green order-table__cell_narrow">Остаить отзыв</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>  
+
+      <section id="my-notary" class="my-notary">
+        <div class="container">
+          <h2 class="section-heading client-page__section-heading my-notary__section-heading">Мои нотариусы</h2>
+          <div class="pagination-wrap-js">
+            <ul class="my-notary-list">
+              <li data-star="5" class="my-notary-list__item">
+                <div class="my-notary-info">
+                  <div class="my-notary-info__photo-wrap">
+                    <img src="img/client-page/photo.jpg" alt="photo" class="my-natary-info__photo">
+                  </div>
+                  <p class="my-notary-info__name">Беляев Алексей Геннадиевич</p>
+                  <div class="my-notary-info-rating">
+                    <p class="my-notary-info-rating__text">Рейтинг: </p>
+                    <div class="star my-notary-info-rating__star">
+                      <div class="star__block star__white"></div>
+                      <div class="star__block star__color"></div>
+                    </div>
+                  </div>
+                  <a href="#" class="my-natary-info__location">м. Выставочный центр</a>
+                </div>
+                <div class="my-notary-order-info">
+                  <p class="my-notary-order-info__title">Оказанная услуга:</p>
+                  <a href="#" class="my-notary-order-info__link">Заверение доверенности на автомобиль</a>
+                  <p class="my-notary-order-info__date">17.03.2018</p>
+                  <p class="my-notary-order-info__price">Стоимость: 500 грн</p>
+                  <button class="site-button my-notary-order-info__button">Заказать услугу еще раз</button>
+                  <button class="site-button my-notary-order-info__button-feedback my-notary-order-info__button">Оставить отзыв</button>
+                </div>
+              </li>
+
+              <li data-star="4" class="my-notary-list__item">
+                <div class="my-notary-info">
+                  <div class="my-notary-info__photo-wrap">
+                    <img src="img/client-page/photo.jpg" alt="photo" class="my-natary-info__photo">
+                  </div>
+                  <p class="my-notary-info__name">Беляев Алексей Геннадиевич</p>
+                  <div class="my-notary-info-rating">
+                    <p class="my-notary-info-rating__text">Рейтинг: </p>
+                    <div class="star my-notary-info-rating__star">
+                      <div class="star__block star__white"></div>
+                      <div class="star__block star__color"></div>
+                    </div>
+                  </div>
+                  <a href="#" class="my-natary-info__location">м. Выставочный центр</a>
+                </div>
+                <div class="my-notary-order-info">
+                  <p class="my-notary-order-info__title">Оказанная услуга:</p>
+                  <a href="#" class="my-notary-order-info__link">Заверение доверенности на автомобиль</a>
+                  <p class="my-notary-order-info__date">17.03.2018</p>
+                  <p class="my-notary-order-info__price">Стоимость: 500 грн</p>
+                  <button class="site-button my-notary-order-info__button">Заказать услугу еще раз</button>
+                  <button class="site-button my-notary-order-info__button-feedback my-notary-order-info__button">Оставить отзыв</button>
+                </div>
+              </li>
+
+              <li data-star="3" class="my-notary-list__item">
+                <div class="my-notary-info">
+                  <div class="my-notary-info__photo-wrap">
+                    <img src="img/client-page/photo.jpg" alt="photo" class="my-natary-info__photo">
+                  </div>
+                  <p class="my-notary-info__name">Беляев Алексей Геннадиевич</p>
+                  <div class="my-notary-info-rating">
+                    <p class="my-notary-info-rating__text">Рейтинг: </p>
+                    <div class="star my-notary-info-rating__star">
+                      <div class="star__block star__white"></div>
+                      <div class="star__block star__color"></div>
+                    </div>
+                  </div>
+                  <a href="#" class="my-natary-info__location">м. Выставочный центр</a>
+                </div>
+                <div class="my-notary-order-info">
+                  <p class="my-notary-order-info__title">Оказанная услуга:</p>
+                  <a href="#" class="my-notary-order-info__link">Заверение доверенности на автомобиль</a>
+                  <p class="my-notary-order-info__date">17.03.2018</p>
+                  <p class="my-notary-order-info__price">Стоимость: 500 грн</p>
+                  <button class="site-button my-notary-order-info__button">Заказать услугу еще раз</button>
+                  <button class="site-button my-notary-order-info__button-feedback my-notary-order-info__button">Оставить отзыв</button>
+                </div>
+              </li>
+      
+              <li data-star="3" class="my-notary-list__item">
+                <div class="my-notary-info">
+                  <div class="my-notary-info__photo-wrap">
+                    <img src="img/client-page/photo.jpg" alt="photo" class="my-natary-info__photo">
+                  </div>
+                  <p class="my-notary-info__name">Беляев Алексей Геннадиевич</p>
+                  <div class="my-notary-info-rating">
+                    <p class="my-notary-info-rating__text">Рейтинг: </p>
+                    <div class="star my-notary-info-rating__star">
+                      <div class="star__block star__white"></div>
+                      <div class="star__block star__color"></div>
+                    </div>
+                  </div>
+                  <a href="#" class="my-natary-info__location">м. Выставочный центр</a>
+                </div>
+                <div class="my-notary-order-info">
+                  <p class="my-notary-order-info__title">Оказанная услуга:</p>
+                  <a href="#" class="my-notary-order-info__link">Заверение доверенности на автомобиль</a>
+                  <p class="my-notary-order-info__date">17.03.2018</p>
+                  <p class="my-notary-order-info__price">Стоимость: 500 грн</p>
+                  <button class="site-button my-notary-order-info__button">Заказать услугу еще раз</button>
+                  <button class="site-button my-notary-order-info__button-feedback my-notary-order-info__button">Оставить отзыв</button>
+                </div>
+              </li>
+        
+              <li data-star="2" class="my-notary-list__item">
+                <div class="my-notary-info">
+                  <div class="my-notary-info__photo-wrap">
+                    <img src="img/client-page/photo.jpg" alt="photo" class="my-natary-info__photo">
+                  </div>
+                  <p class="my-notary-info__name">Беляев Алексей Геннадиевич</p>
+                  <div class="my-notary-info-rating">
+                    <p class="my-notary-info-rating__text">Рейтинг: </p>
+                    <div class="star my-notary-info-rating__star">
+                      <div class="star__block star__white"></div>
+                      <div class="star__block star__color"></div>
+                    </div>
+                  </div>
+                  <a href="#" class="my-natary-info__location">м. Выставочный центр</a>
+                </div>
+                <div class="my-notary-order-info">
+                  <p class="my-notary-order-info__title">Оказанная услуга:</p>
+                  <a href="#" class="my-notary-order-info__link">Заверение доверенности на автомобиль</a>
+                  <p class="my-notary-order-info__date">17.03.2018</p>
+                  <p class="my-notary-order-info__price">Стоимость: 500 грн</p>
+                  <button class="site-button my-notary-order-info__button">Заказать услугу еще раз</button>
+                  <button class="site-button my-notary-order-info__button-feedback my-notary-order-info__button">Оставить отзыв</button>
+                </div>
+              </li>
+
+              <li data-star="2" class="my-notary-list__item">
+                <div class="my-notary-info">
+                  <div class="my-notary-info__photo-wrap">
+                    <img src="img/client-page/photo.jpg" alt="photo" class="my-natary-info__photo">
+                  </div>
+                  <p class="my-notary-info__name">Беляев Алексей Геннадиевич</p>
+                  <div class="my-notary-info-rating">
+                    <p class="my-notary-info-rating__text">Рейтинг: </p>
+                    <div class="star my-notary-info-rating__star">
+                      <div class="star__block star__white"></div>
+                      <div class="star__block star__color"></div>
+                    </div>
+                  </div>
+                  <a href="#" class="my-natary-info__location">м. Выставочный центр</a>
+                </div>
+                <div class="my-notary-order-info">
+                  <p class="my-notary-order-info__title">Оказанная услуга:</p>
+                  <a href="#" class="my-notary-order-info__link">Заверение доверенности на автомобиль</a>
+                  <p class="my-notary-order-info__date">17.03.2018</p>
+                  <p class="my-notary-order-info__price">Стоимость: 500 грн</p>
+                  <button class="site-button my-notary-order-info__button">Заказать услугу еще раз</button>
+                  <button class="site-button my-notary-order-info__button-feedback my-notary-order-info__button">Оставить отзыв</button>
+                </div>
+              </li>            
+            </ul>
+
+            <div class="pagination my-notary-pagination">
+              <a href="#" class="pagination__nav my-notary-pagination__nav_prev">
+                <svg class="pagination__nav-icon pagination__nav-icon_rotate"><use xlink:href="#right-arrow"></use></svg> 
+                <span class="pagination__nav-text">предыдущие 4</span> 
+              </a>
+              <ul class="pagination-num my-notary-pagination-num">
+                <li class="pagination-num__item pagination-num__item_active">
+                  1
+                </li>
+              </ul>
+              <a href="#" class="pagination__nav my-notary-pagination__nav_next">
+                <span class="pagination__nav-text">следующие 4</span>
+                <svg class="pagination__nav-icon"><use xlink:href="#right-arrow"></use></svg>  
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="my-feedback">
+        <div class="container">
+          <h2 class="section-heading client-page__section-heading my-feedback__section-heading">Мои отзывы</h2>
+          <div class="pagination-wrap-js">
+            <ul class="my-feedback-list">
+              <li class="my-feedback-list__item">
+                <div class="my-feedback-notary">
+                  <div class="my-feedback-notary__photo-wrap">
+                    <img src="img/client-page/photo.jpg" alt="photo" class="my-feedback-notary__photo">
+                  </div>
+                  <p class="my-feedback-notary__name">Беляев Алексей Геннадиевич</p>
+                  <p class="my-feedback-notary__position">нотариус</p>
+                  <div data-star="3" class="my-feedback-notary-rating">
+                    <p class="my-feedback-notary-rating__text">Рейтинг: </p>
+                    <div class="star my-feedback-notary-rating__star">
+                      <div class="star__block star__white"></div>
+                      <div class="star__block star__color"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="my-feedback-info-container">
+                  <div class="my-feedback-info">
+                    <p class="my-feedback-info__date">15.03.2018</p>
+                    <p class="my-feedback-info__order-name">Отзыв по услуге: <a href="#" class="my-feedback-info__link">удостоверение договора купли-продажи..</a></p>
+                    <div data-star="4" class="my-feedback-info-rating">
+                      <p class="my-feedback-info-rating__text">Оценка: <span class="my-feedback-info-rating__text_regular">отлично</span></p>
+                      <div class="star my-feedback-info-rating__star">
+                        <div class="star__block star__white"></div>
+                        <div class="star__block star__color"></div>
+                      </div>
+                    </div>
+                    <button class="site-button my-feedback-info__button">Редактировать</button>
+                  </div>
+                  <p class="my-feedback__text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.Lorem ipsum dolor sit amet...
+                    nt occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                  </p> 
+                   <svg class="my-feedback__text-icon"><use xlink:href="#right-arrow"></use></svg>
+                </div>
+              </li>
+
+              <li class="my-feedback-list__item">
+                <div class="my-feedback-notary">
+                  <div class="my-feedback-notary__photo-wrap">
+                    <img src="img/client-page/photo.jpg" alt="photo" class="my-feedback-notary__photo">
+                  </div>
+                  <p class="my-feedback-notary__name">Беляев Алексей Геннадиевич</p>
+                  <p class="my-feedback-notary__position">нотариус</p>
+                  <div data-star="3" class="my-feedback-notary-rating">
+                    <p class="my-feedback-notary-rating__text">Рейтинг: </p>
+                    <div class="star my-feedback-notary-rating__star">
+                      <div class="star__block star__white"></div>
+                      <div class="star__block star__color"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="my-feedback-info-container">
+                  <div class="my-feedback-info clearfix">
+                    <p class="my-feedback-info__date">15.03.2018</p>
+                    <p class="my-feedback-info__order-name">Отзыв по услуге: <a href="#" class="my-feedback-info__link">удостоверение договора купли-продажи..</a></p>
+                    <div data-star="4" class="my-feedback-info-rating">
+                      <p class="my-feedback-info-rating__text">Оценка: <span class="my-feedback-info-rating__text_regular">отлично</span></p>
+                      <div class="star my-feedback-info-rating__star">
+                        <div class="star__block star__white"></div>
+                        <div class="star__block star__color"></div>
+                      </div>
+                    </div>
+                    <button class="site-button my-feedback-info__button">Редактировать</button>
+                  </div>
+                  <p class="my-feedback__text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.Lorem ipsum dolor sit amet...
+                    nt occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.Lorem ipsum dolor sit amet...
+                    nt occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                  </p> 
+                   <svg class="my-feedback__text-icon"><use xlink:href="#right-arrow"></use></svg>
+                </div>
+              </li>
+
+              <li class="my-feedback-list__item">
+                <div class="my-feedback-notary">
+                  <div class="my-feedback-notary__photo-wrap">
+                    <img src="img/client-page/photo.jpg" alt="photo" class="my-feedback-notary__photo">
+                  </div>
+                  <p class="my-feedback-notary__name">Беляев Алексей Геннадиевич</p>
+                  <p class="my-feedback-notary__position">нотариус</p>
+                  <div data-star="3" class="my-feedback-notary-rating">
+                    <p class="my-feedback-notary-rating__text">Рейтинг: </p>
+                    <div class="star my-feedback-notary-rating__star">
+                      <div class="star__block star__white"></div>
+                      <div class="star__block star__color"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="my-feedback-info-container">
+                  <div class="my-feedback-info">
+                    <p class="my-feedback-info__date">15.03.2018</p>
+                    <p class="my-feedback-info__order-name">Отзыв по услуге: <a href="#" class="my-feedback-info__link">удостоверение договора купли-продажи..</a></p>
+                    <div data-star="4" class="my-feedback-info-rating">
+                      <p class="my-feedback-info-rating__text">Оценка: <span class="my-feedback-info-rating__text_regular">отлично</span></p>
+                      <div class="star my-feedback-info-rating__star">
+                        <div class="star__block star__white"></div>
+                        <div class="star__block star__color"></div>
+                      </div>
+                    </div>
+                    <button class="site-button my-feedback-info__button">Редактировать</button>
+                  </div>
+                  <p class="my-feedback__text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.Lorem ipsum dolor sit amet...
+                    nt occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                  </p> 
+                   <svg class="my-feedback__text-icon"><use xlink:href="#right-arrow"></use></svg>
+                </div>
+              </li>
+
+              <li class="my-feedback-list__item">
+                <div class="my-feedback-notary">
+                  <div class="my-feedback-notary__photo-wrap">
+                    <img src="img/client-page/photo.jpg" alt="photo" class="my-feedback-notary__photo">
+                  </div>
+                  <p class="my-feedback-notary__name">Беляев Алексей Геннадиевич</p>
+                  <p class="my-feedback-notary__position">нотариус</p>
+                  <div data-star="3" class="my-feedback-notary-rating">
+                    <p class="my-feedback-notary-rating__text">Рейтинг: </p>
+                    <div class="star my-feedback-notary-rating__star">
+                      <div class="star__block star__white"></div>
+                      <div class="star__block star__color"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="my-feedback-info-container">
+                  <div class="my-feedback-info">
+                    <p class="my-feedback-info__date">15.03.2018</p>
+                    <p class="my-feedback-info__order-name">Отзыв по услуге: <a href="#" class="my-feedback-info__link">удостоверение договора купли-продажи..</a></p>
+                    <div data-star="4" class="my-feedback-info-rating">
+                      <p class="my-feedback-info-rating__text">Оценка: <span class="my-feedback-info-rating__text_regular">отлично</span></p>
+                      <div class="star my-feedback-info-rating__star">
+                        <div class="star__block star__white"></div>
+                        <div class="star__block star__color"></div>
+                      </div>
+                    </div>
+                    <button class="site-button my-feedback-info__button">Редактировать</button>
+                  </div>
+                  <p class="my-feedback__text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.Lorem ipsum dolor sit amet...
+                    nt occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                  </p> 
+                   <svg class="my-feedback__text-icon"><use xlink:href="#right-arrow"></use></svg>
+                </div>
+              </li>
+
+              <li class="my-feedback-list__item">
+                <div class="my-feedback-notary">
+                  <div class="my-feedback-notary__photo-wrap">
+                    <img src="img/client-page/photo.jpg" alt="photo" class="my-feedback-notary__photo">
+                  </div>
+                  <p class="my-feedback-notary__name">Беляев Алексей Геннадиевич</p>
+                  <p class="my-feedback-notary__position">нотариус</p>
+                  <div data-star="3" class="my-feedback-notary-rating">
+                    <p class="my-feedback-notary-rating__text">Рейтинг: </p>
+                    <div class="star my-feedback-notary-rating__star">
+                      <div class="star__block star__white"></div>
+                      <div class="star__block star__color"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="my-feedback-info-container">
+                  <div class="my-feedback-info">
+                    <p class="my-feedback-info__date">15.03.2018</p>
+                    <p class="my-feedback-info__order-name">Отзыв по услуге: <a href="#" class="my-feedback-info__link">удостоверение договора купли-продажи..</a></p>
+                    <div data-star="4" class="my-feedback-info-rating">
+                      <p class="my-feedback-info-rating__text">Оценка: <span class="my-feedback-info-rating__text_regular">отлично</span></p>
+                      <div class="star my-feedback-info-rating__star">
+                        <div class="star__block star__white"></div>
+                        <div class="star__block star__color"></div>
+                      </div>
+                    </div>
+                    <button class="site-button my-feedback-info__button">Редактировать</button>
+                  </div>
+                  <p class="my-feedback__text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.Lorem ipsum dolor sit amet...
+                    nt occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                  </p> 
+                   <svg class="my-feedback__text-icon"><use xlink:href="#right-arrow"></use></svg>
+                </div>
+              </li>
+              </ul>
+            <div class="pagination my-feedback-pagination">
+              <a href="#" class="pagination__nav my-feedback-pagination__nav_prev">
+                <svg class="pagination__nav-icon pagination__nav-icon_rotate"><use xlink:href="#right-arrow"></use></svg> 
+                <span class="pagination__nav-text">предыдущие 4</span> 
+              </a>
+              <ul class="pagination-num my-feedback-pagination-num">
+                <li class="pagination-num__item pagination-num__item_active">
+                  1
+                </li>
+                <!-- <li class="pagination-num__item">
+                  2
+                </li> -->
+               <!--  <li class="pagination-num__item">
+                  3
+                </li> -->
+                <!-- <li class="pagination-num__item">
+                  4
+                </li>
+                <li class="pagination-num__item">
+                  5
+                </li> -->
+                
+              </ul>
+              <a href="#" class="pagination__nav my-feedback-pagination__nav_next">
+                <span class="pagination__nav-text">следующие 4</span>
+                <svg class="pagination__nav-icon"><use xlink:href="#right-arrow"></use></svg>  
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="comment comment-edit">
+        <div class="comment-content">
+          <h3 class="section-heading comment__heading">Исправить свой отзыв об <br> Нотариусовом Нотариусе Нотариусовиче</h3>
+          <ul class="rating-list">
+            <li class="rating-list__item">
+              <div class="dynamic-star-wrap">
+                <input type="text" class="dynamic-star__input-info">
+                <ul class="dynamic-star">
+                  <li class="dynamic-star__item">
+                    <svg class="dynamic-star__icon"><use xlink:href="#star"></use></svg>
+                    <input type="text" class="dynamic-star__input" value="1">
+                    </li>
+                  <li class="dynamic-star__item">
+                    <svg class="dynamic-star__icon"><use xlink:href="#star"></use></svg>
+                    <input type="text" class="dynamic-star__input" value="2">
+                    </li>
+                  <li class="dynamic-star__item">
+                    <svg class="dynamic-star__icon"><use xlink:href="#star"></use></svg>
+                    <input type="text" class="dynamic-star__input" value="3">
+                  </li>
+                  <li class="dynamic-star__item">
+                    <svg class="dynamic-star__icon"><use xlink:href="#star"></use></svg>
+                    <input type="text" class="dynamic-star__input" value="4">
+                  </li>
+                  <li class="dynamic-star__item">
+                    <svg class="dynamic-star__icon"><use xlink:href="#star"></use></svg>
+                    <input type="text" class="dynamic-star__input" value="5">
+                  </li>
+                </ul>
+              </div>
+              <p class="rating-list__text">- качество выполненой работы</p>
+            </li>
+
+            <li class="rating-list__item">
+              <div class="dynamic-star-wrap">
+                <input type="text" class="dynamic-star__input-info">
+                <ul class="dynamic-star">
+                  <li class="dynamic-star__item">
+                    <svg class="dynamic-star__icon"><use xlink:href="#star"></use></svg>
+                    <input type="text" class="dynamic-star__input" value="1">
+                    </li>
+                  <li class="dynamic-star__item">
+                    <svg class="dynamic-star__icon"><use xlink:href="#star"></use></svg>
+                    <input type="text" class="dynamic-star__input" value="2">
+                    </li>
+                  <li class="dynamic-star__item">
+                    <svg class="dynamic-star__icon"><use xlink:href="#star"></use></svg>
+                    <input type="text" class="dynamic-star__input" value="3">
+                  </li>
+                  <li class="dynamic-star__item">
+                    <svg class="dynamic-star__icon"><use xlink:href="#star"></use></svg>
+                    <input type="text" class="dynamic-star__input" value="4">
+                  </li>
+                  <li class="dynamic-star__item">
+                    <svg class="dynamic-star__icon"><use xlink:href="#star"></use></svg>
+                    <input type="text" class="dynamic-star__input" value="5">
+                  </li>
+                </ul>
+              </div>
+              <p class="rating-list__text">- вежливость нотариуса</p>
+            </li>
+
+            <li class="rating-list__item">
+              <div class="dynamic-star-wrap">
+                <input type="text" class="dynamic-star__input-info">
+                <ul class="dynamic-star">
+                  <li class="dynamic-star__item">
+                    <svg class="dynamic-star__icon"><use xlink:href="#star"></use></svg>
+                    <input type="text" class="dynamic-star__input" value="1">
+                    </li>
+                  <li class="dynamic-star__item">
+                    <svg class="dynamic-star__icon"><use xlink:href="#star"></use></svg>
+                    <input type="text" class="dynamic-star__input" value="2">
+                    </li>
+                  <li class="dynamic-star__item">
+                    <svg class="dynamic-star__icon"><use xlink:href="#star"></use></svg>
+                    <input type="text" class="dynamic-star__input" value="3">
+                  </li>
+                  <li class="dynamic-star__item">
+                    <svg class="dynamic-star__icon"><use xlink:href="#star"></use></svg>
+                    <input type="text" class="dynamic-star__input" value="4">
+                  </li>
+                  <li class="dynamic-star__item">
+                    <svg class="dynamic-star__icon"><use xlink:href="#star"></use></svg>
+                    <input type="text" class="dynamic-star__input" value="5">
+                  </li>
+                </ul>
+              </div>
+              <p class="rating-list__text">- пунктуальность (своевременный приход на встречу, оперативный выход на связь</p>
+            </li>
+          </ul>
+          <div class="comment-text-wrap">
+            <textarea id="" class="comment-text">Расскажите о плюсах и минусах данного нотариуса, довольны ли Вы его работой и готовы ли Вы рекомендовать его своим друзьям?Расскажите о плюсах и минусах данного нотариуса, довольны ли Вы его работой
+            и готовы ли Вы рекомендовать его своим друзьям?Расскажите о плюсах и минусах данного нотариуса, довольны ли Вы его работой и готовы ли Вы рекомендовать его своим друзьям? Расскажите о плюсах и минусах данного нотариуса, довольны ли Вы его работой и готовы ли Вы рекомендовать его своим 
+            </textarea>
+          </div>
+          <button class="site-button comment__button">Редактировать отзыв</button>
+          <a href="#" class="comment__exit-button">Отмена</a>
+        </div>
+      </section>
+
+
+      <section class="comment comment-write">
+        <div class="comment-content">
+          <h3 class="section-heading comment__heading">Оставьте свой отзыв об  <br> Нотариусовом Нотариусе Нотариусовиче</h3>
+          <ul class="rating-list">
+            <li class="rating-list__item">
+              <div class="dynamic-star-wrap">
+                <input type="text" class="dynamic-star__input-info">
+                <ul class="dynamic-star" data-feedback-star="3">
+                  <li class="dynamic-star__item">
+                    <svg class="dynamic-star__icon"><use xlink:href="#star"></use></svg>
+                    <input type="radio" name="rating" class="dynamic-star__input" value="1">
+                    </li>
+                  <li class="dynamic-star__item">
+                    <svg class="dynamic-star__icon"><use xlink:href="#star"></use></svg>
+                    <input type="radio" name="rating" class="dynamic-star__input" value="2">
+                    </li>
+                  <li class="dynamic-star__item">
+                    <svg class="dynamic-star__icon"><use xlink:href="#star"></use></svg>
+                    <input type="radio" name="rating" class="dynamic-star__input" value="3">
+                  </li>
+                  <li class="dynamic-star__item">
+                    <svg class="dynamic-star__icon"><use xlink:href="#star"></use></svg>
+                    <input type="radio" name="rating" class="dynamic-star__input" value="4">
+                  </li>
+                  <li class="dynamic-star__item">
+                    <svg class="dynamic-star__icon"><use xlink:href="#star"></use></svg>
+                    <input type="radio" name="rating" class="dynamic-star__input" value="5">
+                  </li>
+                </ul>
+              </div>
+              <p class="rating-list__text">- качество выполненой работы</p>
+            </li>
+
+            <li class="rating-list__item">
+              <div class="dynamic-star-wrap">
+                <input type="text" class="dynamic-star__input-info">
+                <ul class="dynamic-star">
+                  <li class="dynamic-star__item">
+                    <svg class="dynamic-star__icon"><use xlink:href="#star"></use></svg>
+                    <input type="radio" name="rating" class="dynamic-star__input" value="1">
+                    </li>
+                  <li class="dynamic-star__item">
+                    <svg class="dynamic-star__icon"><use xlink:href="#star"></use></svg>
+                    <input type="radio" name="rating" class="dynamic-star__input" value="2">
+                    </li>
+                  <li class="dynamic-star__item">
+                    <svg class="dynamic-star__icon"><use xlink:href="#star"></use></svg>
+                    <input type="radio" name="rating" class="dynamic-star__input" value="3">
+                  </li>
+                  <li class="dynamic-star__item">
+                    <svg class="dynamic-star__icon"><use xlink:href="#star"></use></svg>
+                    <input type="radio" name="rating" class="dynamic-star__input" value="4">
+                  </li>
+                  <li class="dynamic-star__item">
+                    <svg class="dynamic-star__icon"><use xlink:href="#star"></use></svg>
+                    <input type="radio" name="rating" class="dynamic-star__input" value="5">
+                  </li>
+                </ul>
+              </div>
+              <p class="rating-list__text">- вежливость нотариуса</p>
+            </li>
+
+            <li class="rating-list__item">
+              <div class="dynamic-star-wrap">
+                <input type="text" class="dynamic-star__input-info">
+                <ul class="dynamic-star" data-feedback-star="2">
+                  <li class="dynamic-star__item">
+                    <svg class="dynamic-star__icon"><use xlink:href="#star"></use></svg>
+                    <input type="radio" name="rating" class="dynamic-star__input" value="1">
+                    </li>
+                  <li class="dynamic-star__item">
+                    <svg class="dynamic-star__icon"><use xlink:href="#star"></use></svg>
+                    <input type="radio" name="rating" class="dynamic-star__input" value="2">
+                    </li>
+                  <li class="dynamic-star__item">
+                    <svg class="dynamic-star__icon"><use xlink:href="#star"></use></svg>
+                    <input type="radio" name="rating" class="dynamic-star__input" value="3">
+                  </li>
+                  <li class="dynamic-star__item">
+                    <svg class="dynamic-star__icon"><use xlink:href="#star"></use></svg>
+                    <input type="radio" name="rating" class="dynamic-star__input" value="4">
+                  </li>
+                  <li class="dynamic-star__item">
+                    <svg class="dynamic-star__icon"><use xlink:href="#star"></use></svg>
+                    <input type="radio" name="rating" class="dynamic-star__input" value="5">
+                  </li>
+                </ul>
+              </div>
+              <p class="rating-list__text">- пунктуальность (своевременный приход на встречу, оперативный выход на связь</p>
+            </li>
+          </ul>
+          <div class="comment-text-wrap">
+            <textarea id="" class="comment-text" placeholder="Расскажите о плюсах и минусах данного нотариуса, довольны ли Вы его работой и готовы ли Вы рекомендовать его своим друзьям?"></textarea>
+          </div>
+          <button class="site-button comment__button">Оставить отзыв</button>
+          <button class="comment__exit-button">Отмена</button>
+          <p class="comment__thanks">Спасибо за Ваш отзыв!</p>
+        </div>
+      </section>
+
+
+      <section class="document-full">
+        <div class="container">
+          <div class="document-full-container">
+            <div class="document-full-slider-wrap">
+              <!-- <div id="document-slider" > -->
+                <!-- <img src="img/client-page/doc.jpg" alt="document" class="document-full-slider__image">
+                <img src="img/client-page/doc2.jpg" alt="document" class="document-full-slider__image">
+                <img src="img/client-page/doc.jpg" alt="document" class="document-full-slider__image"> -->
+              <!-- </div> -->
+              <div class="document-full-slider-nav-wrap">
+                <button class="document-full-slider-nav document-full-slider-nav__prev">
+                  <img src="img/main/slider-white-nav.png" alt="next" class="document-full-slider-nav__image">
+                </button>
+                <button class="document-full-slider-nav document-full-slider-nav__next">
+                  <img src="img/main/slider-white-nav.png" alt="next" class="document-full-slider-nav__image">
+                </button>
+              </div>
+              <div class="document-full-slider-cansel">
+                <a href="#" download class="document-full-slider-cansel__link">
+                  <img src="img/client-page/download.png" alt="download" class="document-full-slider-cansel__icon">
+                </a>
+                <img src="img/client-page/cansel.png" alt="download" class="document-full-slider-cansel__icon document-full-slider-cansel__cansel">
+              </div>
+              <div class="document-full-slider-zoom">
+                <img src="img/client-page/zoom-.png" alt="download" class="document-full-slider-zoom__icon">
+                <img src="img/client-page/zoom+.png" alt="download" class="document-full-slider-zoom__icon">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+      
+      <div class="footer-clear"></div>
+      <footer class="footer">
+          <div class="container">
+            <div class="footer-list-wrap">
+              <ul class="footer-list footer-services-list">
+                <li class="footer-list__item footer-list__heading footer-services-list__heading">
+                  Сервис
+                </li>
+                <li class="footer-list__item">
+                  <a href="#" class="footer-list__link">О нас</a>
+                </li>
+                <li class="footer-list__item">
+                  <a href="#" class="footer-list__link">О рейтинге</a>
+                </li>
+                <li class="footer-list__item">
+                  <a href="#" class="footer-list__link">Партнерам</a>
+                </li>
+                <li class="footer-list__item">
+                  <a href="#" class="footer-list__link">Правила сервиса</a>
+                </li>
+                <li class="footer-list__item">
+                  <a href="#" class="footer-list__link">Политика конфиденциальности</a>
+                </li>
+              </ul>
+
+              <ul class="footer-list footer-client-list">
+                <li class="footer-list__item footer-list__heading footer-client-list__heading">
+                  Клентам
+                </li>
+                <li class="footer-list__item">
+                  <a href="#" class="footer-list__link">Нотариусы</a>
+                </li>
+                <li class="footer-list__item">
+                  <a href="#" class="footer-list__link">Акции и скидки</a>
+                </li>
+                <li class="footer-list__item">
+                  <a href="#" class="footer-list__link">Нотариальные услуги</a>
+                </li>
+              </ul>
+
+              <ul class="footer-list footer-phone-list">
+                <li class="footer-list__item footer-list__heading footer-phone-list__heading">
+                  Звоните нам
+                </li>
+                <li class="footer-list__item">
+                  С  Пн.-Вс. с 9:00 до 20:00
+                </li>
+                <li class="footer-list__item">
+                  <a href="tel:+3 8 (044) 990 60 08" class="footer-list__link footer-phone-list__link">+3 8 (044) 990 60 08</a>
+                  <a href="tel:+3 8 (097) 555 99 99" class="footer-list__link">+3 8 (097) 555 99 99</a>
+                </li>
+                <li class="footer-list__item">
+                  <a href="tel:+3 8 (093) 555 99 99" class="footer-list__link footer-phone-list__link">+3 8 (093) 555 99 99</a>
+                  <a href="tel:+38 (095) 555 99 99" class="footer-list__link">+3 8 (095) 555 99 99</a>
+                </li>
+              </ul>
+            </div>
+
+            <p class="footer__copyright">Zavireno, 2018 Все права защищены.</p>
+            <p class="footer__text">Использование материалов разрешено только при наличии активной ссылки на источник</p>
+            <div class="smart-orange">
+              <p class="smart-orange__text">Сайт разработан компанией</p>
+              <a href="http://smartorange.com.ua/" target="_blanc" class="smart-orange__link">
+                <img src="img/logo1.svg" alt="smart-orange" class="smart-orange__image">
+              </a>
+            </div>
+          </div>
+      </footer>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/libraries/datapicker/picker.js"></script>
+    <script src="js/libraries/datapicker/picker.time.js"></script>
+    <script src="js/libraries/datapicker/picker.date.js"></script>
+    <script src="js/libraries/slick.min.js"></script>
+    <script src="js/libraries/jquery.maskedinput.min.js"></script>
+    <script src="js/w3-html-include.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/client-page.js"></script>
+    <script src="js/pagination.js"></script>
+
+  </body>
+</html>

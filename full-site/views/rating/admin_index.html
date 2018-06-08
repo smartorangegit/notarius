@@ -1,0 +1,28 @@
+<div class="table100 ver6 m-b-110">
+    <table data-vertable="ver6">
+        <thead>
+        <tr class="row100 head">
+            <th class="column100 column1 query-th" data-column="column2">#</th>
+            <th class="column100 column2 query-th" data-column="column3">ФИО пользователя</th>
+            <th class="column100 column3 query-th" data-column="column4">ФИО нотариуса</th>
+            <th class="column100 column4 query-th" data-column="column5">Название услуги</th>
+            <th class="column100 column4 query-th" data-column="column5">Рейтинг</th>
+            <th class="column100 column4 query-th" data-column="column5">Отзыв</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach($data as $item) { ?>
+        <tr class="row100">
+            <td class="column100 column1 query-td query-col-1" data-column="column1"><?=$item['id']?></td>
+            <td class="column100 column3 query-td query-col-3" data-column="column3"><a href="/admin/users/list_c_users/<?=$item['userID']?>/">
+                <?=$item['fName'].' '.$item['sName'].' '.$item['mName']?></a></td>
+            <td class="column100 column3 query-td query-col-3" data-column="column3"><a href="/admin/users/list_notary/<?=$item['notaryID']?>/">
+                <?=$item['nfName'].' '.$item['nsName'].' '.$item['nmName']?></a></td>
+            <td class="column100 column2 query-td query-col-2" data-column="column2"><?=$item['name']?></td>
+            <td class="column100 column4 query-td query-col-4" data-column="column4"><?=$item['rating']?></td>
+            <td class="column100 column4 query-td query-col-5" data-column="column5"><?=$item['userComment']?></td>
+        </tr>
+        <?php } ?>
+        </tbody>
+    </table>
+</div>

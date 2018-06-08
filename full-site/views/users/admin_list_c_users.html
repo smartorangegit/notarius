@@ -1,0 +1,264 @@
+<?php
+header('Cache-Control: no cache');
+$param = App::getRouter()->getParams();
+if(!$param){
+?>
+<h3 class="section-heading">Таблица со списком клиентов</h3>
+    <div class="limiter queries_margin_top">
+        <div class="container-table100">
+            <div class="wrap-table100">
+
+                <div class="table100 ver6 m-b-110">
+                    <table data-vertable="ver6">
+                        <thead>
+                            <tr class="row100 head">
+                                <th class="column100 column1 user-list-th" data-column="column2">Фио</th>
+                                <th class="column100 column2 user-list-th" data-column="column3">Телефон основной</th>
+                                <th class="column100 column3 user-list-th" data-column="column4">Email</th>
+                                <th class="column100 column4 user-list-th" data-column="column5">Дата рождения</th>
+                                <th class="column100 column5 user-list-th" data-column="column2">Серия и Номер паспорта</th>
+                                <th class="column100 column6 user-list-th" data-column="column3">ИНН</th>
+                                <th class="column100 column7 user-list-th" data-column="column4">В браке (да/нет)</th>
+                                <th class="column100 column8 user-list-th" data-column="column5">Дата создания аккаунта</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach($data['list2'] as $item) {
+                            if($item['role'] == 'user'){?>
+                            <tr class="row100">
+                                <td class="column100 column1 user-list-td user-list-col-1" data-column="column1">
+                                    <a href="/admin/users/list_c_users/<?=$item['id'];?>">
+                                    <?=$item['sName']?> <?=$item['fName']?> <?=$item['mName']?>       
+                                    </a> 
+                                </td>
+
+                                <td class="column100 column2 user-list-td user-list-col-2" data-column="column2">
+                                    <a href="/admin/users/list_c_users/<?=$item['id'];?>"><?=$item['mainPhone']?>
+                                    </a>
+                                </td>
+
+                                <td class="column100 column3 user-list-td user-list-col-3" data-column="column3">
+                                   <?=$item['email']?>
+                                </td>
+
+                                <td class="column100 column4 user-list-td" data-column="column4">
+                                    <?=$item['birthdayDate']?> 
+                                </td>
+
+                                <td class="column100 column5 user-list-td user-list-col-5" data-column="column1">
+                                    <?=$item['passportInfo']?>
+                                </td>
+
+                                <td class="column100 column6 user-list-td" data-column="column2">
+                                    <?=$item['INN']?>
+                                </td>
+
+                                <td class="column100 column7 user-list-td" data-column="column3">
+                                    <?if($item['marriage']==0){echo "Нет";}elseif($item['marriage']==1){echo "Да";}?>
+                                </td>
+
+                                <td class="column100 column8 user-list-td" data-column="column4">
+                                    <?=$item['regDt']?>
+                                </td>
+
+                            </tr>
+                           <?php }
+                             } ?>
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+<?
+}
+else{
+/*
+    echo "Юзер детально";
+    echo "<pre>";
+    print_r($data['user']);
+    echo "</pre>";
+*/
+    ?>
+<div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3>Информация о пользователе</h3>
+        </div>
+        <div class="panel-body">
+            <form  method="post" action="" >
+                <input type="hidden" name="editUserData" value="1">
+                <div class="form-group col-sm-6">
+                    <label id="id">ID</label>
+                    <input type="text" class="form-control" name="id" value="<?=$data['user']['id'];?>" >
+                </div>
+                <div class="form-group col-sm-6">
+                    <label id="userID">userID</label>
+                    <input type="text" class="form-control" name="userID" value="<?=$data['user']['userID'];?>">
+                </div>
+                <div class="form-group col-sm-4">
+                    <label id="fName">fName</label>
+                    <input type="text" class="form-control" name="fName" value="<?=$data['user']['fName'];?>">
+                </div>
+                <div class="form-group col-sm-4">
+                    <label id="sName">sName</label>
+                    <input type="text" class="form-control" name="sName" value="<?=$data['user']['sName'];?>">
+                </div>
+                <div class="form-group col-sm-4">
+                    <label id="mName">mName</label>
+                    <input type="text" class="form-control" name="mName" value="<?=$data['user']['mName'];?>">
+                </div>
+                <div class="form-group col-sm-4">
+                    <label id="mainPhone">mainPhone</label>
+                    <input type="text" class="form-control" name="mainPhone" value="<?=$data['user']['mainPhone'];?>">
+                </div>
+                <div class="form-group col-sm-4">
+                    <label id="messPhone">messPhone</label>
+                    <input type="text" class="form-control" name="messPhone" value="<?=$data['user']['messPhone'];?>">
+                </div>
+                <div class="form-group col-sm-4">
+                    <label id="messenger">messenger</label>
+                    <input type="text" class="form-control" name="messenger" value="<?=$data['user']['messenger'];?>">
+                </div>
+                <div class="form-group col-sm-4">
+                    <label id="email">email</label>
+                    <input type="text" class="form-control" name="email" value="<?=$data['user']['email'];?>">
+                </div>
+                <div class="form-group col-sm-4">
+                    <label id="birthdayDate">birthdayDate</label>
+                    <input type="text" class="form-control" name="birthdayDate" value="<?=$data['user']['birthdayDate'];?>">
+                </div>
+                <div class="form-group col-sm-4">
+                    <label id="citizenship">citizenship</label>
+                    <input type="text" class="form-control" name="citizenship" value="<?=$data['user']['citizenship'];?>">
+                </div>
+                <div class="form-group col-sm-4">
+                    <label id="passportInfo">passportInfo</label>
+                    <input type="text" class="form-control" name="passportInfo" value="<?=$data['user']['passportInfo'];?>">
+                </div>
+                <div class="form-group col-sm-4">
+                    <label id="passportIB">passportIB</label>
+                    <input type="text" class="form-control" name="passportIB" value="<?=$data['user']['passportIB'];?>">
+                </div>
+                <div class="form-group col-sm-4">
+                    <label id="PassportDate">PassportDate</label>
+                    <input type="text" class="form-control" name="PassportDate" value="<?=$data['user']['PassportDate'];?>">
+                </div>
+                <div class="form-group col-sm-4">
+                    <label id="residence">residence</label>
+                    <input type="text" class="form-control" name="residence" value="<?=$data['user']['residence'];?>">
+                </div>
+                <div class="form-group col-sm-4">
+                    <label id="INN">INN</label>
+                    <input type="text" class="form-control" name="INN" value="<?=$data['user']['INN'];?>">
+                </div>
+                <div class="form-group col-sm-2">
+                    <label for="">В браке</label>
+                    <select class="form-control" name="marriage" >
+                        <option value="1" <?php if($data['user']['marriage']==1){echo 'selected';}?>>Да</option>
+                        <option value="0" <?php if($data['user']['marriage']==0){echo 'selected';}?>>Нет</option>
+                    </select>
+                </div>
+                <div class="form-group col-sm-2" style="margin-top: 25px;">
+                    <a href="/admin/users/c_users_partner/<?=$data['user']['id']?>"><button type="button" class="btn btn-block">Партнер</button></a>
+                </div>
+                <div class="form-group col-sm-4">
+                    <label id="docs">docs</label>
+                    <input type="text" class="form-control" name="docs" value="<?=$data['user']['docs'];?>">
+                </div>
+                <div class="form-group col-sm-4">
+                    <label id="marriafeInfo">marriafeInfo</label>
+                    <input type="text" class="form-control" name="marriafeInfo" value="<?=$data['user']['marriafeInfo'];?>">
+                </div>
+                
+
+    
+                <!--<label id="marriage">marriage</label>-->
+                <!--<input type="text" class="form-control" name="marriage" value="<?=$data['user']['marriage'];?>">-->
+                
+                <!--<label id="marriageLink">marriageLink</label>-->
+                <!--<input type="text" class="form-control" name="marriageLink" value="<?=$data['user']['marriageLink'];?>">-->
+                
+                <div class="form-group col-sm-4">
+                    <label id="sms">sms</label>
+                    <input type="text" class="form-control" name="sms" value="<?=$data['user']['sms'];?>">
+                </div>
+                <div class="form-group col-sm-4">
+                    <label id="promotions">promotions</label>
+                    <input type="text" class="form-control" name="promotions" value="<?=$data['user']['promotions'];?>">
+                </div>
+                <div class="form-group col-sm-4">
+                    <label id="rating">rating</label>
+                    <input type="text" class="form-control" name="rating" value="<?=$data['user']['rating'];?>">
+                </div>
+                <div class="form-group col-sm-4">
+                    <label id="orders">orders</label>
+                    <input type="text" class="form-control" name="orders" value="<?=$data['user']['orders'];?>">
+                </div>
+                <div class="form-group col-sm-4">
+                    <label id="lastOrder">lastOrder</label>
+                    <input type="text" class="form-control" name="lastOrder" value="<?=$data['user']['lastOrder'];?>">
+                </div>
+                <div class="form-group col-sm-12">
+                    <input class="btn btn-primary" type="button" onclick="history.back()" value="Назад">
+                    <input onclick="myFunction()" type="submit" class="btn btn-success" value="Редактировать"/>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div>
+        
+        <div>
+            <form action="" method="post" enctype="multipart/form-data" class="fallback">
+                <div class="form-group">
+                    <input id="image" name="image[]" type="file" multiple="">
+                </div>
+                <div class="form-group">
+                    <input class="btn btn-primary" type="submit">
+                </div>
+            </form>
+        </div>
+        
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3>Документы пользователя</h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <?
+                        $dir = ROOT.DS.'webroot/uploads/'.$data['user']['mainPhone'].'/';
+                        $files = scandir($dir,1);
+                        $countFiles = count($files)-2;
+                    for($i=0;$i<$countFiles;$i++){
+                    ?>
+                    <div class="col-xs-6 col-md-3">
+                        <a href="/webroot/uploads/<?=$data['user']['mainPhone'].'/'.$files[$i];?>" target="_blank" class="thumbnail">
+                            <embed src="/webroot/uploads/<?=$data['user']['mainPhone'].'/'.$files[$i];?>">
+                            <form action="" method="post">
+                                <input type="hidden" value="<?=$files[$i];?>" name="dellName">
+                                <input type='submit' class="btn btn-danger" value="Удалить">
+                                <input type="button" class="btn btn-primary" value="Просмотреть">
+                            </form>
+                        </a>
+                    </div>
+                    <?}?>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+    <?
+}
+/*
+foreach($data['list'] as $item){
+    if($item['role'] == 'user'){
+    echo "<pre>";
+        print_r($item);
+    echo "</pre>";
+    }
+}
+*/?>

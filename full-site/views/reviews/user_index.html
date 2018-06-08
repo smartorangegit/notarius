@@ -1,0 +1,70 @@
+<pre>
+<?
+   // print_r($data['listOfDoneDeals'] );
+?>
+</pre>
+<section class="my-feedback">
+    <div class="container">
+        <h2 class="section-heading client-page__section-heading my-feedback__section-heading">Мои отзывы</h2>
+        <div class="pagination-wrap-js">
+            <ul class="my-feedback-list">
+                <? foreach($data['list'] as $item){?>
+                <li class="my-feedback-list__item">
+                    <div class="my-feedback-notary">
+                        <div class="my-feedback-notary__photo-wrap">
+                            <img src="/uploads/<?=$item['login']?>/photo/<?=$item['profPhoto']?>" alt="photo" class="my-feedback-notary__photo">
+                        </div>
+                        <p class="my-feedback-notary__name"><?=$item['nFio']?></p>
+                        <p class="my-feedback-notary__position">нотариус</p>
+                        <div data-star="<?=$item['nRank']?>" class="my-feedback-notary-rating">
+                            <p class="my-feedback-notary-rating__text">Рейтинг: </p>
+                            <div class="star my-feedback-notary-rating__star">
+                                <div class="star__block star__white"></div>
+                                <div class="star__block star__color"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="my-feedback-info-container">
+                        <div class="my-feedback-info">
+                            <p class="my-feedback-info__date"><?=$item['dateOf']?></p>
+                            <p class="my-feedback-info__order-name">Отзыв по услуге:
+                                <a href="#" class="my-feedback-info__link"><?=$item['name']?></a>
+                            </p>
+                            <div data-star="<?=$item['rating']?>" class="my-feedback-info-rating">
+                                <p class="my-feedback-info-rating__text">Оценка: <span class="my-feedback-info-rating__text_regular">отлично</span></p>
+                                <div class="star my-feedback-info-rating__star">
+                                    <div class="star__block star__white"></div>
+                                    <div class="star__block star__color"></div>
+                                </div>
+                            </div>
+                            <form action="/user/dashboard/deal/<?=$item['id']?>/" >
+                                <button style="width: 100%;" type="submit" class="site-button my-feedback-info__button">Редактировать</button>
+                            </form>
+                        </div>
+                        <p class="my-feedback__text">
+                            <?=$item['userComment']?>
+                        </p>
+                        <svg class="my-feedback__text-icon"><use xlink:href="#right-arrow"></use></svg>
+                    </div>
+                </li>
+            <?}?>
+            </ul>
+
+            <div class="pagination my-feedback-pagination">
+                <a href="#" class="pagination__nav pagination__nav_prev my-feedback-pagination__nav_prev">
+                    <svg class="pagination__nav-icon pagination__nav-icon_rotate"><use xlink:href="#right-arrow"></use></svg>
+                    <span class="pagination__nav-text">предыдущие 4</span>
+                </a>
+                <ul class="pagination-num my-feedback-pagination-num">
+                    <li class="pagination-num__item pagination-num__item_active">
+                        1
+                    </li>
+                </ul>
+                <a href="#" class="pagination__nav pagination__nav_next my-feedback-pagination__nav_next">
+                    <span class="pagination__nav-text">следующие 4</span>
+                    <svg class="pagination__nav-icon"><use xlink:href="#right-arrow"></use></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

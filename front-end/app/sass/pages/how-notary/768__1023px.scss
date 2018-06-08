@@ -1,0 +1,28 @@
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+	.how-notary-reg {
+		padding: 20px 10px;
+		height: 500px;
+
+		&__heading {
+			float: none;
+			margin-left: 0;
+			text-align: center;
+			font-size: 26/16*1rem;
+		}
+
+		&-form {
+			float: none;
+			width: 100%;
+			margin: 0;
+		}
+
+		&__banner {
+			display: none;
+		}
+
+		&__button {
+			display: none;
+		}
+	}
+}

@@ -1,0 +1,83 @@
+
+@media screen and (min-width: 1024px) and (max-width: 1344px) {
+	.personal-data {
+		padding: 0;
+
+		&__notary-menu {
+			width: 16.25%;
+		}
+	}
+
+	.notary-page-editing {
+		width: 40%;
+		margin-right: 5%;
+	}
+
+	.notary-page-password {
+		padding: 20px 20px;
+		box-sizing: border-box;
+		margin-bottom: 30px;
+
+		&-content {
+			width: 100%;
+		}
+	}
+
+	.notary-data-wrapper {
+		width: 35%;
+	}
+
+	.notary-video-container {
+		justify-content: flex-start;
+		padding-left: 40px;
+		box-sizing: border-box;
+	}
+
+	.notary-video-list-wrap {
+		width: 70%;
+	}
+
+	.notary-video-list__video {
+		height: 350px;
+	}
+
+	.notary-video-list-del {
+		right: 7%;
+	}
+
+	.notary-page-services-select-wrap {
+		width: 48%;
+		margin-right: 3%;
+	}
+
+	.notary-page-services-selected-wrap {
+		width: 48%;
+	}
+
+	.notary-page-services-selected__button {
+		width: 70%;
+	}
+
+	.notary-page-services-table {
+		&-wrap {
+			width: 855px;
+			margin: 0 auto;
+		}
+	}
+	.notary-page-services-table_scroll {
+		padding: 0 0;
+	}
+	.notary-page-services-table_padding {
+		padding: 0 10px;
+	}
+	.notary-page-services-table-head {
+		padding: 0 10px;
+		
+		&__cell {
+			
+			&_wide {
+				width: 53.5%;
+			}
+		}
+	}
+}

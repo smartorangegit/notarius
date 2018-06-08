@@ -1,0 +1,291 @@
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+	
+	.head {
+		&__heading {
+			margin-top: 150px;
+			font-size: 2rem;
+		}
+	}
+
+	.tutorial {
+		padding: 15px 0;
+
+		&-header {
+			height: 120px;
+
+			&__heading {
+				font-size: 2rem;
+			}
+		}
+
+		&-list {
+			width: 100%;
+			margin-top: 40px;
+			margin-bottom: 20px;
+
+			&__item {
+				width: 32%;
+				height: 185px;
+				padding-bottom: 15px;
+			}
+
+			&__icon {
+				&-wrap {
+					margin-bottom: 10px;
+					width: 80px;
+					height: 80px;
+				}
+
+				margin-bottom: 0px;
+			}
+
+			&__text {
+				width: 75%;
+				font-size: 0.75rem;
+			}
+		}
+	}
+
+	.workers {
+		padding: 10px 0 25px 0;
+
+		&__section-heading {
+			margin-bottom: 20px;
+		}
+		
+		&__button {
+			width: 30%;
+			font-size: 1.2rem;
+		}
+	}
+	.workers-slider {
+		&__photo {
+			width: 100%;
+
+			&-wrap {
+				float: left;
+				position: relative;
+				width: 210/520*100%;
+				margin-left: 34/520*100%;
+				height: 100%;
+				margin-right: 7px;
+				overflow: hidden;
+			}
+		}
+
+		&-info {
+			margin-top: 25px;
+			padding: 15px 0;
+		}
+	}
+
+	.advantages {
+		&__text {
+			font-size: 2rem;
+		}
+
+		&-list {
+			&__text {
+				font-size: 0.85rem;
+			}
+		}
+	}
+
+	.share {
+		padding: 15px 0 40px 0;
+
+		&__section-heading {
+			margin-bottom: 20px;
+		}
+
+		&__section-link {
+			bottom: -25px;
+		}
+	}
+	.share-slider {
+
+		&-wrap {
+			height: 370px;
+		}
+
+		&-content {
+			height: 370px;
+		}
+
+		&__title {
+			margin-top: 70px;
+			font-size: 3rem;
+		}
+
+		&__descript {
+			margin: 35px 0 0 90/1200*100%;
+			font: 1.7rem Roboto-Thin, Arial, sans-serif;
+		}
+
+		&__discounts {
+			width: 110px;
+			height: 110px;
+			font-size: 2.4rem;
+		}
+	 	.slick-dots {
+			bottom: 50px;
+	 	}
+	}
+	a.share-slider__link {
+		font-size: 1.3rem;
+	}
+
+	.services {
+		padding: 15px 0 40px 0;
+
+		&__section-heading {
+			margin-bottom: 35px;
+		}
+
+		&__section-link {
+			bottom: -25px;
+		}
+	}
+
+	.services-slider {
+		&-wrap {
+			width: 100%;
+			height: 370px;
+		}
+
+		// &-content {
+		// 	height: 420px;
+		// }
+
+		&__image {
+			height: 370px;
+		}
+
+		&-descript {
+			top: 120px;
+			width: 45%;
+			height: 155px;
+			padding: 15px 0 15px 0;
+
+			&__text {
+				font-size: 1.4rem;
+			}
+		}
+
+		.slick-dots {
+			bottom: 20px;
+	 	}
+	}
+	a.services-slider-descript__link {
+		font-size: 1.3rem;
+	}
+
+	.entry {
+		height: 500px;
+
+		&__text {
+			margin-left: 3.5%;
+		}
+
+		&-icon-list {
+			right: 3.5%;
+			top: 50px;
+		}
+
+		&__button {
+			bottom: 50px;
+			font-size: 1.5rem;
+		}
+	}
+
+	.questions {
+		position: relative;
+		padding: 15px 0 40px 0;
+	}
+
+	.order {
+		padding: 20px 0 35px 0;
+
+		&__section-heading {
+			margin-bottom: 40px;
+		}
+	}
+
+
+	@media screen and (max-width: 900px) {
+		.share-slider {
+
+			&-wrap {
+				height: 330px;
+				overflow: hidden;
+			}
+
+			&-content {
+				height: 330px;
+			}
+
+			&__image {
+				max-height: 330px;
+			}
+		}
+
+		.services-slider {
+			&-wrap {
+				width: 100%;
+				height: 319px;
+				overflow: hidden;
+			}
+
+			&__image {
+				height: 319px;
+			}
+
+			&-descript {
+				top: 70px;
+				height: 140px;
+			}
+
+			.slick-dots {
+				bottom: 30px;
+		 	}
+		}
+
+		.questions {
+			&-list {
+				&__heading {
+					font-size: 0.9rem;
+				}
+
+				&__descript {
+					font-size: 0.8rem;
+				}
+			}
+		}
+
+		.entry {
+			height: 500px;
+
+			&__text {
+				margin-left: 3.5%;
+			}
+
+			&-icon-list {
+				width: 445px;
+				right: 3.5%;
+				top: 50px;
+
+				&__text {
+					font-size: 0.9rem;
+				}
+			}
+
+			&__button {
+				width: 38%;
+				bottom: 50px;
+				font-size: 1.5rem;
+			}
+		}
+	}
+		
+}

@@ -1,0 +1,346 @@
+<?php
+/*
+echo '<br>';
+ echo 'Поля с данными о нотариусе';
+echo '<pre>';
+print_r($data['notaryInfo']);
+echo '<br>';
+
+echo '<p>Дней от регистрации </p>';
+print_r(floor((strtotime("now")-strtotime($data['notaryInfo']['regDt']))/86400));
+
+echo '<br>';
+echo '<p>Список услуг этого нотируса</p>';
+    print_r($data['notaryServices']);
+
+echo '<br>';
+echo '<p>Список комментов этого нотируса</p>';
+    print_r($data['notaryComments']);
+echo '</pre>';
+*/?>
+    <div class="container">
+        <ul class="page-name page-name_long">
+            <li class="page-name__item">услуги</li>
+            <li class="page-name__item">нотариусы</li>
+            <li class="page-name__item page-name__item_long page-name__item_font_regular">
+                <?=$data['notaryInfo']['fName'].' '.$data['notaryInfo']['sName'].' '.$data['notaryInfo']['mName']?>
+            </li>
+        </ul>
+    </div>
+
+<section class="card-top">
+    <div class="container">
+        <div class="card-top-container">
+            <ul class="card-top-social">
+              <li class="card-top-social__item">
+                <a href="#" class="card-top-social__link">
+                  <svg class="card-top-social__icon card-top-social__icon_1"><use xlink:href="#facebook_2"></use></svg>
+                </a>
+              </li>
+              <li class="card-top-social__item">
+                <a href="#" class="card-top-social__link">
+                  <svg class="card-top-social__icon"><use xlink:href="#instagram"></use></svg>
+                </a>
+              </li>
+              <li class="card-top-social__item">
+                <a href="#" class="card-top-social__link">
+                  <svg class="card-top-social__icon"><use xlink:href="#twitter"></use></svg>
+                </a>
+              </li>
+            </ul>
+            <div class="card-top-image">
+<?
+  if($data['notaryInfo']['profPhoto']){?>
+        <img src="/webroot/uploads/<?=$data['notaryInfo']['login']?>/photo/<?=$data['notaryInfo']['profPhoto']?>" alt="photo" class="card-top-image__photo">
+  <?}
+  else{?>
+        <img src="/img/man.png" alt="photo" class="card-top-image__photo">
+<?}
+?>
+            </div>
+            <div class="card-top-info">
+                <p class="card-top-info__name">
+                    <?=$data['notaryInfo']['fName'].' '.$data['notaryInfo']['sName'].' '.$data['notaryInfo']['mName']?>
+                </p>
+                <ul class="card-top-info-list">
+                    <li class="card-top-info-list__item">
+                        <svg class="card-top-info-list__icon"><use xlink:href="#thumb_up_2"></use></svg>
+                        <div class="card-top-info-list__text-wrap">
+                            <p class="card-top-info-list__text card-top-info-list__text_width_auto">Рейтинг:</p>
+                            <div data-star="<?=round($data['notaryInfo']['rating']);?>" class="card-top__rating star">
+                                <div class="star__block star__white"></div>
+                                <div class="star__block star__color"></div>
+                            </div>
+                            <p class="card-top-info-list__text_blue">(о рейтинге)</p>
+                            <div class="card-top-info-tooltip">
+                                Рейтинг складывается из средних оценок по трем критериям: качество работы, вежливость и пунктуальность. Положительной считается только оценка "5" из 5-ти
+                            </div>
+                        </div>
+                    </li>
+                    <li class="card-top-info-list__item">
+                        <svg class="card-top-info-list__icon"><use xlink:href="#calendar_2"></use></svg>
+                        <p class="card-top-info-list__text">Работает с ZAVIRENO <span class="card-top-info-list__text_regular">
+                            <?print_r(floor((strtotime("now")-strtotime($data['notaryInfo']['regDt']))/86400));?>
+                        </span> дней</p>
+                    </li>
+                    <li class="card-top-info-list__item">
+                        <svg class="card-top-info-list__icon"><use xlink:href="#icon-1"></use></svg>
+                        <p class="card-top-info-list__text">Проведено <span class="card-top-info-list__text_regular"><?=$data['countFD']['id']?> сделок</span> </p>
+                    </li>
+                    <li class="card-top-info-list__item">
+                        <svg class="card-top-info-list__icon"><use xlink:href="#point"></use></svg>
+                        <p class="card-top-info-list__text">Ближайший район/метро: <span class="card-top-info-list__text_regular">
+                            <?=$data['notaryInfo']['metroName'].' , '.$data['notaryInfo']['mAreaName'];?></span>
+                        </p>
+                    </li>
+                    <li class="card-top-info-list__item">
+                         <svg class="card-top-info-list__icon"><use xlink:href="#car"></use></svg>
+                        <p class="card-top-info-list__text">Возможность выезда: <span class="card-top-info-list__text_regular">
+                            <?if($data['notaryInfo']['poweredByExit']==1){echo 'Да';}else{echo 'Нет';}?>
+                        </span></p>
+                    </li>
+                    <li class="card-top-info-list__item">
+                        <svg class="card-top-info-list__icon"><use xlink:href="#card_2"></use></svg>
+                        <p class="card-top-info-list__text">Оплата услуг банковской картой: <span class="card-top-info-list__text_regular">да</span></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="card-about">
+    <div class="container card-about-container clearfix">
+        <h2 class="card-about__heading"><span class="card-heading__capitalize">О</span> НОТАРИУСЕ</h2>
+        <p class="card-about__text">
+           <?=$data['notaryInfo']['aboutNotary']?>
+        </p>
+        <?if($data['notaryInfo']['is_active']==1){?>
+        <div class="card-about-check">
+            <img src="/img/card/checked.png" alt="checked" class="card-about-check__icon">
+            <p class="card-about-check__text">Достоверность информации <br>
+                проверена <span class="card-about-check__text_regular">ZAVIRENO</span></p>
+        </div>
+        <?}?>
+    </div>
+</section>
+
+
+<section class="card-services">
+    <div class="container clearfix">
+        <p class="card-services__heading"><span class="card-heading__capitalize">О</span>казываемые услуги</p>
+        <ul class="card-services-name-list">
+          <?foreach($data['ListCat'] as $catList){?>
+            <li class="card-services-name-list__item">
+                <a href="#" class="card-services-name-list__link" data-cat="<?=$catList['id']?>" data-notary="<?=$data['notaryInfo']['userID']?>">
+                    <?=$catList['name']?>
+                </a>
+            </li>
+          <?}?>
+        </ul>
+
+        <ul class="card-services-price-wrap">
+            <li class="card-services-price-wrap__item card-services-price-wrap__item_active">
+                <ul class="card-services-price" id="servicesOnN">
+                    <?//print_r($data['getListServicesIn'])?>
+                    <?foreach($data['getListServicesIn'] as $servNot){?>
+                    <li class="card-services-price__item" onclick="addDeal(this)" data-service="<?=$servNot['id']?>" data-notary="<?=$data['notaryInfo']['userID']?>">
+                        <span class="card-services-price__service">
+                            <?=$servNot['name'];?>
+                        </span>
+                        <sapn class="dottet"></sapn>
+                        <span class="card-services-price__prive"><?=$servNot['costService'];?>грн</span>
+                    </li>
+                    <?}?>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</section>
+<?if($data['rating']){?>
+
+<section class="card-statistic">
+    <div class="container">
+        <div class="card-statistic-content">
+            <p class="card-statistic__quantity">Отзывы: <?=$data['countRW']['countCom'];?></p>
+            <p class="card-statistic__percent"> <span class="card-statistic__percent_regular">
+            <?
+            //echo $data['midRW']['countCom'];
+            //echo "<br>";
+            //echo $data['countRW']['countCom'];
+            //echo "<br>";
+            echo round($data['midRW']['countCom']/$data['countRW']['countCom'],2)*100;
+            ?>%</span> положительных <br> отзывов</p>
+        </div>
+    </div>
+</section>
+<?}?>
+
+<section class="feedback" id="review">
+    <div class="container">
+        <div class="pagination-wrap-js">
+
+            <ul class="feedback-list">
+                <!--<pre>-->
+                    <!--<?print_r($data['rating']);?>-->
+                <!--</pre>-->
+                <?foreach($data['rating'] as $rComItem){?>
+                <li data-star="<?=$rComItem['rating'];?>" class="feedback-list__item">
+                    <div class="feedback-list-info">
+                        <p class="feedback-list-info__name"><?=$rComItem['fName']?></p>
+                        <p class="feedback-list-info__position">заказчик</p>
+                        <p class="feedback-list-info__date"><?=$rComItem['dateOf']?></p>
+                        <p class="feedback-list-info__rating">Оценка:<span class="feedback-list-info__rating_regular"> <?=$rComItem['rating'];?></span></p>
+                        <div class="star feedback-list-info__rating-star">
+                            <div class="star__block star__white"></div>
+                            <div class="star__block star__color"></div>
+                        </div>
+                    </div>
+                    <div class="feedback-list-text">
+                        <p class="feedback-list-text__comment">
+                            <?=$rComItem['userComment'];?>
+                        </p>
+                        <svg class="my-feedback__text-icon feedback-list-text__icon"><use xlink:href="#right-arrow"></use></svg>
+                        <p class="feedback-list-text__service-name"><span class="feedback-list-text__service-name_regular">Отзыв по услуге:</span>
+                            <span class="feedback-list-text__service-name_blue"> <?=$rComItem['name'];?> </span></p>
+                    </div>
+                </li>
+                <?}?>
+            </ul>
+
+            <div class="feedback-list__more">
+              <span>Смотреть следующие отзывы </span>
+            </div>
+            <?if(count($data['rating'])>=4){?>
+            <div class="pagination feedback-pagination">
+                <a href="#" class="pagination__nav pagination__nav_prev pagination__nav_prev feedback-pagination__nav_prev">
+                    <svg class="pagination__nav-icon pagination__nav-icon_rotate"><use xlink:href="#right-arrow"></use></svg>
+                    <span class="pagination__nav-text">предыдущие 4</span>
+                </a>
+                <ul class="pagination-num feedback-pagination-num">
+                    <li class="pagination-num__item pagination-num__item_active">
+                       1
+                    </li>
+                </ul>
+                <a href="#" class="pagination__nav pagination__nav_next pagination__nav_next feedback-pagination__nav_next">
+                    <span class="pagination__nav-text">следующие 4</span>
+                    <svg class="pagination__nav-icon"><use xlink:href="#right-arrow"></use></svg>
+                </a>
+            </div>
+            <?}?>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="card-video">
+    <div class="container">
+        <h2 class="card-video__heading"><span class="card-heading__capitalize">В</span>идео нотариуса</h2>
+        <div class="video_wrapper video_wrapper_full js-videoWrapper card-video__video">
+            <iframe class="videoIframe js-videoIframe" src="" frameborder="0" allowTransparency="true"
+                    allowfullscreen data-src="https://www.youtube.com/embed/<?=$data['notaryInfo']['video']?>?autoplay=1&modestbranding=1&rel=0&hl=ru&showinfo=0&color=white"></iframe>
+                <button class="videoPoster js-videoPoster"><svg class="card-video__icon"><use xlink:href="#youtube"></use></svg></button>
+        </div>
+        <span class="card-video__name">Video name</span>
+    </div>
+</section>
+
+
+<section class="card-order">
+    <div class="container">
+        <div class="form-wrap order-form-wrap">
+            <form method="post" action="" class="form">
+                <div class="form-container">
+                    <div class="form__select-wrap">
+                        <input type="text" id="select2" name="service" class="form__input form__select-info" placeholder="Выберите услугу" style="display: none">
+                        <input id="form__select-label" type="text" class="form__input form__select" placeholder="Выберите услугу" required>
+                        <label for="form__select-label" class="form__label"></label>
+                    </div>
+                    <div class="form__date-wrap">
+                        <input id="form__date-label" class="form__input form__date" name="dateOf" type="date" placeholder="Выберите дату" required>
+                        <label for="form__date-label" class="form__label"></label>
+                    </div>
+                    <div class="form__time-wrap">
+                        <input id="form__time-label" class="form__input form__time" type="time" name="timeOf" placeholder="Выберите время" required>
+                        <label for="form__time-label" class="form__label"></label>
+                    </div>
+                    <input class="form__input form__phone" name="regNum" type="text" placeholder="Укажите Ваш телефон" required>
+                </div>
+                <div class="form__checkbox-wrap">
+                    <input type="checkbox" id="form__checkbox" class="popup-form__checkbox form__checkbox">
+                    <label for="form__checkbox" class="popup-form__label"></label>
+                    <p class="form__text">С виездом</p>
+                </div>
+                <button class="form__button" type="submit">Подобрать<br>нотариуса</button>
+            </form>
+            <div class="select-menu form-select-menu select-menu_border">
+                <ul class="select-menu-list">
+                    <?foreach($data['servicesListTOP'] as $item){?>
+                        <li id="<?=$item['id'];?>" class="select-menu-list__item">
+                            <?=$item['name'];?>
+                        </li>
+                    <?}?>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    $(".card-services-name-list__link").on('click', function() {
+        var massCat =  {id:$(this).attr("data-cat"),notary:$(this).attr("data-notary")};
+        $.ajax({
+            data: massCat,
+            url: '/webroot/getServiceListByNotary.php',
+            method: 'POST', // or GET
+            success: function (msg) {
+               var msg2 = JSON.parse(msg);
+                $(document.getElementById("servicesOnN")).empty();
+               msg2.SList.forEach(function (element) {
+                   var ul = document.getElementById("servicesOnN");
+                   var span  = document.createElement("span");
+                   var span2  = document.createElement("span");
+                   var span3  = document.createElement("span");
+
+                   var li = document.createElement("li");
+                   $("ul.card-services-price-wrap>li").css( "display", "list-item" );
+
+                   li.setAttribute('class', "card-services-price__item");
+                   li.setAttribute('data-notary', "<?php echo $data['notaryInfo']['userID']?>");
+                   li.setAttribute('data-service', element.id);
+                   li.setAttribute('onClick', 'addDeal(this)');
+
+                   span.setAttribute('class', "card-services-price__service");
+                   span2.setAttribute('class', "dottet");
+                   span3.setAttribute('class', "card-services-price__prive");
+                   span.appendChild(document.createTextNode(element.name));
+                   span3.appendChild(document.createTextNode(element.costService+' грн'));
+
+
+                   ul.appendChild(li);
+                   li.appendChild(span);
+                   li.appendChild(span2);
+                   li.appendChild(span3);
+                });
+
+
+            }
+        });
+    });
+    //временно не трогать уточняется вид и функционал
+/*
+    function addDeal(id) {
+        //console.log($(id).data('service'));
+        var idServ =  {id:$(id).data('service'),notary:$(id).data('notary')};
+        $.ajax({
+            data: idServ,
+            url: '/webroot/addDealByN.php',
+            method: 'POST', // or GET
+            success: function (add) {
+                console.log(add);
+            }
+        });
+
+    }
+    */
+</script>

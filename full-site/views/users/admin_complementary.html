@@ -1,0 +1,134 @@
+<?php
+//print_r($data['params']);
+if(!$data['params']){
+?>
+
+<!-- <h1 class="page-header">Страница создания дополнительных услуг</h1> -->
+
+<div class="service-add">
+    <h3 class="section-heading">Добавление новой услуги</h3>
+    <form action="" method="post" class="form-group">
+        <div class="row">
+            <div class="form-group col-sm-2">
+                <input type="hidden" name="addComplementary" value="1">
+                <input type="text" class="form-control" name="name" placeholder="Название услуги">
+            </div>
+            <div class="form-group col-sm-2">
+                <input type="text" class="form-control" name="validity" placeholder="Срок действия">
+            </div>
+            <div class="form-group col-sm-2">
+                <input type="text" class="form-control" name="payMen" placeholder="Кто платит">
+            </div>
+            <div class="form-group col-sm-2">
+                <input type="text" class="form-control" name="necessarily" placeholder="Обязательна или нет"><br>
+            </div>
+            <div class="form-group col-sm-3">
+                <textarea name="description" class="form-control" placeholder="Описание к услуге"></textarea>
+            </div>
+            <button class="btn btn-primary col-sm-1" type="submit">Добавить</button>
+        </div>
+    </form>
+</div>
+<h3 class="section-heading">Таблица со списком созданных услуг</h3>
+
+<div class="limiter queries_margin_top">
+    <div class="container-table100">
+        <div class="wrap-table100">
+
+            <div class="table100 ver6 m-b-110">
+                <table data-vertable="ver6">
+                    <thead>
+                        <tr class="row100 head">
+                            <th class="column100 column1 user-list-th" data-column="column1">#</th>
+                            <th class="column100 column2 user-list-th" data-column="column2">Название</th>
+                            <th class="column100 column3 user-list-th" data-column="column3">Срок действия</th>
+                            <th class="column100 column4 user-list-th" data-column="column4">Описание</th>
+
+                            </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach($data['getListComplementary'] as $item) { ?>
+                            <tr class="row100">
+                                <td class="column100 column1 admin-serv-td" data-column="column1">
+                                    <a class='cell__link' href="/admin/users/complementary/<?=$item['id']?>"><?=$item['id']?></a>
+                                </td>
+
+                                <td class="column100 column2 admin-serv-td" data-column="column2">
+                                    <a class='cell__link' href="/admin/users/complementary/<?=$item['id']?>"><?=$item['name']?></a>
+                                </td>
+
+                                <td class="column100 column3 admin-serv-td" data-column="column3">
+                                   <a class='cell__link' href="/admin/users/complementary/<?=$item['id']?>"><?=$item['validity']?></a>
+                                </td>
+
+                                 <td class="column100 column3 admin-serv-td" data-column="column3">
+                                   <a class='cell__link' href="/admin/users/complementary/<?=$item['id']?>"><?=$item['description']?></a>
+                                </td>        
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+                 </table>
+            </div>
+                
+        </div>
+    </div>
+</div>
+
+<?}else{?>
+<div class="row well well-lg">
+    <div class="col-sm-4">
+        <form action="" method="post">
+            <input type="hidden" name="updComplementary" value="1">
+            <div class="form-group">
+                <label for="">Название услуги:</label>
+                <input type="text" class="form-control" name="name" placeholder="Название услуги" value="<?=$data['getAService']['name']?>" >
+            </div>
+            <div class="form-group">
+                <label for="">Срок действия:</label>
+                <input type="text" class="form-control" name="validity" placeholder="Срок действия" value="<?=$data['getAService']['validity']?>" >
+            </div>
+            <!--<input type="text" class="form-control" name="cost" placeholder="Цена услуги"><br>-->
+            <div class="form-group">
+                <label for="">Кто платит:</label>
+                <input type="text" class="form-control" name="payMen" placeholder="Кто платит" value="<?=$data['getAService']['payMen']?>" >
+            </div>
+            <div class="form-group">
+                <label for="">Обязательна или нет:</label>
+                <input type="text" class="form-control" name="necessarily" placeholder="Обязательна или нет" value="<?=$data['getAService']['necessarily']?>" >
+            </div>
+            <div class="form-group">
+                <label for="">Описание к услуге:</label>
+                <textarea name="description" class="form-control" placeholder="Описание к услуге"><?=$data['getAService']['description']?></textarea>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Обновить</button>
+        </form>
+    </div>
+    <div class="col-sm-8 col-md-4">
+        <form action="" method="post">
+            <div class="form-group">
+                <label>Налоги этой дополнительной услуги:</label>
+                <select class="form-control" size="5"  name="sTaxADell">
+                    <?foreach($data['getLTAS'] as $itemLTAS){?>
+                    <option value="<?=$itemLTAS['id']?>"><?=$itemLTAS['name']?></option>
+                    <?}?>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-danger">Очистить</button>
+        </form>
+    </div>
+    <div class="col-sm-8 col-md-4">
+        <form action="" method="post">
+            <div class="form-group">
+                <label>Добавить налог:</label>
+                <select class="form-control" size="5"  name="addAStax">
+                    <?foreach($data['getListsTax'] as $itemSTA){?>
+                    <option value="<?=$itemSTA['id']?>"><?=$itemSTA['name']?></option>
+                    <?}?>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-success">Добавить</button>
+        </form>
+    </div>
+</div>
+<input type="button" class="btn" onclick="history.back()" value="Назад">
+<?}?>

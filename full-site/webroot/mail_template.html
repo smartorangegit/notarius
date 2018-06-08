@@ -1,0 +1,43 @@
+<?php
+header('Access-Control-Allow-Origin: http://notarius.smarto.com.ua');
+?>
+<html>
+<head>
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "EventReservation",
+      "reservationNumber": "1",
+      "reservationStatus": "http://schema.org/Confirmed",
+      "underName": {
+        "@type": "Person",
+        "name": "Test Testivich"
+      },
+      "reservationFor": {
+        "@type": "Event",
+        "name": "Notary event",
+        "startDate": "20180322T120000Z",
+        "endDate" : "20180322T120000Z",
+        "description": "Super event",
+        "location": {
+          "@type": "Place",
+          "name": "SmartOrange",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Voznesenska 45",
+            "addressLocality": "Kiev",
+            "addressRegion": "Kievska",
+            "postalCode": "02000",
+            "addressCountry": "UA"
+          }
+        }
+      }
+    }
+    </script>
+</head>
+<body>
+<p>
+    This a test from  notarius.smarto.com.ua
+</p>
+</body>
+</html>

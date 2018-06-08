@@ -1,0 +1,158 @@
+<?php
+header('Cache-Control: no-cache, no-store, must-revalidate'); // HTTP 1.1.
+header('Pragma: no-cache'); // HTTP 1.0.
+header('Expires: 0');
+$param = App::getRouter()->getParams();
+
+foreach($data['listOfDoneDeals'] as $item){
+    $lodd[] = $item['id'];
+}
+if(in_array($param[0],$lodd)){ //если сделка пренадлежит юзеру то он может оставить комментарий
+    $dir2 = ROOT.DS.'webroot/uploads/'.$data['currentDoneDeal'][0]['login'].'/photo/';
+    $files2 = scandir($dir2,1);
+ ?><style>
+    /*sprite with stars*/
+    #reviewStars-input input:checked ~ label, #reviewStars-input label, #reviewStars-input label:hover, #reviewStars-input label:hover ~ label {
+        background: url('http://positivecrash.com/wp-content/uploads/ico-s71a7fdede6.png') no-repeat;
+    }
+
+    #reviewStars-input {
+
+        /*fix floating problems*/
+        overflow: hidden;
+        *zoom: 1;
+        /*end of fix floating problems*/
+
+        position: relative;
+        float: left;
+    }
+
+    #reviewStars-input input {
+        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+        opacity: 0;
+
+        width: 43px;
+        height: 40px;
+
+        position: absolute;
+        top: 0;
+        z-index: 0;
+    }
+
+    #reviewStars-input input:checked ~ label {
+        background-position: 0 -40px;
+        height: 40px;
+        width: 43px;
+    }
+
+    #reviewStars-input label {
+        background-position: 0 0;
+        height: 40px;
+        width: 43px;
+        float: right;
+        cursor: pointer;
+        margin-right: 10px;
+
+        position: relative;
+        z-index: 1;
+    }
+
+    #reviewStars-input label:hover, #reviewStars-input label:hover ~ label {
+        background-position: 0 -40px;
+        height: 40px;
+        width: 43px;
+    }
+
+    #reviewStars-input #star-0 {
+        left: 0px;
+    }
+    #reviewStars-input #star-1 {
+        left: 53px;
+    }
+    #reviewStars-input #star-2 {
+        left: 106px;
+    }
+    #reviewStars-input #star-3 {
+        left: 159px;
+    }
+    #reviewStars-input #star-4 {
+        left: 212px;
+    }
+    #reviewStars-input #star-5 {
+        left: 265px;
+    }
+</style>
+
+    <div class="container feedback-write-container"> 
+        <form action="" method="post">
+            <div class="comment-content feedback-write-content">
+                <div>
+                    <embed src="/webroot/uploads/<?=$data['currentDoneDeal'][0]['login']?>/photo/<?=$files2[0];?>" width="130" height="155">
+                </div>
+                <div>
+                    <!-- <label>Фио нотариуса</label> -->
+                    <a href="/notaries/profile/<?=$data['currentDoneDeal'][0]['noID']?>/">
+                        <p class="feedback-write__name"><?=$data['currentDoneDeal'][0]['fName'].' '.$data['currentDoneDeal'][0]['sName'].' '.$data['currentDoneDeal'][0]['mName']?></p>
+                    </a>
+                </div>
+                <div style="display: inline-grid;">
+                    <!--<label>Рейтинг</label>-->
+                    <!--<input type="hidden" id="rating" value="<?=$data['currentDoneDeal'][0]['rating']?>">-->
+                    <!--<div id="reviewStars-input">-->
+                        <!--<input id="star-5" type="radio" name="rating" value="5"/>-->
+                        <!--<label title="gorgeous" for="star-5"></label>-->
+                        <!--<input id="star-4" type="radio" name="rating" value="4"/>-->
+                        <!--<label title="good" for="star-4"></label>-->
+                        <!--<input id="star-3" type="radio" name="rating" value="3"/>-->
+                        <!--<label title="regular" for="star-3"></label>-->
+                        <!--<input id="star-2" type="radio" name="rating" value="2"/>-->
+                        <!--<label title="poor" for="star-2"></label>-->
+                        <!--<input id="star-1" type="radio" name="rating" value="1"/>-->
+                        <!--<label title="bad" for="star-1"></label>-->
+
+                    <!--</div>-->
+                    <ul class="dynamic-star feedback-write__dynamic-star" data-feedback-star="<?=$data['currentDoneDeal'][0]['rating']?>">
+                        <li class="dynamic-star__item">
+                            <svg class="dynamic-star__icon"><use xlink:href="#star"></use></svg>
+                                <input type="radio" name="rating" class="dynamic-star__input" value="1">
+                        </li>
+                        <li class="dynamic-star__item">
+                            <svg class="dynamic-star__icon"><use xlink:href="#star"></use></svg>
+                                <input type="radio" name="rating" class="dynamic-star__input" value="2">
+                        </li>
+                        <li class="dynamic-star__item">
+                            <svg class="dynamic-star__icon"><use xlink:href="#star"></use></svg>
+                                <input type="radio" name="rating" class="dynamic-star__input" value="3">
+                        </li>
+                        <li class="dynamic-star__item">
+                            <svg class="dynamic-star__icon"><use xlink:href="#star"></use></svg>
+                                <input type="radio" name="rating" class="dynamic-star__input" value="4">
+                        </li>
+                        <li class="dynamic-star__item">
+                            <svg class="dynamic-star__icon"><use xlink:href="#star"></use></svg>
+                                <input type="radio" name="rating" class="dynamic-star__input" value="5">
+                        </li>
+                    </ul>
+                </div>
+                    <div class="comment-text-wrap">
+                    <textarea class="comment-text" name="userComment"><?=$data['currentDoneDeal'][0]['userComment']?></textarea>
+                    </div>
+                <div>
+                    <button class="site-button comment__button" type="submit">Оставить отзыв</button>
+                    <a href="/user/dashboard/" class="comment__exit-button">Отмена</a href="#">
+                    <p class="comment__thanks">Спасибо за Ваш отзыв!</p>
+                </div>
+            </div>
+        </form>
+    </div>
+<script>
+    var x = document.getElementById("rating").value;
+    console.log(x);
+   document.getElementById('star-'+x).checked = true;
+</script>
+ <?
+}
+else{
+ Router::redirect('/user/dashboard/');
+}
+?>

@@ -1,0 +1,8 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteCond %{REQUEST_URI} !/$
+        RewriteCond %{REQUEST_URI} !\.
+        RewriteRule ^(.*) %{REQUEST_URI}/ [R=301,L]
+    RewriteRule ^$ webroot/ [L]
+    RewriteRule (.*) webroot/$1 [L]
+</IfModule>

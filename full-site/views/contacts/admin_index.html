@@ -1,0 +1,52 @@
+
+<h3 class="section-heading">Сообщения</h3>
+<div class="limiter queries_margin_top">
+    <div class="container-table100">
+        <div class="wrap-table100">
+
+            <div class="table100 ver6 m-b-110">
+                <table data-vertable="ver6">
+                    <thead>
+                        <tr class="row100 head">
+                            <th class="column100 column1 query-th" data-column="column2">#</th>
+                            <th class="column100 column2 query-th" data-column="column3">Номер</th>
+                            <th class="column100 column3 query-th" data-column="column4">Время заявки</th>
+                            <!--<th class="column100 column4 query-th" data-column="column5">Message</th>-->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach($data as $item) { ?>
+                        <tr class="row100">
+                            <td class="column100 column1 query-td query-col-1" data-column="column1"><?=$item['id']?></td>
+                            <td class="column100 column2 query-td query-col-2" data-column="column2"><?=$item['number']?></td>
+                            <td class="column100 column3 query-td query-col-3" data-column="column3"><?=$item['timeIn']?></td>
+                            <!--<td class="column100 column4 query-td query-col-4" data-column="column4"><?=$item['message']?></td>-->
+                        </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
+            </div>
+                
+        </div>
+    </div>
+</div>
+
+        <!-- </div> -->
+
+        <!-- <table class="table table-striped table-bordered">
+            <tr>
+                <th class="col-sm-1">#</th>
+                <th class="col-sm-2">Name</th>
+                <th class="col-sm-3">Email</th>
+                <th class="col-sm-6">Message</th>
+            </tr>
+            <?php foreach($data as $item) { ?>
+            <tr>
+                <td><?=$item['id']?></td>
+                <td><?=$item['name']?></td>
+                <td><?=$item['email']?></td>
+                <td><?=$item['message']?></td>
+            </tr>
+            <?php } ?>
+        </table> -->
+ 

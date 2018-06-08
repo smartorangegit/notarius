@@ -1,0 +1,267 @@
+<?php
+header('Cache-Control: no-cache, no-store, must-revalidate'); // HTTP 1.1.
+header('Pragma: no-cache'); // HTTP 1.0.
+header('Expires: 0');
+  $params = App::getRouter()->getParams();
+?>
+
+<div class="container">
+    <ul class="page-name">
+        <li class="page-name__item">'Завірено'</li>
+        <li class="page-name__item page-name__item_font_regular"><?=$data['page']['title']?></li>
+    </ul>
+</div>
+
+<?if($params[0] == 'promotions-and-discounts'){?>
+<section class="shares-form-wrap">
+    <div class="shares-form-container">
+        <form action="" class="shares-form" id="discounts">
+            <!--<input type="hidden" name="ajax_data" value="1">-->
+            <div class="shares-form__offer-wrap">
+                <input type="text" id="select" name="service" class="shares-form__offer-info" placeholder="Выберите услугу" style="display: none" value="">
+                <input type="text" class="shares-form__input shares-form__offer" value="Поиск предложения">
+                <div class="form-select-menu shares-select-menu shares-offer-select-menu select-menu">
+                    <ul class="select-menu-list shares-form-select-menu-list">
+                        <?foreach($data['sList'] as $sLitems){?>
+                            <li class="select-menu-list__item" id="<?=$sLitems['id']?>">
+                               <?=$sLitems['name']?>
+                            </li>
+                        <?}?>
+                    </ul>
+                </div>
+            </div>
+            <div class="shares-form__search-wrap">
+                <input type="text" class="shares-form__input shares-form__search" name="serviceName" placeholder="Введите название акционного преложения" value="">
+            </div>
+            <div class="shares-form__district-wrap">
+                <input type="text" id="select" name="area" class="shares-form__district-info" placeholder="Выберите услугу" style="display: none" value="">
+                <input type="text" class="shares-form__input shares-form__district" value="Выберите район">
+                <div class="form-select-menu shares-select-menu shares-district-select-menu select-menu">
+                    <ul class="select-menu-list shares-form-select-menu-list">
+                      <?foreach($data['aList'] as $aLitems){?>
+                        <li class="select-menu-list__item" id="<?=$aLitems['id']?>">
+                            <?=$aLitems['areaName']?>
+                        </li>
+                      <?}?>
+                    </ul>
+                </div>
+            </div>
+            <button class="site-button shares-form__button" onclick="catServClick(event)">Найти</button>
+        </form>
+        <!--
+        <script>
+            function catServClick(event) {
+                event.preventDefault();
+                var data = $('#discounts').serializeArray();
+                //console.log(data);
+                $.ajax({
+                    data: data,
+                    url: '/pages/view',
+                    method: 'GET', // or GET
+                    success: function (msg) {
+                        console.log(msg);
+                    }
+                });
+            }
+        </script>
+        -->
+    </div>
+</section>
+<?}?>
+
+<?=$data['page']['content']?>
+<?php
+if($params[0] == 'about-us'){?>
+<section class="order about-page-order">
+    <div class="container">
+        <div class="form-wrap about-page-form-wrap">
+            <form method="post" action="" class="form">
+                <div class="form-container">
+                    <div class="form__select-wrap">
+                        <input type="text" id="select2" name="service" class="form__input form__select-info" placeholder="Выберите услугу" style="display: none">
+                        <input id="form__select-label" type="text" class="form__input form__select" placeholder="Выберите услугу" required disabled>
+                        <label for="form__select-label" class="form__label"></label>
+                    </div>
+                    <div class="form__date-wrap">
+                        <input id="form__date-label" class="form__input form__date" name="dateOf" type="date" placeholder="Выберите дату" required>
+                        <label for="form__date-label" class="form__label"></label>
+                    </div>
+                    <div class="form__time-wrap">
+                        <input id="form__time-label" class="form__input form__time" type="time" name="timeOf" placeholder="Выберите время" required>
+                        <label for="form__time-label" class="form__label"></label>
+                    </div>
+                    <input class="form__input form__phone" name="regNum" type="text" placeholder="Укажите Ваш телефон" required>
+                </div>
+                <div class="form__checkbox-wrap">
+                    <input type="checkbox" id="form__checkbox" class="form__checkbox">
+                    <label for="form__checkbox" class="form__checkbox-label"></label>
+                    <p class="form__text">С виездом</p>
+                </div>
+                <button class="form__button" type="submit">Подобрать<br>нотариуса</button>
+            </form>
+            <div class="form-select-menu select-menu form-select-menu select-menu_border">
+                <ul class="select-menu-list">
+                    <? foreach($data['servicesListTOP'] as $item){?>
+                         <li id="<?=$item['id'];?>" class="select-menu-list__item">
+                            <?=$item['name'];?>
+                        </li>
+                    <?}?>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<?}?>
+<script>
+    $(".menu-drop__link").removeClass("menu-drop__link_active");
+    $("li.menu-drop__item:last>a").addClass("menu-drop__link_active");
+</script>
+<?if($params[0] == 'promotions-and-discounts'){?>
+
+<section class="shares-list-wrap">
+    <div class="container">
+        <p class="shares-page-share__text">
+            Найдено <span class="shares-page-share__text_regular"><?=$data['countDiscounts']['cou'];?> акционных предложения</span>
+        </p>
+        <div class="pagination-wrap-js">
+            <ul class="shares-list">
+                <? foreach($data['discountData'] as $discItem){?>
+                <?
+                   //print_r($discItem);
+                ?>
+                <li data-star="<?=$discItem['rating']?>" class="shares-list__item">
+                    <?$skidka =  ($discItem['cost']*$discItem['discount'])/100;?>
+                    <div class="shares-list__meta">
+                      <input class="shares-list__meta-input" type="hidden" value="<?=$discItem['name']?>" name="servName">
+                      <input class="shares-list__meta-input" type="hidden" value="<?=$discItem['serviceID']?>" name="service">
+                      <input class="shares-list__meta-input" type="hidden" value="<?=$discItem['cost']?>" name="cost">
+                      <input class="shares-list__meta-input" type="hidden" value="<?=$discItem['cost']-$skidka?>" name="fCost">
+                      <input class="shares-list__meta-input" type="hidden" value="<?=$discItem['nID']?>" name="notaryID">
+                    </div>
+
+                    <div class="shares-list-title">
+                        <div class="shares-list-title__text">
+                            <p class="shares-list-title__name"><?=$discItem['name']?></p>
+                            <div class="shares-list-title-meta">
+                                <p class="shares-list-title-meta__zavireno">Только через “ZAVIRENO”</p>
+                                <p class="shares-list-title-meta__date">Действует до <?=$discItem['expiration_date']?></p>
+                            </div>
+                        </div>
+                        <div class="shares-list-title__price-wrap">
+                            <div class="shares-list-title__price">
+                                <p class="shares-list-title__old-price"><?=$discItem['cost']?>грн</p>
+                                <p class="shares-list-title__new-price">
+                                    <? echo ($discItem['cost']-$skidka) ?>
+                                грн</p>
+                            </div>
+                            <div class="shares-list-title__discount"><?=$discItem['discount']?>%</div>
+                        </div>
+                    </div>
+                    <div class="shares-list-notary">
+                        <div class="shares-list-notary-info clearfix">
+                            <?if($discItem['profPhoto']){?>
+                            <img src="/uploads/<?=$discItem['login']?>/photo/<?=$discItem['profPhoto']?>" alt="photo" class="shares-list-notary-info__photo">
+                            <?}else{?>
+                            <img src="/img/man.png" alt="photo" class="shares-list-notary-info__photo">
+                            <?}?>
+                            <p class="shares-list-notary-info__name"><?=$discItem['fName'].' '.$discItem['sName'].' '.$discItem['mName'].' '?></p>
+                            <div class="shares-list-notary-info-raiting">
+                                <p class="shares-list-notary-info-raiting__text">Рейтинг: </p>
+                                <div class="star shares-list-notary-info-raiting__star">
+                                    <div class="star__block star__white"></div>
+                                    <div class="star__block star__color"></div>
+                                </div>
+                                <a href="#" class="shares-list-notary-info-raiting__link"><?=$discItem['couCom'];?> отзывов</a>
+                            </div>
+                            <div class="shares-list-notary-info-location">
+                                <svg class="shares-list-notary-info-location__icon"><use xlink:href="#point"></use></svg>
+                                <p class="shares-list-notary-info-location__text">ул. <?=$discItem['street']?>, <?=$discItem['house']?></p>
+                                <a href="#" class="shares-list-notary-info-location__link">м. <?=$discItem['metroName']?></a>
+                                <?if($discItem['mAreaName']){?>
+                                <p class="shares-list-notary-info-location__text shares-list-notary-info-location__text_gray">(<?=$discItem['mAreaName']?>)</p>
+                                <?}?>
+                                <a href="/notaries/?notary=<?=$discItem['nID']?>" class="shares-list-notary-info-location__link shares-list-notary-info-location__link-map">показать на карте</a>
+                            </div>
+                        </div>
+                        <button class="shares-list-notary__button site-button">Записаться</button>
+                    </div>
+                </li>
+                <?}?>
+            </ul>
+            <?if($data['countDiscounts']['cou']>=5){?>
+            <div class="pagination shares-pagination">
+                <a href="#" class="pagination__nav pagination__nav_prev shares-pagination__nav_prev">
+                    <svg class="pagination__nav-icon pagination__nav-icon_rotate"><use xlink:href="#right-arrow"></use></svg>
+                    <span class="pagination__nav-text">предыдущие 5</span>
+                </a>
+                <ul class="pagination-num shares-pagination-num">
+                    <li class="pagination-num__item pagination-num__item_active">
+                        1
+                    </li>
+                </ul>
+                <a href="#" class="pagination__nav pagination__nav_next shares-pagination__nav_next">
+                    <span class="pagination__nav-text">следующие 5</span>
+                    <svg class="pagination__nav-icon"><use xlink:href="#right-arrow"></use></svg>
+                </a>
+            </div>
+            <?}?>
+        </div>
+    </div>
+</section>
+
+<section class="shares-popup-form">
+    <div class="form-wrap popup-form-wrap">
+        <form method="post" action="" class="form form_vertical">
+            <div class="form-container popup-form-container">
+                <div class="form__select-wrap popup-form-input">
+                    <input type="hidden" name="discountForm" value="1">
+                    <input type="text" id="select" name="service" class="form__input form__select-info" style="display: none">
+                    <input type="text" class="form__input form__select popup-form-input__input" placeholder="Выберите услугу" disabled>
+                </div>
+                <div class="form__date-wrap popup-form-input">
+                    <input id="form__date-label" class="form__input form__date popup-form-input__input" type="date" placeholder="Выберите дату" name="dateOf" required>
+                    <label for="form__date-label" class="form__label"></label>
+                </div>
+                <div class="form__time-wrap popup-form-input">
+                    <input id="form__time-label" class="form__input form__time popup-form-input__input" type="time" placeholder="Выберите время" name="timeOf" required>
+                    <label for="form__time-label" class="form__label"></label>
+                </div>
+                <input class="form__input form__phone popup-form-input popup-form-input__phone" type="text" placeholder="Укажите Ваш телефон" required name="fdNumber">
+            </div>
+            <div class="popup-form__checkbox-wrap">
+                <input type="checkbox" id="shares-popup-form__checkbox" class="popup-form__checkbox form__checkbox" name="homeCheck">
+                <label for="shares-popup-form__checkbox" class="form__checkbox-label"></label>
+                <p class="form__text">С виездом</p>
+            </div>
+            <button class="form__button popup-form__button" type="submit">Подобрать нотариуса</button>
+        </form>
+        <div class="select-menu form-select-menu popup-form-select-menu">
+            <ul class="select-menu-list">
+                <li class="select-menu-list__item select-menu-list__item_active" id="s1">
+                    Удостоверение договора
+                </li>
+                <li class="select-menu-list__item" id="s2">
+                    Удостоверение доверенности
+                </li>
+                <li class="select-menu-list__item" id="s3">
+                    Наследство
+                </li>
+                <li class="select-menu-list__item" id="s4">
+                    Завещания
+                </li>
+                <li class="select-menu-list__item" id="s5">
+                    Свидетельствование достоверности подписи на документах
+                </li>
+                <li class="select-menu-list__item" id="s6">
+                    Другие нотариальные действия
+                </li>
+            </ul>
+        </div>
+        <img src="/img/cancel.png" alt="cansel" class="popup-form__icon">
+    </div>
+</section>
+
+<?}?>
+<script>
+    $('input[name="number"]').mask('+38( 000 )  000 - 00 00');
+</script>

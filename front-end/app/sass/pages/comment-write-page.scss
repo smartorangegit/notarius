@@ -1,0 +1,25 @@
+.feedback-write {
+	&-container {
+		height: 100vh;
+	}
+
+	&-content {
+		padding: 0 0 80px 0;
+		text-align: center;
+	}
+
+	&__name {
+		font: 1.5rem Roboto-Regular, Arial, sans-serif;
+		color: $dark-gray;
+		margin-bottom: 7px;
+	}
+
+	&__dynamic-star {
+		margin-bottom: 10px;
+	}
+}
+
+a.comment__exit-button {
+	color: $blue;
+	margin-bottom: 7px;
+}

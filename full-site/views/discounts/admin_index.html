@@ -1,0 +1,106 @@
+<div class="col-sm-12 text-center">
+    <div class="col-sm-6 col-sm-offset-3">
+        <h3>Добавление Акционанного предложения:</h3>
+        <form action="" method="post">
+            <div>
+                <input type="hidden" name="id" value="<?=$data['info']['id']?>">
+                <input type="hidden" name="discount_add" value="1">
+                <label>Услуга:</label>
+                <select name="servID">
+                    <? foreach($data['sList'] as $sL){?>
+                    <option value="<?=$sL['id']?>"><?=$sL['name'];?></option>
+                    <?}?>
+                </select>
+            </div>
+            <div>
+                <label>Нотариус:</label>
+                <select name="notaryID">
+                    <? foreach($data['nList'] as $nL){?>
+                        <option value="<?=$nL['id']?>"><?=$nL['fName'].' '.$nL['sName'].' '.$nL['mName']?></option>
+                    <?}?>
+                </select>
+            </div>
+            <div>
+                <label>Цена:</label>
+                <input type="number" name="cost" required>
+            </div>
+            <div>
+                <label>% Скидки:</label>
+                <input type="number" name="discount" required>
+            </div>
+            <div>
+                <label>Дата окончания:</label>
+                <input type="date" name="expiration_date" required>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Добавить</button>
+        </form>
+    </div>
+</div>
+
+<div class="divTable">
+    <div class="divTableBody">
+        <div class="divTableRow">
+            <div class="divTableCell">Название услуги</div>
+            <div class="divTableCell">ФИО нотариуса</div>
+            <div class="divTableCell">Цена</div>
+            <div class="divTableCell">% Скидки</div>
+            <div class="divTableCell">Дата окончания</div>
+        </div>
+        <?php foreach($data['listOfDiscounts']  as $item) { ?>
+            <div class="divTableRow">
+                <div class="divTableCell">
+                    <a href="/admin/discounts/offer/<?=$item['id']?>/"><?=$item['name']?></a>
+                </div>
+                <div class="divTableCell">
+                    <a href="/admin/discounts/offer/<?=$item['id']?>/"><?=$item['fName'].' '.$item['sName'].' '.$item['mName']?></a>
+                </div>
+                <div class="divTableCell">
+                    <a href="/admin/discounts/offer/<?=$item['id']?>/"><?=$item['cost']?></a>
+                </div>
+                <div class="divTableCell">
+                    <a href="/admin/discounts/offer/<?=$item['id']?>/"><?=$item['discount']?></a>
+                </div>
+                <div class="divTableCell">
+                    <a href="/admin/discounts/offer/<?=$item['id']?>/"><?=$item['expiration_date']?></a>
+                </div>
+            </div>
+
+        <?php } ?>
+    </div>
+</div>
+
+<style>
+    div.divTableCell>a {
+        color: black;
+    }
+    /* DivTable.com */
+    .divTable{
+        display: table;
+        width: 100%;
+    }
+    .divTableRow {
+        display: table-row;
+    }
+    .divTableHeading {
+        background-color: #EEE;
+        display: table-header-group;
+    }
+    .divTableCell, .divTableHead {
+        border: 1px solid #999999;
+        display: table-cell;
+        padding: 3px 10px;
+    }
+    .divTableHeading {
+        background-color: #EEE;
+        display: table-header-group;
+        font-weight: bold;
+    }
+    .divTableFoot {
+        background-color: #EEE;
+        display: table-footer-group;
+        font-weight: bold;
+    }
+    .divTableBody {
+        display: table-row-group;
+    }
+</style>

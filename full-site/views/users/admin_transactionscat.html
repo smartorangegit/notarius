@@ -1,0 +1,124 @@
+<?php
+header('Cache-Control: no cache');
+$param = App::getRouter()->getParams();
+if(!$param){
+?>
+<!-- <h1 class="page-header">Страница создания категорий услуг</h1> -->
+
+<div class="service-add">
+    <h3 class="section-heading">Создание категории услуги</h3>
+    <form action="" method="post" class="form-group row">
+                <!-- <input type="hidden" name="addServices" value="1"> -->
+        <div class="form-group col-sm-3">
+            <input type="hidden" name="addCatSer" value="1">
+            <input type="text" class="form-control" name="name" placeholder="Название категории" required>
+        </div>
+                    <!--<input type="text" class="form-control" name="cost" placeholder="Цена услуги"><br>-->
+                    <!--<select class="form-control" size="3"  name="additionalID">-->
+                        <!--<option value="1">доп услуга 1</option>-->
+                        <!--<option value="2">доп услуга 2</option>-->
+                        <!--<option value="3">доп услуга 3</option>-->
+                    <!--</select>-->
+        <div class="form-group col-sm-6">
+            <textarea name="description" class="form-control col-sm-12" placeholder="Описание к категории" required></textarea>
+        </div>
+        <button class="btn btn-primary col-sm-1" type="submit">Добавить</button>
+    </form>
+</div>
+
+<h3 class="section-heading">Таблица со списком созданных категорий услуг</h3>
+
+<div class="limiter queries_margin_top">
+    <div class="container-table100">
+        <div class="wrap-table100">
+
+            <div class="table100 ver6 m-b-110">
+                <table data-vertable="ver6">
+                    <thead>
+                        <tr class="row100 head">
+                            <th class="column100 column1 user-list-th" data-column="column1">#</th>
+                            <th class="column100 column2 user-list-th" data-column="column2">Название</th>
+                            <th class="column100 column3 user-list-th" data-column="column3">Описание</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach($data['getListCatServ'] as $item) { ?>
+                            <tr class="row100">
+                                <td class="column100 column1 admin-serv-td" data-column="column1">
+                                    <a class='cell__link' href="/admin/users/transactionscat/<?=$item['id']?>">
+                                    <?=$item['id']?></a>
+                                </td>
+
+                                <td class="column100 column2 admin-serv-td" data-column="column2">
+                                    <a class='cell__link' href="/admin/users/transactionscat/<?=$item['id']?>"><?=$item['name']?></a>
+                                </td>
+
+                                <td class="column100 column3 admin-serv-td" data-column="column3">
+                                    <a class='cell__link' href="/admin/users/transactionscat/<?=$item['id']?>">
+                                   <?=$item['description']?></a>
+                                </td>
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+                 </table>
+            </div>
+                
+        </div>
+    </div>
+</div>
+
+<?
+}
+else{
+echo "<div class='page-header'><h1>Категория услуг детально</h1></div>";
+?>
+<div class="row well well-lg">
+    <div class="col-md-4">
+        <form action="" method="post">
+            <input type="hidden" name="updCatSer" value="1">
+            <div class="form-group">
+                <label for="">Название категории:</label>
+                <input type="text" class="form-control" name="name" value="<?=$data['getCatServ']['name']?>"><br>
+            </div>
+            <div class="form-group">
+                <label for="">Описание к категории:</label>
+                <textarea name="description" class="form-control" ><?=$data['getCatServ']['description']?></textarea>
+            </div>
+            <button class="btn btn-primary btn-block" type="submit">Обновить</button>
+        </form>
+    </div>
+    <div class="col-md-4">
+        <form action="" method="post">
+            <div class="form-group">
+                <label>Добавить дополнительную услугу:</label>
+                <select style="min-height: 148px;" class="form-control" size="5"  name="dellServToCar">
+                    <?foreach($data['getListServicesIn'] as $itemCi){?>
+                    <option value="<?=$itemCi['id']?>"><?=$itemCi['name']?></option>
+                    <?}?>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-danger">Удалить</button>
+        </form>
+    </div>
+    <div class="col-md-4">
+        <form action="" method="post">
+            <div class="form-group">
+                <label>Добавить дополнительную услугу:</label>
+                <select style="min-height: 148px;" class="form-control" size="5"  name="addServToCar">
+                    <?foreach($data['getListServices'] as $itemC){?>
+                    <option value="<?=$itemC['id']?>"><?=$itemC['name']?></option>
+                    <?}?>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-success">Добавить</button>
+        </form>
+    </div>
+</div>
+<div class="row mtop10">
+    <div class="col-md-6">
+        <input type="button" class="btn" onclick="history.back()" value="Назад">
+    </div>
+</div>
+<?
+//print_r($data['getListServicesIn']);
+}?>

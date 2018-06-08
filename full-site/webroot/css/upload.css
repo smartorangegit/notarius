@@ -1,0 +1,65 @@
+/*body {
+    padding-bottom: 2rem;
+    padding-top: 4rem;
+}*/
+.row {
+    margin-bottom: 1rem;
+}
+[class*="col-"] {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+hr {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+#files {
+    overflow-y: scroll !important;
+    min-height: 320px;
+}
+@media (min-width: 768px) {
+    #files {
+        min-height: 0;
+    }
+}
+#debug {
+    overflow-y: scroll !important;
+    height: 180px;
+}
+
+.dm-uploader {
+    border: 0.25rem dashed #A5A5C7;
+    text-align: center;
+}
+.dm-uploader.active {
+    border-color: red;
+
+    border-style: solid;
+}
+.dm-uploader {
+    cursor: default;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.dm-uploader .btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.dm-uploader .btn input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    border: solid transparent;
+    width: 100%;
+    opacity: .0;
+    filter: alpha(opacity= 0);
+    cursor: pointer;
+}

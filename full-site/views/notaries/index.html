@@ -1,0 +1,632 @@
+<h2 class="section-heading filter-result__heading filter-result__heading-mobile">Нотариусы</h2>
+<div class="filter-mobile-open__button">
+    <img src="/img/filter/metka.png" alt="icon" class="filter-mobile-open__image">
+    <p class="filter-mobile-open__text">Фильтр</p>
+</div>
+
+<div class="filter-container container">
+    <aside class="sidebar">
+        <ul class="page-name filter__page-name">
+            <li class="page-name__item">'Завірено'</li>
+            <li class="page-name__item page-name__item_font_regular"><?=__('lng.notaries')?></li>
+        </ul>
+        <button class="site-button sidebar__button sidebar__button_top">Искать по:</button>
+<form action="" method="post" id="notaryFiler">
+        <div class="search-tag search-subway">
+            <div class="search-title search-title__subway">
+                <p class="search-title__name search-title__name_subway">Mетро</p>
+                <div class="search-title__show search-title__show_plus"></div>
+            </div>
+            <div class="search-items-wrap">
+                <input type="text" class="search-subway__input-info" style="display: none;" name="metro">
+                <img src="/img/client-page/remove.png" alt="remove" class="search-tag__image">
+                <p type="text" class="search-input__input search-subway__input" ></p>
+            </div>
+        </div>
+
+        <div class="search-tag">
+            <div class="search-title">
+                <p class="search-title__name">Район</p>
+                <div class="search-title__show search-title__show_plus"></div>
+            </div>
+            <div class="search-items-wrap">
+                <div class="search-input__select-wrap">
+                    <select name="area" class="search-input__select">
+                        <?foreach($data['areas'] as $arItem){?>
+                        <option class="search-input__option" value="<?=$arItem['id']?>"><?=$arItem['areaName']?></option>
+                        <?}?>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="search-tag">
+            <div class="search-title">
+                <p class="search-title__name">Улица</p>
+                <div class="search-title__show search-title__show_plus"></div>
+            </div>
+            <div class="search-items-wrap search-items-wrap_margin search-input">
+                <input type="text" class="search-input__input" name="street">
+            </div>
+        </div>
+
+        <div class="search-tag">
+            <div class="search-title">
+                <p class="search-title__name">С выездом</p>
+                <div class="search-title__show search-title__show_plus"></div>
+            </div>
+            <div class="search-items-wrap">
+                <div class="search-checkbox">
+                    <!-- <input id="departure" type="checkbox" name="microdistrict1" class="search-items-droplist__input">
+                    <label for="departure" class="search-items-droplist__label"></label> -->
+                    <div class="search-input__select-wrap">
+                        <select name="poweredByExit" class="search-input__select">
+                            <option class="search-input__option" value="">Не выбран</option>
+                            <option class="search-input__option" value="1">Да</option>
+                            <option class="search-input__option" value="0">Нет</option>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="search-tag">
+            <div class="search-title">
+                <p class="search-title__name">Частный/Государственный</p>
+                <div class="search-title__show search-title__show_plus"></div>
+            </div>
+            <div class="search-items-wrap">
+                <div class="search-input__select-wrap">
+                    <select name="typeOfNotary" class="search-input__select">
+                            <option class="search-input__option" value="">Не выбран</option>
+                            <option class="search-input__option" value="1">Частный</option>
+                            <option class="search-input__option" value="0">Государственный</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="search-tag">
+            <div class="search-title">
+                <p class="search-title__name">Рейтинг нотариуса</p>
+                <div class="search-title__show search-title__show_plus"></div>
+            </div>
+            <div class="search-items-wrap search-range">
+                <label for="rating-min" class="search-range__label search-range__label_min">от: </label>
+                <input id="rating-min" type="text" class="search-input__input search-range__input search-range__input_min" placeholder="1" name="ratingMin">
+
+                <label for="rating-max" class="search-range__label">до: </label>
+                <input id="rating-max" type="text" class="search-input__input search-range__input" placeholder="5" name="ratingMax">
+            </div>
+        </div>
+
+        <div class="search-tag">
+            <div class="search-title">
+                <p class="search-title__name">Режим работы</p>
+                <div class="search-title__show search-title__show_plus"></div>
+            </div>
+            <div class="search-items-wrap search-range">
+                <label for="work-min" class="search-range__label search-range__label_min">c: </label>
+                <input id="work-min" type="time" class="work-time-min search-input__input search-range__input search-range__input_min" name="workTimeS">
+
+                <label for="work-max" class="search-range__label">до: </label>
+                <input id="work-max" type="time" class="work-time-max search-input__input search-range__input"  name="workTimeF">
+            </div>
+        </div>
+
+        <div class="search-tag">
+            <div class="search-title">
+                <p class="search-title__name">ФИО нотариуса</p>
+                <div class="search-title__show search-title__show_plus"></div>
+            </div>
+            <div class="search-items-wrap search-input">
+                <input type="text" class="search-input__input" name="fio">
+            </div>
+        </div>
+
+        <div class="search-tag">
+            <div class="search-title">
+                <p class="search-title__name">Услуга</p>
+                <div class="search-title__show search-title__show_plus"></div>
+            </div>
+            <div class="search-items-wrap">
+                <div class="search-input__select-wrap">
+                    <select name="serviceName" class="search-input__select">
+                        <?foreach($data['getServicesInfo'] as $siItem){?>
+                        <option class="search-input__option" value="<?=$siItem['id']?>"><?=$siItem['name']?></option>
+                        <?}?>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="search-tag">
+            <div class="search-title">
+                <p class="search-title__name">Рабочий выходной</p>
+                <div class="search-title__show search-title__show_plus"></div>
+            </div>
+            <div class="search-items-wrap search-range">
+                <div class="search-range-input-wrap">
+                    <p class="search-range-input__heading">Субота</p>
+                    <label for="sat-min" class="search-range__label search-range__label_min">c: </label>
+                    <input id="sat-min" name="stWorkS" type="text" class="work-time-min search-input__input search-range__input search-range__input_min">
+
+                    <label for="sat-max" class="search-range__label">до: </label>
+                    <input id="sat-max" name="stWorkF" type="text" class="work-time-max search-input__input search-range__input">
+                </div>
+                <div class="search-range-input-wrap">
+                    <p class="search-range-input__heading">Воскресение</p>
+                    <label for="sun-min" class="search-range__label search-range__label_min">c: </label>
+                    <input id="sun-min" name="saWorkS" type="text" class="search-input__input search-range__input search-range__input_min work-time-min">
+
+                    <label for="sun-max" class="search-range__label">до: </label>
+                    <input id="sun-max" name="saWorkF" type="text" class="search-input__input search-range__input work-time-max">
+                </div>
+            </div>
+        </div>
+
+        <div class="search-tag search-tag_margin">
+            <div class="search-title">
+                <p class="search-title__name">Стоимость услуги</p>
+                <div class="search-title__show search-title__show_plus"></div>
+            </div>
+            <div class="search-items-wrap search-range">
+                <label for="cost-min" class="search-range__label search-range__label_min">от: </label>
+                <input id="cost-min" type="text" class="search-input__input search-range__input search-range__input_min" name="costS">
+
+                <label for="cost-max" class="search-range__label">до: </label>
+                <input id="cost-max" type="text" class="search-input__input search-range__input" name="costF">
+            </div>
+        </div>
+
+        <button onclick="callFilter(event)" type="submit" class="site-button sidebar__button">Поиск</button>
+</form>
+    </aside>
+
+    <section class="filter-result">
+        <h2 class="section-heading filter-result__heading">Нотариусы</h2>
+        <div class="filter-meta">
+            <div class="filter-meta-text">
+                <span class="filter-meta-text__text">Найдено <span class="filter-meta-text__text_blue">
+                    <?=$data['paginationNum']['countNotaries'];?>
+                </span> нотариусов по запросу:</span>
+            </div>
+            <ul class="filter-meta-button-list">
+                <?if($_GET['metro']!=''){?>
+                <li class="filter-meta-button-list__item">
+                    <p class="filter-meta-button-list__text">По Метро</p>
+                    <img src="/img/filter/remove.png" alt="del" class="filter-meta-button-list__icon" data-filter="metro">
+                </li>
+                <?}?>
+
+                <?if($_GET['area']!=''){?>
+                <li class="filter-meta-button-list__item">
+                    <p class="filter-meta-button-list__text">По Району</p>
+                    <img src="/img/filter/remove.png" alt="del" class="filter-meta-button-list__icon" data-filter="area">
+                </li>
+                <?}?>
+
+                <?if($_GET['street']!=''){?>
+                <li class="filter-meta-button-list__item">
+                    <p class="filter-meta-button-list__text">По Улице</p>
+                    <img src="/img/filter/remove.png" alt="del" class="filter-meta-button-list__icon" data-filter="street">
+                </li>
+                <?}?>
+
+                <?if($_GET['poweredByExit']!=''){?>
+                <li class="filter-meta-button-list__item">
+                    <p class="filter-meta-button-list__text">С выездом</p>
+                    <img src="/img/filter/remove.png" alt="del" class="filter-meta-button-list__icon" data-filter="poweredByExit">
+                </li>
+                <?}?>
+
+                <?if($_GET['typeOfNotary']!=''){?>
+                <li class="filter-meta-button-list__item">
+                    <p class="filter-meta-button-list__text">По типу</p>
+                    <img src="/img/filter/remove.png" alt="del" class="filter-meta-button-list__icon" data-filter="typeOfNotary">
+                </li>
+                <?}?>
+
+                <?if($_GET['ratingMin']!=''){?>
+                <li class="filter-meta-button-list__item">
+                    <p class="filter-meta-button-list__text">По рейтингу</p>
+                    <img src="/img/filter/remove.png" alt="del" class="filter-meta-button-list__icon" data-filter="rating">
+                </li>
+                <?}?>
+
+                <?if($_GET['workTimeS']!=''){?>
+                <li class="filter-meta-button-list__item">
+                    <p class="filter-meta-button-list__text">По времени (будни)</p>
+                    <img src="/img/filter/remove.png" alt="del" class="filter-meta-button-list__icon" data-filter="workTime">
+                </li>
+                <?}?>
+
+                <?if($_GET['fio']!=''){?>
+                <li class="filter-meta-button-list__item">
+                    <p class="filter-meta-button-list__text">По ФИО</p>
+                    <img src="/img/filter/remove.png" alt="del" class="filter-meta-button-list__icon" data-filter="fio">
+                </li>
+                <?}?>
+
+                <?if($_GET['serviceName']!=''){?>
+                <li class="filter-meta-button-list__item">
+                    <p class="filter-meta-button-list__text">По услуге</p>
+                    <img src="/img/filter/remove.png" alt="del" class="filter-meta-button-list__icon" data-filter="serviceName">
+                </li>
+                <?}?>
+
+                <?if($_GET['stWorkS']!='' || $_GET['saWorkS']!=''){?>
+                <li class="filter-meta-button-list__item">
+                    <p class="filter-meta-button-list__text">По времени (выходные)</p>
+                    <img src="/img/filter/remove.png" alt="del" class="filter-meta-button-list__icon" data-filter="stWork">
+                </li>
+                <?}?>
+
+                <?if($_GET['costS']!=''){?>
+                <li class="filter-meta-button-list__item">
+                    <p class="filter-meta-button-list__text">По стоимости</p>
+                    <img src="/img/filter/remove.png" alt="del" class="filter-meta-button-list__icon" data-filter="cost">
+                </li>
+                <?}?>
+
+
+        <?//print_r($_GET)?>
+            </ul>
+            <form action="/notaries/" method="post">
+            <button type="submit" class="filter-meta__button">oчистить все</button>
+            </form>
+        </div>
+        <div class="filter-content">
+            <div id="map" class="filter-content-map">
+                <img src="/img/filter/map.jpg" alt="map">
+            </div>
+
+            <div class="pagination-wrap-js">
+                <ul class="filter-notary-list">
+                    <?if($data['paginationNum']['countNotaries']>0){?>
+                    <li class="filter-notary-list__item">
+                        <div class="filter-notary-list__image-wrap">
+                          <img src="/img/man.png" alt="photo" class="filter-notary-list__image">
+                        </div>
+                        <p class="filter-notary-list__name">Беляев Алексей Геннадиевич</p>
+                        <div data-star="3" class="star filter-notary-list__rating">
+                            <div class="star__block star__white"></div>
+                            <div class="star__block star__color"></div>
+                        </div>
+                        <a href="#" class="filter-notary-list__subway filter-notary-list__link">
+                            м.Вокзальная
+                        </a>
+                        <a href="#" class="filter-notary-list__feedback filter-notary-list__link">
+                            15 отзывов
+                        </a>
+                        <button class="site-button filter-notary-list__button">
+                            Подробнее
+                        </button>
+                    </li>
+                    <?}?>
+                    <!--<li class="filter-notary-list__item filter-notary-more">-->
+                        <!--<p class="filter-notary-more__text">Еще 15 нотариусов</p>-->
+                    <!--</li>-->
+                </ul>
+
+                <div class="pagination filter-pagination">
+                    <ul class="pagination-num filter-pagination-num">
+                        <?php
+//print_r(substr($_SERVER['REQUEST_URI'],11));
+
+$uri1 = substr($_SERVER['REQUEST_URI'],11);
+$uri2 = str_replace('page=','',$uri1);
+    if($_GET['page']){
+      $uri3 = substr($uri2,1);
+      $uri4 = $uri3;
+    }
+    else{
+      $uri3 = $uri2;
+      $uri4 = '&'.$uri3;
+    }
+$uriFin = $uri4;
+
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+$p = new Pagination(array(
+    'itemsCount' => $data['paginationNum']['countNotaries'],
+                        'itemsPerPage' => 2,
+                        'currentPage' => $page
+                        ));
+                        ?>
+                        <hr/>
+                        <?php foreach ($p->buttons as $button) :
+                        if ($button->isActive) : ?>
+                        <a  class="pagination-num__link filter-pagination-num__link" href = '?page=<?=$button->page.$uriFin?>'><?=$button->text?></a>
+                        <?php else : ?>
+                        <a class="pagination-num__link filter-pagination-num__link pagination-num__link_active"><?=$button->text?></a>
+                        <?php endif;
+endforeach;
+?>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="metro-map-wrap">
+        <div class="metro-map">
+            <img src="/img/filter/close.png" alt="close" class="metro-map__close">
+            <h2 class="section-heading metro-map__heading">Выберите подходящую (- ее) станцию ( - и) метро:</h2>
+            <div class="metro-map__map">
+<div id="red">
+                    <?foreach($data['metroList'] as $mLitem){?>
+                        <label id="<?=$mLitem['id']?>" class="metro-map__label color-red-<?=$mLitem['id']?>" data-value="<?=$mLitem['metroName']?>">
+                            <input class="metro-map__input" type="checkbox">
+                            <span class="metro-map__text"><?=$mLitem['metroName']?></span>
+                            <img src="/img/cancel.png" alt="cansel" class="metro-map__icon">
+                        </label>
+                    <?}?>
+</div>
+            </div>
+            <div class="metro-map-button">
+                <button class="site-button metro-map-button__button metro-map-button__clear">
+                    Сбросить
+                </button>
+                <button class="site-button metro-map-button__button metro-map-button__send">
+                    Выбрать
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="metro-map-wrap_mobile">
+        <div class="metro-map">
+          <img src="/img/filter/close.png" alt="close" class="metro-map__close">
+          <h2 class="section-heading metro-map__heading">Выберите подходящую (- ее) станцию ( - и) метро:</h2>
+          <div class="metro-map__map">
+            <div id="red" class="red">
+                <?foreach($data['metroList'] as $mLitem){?>
+                    <?if($mLitem['id']>0 && $mLitem['id']<=18){?>
+                      <label id="<?=$mLitem['id']?>" class="metro-map__label color-red-mob-<?=$mLitem['id']?>" data-value="<?=$mLitem['metroName']?>">
+                            <input class="metro-map__input" type="checkbox">
+                            <span class="metro-map__text"><?=$mLitem['metroName']?></span>
+                            <img src="/img/cancel.png" alt="cansel" class="metro-map__icon">
+                      </label>
+                    <?}?>
+                <?}?>
+            </div>
+
+            <div id="blue" class="blue">
+                <?foreach($data['metroList'] as $mLitem){?>
+                    <?if($mLitem['id']>=19 && $mLitem['id']<=36){?>
+                      <label id="<?=$mLitem['id']?>"  class="metro-map__label color-blue-mob-<?=$mLitem['id']?>" data-value="<?=$mLitem['metroName']?>">
+                         <input class="metro-map__input" type="checkbox">
+                         <span class="metro-map__text"><?=$mLitem['metroName']?></span>
+                         <img src="/img/cancel.png" alt="cansel" class="metro-map__icon">
+                      </label>
+                    <?}?>
+                <?}?>
+            </div>
+
+            <div id="green" class="green">
+                <?foreach($data['metroList'] as $mLitem){?>
+                    <?if($mLitem['id']>=37){?>
+                      <label id="<?=$mLitem['id']?>" class="metro-map__label color-green-mob-<?=$mLitem['id']?>" data-value="<?=$mLitem['metroName']?>">
+                        <input class="metro-map__input" type="checkbox">
+                        <span class="metro-map__text"><?=$mLitem['metroName']?></span>
+                        <img src="/img/cancel.png" alt="cansel" class="metro-map__icon">
+                      </label>
+                 <?}?>
+                <?}?>
+            </div>
+
+          </div>
+          <div class="metro-map-button">
+            <button class="site-button metro-map-button__button metro-map-button__clear">
+              Сбросить
+            </button>
+            <button class="site-button metro-map-button__button metro-map-button__send">
+              Выбрать
+            </button>
+          </div>          
+        </div>
+    </section>
+</div>
+
+<?php
+if($data['paginationNum']['countNotaries']>0){
+ foreach($data['cords'] as $mark){
+   $mC[] =  [explode(',',$mark['geolocation']), 'fio'=>$mark['fName'].' '.$mark['sName'].' '.$mark['mName'], 'id'=>$mark['userID'], 'rating'=>$mark['rating']];
+ }
+    $markers = json_encode($mC);
+}
+?>
+
+<div id="nL">
+
+</div>
+<style>
+    #content{
+        display: grid;
+    }
+</style>
+<script charset="utf-8">
+    window.onload = function () {
+        callFilterOnse(event);
+    };
+    function callFilterOnse(event) {
+        event.preventDefault();
+        var msg;
+        var URL = window.location.href;
+        if(URL.indexOf('=')!==-1) {
+            msg = URL.substring(URL.indexOf('?')+1);
+        } else {
+            msg  = $('#notaryFiler').serialize();
+        }
+        $.ajax({
+            url: '/webroot/notariesFilter.php',
+            type: "POST",
+            data: msg,
+            success: function onAjaxSuccess(data)
+            {
+                //$('#nL').html(data);
+                var q = JSON.parse(data);
+                if(q.msg_info.length>0) {
+                    initMap();
+                }
+                /*карта*/
+                function initMap() {
+                    var myLatlng = new google.maps.LatLng(50.448613, 30.523343);
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                        center: myLatlng,
+                        zoom: 10
+                    });
+                    var infowindow = new google.maps.InfoWindow({
+                        content: ''
+                    });
+                    var liItem ;
+                    var form = '';
+                    var img = '';
+                    var ra = '';
+                    if(q.msg_info != ''){
+
+                        console.log(q.msg_info.length);
+
+
+                        for (var iz = 0; iz < q.msg_info.length; iz++) {
+                            var srt = q.msg_info[iz].geolocation;
+                            var test = srt.split(',');
+
+                            //console.log(test[0], test[1]);
+
+                            marker = new google.maps.Marker({
+                                position: new google.maps.LatLng(test[0], test[1]),
+                                title: q.msg_info[iz].fName + ' ' + q.msg_info[iz].sName + ' ' + q.msg_info[iz].mName,
+                                rating: parseFloat(q.msg_info[iz].rating),
+                                ra : parseFloat(q.msg_info[iz].rating)*20,
+                                url: '/notaries/profile/' + q.msg_info[iz].userID + '/',
+                                icon : '/img/locat.png'
+                            });
+                            marker.setMap(map);
+
+                            google.maps.event.addListener(marker, 'click', function () {
+
+                                var cString = '<div id="content">' +
+                                    '' + this.title + '\n' +
+                                    '<div data-star="'+this.rating+'" class="star filter-notary-list__rating">' +
+                                    '<div class="star__block star__white"></div>' +
+                                    '<div class="star__block star__color" style="width:'+this.ra+'%;"></div>' +
+                                    '</div>'+
+                                    '<a href="' + this.url + '">Перейти к нотариусу</a>' +
+                                    '</div>' +
+                                    '';
+                                infowindow.close();
+                                infowindow.setContent(cString);
+                                infowindow.open(marker, this);
+                                //console.log(this);
+                            });
+//    $('#nL').html(data);
+
+        if(q.msg_info[iz].profPhoto==""){
+           img = '<div class="filter-notary-list__image-wrap">' +
+               '<img src="/img/man.png" alt="photo" class="filter-notary-list__image">' +
+               '</div>'
+        }else{
+            img = '<div class="filter-notary-list__image-wrap">' +
+                '<img src="/webroot/uploads/'+q.msg_info[iz].login+'/photo/'+q.msg_info[iz].profPhoto+'" class="filter-notary-list__image">' +
+                '</div>'
+        }
+        if(q.msg_info[0].rating==""){
+
+        }
+        else{
+            ra = parseFloat(q.msg_info[iz].rating)*20;
+        }
+
+
+    liItem = '<li class="filter-notary-list__item">'+'<a class="filter-notary-list__image-link" href="/notaries/profile/'+q.msg_info[iz].userID+'/">'+
+                            img+
+                            '<p class="filter-notary-list__name">'+q.msg_info[iz].fName + ' ' + q.msg_info[iz].sName + ' ' + q.msg_info[iz].mName+'</p></a>'+
+                            '<div data-star="'+parseFloat(q.msg_info[iz].rating)+'" class="star filter-notary-list__rating">'+
+                            '<div class="star__block star__white"></div>'+
+                            '<div class="star__block star__color" style="width: '+ra+'%;"></div>'+
+                            '</div>'+
+                            '<a href="#" class="filter-notary-list__subway filter-notary-list__link">м.'+q.msg_info[iz].metroName+'</a>'+
+                            '<a href="#" class="filter-notary-list__feedback filter-notary-list__link">'+q.msg_info[iz].couCom+' отзывов </a>'+
+                            '<a href="/notaries/profile/'+q.msg_info[iz].userID+'" class="site-button filter-notary-list__button">Подробнее</a>'+
+                            '</li>';
+    var form=liItem+form;
+    $('.filter-notary-list').html(form);
+
+                       }
+                    }
+                    else{
+                        var markers = JSON.parse('<?php echo $markers;?>');
+                        console.log(markers);
+                        for (var i = 0; i < markers.length; i++){
+
+                            marker = new google.maps.Marker({
+                                position: new google.maps.LatLng(markers[i][0][0], markers[i][0][1]),
+                                title: markers[i].fio,
+                                rating: 'rating : '+parseFloat(markers[i].rating),
+                                url: '/notaries/profile/'+markers[i].id+'/'
+                            });
+                            marker.setMap(map);
+
+                            google.maps.event.addListener(marker, 'click', function() {
+                                var cString = '<div id="content">'+
+                                    '' + this.title + '\n' +
+                                    '<p>'+this.rating+'</p>'+
+                                    '<a href="' + this.url + '">Еще</a>' +
+                                    '</div>'+
+                                    '';
+                                infowindow.close();
+                                infowindow.setContent(cString);
+                                infowindow.open(marker, this);
+                                console.log(this);
+                            });
+
+
+                        }
+
+                    }
+                }
+                /*конец карты*/
+
+            }
+
+        });
+    }
+
+    function callFilter(event) {
+        event.preventDefault();
+        var inputs = $('#notaryFiler').find('input, select').not('#url');
+        var str = Array.prototype.reduce.call(inputs, function(sum, input) {
+            if(input.value !== '') {
+                sum += '&' + encodeURIComponent(input.name) + '=' + input.value ;
+            }
+            return sum;
+
+        }, '?');
+
+        var msg   = $('#notaryFiler').serialize();
+        $.ajax({
+            url: '/webroot/notariesFilter.php',
+            type: "POST",
+            data: msg,
+            success: function onAjaxSuccess(data)
+            {
+                $('#nL').html(data);
+
+                var targetForm = $('#notaryFiler');
+                var urlWithParams = targetForm.attr('action') + str;
+                var origURL = window.location.href;
+                var cleanURL = origURL.substring(0, origURL.indexOf('?'));
+                window.location.href = (cleanURL + urlWithParams).replace('&','');
+                var count = JSON.parse(data);
+
+            }
+        });
+    }
+
+</script>
+
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhMNSbFVMdX7nG3FT8okq6bgnQVja33ug&libraries=places">
+</script>

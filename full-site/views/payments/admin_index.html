@@ -1,0 +1,21 @@
+
+<table class="table table-striped" >
+    <th>Пользователь</th>
+    <th>Номер пользователя</th>
+    <th>Нотариус</th>
+    <th>Номер нотариуса</th>
+    <th>Услуга</th>
+    <th>Цена</th>
+    <th>Дата оплаты</th>
+    <?php foreach($data['listPayments'] as $listPayments) { ?>
+    <tr>
+        <td><b><?=$listPayments['uFio']?></b></td>
+        <td><b><?=$listPayments['mainPhone']?></b></td>
+        <td><b><?=$listPayments['nFio']?></b></td>
+        <td><b><?=$listPayments['login']?></b></td>
+        <td><b><?=$listPayments['name']?></b></td>
+        <td><b><?=$listPayments['cost']?></b></td>
+        <td><b><?=$listPayments['dateTransaction']?></b></td>
+    </tr>
+    <?php }?>
+</table>

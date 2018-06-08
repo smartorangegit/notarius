@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/datapick-classic.time.css" rel="stylesheet">
+    <link href="css/datapick-classic.date.css" rel="stylesheet">
+    <link href="css/datapick-classic.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css"/>
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="import" href="symbol-defs.html">
+    <title>notary-page</title>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+      <!-- include SVG-sprite -->
+      <div w3-include-html="include/sprite.html"></div>  
+      <!-- /// -->
+
+      <section class="head gray-head">
+        <div class="container head-container">
+          <header class="header services-page-header gray-header">
+            <svg class="hamburger-open hamburger-open_gray""><use xlink:href="#menu"></use></svg>
+            <a href="#" class="header__link"><img src="img/zavireno_gray.png" alt="image" class="header__image"></a>
+            <div class="hamburger-content">
+              <button class="header__button header__button_gray header__button-question">Подобрать нотариуса</button>
+              <div class="social header__social">
+                <ul class="social-list">
+                  <li class="social-list__item">
+                    <a href="#" class="social-list__link">
+                      <svg class="social-list__icon social-list__icon_white social-list__icon_viber"><use xlink:href="#viber"></use></svg>
+                    </a>
+                  </li>
+                  <li class="social-list__item">
+                    <a href="#" class="social-list__link">
+                    <svg class="social-list__icon social-list__icon_white social-list__icon_facebook"><use xlink:href="#facebook"></use></svg>
+                    </a>
+                  </li>
+                  <li class="social-list__item">
+                    <a href="#" class="social-list__link">
+                      <svg class="social-list__icon social-list__icon_white social-list__icon_telegram"><use xlink:href="#telegram"></use></svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <ul class="menu header__menu">
+                <li class="menu__item">
+                  <a href="" class="menu__link menu__link_gray">о нас</a>
+                </li>
+                <li class="menu__item menu__item-drop">
+                  <a href="#" class="menu__link menu__link-drop menu__link_gray">как это работает</a>
+                  <ul class="menu-drop menu-drop_border_gray">
+                   <li class="menu-drop__item">
+                      <a href="tutorial-heading" name="tutorial-heading" class="menu-drop__link menu__link_gray">для клиентов</a>
+                    </li>
+                    <li class="menu-drop__item">
+                      <a href="" class="menu-drop__link menu__link_gray">для нотариусов</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="menu__item">
+                  <a href="" class="menu__link menu__link_gray">преимущества</a>
+                </li>
+                <li class="menu__item">
+                  <a href="services.html" class="menu__link menu__link_gray">услуги</a>
+                </li>
+                <li class="menu__item">
+                  <a href="" class="menu__link menu__link_gray">нотариусы</a>
+                </li>
+                <li class="menu__item">
+                  <a href="" class="menu__link menu__link_gray">вопросы</a>
+                </li>
+                <li class="menu__item">
+                  <a href="contact.html" class="menu__link menu__link_gray">контакты</a>
+                </li>
+              </ul>
+              <svg class="hamburger-cansel"><use xlink:href="#cancel"></use></svg>
+
+            </div>
+            <div class="head-client">
+               <p class="client-name">Александ Собко</p>
+               <ul class="client-menu head__client-menu">
+                 <li class="client-menu__item">
+                  <a href="" class="client-menu__link">Личные данные</a>
+                </li>
+                 <li class="client-menu__item">
+                  <a href="#document" class="client-menu__link">Мои документы</a>
+                </li>
+                <li class="client-menu__item">
+                  <a href="#notary-video" class="client-menu__link">Мои видео</a>
+                </li>
+                <li class="client-menu__item">
+                  <a href="#notary-services" class="client-menu__link">Мои услуги</a>
+                </li>
+                <li class="client-menu__item">
+                  <a href="#orders" class="client-menu__link">Мои заказы</a>
+                </li>
+                 <li class="client-menu__item ">
+                  <a href="" class="client-menu__link client-menu__exit">Выход</a>
+                </li>
+               </ul>
+             </div>
+          </header>
+          <ul class="page-name page-name_long">
+            <li class="page-name__item">услуги</li>
+            <li class="page-name__item">нотариусы</li>
+            <li class="page-name__item page-name__item_long page-name__item_font_regular">Нотариусов Нотариус Нотариусович</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="personal-data-wrap">
+        <div class="container">
+          <h2 class="section-heading client-page__section-heading personal-data__section-heading">Личные данные</h2>
+          <div class="personal-data">
+            <ul class="client-menu personal-data__notary-menu">
+              <li class="client-menu__item">
+                <a href="#" class="client-menu__link">Личные данные</a>
+              </li>
+              <li class="client-menu__item">
+                <a href="#document" class="client-menu__link">Мои документы</a>
+              </li>
+              <li class="client-menu__item">
+                <a href="#notary-video" class="client-menu__link">Мои видео</a>
+              </li>
+              <li class="client-menu__item">
+                <a href="#notary-services" class="client-menu__link">Мои услуги</a>
+              </li>
+              <li class="client-menu__item">
+                <a href="#orders" class="client-menu__link">Мои заказы</a>
+              </li>
+              <li class="client-menu__item ">
+                <a href="" class="client-menu__link client-menu__exit">Выход</a>
+              </li>
+            </ul>
+
+            <div class="editing notary-page-editing">
+              <p class="personal-data__subheading notary-page-editing__subheading">Редактирование личных данных</p>
+              <form action="" class="editing-form">
+                <div class="editing-form__input-wrap">
+                  <label for="notary-name" class="editing-form__label">Имя:  </label>
+                  <input id="notary-name" class="editing-form__input" type="text">
+                </div>
+
+                <div class="editing-form__input-wrap">
+                  <label for="notary-name" class="editing-form__label">Фамилия: </label>
+                  <input id="notary-name" class="editing-form__input" type="text">
+                </div>
+
+                <div class="editing-form__input-wrap">
+                  <label for="notary-name" class="editing-form__label">Имя:  </label>
+                  <input id="notary-name" class="editing-form__input" type="text">
+                </div>
+
+                <div class="editing-form__input-wrap">
+                  <label for="notary-name" class="editing-form__label">Фамилия: </label>
+                  <input id="notary-name" class="editing-form__input" type="text">
+                </div>
+                
+                <div class="editing-form__input-wrap">
+                  <label for="notary-name" class="editing-form__label">Имя:  </label>
+                  <input id="notary-name" class="editing-form__input" type="text">
+                </div>
+
+                <div class="editing-form__input-wrap">
+                  <label for="notary-name" class="editing-form__label">Фамилия: </label>
+                  <input id="notary-name" class="editing-form__input" type="text">
+                </div>
+
+                <div class="editing-form__input-wrap">
+                  <label for="notary-name" class="editing-form__label">Имя:  </label>
+                  <input id="notary-name" class="editing-form__input" type="text">
+                </div>
+
+                <div class="editing-form__input-wrap">
+                  <label for="notary-name" class="editing-form__label">Фамилия: </label>
+                  <input id="notary-name" class="editing-form__input" type="text">
+                </div>
+
+                <div class="editing-form__input-wrap">
+                  <label for="notary-name" class="editing-form__label">Имя:  </label>
+                  <input id="notary-name" class="editing-form__input" type="text">
+                </div>
+
+                <div class="editing-form__input-wrap">
+                  <label for="notary-name" class="editing-form__label">Фамилия: </label>
+                  <input id="notary-name" class="editing-form__input" type="text">
+                </div>
+
+                <div class="editing-form__input-wrap">
+                  <label for="notary-name" class="editing-form__label">Имя:  </label>
+                  <input id="notary-name" class="editing-form__input" type="text">
+                </div>
+
+                <div class="editing-form__input-wrap">
+                  <label for="notary-name" class="editing-form__label">Фамилия: </label>
+                  <input id="notary-name" class="editing-form__input" type="text">
+                </div>
+
+                <div class="editing-form__input-wrap">
+                  <label for="notary-name" class="editing-form__label">Имя:  </label>
+                  <input id="notary-name" class="editing-form__input" type="text">
+                </div>
+
+                <div class="editing-form__input-wrap">
+                  <label for="notary-name" class="editing-form__label">Фамилия: </label>
+                  <input id="notary-name" class="editing-form__input" type="text">
+                </div>
+
+                <div class="editing-form__input-wrap">
+                  <label for="notary-name" class="editing-form__label">Имя:  </label>
+                  <input id="notary-name" class="editing-form__input" type="text">
+                </div>
+
+                <div class="editing-form__input-wrap">
+                  <label for="notary-name" class="editing-form__label">Фамилия: </label>
+                  <input id="notary-name" class="editing-form__input" type="text">
+                </div>
+
+                <div class="editing-form__input-wrap">
+                  <label for="notary-name" class="editing-form__label">Имя:  </label>
+                  <input id="notary-name" class="editing-form__input" type="text">
+                </div>
+
+                <div class="editing-form__input-wrap">
+                  <label for="notary-name" class="editing-form__label">Фамилия: </label>
+                  <input id="notary-name" class="editing-form__input" type="text">
+                </div>
+
+                <div class="editing-form__input-wrap">
+                  <label for="notary-name" class="editing-form__label">Имя:  </label>
+                  <input id="notary-name" class="editing-form__input" type="text">
+                </div>
+
+                <div class="editing-form__input-wrap">
+                  <label for="notary-name" class="editing-form__label">Фамилия: </label>
+                  <input id="notary-name" class="editing-form__input" type="text">
+                </div>
+              </form>
+              <button class="site-button personal-data__button">Сохранить</button>
+            </div>
+
+            <div class="notary-data-wrapper">
+              <div class="notary-page-password">
+                <div class="personal-data-password notary-page-password-content">
+                <p class="personal-data__subheading personal-data-password__subheading">Смена пароля</p>
+                <label for="personal-data-password__old" class="personal-data-password__old personal-data-password__label">Старий пароль: </label>
+                <input id="personal-data-password__old" class="personal-data-password__old personal-data-password__input" type="password">
+
+                <label for="personal-data-password__new" class="personal-data-password__new personal-data-password__label">Новый пароль: </label>
+                <input id="personal-data-password__new" class="personal-data-password__new personal-data-password__input" type="password">
+
+                <label for="personal-data-password__confirm" class="personal-data-password__confirm personal-data-password__label">Подтвердите новый пароль: </label>
+                <input id="personal-data-password__confirm" class="personal-data-password__confirm personal-data-password__input" type="password">
+              </div>
+              <button class="site-button personal-data__button">Сохранить</button>
+            </div>
+            <div class="notary-page-photo">
+              <p class="notary-page-photo__heading">Загрузить/сменить фото профиля:</p>
+              <img src="img/border-man.png" alt="photo" class="notary-page-photo__image">
+              <p class="notary-page-photo__info">Фаил не выбран</p>
+              <div class="notary-page-photo-add">
+                <label for="photo-add" class="notary-page-photo-add__label">Выбрать файл</label>
+                <input id="photo-add" class="notary-page-photo-add__input" type="file">
+              </div>
+              <button class="site-button notary-page-photo__button">Загрузить</button>
+            </div>
+          </div>
+            </div>
+        </div>
+      </section>
+
+
+      <section id="document" class="document">
+        <div class="container">
+          <h2 class="section-heading client-page__section-heading document__section-heading">Мои документы</h2>
+          <div class="document-container">
+            <div class="document-add">
+              <ul class="document-add-list">
+                <li class="document-add-list__item">
+                  <div class="document-add-list__name-wrap">
+                    <span class="document-add-list__name">Документы для нотариуса для нотариуса</span>
+                    <img src="img/client-page/remove.png" alt="remove" class="document-add-list__icon">
+                  </div>
+                  <p class="document-add-list__size">1 Кб .png</p>
+                </li>
+              </ul>
+              <div class="document-add-buttons">
+                <div class="document-add-buttons__add">
+                  <label for="document-add__file" class="document-add-buttons__label"></label>
+                  <input id="document-add__file" class="document-add-buttons__input" type="file">
+                  <p class="document-add-buttons__text"><span class="document-add-buttons__text_regular">Добавить  файл</span> <br> до 2 Гб</p>
+                </div>
+                <button class="site-button document-add-buttons__load">Загрузить</button>
+              </div>
+            </div>
+            <div class="document-show">
+              <ul class="document-show-list">
+                <li class="document-show-list__item">
+                  <div class="document-show-list-image">
+                    <div class="document-show-list-image-background">
+                      <svg class="document-show-list-image-background__icon"><use xlink:href="#magnifying"></use></svg>
+                    </div> 
+                    <img src="img/client-page/doc2.jpg" alt="doc-image" class="document-show-list-image__image">
+                  </div>
+                  <input type="text" class="document-show-list__input" value="document">
+                </li>
+                <li class="document-show-list__item">
+                  <div class="document-show-list-image">
+                    <div class="document-show-list-image-background">
+                      <svg class="document-show-list-image-background__icon"><use xlink:href="#magnifying"></use></svg>
+                    </div> 
+                    <img src="img/client-page/doc.jpg" alt="doc-image" class="document-show-list-image__image">
+                  </div>
+                  <input type="text" class="document-show-list__input" value="document">
+                </li>
+                <li class="document-show-list__item">
+                  <div class="document-show-list-image">
+                    <div class="document-show-list-image-background">
+                      <svg class="document-show-list-image-background__icon"><use xlink:href="#magnifying"></use></svg>
+                    </div> 
+                    <img src="img/client-page/doc2.jpg" alt="doc-image" class="document-show-list-image__image">
+                  </div>
+                  <input type="text" class="document-show-list__input" value="document">
+                </li>
+                <li class="document-show-list__item">
+                  <div class="document-show-list-image">
+                    <div class="document-show-list-image-background">
+                      <svg class="document-show-list-image-background__icon"><use xlink:href="#magnifying"></use></svg>
+                    </div> 
+                    <img src="img/client-page/doc.jpg" alt="doc-image" class="document-show-list-image__image">
+                  </div>
+                  <input type="text" class="document-show-list__input" value="document">
+                </li>
+                
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="notary-video" class="notary-video">
+        <div class="container">
+          <h2 class="section-heading client-page__section-heading notary-video__section-heading">Мои видео</h2>
+          <div class="notary-video-container">
+            <div class="notary-video-list-wrap">
+              <div class="notary-video-list-content">
+                <div class="notary-video-list__video-wrap">
+                  <div class="video_wrapper video_wrapper_full js-videoWrapper notary-video-list__video">
+                    <iframe class="videoIframe js-videoIframe" src="" frameborder="0" allowTransparency="true" allowfullscreen data-src="https://www.youtube.com/embed/G4cJ4wviwS8?autoplay=1&modestbranding=1&rel=0&hl=ru&showinfo=0&color=white"></iframe>
+                    <button class="videoPoster js-videoPoster"><svg class="notary-video-list__icon"><use xlink:href="#youtube"></use></svg></button>
+                  </div>
+                  <p class="notary-video-list__name">Video name</p>
+                </div>
+                <div class="notary-video-list-del">
+                  <img src="img/notary-page/del-icon.png" alt="del" class="notary-video-list-del__icon">
+                  <p class="notary-video-list-del__text">удалить</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="notary-services" class="notary-page-services">
+        <div class="container clearfix">
+          <h2 class="section-heading client-page__section-heading notary-page-services__section-heading">Услуги</h2>
+          <div class="notary-page-services-select-wrap">
+            <p class="notary-page-services-select__heading">Выберите оказываемые Вами услуги з списка:</p>
+            <div class="select-menu notary-page-services-block notary-page-services-select">
+              <ul class="select-menu-list">
+                <li class="select-menu-list__item select-menu-list__item_active" id="ns1">
+                  Удостоверение договора
+                </li>
+                <li class="select-menu-list__item" id="ns2">
+                  Удостоверение доверенности
+                </li>
+                <li class="select-menu-list__item" id="ns3">
+                  Наследство
+                </li>
+                <li class="select-menu-list__item" id="ns4">
+                  Завещания
+                </li>
+                <li class="select-menu-list__item" id="ns5">
+                  Свидетельствование достоверности
+                   подписи на документах
+                </li>
+                <li class="select-menu-list__item" id="ns6">
+                  Другие нотариальные действия
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="notary-page-services-selected-wrap">
+            <p class="notary-page-services-select__heading notary-page-services-selected__heading">Выберите оказываемые Вами услуги з списка:</p>
+            <div class="notary-page-services-block notary-page-services-selected">
+                <ul class="notary-page-services-selected-list">
+                  <!-- <li class="notary-page-services-selected-list__item">
+                    <div class="notary-page-services-selected-list__item-content">
+                      <img src="img/notary-page/remove.png" alt="remove" class="notary-page-services-selected-list__image">
+                      <p class="notary-page-services-selected-list__text">Удостоверение договора:</p>
+                    </div>
+
+                    <ul class="notary-page-services-selected-droplist">
+                      <li class="notary-page-services-selected-droplist__item">
+                        <div class="notary-page-services-selected-droplist__item-content">
+                          <img src="img/notary-page/remove.png" alt="remove" class="notary-page-services-selected-droplist__image">
+                          <p class="notary-page-services-selected-droplist__text">- купли-продажи, дарения, мены...недвижемого имущества</p>
+                        </div>
+                      </li>
+                      <li class="notary-page-services-selected-droplist__item">
+                        <div class="notary-page-services-selected-droplist__item-content">
+                          <img src="img/notary-page/remove.png" alt="remove" class="notary-page-services-selected-droplist__image">
+                          <p class="notary-page-services-selected-droplist__text">- купли-продажи, дарения, мены...недвижемого имущества</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </li> -->
+                </ul>
+                <button class="site-button notary-page-services-selected__button">Добавить в мои услуги</button>
+            </div>
+          </div>
+
+          <div class="notary-page-services-table-container">
+             <p class="notary-page-services-select__heading notary-page-services-table__heading">Мои услуги</p>
+
+            <div class="notary-page-services-table-wrap"> 
+              <ul class="notary-page-services-table-head">
+                <li class="notary-page-services-table-head__cell notary-page-services-table-head__cell_wide">Название услуги</li>
+                <li class="notary-page-services-table-head__cell">Цена услуги</li>
+                <li class="notary-page-services-table-head__cell notary-page-services-table-head__cell_middle">Цена доп. услуг</li>
+                <li class="notary-page-services-table-head__cell">Удалить услугу</li>
+              </ul>
+              <div class="notary-page-services-table_padding">
+                <div class="notary-page-services-table_scroll">
+                  <table  class="notary-page-services-table">
+                    <tbody class="notary-page-services-table-body">
+                      <tr class="notary-page-services-table__row">
+                        <td class="notary-page-services-table__cell notary-page-services-table__cell_wide">Покупка квартиры</td>
+                        <td class="notary-page-services-table__cell">500</td>
+                        <td class="notary-page-services-table__cell notary-page-services-table__cell_middle">100</td>
+                        <td class="notary-page-services-table__cell">
+                          <img src="img/notary-page/remove.png" alt="remove" class="order-table__icon">
+                        </td>
+                      </tr>
+                      <tr class="notary-page-services-table__row">
+                        <td class="notary-page-services-table__cell notary-page-services-table__cell_wide">Покупка квартиры</td>
+                        <td class="notary-page-services-table__cell">500</td>
+                        <td class="notary-page-services-table__cell notary-page-services-table__cell_middle">100</td>
+                        <td class="notary-page-services-table__cell">
+                          <img src="img/notary-page/remove.png" alt="remove" class="notary-page-services-table__icon">
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+
+        </div>
+      </section>
+
+      <section id="orders" class="сlient-page-orders">
+        <div class="container">
+          <h2 class="section-heading client-page__section-heading сlient-page-orders__section-heading">Мои заказы</h2>
+          <div class="notary-page-orders">
+            <ul class="order-table-head order-table__row notary-all-order-thead">
+              <li class="order-table-head__item notary-all-order-thead-col-1">услуга</li>
+              <li class="order-table-head__item notary-all-order-thead-col-2">дата</li>
+              <li class="order-table-head__item notary-all-order-thead-col-3">вермя</li>
+              <li class="order-table-head__item notary-all-order-thead-col-4">сумма</li>
+              <li class="order-table-head__item notary-all-order-thead-col-5">статус</li>
+              <li class="order-table-head__item notary-all-order-thead-col-6">оплата</li>
+            </ul>
+            <div class="notary-page-orders-padding">
+              <div class="order-table-wrap notary-page-orders-scroll">
+                <table  class="order-table">
+                  <tbody class="order-table-body">
+                    <tr class="order-table__row">
+                      <td class="order-table__cell order-table__cell_wide">Покупка квартиры</td>
+                      <td class="order-table__cell order-table__cell_middle">17.03.2018</td>
+                      <td class="order-table__cell order-table__cell_middle">16:30</td>
+                      <td class="order-table__cell order-table__cell_middle">500</td>
+                      <td data-status="1" class="order-status order-table__cell order-table__cell_narrow">новый</td>
+                      <td data-status="1" class="order-status order-table__cell order-table__cell_narrow">ожидается оплата</td>
+                    </tr> 
+                  </tbody>
+                </table>
+              </div> 
+            </div>
+          </div>  
+
+
+
+
+
+          <h2 class="section-heading client-page__section-heading сlient-page-orders__section-heading">Мои заказы</h2>
+          <div class="notary-page-orders notary-available-order">
+            <ul class="order-table-head order-table__row notary-available-order-thead">
+              <li class="order-table-head__item notary-available-order-thead-col-1">услуга</li>
+              <li class="order-table-head__item notary-available-order-thead-col-2">дата</li>
+              <li class="order-table-head__item notary-available-order-thead-col-3">вермя</li>
+              <li class="order-table-head__item notary-available-order-thead-col-4">сумма</li>
+              <li class="order-table-head__item notary-available-order-thead-col-5">финальная сумма</li>
+              <li class="order-table-head__item notary-available-order-thead-col-6">на дом</li>
+              <li class="order-table-head__item notary-available-order-thead-col-7">комментарии</li>
+              <li class="order-table-head__item notary-available-order-thead-col-8"></li>
+            </ul>
+            <div class="notary-page-orders-padding">
+              <div class="order-table-wrap notary-page-orders-scroll notary-available-order-scroll">
+                <!-- <table  class="order-table notary-available-order-tabel"> -->
+                  <!-- <tbody class="order-table-body"> -->
+                    <div class="notary-available-order-tabel">
+                      <div class="order-table__cell order-table__cell_wide">
+                        <input type="text" class="notary-available-order__input" placeholder="Покупка квартиры" readonly>
+                      </div>
+                      <div class="order-table__cell notary-available-order-body-middle">
+                         <input type="text" class="notary-available-order__input" placeholder="17.11.18" readonly>
+                      </div>
+                      <div class="order-table__cell order-table__cell_narrow">
+                        <input type="text" class="notary-available-order__input" placeholder="17:20" readonly>
+                      </div>
+                      <div class="order-table__cell order-table__cell_narrow">
+                          <input type="text" class="notary-available-order__input" placeholder="500" readonly>
+                      </div>
+                      <div class="order-table__cell order-table__cell_narrow">
+                        <input type="text" class="notary-available-order__input" placeholder="700" readonly>
+                      </div>
+                      <div class="order-table__cell order-table__cell_narrow">
+                        <input id="table__checkbox-label" type="checkbox" class="table__checkbox-input">
+                        <label for="table__checkbox-label"></label>
+                      </div>
+                      <div class="order-table__cell order-table__cell_wide">
+                        <textarea class="notary-available-order__input notary-available-order__text-area" readonly></textarea>
+                      </div>
+                      <div class="order-table__cell order-table__cell_narrow">
+                        <button class="site-button notary-available-order__button">go</button>
+                      </div>
+                    </div> 
+                    <div class="notary-available-order-tabel">
+                      <div class="order-table__cell order-table__cell_wide">
+                        <input type="text" class="notary-available-order__input" placeholder="Покупка квартиры" readonly>
+                      </div>
+                      <div class="order-table__cell notary-available-order-body-middle">
+                         <input type="text" class="notary-available-order__input" placeholder="17.11.18" readonly>
+                      </div>
+                      <div class="order-table__cell order-table__cell_narrow">
+                        <input type="text" class="notary-available-order__input" placeholder="17:20" readonly>
+                      </div>
+                      <div class="order-table__cell order-table__cell_narrow">
+                          <input type="text" class="notary-available-order__input" placeholder="500" readonly>
+                      </div>
+                      <div class="order-table__cell order-table__cell_narrow">
+                        <input type="text" class="notary-available-order__input" placeholder="700" readonly>
+                      </div>
+                      <div class="order-table__cell order-table__cell_narrow">
+                        <input id="table__checkbox-label" type="checkbox" class="table__checkbox-input">
+                        <label for="table__checkbox-label"></label>
+                      </div>
+                      <div class="order-table__cell order-table__cell_wide">
+                        <textarea class="notary-available-order__input notary-available-order__text-area" readonly></textarea>
+                      </div>
+                      <div class="order-table__cell order-table__cell_narrow">
+                        <button class="site-button notary-available-order__button">go</button>
+                      </div>
+                    </div>
+                  <!-- </tbody> -->
+                <!-- </table> -->
+              </div> 
+            </div>
+          </div>  
+        </div>
+      </section>  
+
+    <div class="asd">
+      <input type="checkbox" id="form__checkbox" class="form__checkbox">
+      <label for="form__checkbox" class="form__checkbox-label"></label>
+    </div>
+
+      <section class="document-full">
+        <div class="container">
+          <div class="document-full-container">
+            <div class="document-full-slider-wrap">
+              <div class="document-full-slider-nav-wrap">
+                <button class="document-full-slider-nav document-full-slider-nav__prev">
+                  <img src="img/main/slider-white-nav.png" alt="next" class="document-full-slider-nav__image">
+                </button>
+                <button class="document-full-slider-nav document-full-slider-nav__next">
+                  <img src="img/main/slider-white-nav.png" alt="next" class="document-full-slider-nav__image">
+                </button>
+              </div>
+              <div class="document-full-slider-cansel">
+                <a href="#" download class="document-full-slider-cansel__link">
+                  <img src="img/client-page/download.png" alt="download" class="document-full-slider-cansel__icon">
+                </a>
+                <img src="img/client-page/cansel.png" alt="download" class="document-full-slider-cansel__icon document-full-slider-cansel__cansel">
+              </div>
+              <div class="document-full-slider-zoom">
+                <img src="img/client-page/zoom-.png" alt="download" class="document-full-slider-zoom__icon document-full-slider-zoom__minus">
+                <img src="img/client-page/zoom+.png" alt="download" class="document-full-slider-zoom__icon document-full-slider-zoom__plus">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
+       <div class="footer-clear"></div>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-list-wrap">
+          <ul class="footer-list footer-services-list">
+            <li class="footer-list__item footer-list__heading footer-services-list__heading">
+              Сервис
+            </li>
+            <li class="footer-list__item">
+              <a href="#" class="footer-list__link">О нас</a>
+            </li>
+            <li class="footer-list__item">
+              <a href="#" class="footer-list__link">О рейтинге</a>
+            </li>
+            <li class="footer-list__item">
+              <a href="#" class="footer-list__link">Партнерам</a>
+            </li>
+            <li class="footer-list__item">
+              <a href="#" class="footer-list__link">Правила сервиса</a>
+            </li>
+            <li class="footer-list__item">
+              <a href="#" class="footer-list__link">Политика конфиденциальности</a>
+            </li>
+          </ul>
+
+          <ul class="footer-list footer-client-list">
+            <li class="footer-list__item footer-list__heading footer-client-list__heading">
+              Клентам
+            </li>
+            <li class="footer-list__item">
+              <a href="#" class="footer-list__link">Нотариусы</a>
+            </li>
+            <li class="footer-list__item">
+              <a href="#" class="footer-list__link">Акции и скидки</a>
+            </li>
+            <li class="footer-list__item">
+              <a href="#" class="footer-list__link">Нотариальные услуги</a>
+            </li>
+          </ul>
+
+          <ul class="footer-list footer-phone-list">
+            <li class="footer-list__item footer-list__heading footer-phone-list__heading">
+              Звоните нам
+            </li>
+            <li class="footer-list__item">
+              С  Пн.-Вс. с 9:00 до 20:00
+            </li>
+            <li class="footer-list__item">
+              <a href="tel:+3 8 (044) 990 60 08" class="footer-list__link footer-phone-list__link">+3 8 (044) 990 60 08</a>
+              <a href="tel:+3 8 (097) 555 99 99" class="footer-list__link">+3 8 (097) 555 99 99</a>
+            </li>
+            <li class="footer-list__item">
+              <a href="tel:+3 8 (093) 555 99 99" class="footer-list__link footer-phone-list__link">+3 8 (093) 555 99 99</a>
+              <a href="tel:+38 (095) 555 99 99" class="footer-list__link">+3 8 (095) 555 99 99</a>
+            </li>
+          </ul>
+        </div>
+
+        <p class="footer__text">Использование материалов разрешено только при наличии активной ссылки на источник</p>
+        <p class="footer__copyright">Zavireno, 2018 Все права защищены.</p>
+        <div class="smart-orange">
+          <p class="smart-orange__text">Сайт разработан компанией</p>
+          <a href="http://smartorange.com.ua/" target="_blanc" class="smart-orange__link">
+            <img src="img/logo1.svg" alt="smart-orange" class="smart-orange__image">
+          </a>
+        </div>
+      </div>
+    </footer>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/libraries/datapicker/picker.js"></script>
+    <script src="js/libraries/datapicker/picker.time.js"></script>
+    <script src="js/libraries/datapicker/picker.date.js"></script>
+    <script src="js/libraries/slick.min.js"></script>
+    <script src="js/libraries/jquery.maskedinput.min.js"></script>
+    <script src="js/w3-html-include.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/client-page.js"></script>
+    <script src="js/notary-page.js"></script>
+    <script src="js/notary-page-select-services.js"></script>
+
+  </body>
+</html>

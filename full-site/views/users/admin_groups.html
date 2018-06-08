@@ -1,0 +1,98 @@
+<?php
+header('Cache-Control: no cache');
+$param = App::getRouter()->getParams();
+if(!$param){?>
+<div class="service-add">
+    <h3 class="section-heading">Добавление списка групп нотариусов</h3>
+    <form action="" method="post" class="form-group">
+        <div class="row">
+            <div class="form-group col-sm-3">
+                <input type="text" class="form-control" name="name" placeholder="Название группы" required><br>
+            </div>
+            <div class="form-group col-sm-4">
+                <textarea name="message" class="form-control" placeholder="Описание к группе"></textarea>
+            </div>
+            <a  href="/admin/users/tax/<?=$data['id']?>"><button class="btn btn-primary col-sm-1">Добавить</button></a>
+        </div>
+    </form>
+</div>
+
+<h3 class="section-heading">Таблица со списком групп нотариусов</h3>
+
+<div class="limiter queries_margin_top">
+    <div class="container-table100">
+        <div class="wrap-table100">
+
+            <div class="table100 ver6 m-b-110">
+                <table data-vertable="ver6">
+                    <thead>
+                    <tr class="row100 head">
+                        <th class="column100 column1 user-list-th" data-column="column1">Номер</th>
+                        <th class="column100 column2 user-list-th" data-column="column2">Название</th>
+                        <th class="column100 column3 user-list-th" data-column="column3">Сообщение</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php foreach($data['main'] as $item) { ?>
+                    <tr class="row100">
+                        <td class="column100 column1 admin-serv-td" data-column="column1">
+                            <a class='cell__link' href="/admin/users/groups/<?=$item['id']?>"><?=$item['id']?></a>
+                        </td>
+
+                        <td class="column100 column2 admin-serv-td" data-column="column2">
+                            <a class='cell__link' href="/admin/users/groups/<?=$item['id']?>"><?=$item['name']?></a>
+                        </td>
+
+                        <td class="column100 column3 admin-serv-td" data-column="column3">
+                            <a class='cell__link' href="/admin/users/groups/<?=$item['id']?>"><?=$item['descriptionAbout']?></a>
+                        </td>
+                    </tr>
+                    <?php } ?>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+<?}
+else{?>
+    <div style="display: inline-flex; width: 100%">
+        <div style="display: block; width: 30%;">
+        <label>Название группы</label>
+        <select class="form-control" size="5"  name="group">
+            <option name="<?=$data['notaryGroupByID']['id'];?>"><?=$data['notaryGroupByID']['name'];?></option>
+        </select>
+        </div>
+        <div style="display: block; width: 30%;">
+            <form action="" method="post">
+        <label>Нотариусы этой группы</label>
+        <select class="form-control" size="5" multiple name="notaryDell[]">
+            <?php foreach($data['notariesIn'] as $item){?>
+            <option value="<?=$item['id'];?>"><?=$item['fName'];?></option>
+            <?}?>
+        </select>
+                <button type="submit" class="btn btn-danger">Очистить</button>
+            </form>
+        </div>
+        <div style="display: block; width: 30%;">
+            <form action="" method="post">
+
+        <label>Все нотариусы</label>
+        <select class="form-control" size="5"  multiple name="notaryList[]" >
+            <?php foreach($data['notaryList'] as $notary){?>
+            <option value="<?=$notary['id'];?>"><?=$notary['fName'];?></option>
+            <?}?>
+        </select>
+                <button type="submit">Добавить</button>
+            </form>
+        </div>
+    </div>
+    <br>
+<input type="button" class="btn" onclick="history.back()" value="Назад">
+<?php
+   foreach($data['notariesIn'] as $item){
+    //print_r($item);
+   }
+   }
+?>

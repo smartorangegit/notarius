@@ -1,0 +1,426 @@
+
+@media screen and (min-width: 320px) and (max-width: 599px) {
+	.filter-result__heading {
+		background-color: #fff;
+		color: $dark-gray;
+		text-align: center;
+		margin-bottom: 20px;
+	}
+
+	.filter-mobile-open__button {
+		display: flex;
+	}
+
+	.sidebar__button {
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+
+		&_top {
+			display: none;
+		}
+	}
+	
+	.search-title__show {
+		width: 10%;
+	}
+
+	.search-title__name {
+		width: 85%;
+	}
+
+	.search-tag_margin {
+		margin-bottom: 15px;
+	}
+
+	.search-tag:after {
+		width: 85%;
+	}
+
+	.filter-container {
+		flex-direction: column;
+	}
+
+	.sidebar {
+		display: none;
+		width: 100%;
+		margin-right: 0;
+		padding: 0 15px;
+		box-sizing: border-box;
+	}
+
+	.filter-result {
+		width: 100%;
+
+		&__heading {
+			display: none;
+
+			&-mobile {
+				display: block;
+			}
+		}
+	}
+
+	.filter-meta {
+		display: none;
+		padding-bottom: 23px;
+		margin-bottom: 15px;
+
+		&-text {
+			display: none;
+		}
+
+		&-button-list {
+			margin-bottom: 15px;
+			justify-content: space-between;
+			flex-wrap: wrap;
+
+			&__item {
+				width: 48%;
+				max-width: 50%;
+				justify-content: space-between;
+
+				&:nth-child(2n) {
+					margin-right: 0;
+				}
+			}
+		}
+
+		&__button {
+			bottom: 15px;
+			right: 50%;
+			transform: translateX(50%);
+		}
+	}
+
+	.filter-content {
+		&-map {
+			height: 300px;
+			margin-bottom: 15px;
+		} 
+	}
+
+	.filter-notary-list {
+		&__item {
+			width: 100%;
+			margin-right: 0;
+		}
+
+		&__image-wrap {
+			width: 80%;
+			margin: 0 auto 10px auto;
+			height: 247px;
+		}
+
+		&__name {
+			height: 25px;
+		}
+	}
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+	.metro-map	{
+		width: 90%;
+		padding: 0 0 15px 0;
+
+		&__heading {
+			height: 55px;
+		}
+
+		.red {
+			border-left: 4px solid red;
+			height: 450px;
+			margin-bottom: 30px;
+		}
+
+		.blue {
+			border-left: 4px solid blue;
+			height: 450px;
+			margin-bottom: 30px;
+		}
+
+		.green {
+			border-left: 4px solid green;
+			height: 400px;
+		}
+
+		&__close {
+			top: 65px;
+		}
+
+		&__map {
+			margin-bottom: 20px;
+			position: relative;
+			height: 300px;
+			width: 100%;
+			background-image: none;
+			background-color: #fff;
+			overflow-y: auto;
+			padding-left: 15px;
+			box-sizing: border-box;
+
+			&::-webkit-scrollbar {
+				width: 7px;
+			}
+
+			&::-webkit-scrollbar-thumb {
+				background-color: $blue;
+				border-radius: 10px;
+
+			}
+
+			&::-webkit-scrollbar-track {
+				border: 1px solid $blue;
+				border-radius: 10px;
+			}
+		}
+
+		&__label {
+			&:before {
+				position: absolute;
+				left: -10px;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 10px;
+				height: 4px;
+				content: " ";
+			} 
+		}
+	}
+
+	.color-red {
+		&:before {
+			background-color: red;
+		}
+	}
+
+	.color-blue {
+		&:before {
+			background-color: blue;
+		}
+	}
+
+	.color-green {
+		&:before {
+			background-color: green;
+		}
+	}
+
+	.color-red-mob {
+		&-1 {
+			left: 18px;
+			top: 0px;
+		}
+		&-2 {
+			left: 18px;
+			top: 25px;
+		}
+		&-3 {
+			left: 18px;
+			top: 50px;
+		}
+		&-4 {
+			left: 18px;
+			top: 75px;
+		}
+		&-5 {
+			left: 18px;
+			top: 100px;
+		}
+		&-6 {
+			left: 18px;
+			top: 125px;
+		}
+		&-7 {
+			left: 18px;
+			top: 150px;
+		}
+		&-8 {
+			left: 18px;
+			top: 175px;
+		}
+		&-9 {
+			left: 18px;
+			top: 200px;
+		}
+		&-10 {
+			left: 18px;
+			top: 225px;
+		}
+		&-11 {
+			left: 18px;
+			top: 250px;
+		}
+		&-12 {
+			left: 18px;
+			top: 275px;
+		}
+		&-13 {
+			left: 18px;
+			top: 300px;
+		}
+		&-14 {
+			left: 18px;
+			top: 325px;
+		}
+		&-15 {
+			left: 18px;
+			top: 350px;
+		}
+		&-16 {
+			left: 18px;
+			top: 375px;
+		}
+		&-17 {
+			left: 18px;
+			top: 400px;
+		}
+		&-18 {
+			left: 18px;
+			top: 425px;
+		}
+	}
+
+
+	.color-blue-mob {
+		&-19 {
+			left: 18px;
+			top: 480px;
+		}
+		&-20 {
+			left: 18px;
+			top: 505px;
+		}
+		&-21 {
+			left: 18px;
+			top: 530px;
+		}
+		&-22 {
+			left: 18px;
+			top: 555px;
+		}
+		&-23 {
+			left: 18px;
+			top: 580px;
+		}
+		&-24 {
+			left: 18px;
+			top: 605px;
+		}
+		&-25 {
+			left: 18px;
+			top: 630px;
+		}
+		&-26 {
+			left: 18px;
+			top: 655px;
+		}
+		&-27 {
+			left: 18px;
+			top: 680px;
+		}
+		&-28 {
+			left: 18px;
+			top: 705px;
+		}
+		&-29 {
+			left: 18px;
+			top: 730px;
+		}
+		&-30 {
+			left: 18px;
+			top: 755px;
+		}
+		&-31 {
+			left: 18px;
+			top: 780px;
+		}
+		&-32 {
+			left: 18px;
+			top: 805px;
+		}
+		&-33 {
+			left: 18px;
+			top: 830px;
+		}
+		&-34 {
+			left: 18px;
+			top: 855px;
+		}
+		&-35 {
+			left: 18px;
+			top: 880px;
+		}
+		&-36 {
+			left: 18px;
+			top: 905px;
+		}
+	}
+
+	.color-green-mob {
+		&-37 {
+			left: 18px;
+			top: 960px;
+		}
+		&-38 {
+			left: 18px;
+			top: 985px;
+		}
+		&-39 {
+			left: 18px;
+			top: 1010px;
+		}
+		&-40 {
+			left: 18px;
+			top: 1035px;
+		}
+		&-41 {
+			left: 18px;
+			top: 1060px;
+		}
+		&-42 {
+			left: 18px;
+			top: 1085px;
+		}
+		&-43 {
+			left: 18px;
+			top: 1110px;
+		}
+		&-44 {
+			left: 18px;
+			top: 1135px;
+		}
+		&-45 {
+			left: 18px;
+			top: 1160px;
+		}
+		&-46 {
+			left: 18px;
+			top: 1185px;
+		}
+		&-47 {
+			left: 18px;
+			top: 1210px;
+		}
+		&-48 {
+			left: 18px;
+			top: 1235px;
+		}
+		&-49 {
+			left: 18px;
+			top: 1260px;
+		}
+		&-50 {
+			left: 18px;
+			top: 1285px;
+		}
+		&-51 {
+			left: 18px;
+			top: 1310px;
+		}
+		&-52 {
+			left: 18px;
+			top: 1335px;
+		}
+	}
+}

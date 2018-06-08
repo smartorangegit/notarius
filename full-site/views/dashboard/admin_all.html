@@ -1,0 +1,150 @@
+<?php
+header('Cache-Control: no cache');
+$param = App::getRouter()->getParams();
+if(!$param){
+?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<div id="res" ></div>
+<script>
+    $( document ).ready(function() {
+        timerId;
+    });
+    var request = new XMLHttpRequest();
+
+    function reqReadyStateChange() {
+        if (request.readyState == 4) {
+            var status = request.status;
+            if (status == 200) {
+                console.log(request);
+                if (request.responseText != "") {
+                    $('#res').html(request.responseText);
+                    
+                    statusColor(); //dashboard_status_color
+
+                }
+            }
+        }
+    }
+
+    var timerId = setInterval(function() {
+        request.open("GET", "/webroot/getFull.php");
+        request.onreadystatechange = reqReadyStateChange;
+        request.send();
+    }, 2000);
+</script>
+<?}
+else{?>
+    <form method="post" action="" class="col-sm-6 col-sm-offset-3">
+        <?if(!empty($data['getDealByID']['notaryID'])){?>
+        <div class="group-control">
+            <div class="row">
+                <div class="col-sm-12">
+                    <input type="hidden" name="dealID" value="<?=$data['getDealByID']['deID'];?>">
+                    <div class="form-group">
+                        <div>
+                            <label for="namenot">Нотариус:</label>
+                            <a href="/admin/users/list_notary/<?=$data['getDealByID']['notaryID']?>/" id="namenot"><?=$data['getDealByID']['fNA'].' '.$data['getDealByID']['sNA'].' '.$data['getDealByID']['mNA']?></a>
+                        </div>
+                        <div>
+                            <label for="numnot">Номер Нотариуса:</label>
+                            <input type="text" id="numnot" class="form-control" value="<?=$data['getDealByID']['login']?>" readonly>
+                        </div>
+                    </div>
+                </div>
+                        <?}?>
+                        <div class='form-group col-sm-12 col-lg-12'>
+                            <label>Пользователь:</label>
+                            <a href='/admin/users/list_c_users/<?=$data["getDealByID"]["userID"]?>/'><?=$data['getDealByID']['fName'] . ' ' . $data['getDealByID']['sName'] . '
+                 ' . $data['getDealByID']['mName']?></a>
+                <div class="form-group">
+                    <label for="name">Услуга:</label>
+                    <input type="text" id="name" class="form-control" value="<?=$data['getDealByID']['name']?>" readonly>
+                </div>
+                <div class="row">
+                    <div class="form-group col-sm-3">
+                        <label for="date">Дата:</label>
+                        <input type="text" id="date" class="form-control" value="<?=$data['getDealByID']['dateOf']?>" readonly>
+                    </div>
+                    <div class="form-group col-sm-3">
+                        <label for="time">Время:</label>
+                        <input type="text" id="time" class="form-control" value="<?=$data['getDealByID']['timeOf']?>" readonly>
+                    </div>
+                    <div class="form-group col-sm-3">
+                        <label for="sum">Сумма:</label>
+                        <input type="text" id="sum" class="form-control" value="<?=$data['getDealByID']['cost']?>" readonly>
+                    </div>
+                    <div class="form-group col-sm-3">
+                        <label for="fsum">Фин. Сумма:</label>
+                        <input type="text" id="fsum" class="form-control" value="<?=$data['getDealByID']['finalCost']?>" readonly>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class='form-group col-sm-6'>
+                        <label >Статус:</label>
+                        <select name="state" class='form-control' id="transactionStatus" data-stat="<?=$data['getDealByID']['transactionStatus']?>">
+                            <option value="1">Новая</option>
+                            <option value="2">Обработана</option>
+                            <option value="3">Назначена</option>
+                            <option value="3">Состоялась</option>
+                            <option value="4">Отменена</option>
+                        </select>
+                    </div>
+                    <div style="margin-top: 25px;" class="col-sm-6">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <input type="checkbox" id="place" value="<?=$data['getDealByID']['place']?>">                    
+                            </span>
+                            <input class="form-control" type="text" value="На дому" readonly/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-success btn-block" value="Обработать">
+                </div>
+                
+                                        <!--<div class="gruoup-control">-->
+                <!--<label for="transactionStatus">Статус</label>-->
+                <!--<input type="text" class="form-control" id="transactionStatus" data-stat="<?=$data['getDealByID']['transactionStatus']?>" readonly>-->
+                                        <!--</div>-->
+            </div>
+        </div>
+    </form>
+</div>
+
+
+    <?if(!empty($data['state'])){?>
+        <div class="form-group col-sm-12">
+        <h3 class="text-center">Состояние изменеия сделки</h3>
+        <table class="table table-striped table-bordered" style="width: 100%;">
+            <tr>
+                <th style="width: 10%;">Время изменения</th>
+                <th style="width: 10%;">Дата измеенния</th>
+                <th style="width: 10%;">Состояние</th>
+            </tr>
+            <?php foreach($data['state'] as $item) { ?>
+            <tr>
+                <td><?=$item['timeChange']?></td>
+                <td><?=$item['dateChange']?></td>
+                <td><?
+                if($item['stat']==1){echo "Новая";}
+                elseif($item['stat']==2){echo "Обработана";}
+                elseif($item['stat']==3){echo "Назначена";}
+                elseif($item['stat']==4){echo "Состоялась";}
+                elseif($item['stat']==5){echo "Отменена";}
+                ?></td>
+            </tr>
+            <?php } ?>
+        </table>
+        </div>
+    <?}?>
+
+<script>
+    var x = document.getElementById("place").value;
+    if(x==1){
+        document.getElementById('place').checked = true;
+    }
+    var state = document.getElementById("transactionStatus");
+    state.selectedIndex = state.dataset.stat-1;
+    console.log(state.dataset.stat);
+</script>
+<?}?>

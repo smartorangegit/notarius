@@ -1,0 +1,175 @@
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+	.header {
+		&__button-question {
+			width: 24%;
+			height: 50px;
+			margin-top: 35px;
+		}
+	}
+
+	.social {
+		margin-top: 42px;
+		width: 135px;
+	}
+
+	.form-wrap {
+		width: 100%;
+		height: 75px;
+	}
+
+	.form {
+		&__text {
+			font-size: 0.75rem;
+		}
+
+		&__input {
+			font-size: 0.75rem;
+		}
+
+		&__button {
+			height: 50px;
+			font-size: 0.75rem;
+		}
+	}
+
+	.categories {
+		padding: 20px 0 25px 0;
+
+		&__section-heading {
+			margin-bottom: 25px;
+		}
+	}
+	a.categories-type__link {
+		font-size: 0.8rem;
+	}
+
+	a.categories-subspecies__link {
+		font-size: 0.8rem;
+	}
+
+	.footer {
+
+		&-clear {
+			padding-bottom: 297px;
+		}
+
+		&__text {
+			text-align: center;
+		}
+
+		&-list {
+			&__item {
+				margin-bottom: 12px;
+			}
+		}
+
+		&-services-list {
+
+			&__heading {
+				&:after {
+					width: 100%;
+				}
+			}
+		} 
+
+		&-client-list {
+			&__heading {
+				&:after {
+					width: 140%;
+					left: 80%;
+				}
+			}
+		}
+
+		&-phone-list {
+			&__heading {
+				&:after {
+					width: 75%;
+					left: 55%;
+				}
+			}
+		}
+
+		a.footer-list__link {
+			font-size: 0.7rem;
+		}
+	}
+
+	@media screen and (max-width: 900px) {
+		.container {
+			width: 98%;
+		}
+
+		.footer {
+
+			&-clear {
+				padding-bottom: 297px;
+			}
+
+			&__text {
+				text-align: center;
+			}
+
+			&-list {
+				&__item {
+					margin-bottom: 12px;
+				}
+			}
+
+			&-services-list {
+
+				&__heading {
+					&:after {
+						width: 100%;
+					}
+				}
+			} 
+
+			&-client-list {
+				&__heading {
+					&:after {
+						width: 140%;
+						left: 80%;
+					}
+				}
+			}
+
+			&-phone-list {
+				&__heading {
+					&:after {
+						width: 55%;
+						left: 55%;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1023px) {
+	.popup-form-wrap {
+		width: 40%;
+		height: auto;
+	}
+
+	.gray-header {
+		border-bottom: 1px solid $dark-gray;
+	}
+}
+
+@media screen and (max-width: 960px) {
+
+	.menu {
+		margin-top: -7%;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.menu {
+		&__link {
+			font-size: 1.3rem;
+		}
+	}
+}

@@ -1,0 +1,242 @@
+
+@media screen and (min-width: 600px) and (max-width: 767px) {
+
+	.client-page__section-heading {
+		background-color: #fff;
+		color: $dark-gray;
+		text-align: center;
+	}
+	
+	.personal-data {
+		padding-left: 15px;
+		box-sizing: border-box;
+
+			&__client-menu {
+				display: none;
+			}
+
+		&__editing {
+			width: 40%;
+			margin-right: 5.8%;
+			margin-bottom: 50px;
+		}
+
+		&-password {
+			width: 33%;
+
+			&__input {
+				width: 90%;
+			}
+		}
+
+		&__button {
+			width: 100%;
+			margin-bottom: 0;
+		}
+
+		&__section-heading {
+			margin-bottom: 15px;
+		}
+	}
+		
+	.editing__label, .editing__input {
+		font-size: 0.9rem;
+	}
+
+	.document {
+		&-show {
+			&-list-image {
+				height: 90px;
+			}
+		}
+	}
+
+	.order-table {
+
+		&__cell {
+			font-size: 0.65rem;
+		}
+
+		&-head__item {
+			font-size: 0.65rem;
+		}
+	}
+
+	.orders-name-list__item_active {
+		border-bottom-width: 6px;
+	}
+
+	.order-table-head__item_middle {
+		width: 11.5%;
+	} 
+
+	a.orders-name-list__link {
+		font-size: 0.65rem;
+	}
+
+	a.order-table__link {
+		font-size: 0.65rem;
+	}
+
+	.my-notary {
+		padding-top: 0;
+
+		&-list {
+			flex-direction: column;
+			margin-bottom: 0;
+
+
+			&__item {
+				width: 100%;
+				flex-direction: column;
+				height: auto;
+				margin-bottom: 18px;
+			}
+		}
+
+		&-info {
+			width: 100%;
+			margin: 0 0 20px 0;
+
+			&-rating {
+				width: 30%;
+			}
+		}
+
+		&-order-info {
+			width: 100%;
+
+			&__title {
+				margin-bottom: 9px;
+			}
+		}
+
+		&-pagination {
+			border-bottom: none;
+		}
+	}
+
+	a.my-notary-order-info__link {
+		margin-bottom: 15px;
+	}
+
+	.my-feedback {
+		&__section-heading {
+			margin-bottom: 25px;
+		}
+
+		&-list {
+			&__item {
+				flex-direction: column;
+			}
+		}
+
+		&-notary {
+			width: 100%;
+			margin-right: 0;
+			text-align: left;
+
+			&__photo-wrap {
+				float: left;
+				width: 30%;
+				margin: 0 10px 0 0;
+			}
+
+			&__name {
+				float: left;
+			}
+
+			&__position {
+				float: left;
+				margin-right: 40%;
+				margin-bottom: 7px;
+			}
+
+			&-rating {
+				float: left;
+				display: flex;
+
+				&__text {
+					margin-right: 5px;
+				}
+			}
+		}
+
+		&-info {
+			display: flex;
+			align-items: flex-start;
+			flex-direction: column;
+
+			&__date {
+				font-size: 0.9rem;
+			}
+
+			&__order-name {
+				font-size: 0.9rem;
+				margin-bottom: 4px;
+			}
+
+			&-rating {
+				margin-bottom: 7px;
+
+				&__text {
+					font-size: 0.9rem;
+				}
+			}
+
+			&__button {
+				width: 80%;
+			}
+		}
+
+		&__text-icon {
+				right: 0;
+				bottom: 8px;
+			}
+	}
+	a.my-feedback-info__link {
+		font-size: 0.9rem;
+	}
+
+	.comment__heading {
+		background-color: #fff;
+		color: $dark-gray;
+		text-align: center;
+		font-size: 1.4rem;
+		height: 90px;
+		margin-bottom: 10px;
+	}
+
+	.comment-content {
+		width: 80%;
+
+	}
+
+	.rating-list {
+		margin-bottom: 20px;
+
+		&__item {
+			margin-bottom: 15px;
+		}
+
+		&__text {
+			font-size: 0.8rem;
+			text-align: center;
+		}
+	}
+
+	.dynamic-star {
+		&__item {
+			width: 25px;
+			height: 25px;
+		}
+	}
+
+	.rating-list__item {
+		flex-direction: column;
+	}
+
+	.comment-text {
+		font-size: 0.9rem;
+	}
+}

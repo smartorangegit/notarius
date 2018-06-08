@@ -1,0 +1,180 @@
+<?php
+header('Cache-Control: no cache');
+//print_r($data['params']);
+if(!$data['params']){
+?>
+
+<!-- <h1 class="page-header">Страница создания услуг</h1> -->
+
+<div class="service-add">
+    <h3 class="section-heading">Добавление новой услуги</h3>
+    <form action="" method="post" class="form-group row">
+        <input type="hidden" name="addServices" value="1">
+        <div class="form-group col-sm-3">
+            <label> </label>
+            <input type="text" class="form-control" name="name" placeholder="Название услуги">
+        </div>
+                    <!--<input type="text" class="form-control" name="cost" placeholder="Цена услуги"><br>-->
+        <div class="form-group col-sm-2">
+            <label> </label>
+            <input type="text" class="form-control" name="validity" placeholder="Срок действия">
+        </div>
+        <div class="form-group col-sm-2">
+            <label>Топ услуг</label>
+            <select class="form-control" name="top">
+                <option value="0">Нет</option>
+                <option value="1">Да</option>
+            </select>
+        </div>
+                    <!--<select class="form-control" size="3"  name="additionalID">-->
+                        <!--<option value="1">доп услуга 1</option>-->
+                        <!--<option value="2">доп услуга 2</option>-->
+                        <!--<option value="3">доп услуга 3</option>-->
+                    <!--</select>-->
+        <div class="form-group col-sm-6">
+            <textarea name="description" class="col-sm-12" placeholder="Описание к услуге"></textarea>
+        </div>
+        <button class="btn btn-primary col-sm-1" type="submit">Добавить</button>
+    </form>
+</div>
+
+
+<h3 class="section-heading">Таблица со списком созданных услуг</h3>
+
+<div class="limiter queries_margin_top">
+    <div class="container-table100">
+        <div class="wrap-table100">
+
+            <div class="table100 ver6 m-b-110">
+                <table data-vertable="ver6">
+                    <thead>
+                        <tr class="row100 head">
+                            <th class="column100 column1 user-list-th" data-column="column1">#</th>
+                            <th class="column100 column2 user-list-th" data-column="column2">Название</th>
+                            <th class="column100 column3 user-list-th" data-column="column3">Срок действия</th>
+                            <th class="column100 column4 user-list-th" data-column="column4">Описание</th>
+                            </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach($data['getListServices'] as $item) { ?>
+                            <tr class="row100">
+                                <td class="column100 column1 admin-serv-td" data-column="column1">
+                                    <a class='cell__link' href="/admin/users/services/<?=$item['id']?>">
+                                    <?=$item['id']?></a>
+                                </td>
+
+                                <td class="column100 column2 admin-serv-td" data-column="column2">
+                                    <a class='cell__link' href="/admin/users/services/<?=$item['id']?>"><?=$item['name']?></a>
+                                </td>
+
+                                <td class="column100 column3 admin-serv-td" data-column="column3">
+                                    <a class='cell__link' href="/admin/users/services/<?=$item['id']?>">
+                                   <?=$item['validity']?></a>
+                                </td>
+
+                                <td class="column100 column4 admin-serv-td admin-serv-col-4" data-column="column4">
+                                    <a class='cell__link' href="/admin/users/services/<?=$item['id']?>">
+                                    <?=$item['description']?></a>
+                                </td>
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+                 </table>
+            </div>
+                
+        </div>
+    </div>
+</div>
+
+<?}else{
+echo "<div class='page-header'><h1>Детальная страница услуги</h1></div>"; ?>
+<div class="row well well-lg">
+    <div class="col-md-4">
+        <form action="" method="post">
+            <input type="hidden" name="updServices" value="1">
+            <div class="form-group">
+                <label for="">Название услуги:</label>
+                <input type="text" value="<?=$data['getService']['name']?>" class="form-control" name="name" placeholder="Название услуги">
+            </div>
+            <!--<input type="text" value="<?=$data['getService']['cost']?>" class="form-control" name="cost" placeholder="Цена услуги"><br>-->
+            <div class="form-group">
+                <label for="">Срок действия услуги:</label>
+                <input type="text" value="<?=$data['getService']['validity']?>" class="form-control" name="validity" placeholder="Срок действия">
+            </div>
+            <div class="form-group">
+                <label for="">В топе:</label>
+                <select class="form-control" name="top">
+                    <option value="0" <? if($data['getService']['top']==0){echo 'selected';} ?>>Нет</option>
+                    <option value="1" <? if($data['getService']['top']==1){echo 'selected';}?>>Да</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="">Описание услуги:</label>
+                <textarea style="min-height: 145px;" name="description" class="form-control" placeholder="Описание к услуге"><?=$data['getService']['description']?></textarea>
+            </div>
+            <button class="btn btn-primary btn-block" type="submit">Обновить</button>
+        </form>
+    </div>
+    <div class="col-md-4">
+        <div class="mbottom20">
+            <form action="" method="post">
+                <div class="form-group">
+                    <label>Список выбраных дополнительных услуг:</label>
+                    <select class="form-control" size="5"  name="additionalSDell">
+                        <?foreach($data['getAdditionalS'] as $itemS){?>
+                        <option value="<?=$itemS['id']?>"><?=$itemS['name']?></option>
+                        <?}?>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-danger">Удалить из списка</button>
+            </form>
+        </div>
+        <div>
+            <form action="" method="post">
+                <div class="form-group">
+                    <label>Добавить дополнительную услугу:</label>
+                    <select class="form-control" size="5"  name="additionalSAdd">
+                        <?foreach($data['getListComplementary'] as $itemC){?>
+                        <option value="<?=$itemC['id']?>"><?=$itemC['name']?></option>
+                        <?}?>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-success">Добавить в список</button>
+            </form>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="mbottom20">
+            <form action="" method="post">
+                <div class="form-group">
+                    <label>Список выбраных налогов:</label>
+                    <select class="form-control" size="5"  name="sTaxDell">
+                        <?foreach($data['getLTS'] as $itemLTS){?>
+                        <option value="<?=$itemLTS['id']?>"><?=$itemLTS['name']?></option>
+                        <?}?>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-danger">Удалить из списка</button>
+            </form>
+        </div>
+        <div>
+        <form action="" method="post">
+            <div class="form-group">
+                <label>Добавить дополнительный налог:</label>
+                <select class="form-control" size="5"  name="addStax">
+                    <?foreach($data['getListsTax'] as $itemST){?>
+                    <option value="<?=$itemST['id']?>"><?=$itemST['name']?></option>
+                    <?}?>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-success">Добавить в список</button>
+        </form>
+    </div>
+</div>
+</div>
+</div>
+<input type="button" class="btn" onclick="history.back()" value="Назад">
+<?
+//print_r($data['getService']);
+}?>
+

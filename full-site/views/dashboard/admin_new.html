@@ -1,0 +1,242 @@
+<?php
+header('Cache-Control: no cache');
+$param = App::getRouter()->getParams();
+if(!$param){
+Router::redirect('/admin/dashboard/');
+}
+else{
+?>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <form id="getNL" method="post" action="javascript:void(null);" onsubmit="getNotary()">
+            <div class="form-group col-sm-6">
+                <label for="fio">Поиск по ФИО:</label>
+                <input id="fio" name="fio" type="text" class="form-control" placeholder="Введите ФИО">
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="area">Выбор района:</label>
+                <select id="area" name="area" class="form-control">
+                    <option value="0">Все</option>
+                    <option value="1">Шевченковский</option>
+                    <option value="2">Днепровский</option>
+                </select>
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="limX">От:</label>
+                <input id="limX" name="limX" type="time" class="form-control">
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="limY">До:</label>
+                <input id="limY" name="limY" type="time" class="form-control">
+            </div>
+            <div class="col-sm-12 col-md-10 col-md-offset-1">
+                <div class="form-group col-sm-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <input id="week" name="week" type="checkbox" checked>
+                        </span>
+                        <label for="week" class="form-control">будни</label>
+                    </div>
+                </div>
+                <div class="form-group col-sm-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <input id="sb" name="sb" type="checkbox">
+                        </span>
+                        <label for="sb" class="form-control">в субботу</label>
+                    </div>
+                </div>
+                <div class="form-group col-sm-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <input id="vskr" name="vskr" type="checkbox" >
+                        </span>
+                        <label for="vskr" type="text" class="form-control">в воскресение</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-md-6 col-md-offset-3">
+                <input type="submit" class="btn btn-success btn-block" value="Найти">
+            </div>
+        </form>
+    </div>
+</div>
+<?
+//print_r($data['getDealByID']['groupID'])
+?>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <form id="setNL"  action="javascript:void(null);" onsubmit="setNotary()">
+            <div class="form-group">
+                <select id="nL" multiple='multiple' size="3" class="form-control" style="margin-bottom: 15px;">
+                </select>
+            </div>
+            <div class="col-md-6 col-md-offset-3">
+                <input type="submit" class="btn btn-success btn-block" value="Выбрать нотариусов из списка">
+            </div>
+        </form>
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-body">
+<div class="form-group col-md-3">
+    <label for="notaryGrp">Выбрать группу нотариусов:</label>
+    <select name="notaryGrp"  id="notaryGrp" class="form-control" data-ng="<?=$data['getDealByID']['groupID']?>" onchange="myFunction()">
+        <?foreach($data['notaryGroups'] as $item){?>
+        <option value="<?=$item['id']?>"><?=$item['name'];?></option>
+        <?}?>
+    </select>
+</div>
+        <div class="form-group col-md-3">
+            <label style="height:14px;"></label>
+            <button onclick="addAll()" class="btn btn-primary btn-block">Выбрать всех нотариусов</button>
+        </div>
+    </div>
+</div>
+
+<div id="sucessN"></div>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <form  method="post" id="list" action="javascript:void(null);" onsubmit="call()">
+            <div class="group-control col-md-12">
+                <div class="form-group col-md-4">
+                    <label>Пользователь:</label>
+                    <a href="/admin/users/list_c_users/<?=$data['getDealByID']['userID'];?>">
+                    <?=$data['getDealByID']['fName'].' '.$data['getDealByID']['sName'].' '.$data['getDealByID']['mName']?>
+                    </a>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="user">Номер телефона:</label>
+                    <input type="text" id="user" class="form-control" value="<?=$data['getDealByID']['mainPhone']?>" readonly>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="name">Выбранная услуга:</label>
+                    <input type="text" id="name" class="form-control" value="<?=$data['getDealByID']['name']?>" readonly>
+                    <input type="hidden" name="serviceID" id="serviceID" value="<?=$data['getDealByID']['serviceID'];?>">
+                    <input type="hidden" name="deID" id="deID" value="<?=$data['getDealByID']['deID'];?>">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="date">Дата сделки:</label>
+                    <input type="text" id="date" class="form-control" value="<?=$data['getDealByID']['dateOf']?>" readonly>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="time">Время сделки:</label>
+                    <input type="text" id="time" class="form-control" value="<?=$data['getDealByID']['timeOf']?>" readonly>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="notaryL">Нотариусы:</label>
+                    <input id="notaryL" name="notaryL" type="text" class="form-control" value="<?=$data['getDealByID']['notaryList']?>" readonly placeholder="Не выбрано">
+                </div>
+                <div class="form-group col-md-3" style="margin-top: 25px;">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <input type="checkbox" id="place" value="<?=$data['getDealByID']['place']?>" disabled>
+                        </span>
+                        <input for="place" class="form-control" type="text" value="На дому" readonly>
+                    </div>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="state">Статус:</label>
+                    <select name="state" id="state" class="form-control" data-stat="<?=$data['getDealByID']['transactionStatus']?>">
+                        <option value="1">Новая</option>
+                        <option value="2">Обработана</option>
+                        <option value="3">Назначено</option>
+                        <option value="4">Состоялась</option>
+                        <option value="5">Отменена</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="sum">Сумма:</label>
+                    <input type="text" name="sum" id="sum" class="form-control" value="<?=$data['getDealByID']['cost']?>" placeholder="Введите сумму">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="fSum">Фин. Сумма:</label>
+                    <input type="text" name="fSum" id="fSum" class="form-control" value="<?=$data['getDealByID']['finalCost']?>" placeholder="Введите финальную сумму">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="notaryG">Группа нотариусов:</label>
+                    <input name="notaryG" id="notaryG" class="form-control" value="<?=$data['getDealByID']['groupID']?>" readonly>
+                </div>
+                <div class="form-group col-md-6 col-md-offset-3">
+                    <label for="adKom">Коментарий от админа:</label>
+                    <textarea name="adKom" id="adKom" class="form-control"><?=$data['getDealByID']['adKom']?></textarea>
+                </div>
+            </div>
+            <div class="form-group col-md-6 col-md-offset-3">
+                <input type="submit" class="btn btn-success btn-block" value="Отправить нотариусу">
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    function myFunction() {
+        var x = document.getElementById("notaryGrp").value;
+        document.getElementById("notaryG").value = x;
+        console.log(x);
+    }
+    function getNotary() {
+        var msg   = $('#getNL').serialize();
+        $.ajax({
+            url: '/webroot/getN.php',
+            type: "POST",
+            data: msg,
+            success: function onAjaxSuccess(data)
+            {
+               // console.log(data);
+                $('#nL').html(data);
+            }
+        });
+
+    }
+    function setNotary() {
+        var result = [];
+        $('#nL option').each(function(index, option) {
+            if(option.selected) {
+                result.push(option.value);
+            }
+        });
+        //var snl   = $('#setNL').serialize();
+        var notaryL = document.getElementById("notaryL");
+        notaryL.setAttribute('value', result);
+        console.log(result);
+
+    }
+
+    function call() {
+        var msg   = $('#list').serialize();
+        $.ajax({
+            url: '/webroot/post.php',
+            type: "POST",
+            data: msg,
+            success: function onAjaxSuccess(data)
+            {
+                console.log(data);
+                $('#sucessN').html(data);
+             setInterval(function() {
+                $("#sucessN").fadeOut("slow");
+            }, 3000);
+            }
+        });
+
+    }
+    var x = document.getElementById("place").value;
+    if(x==1){
+        document.getElementById('place').checked = true;
+    }
+    var stateNum = document.getElementById("state").dataset.stat;
+    var state = document.getElementById("state").children[stateNum-1];
+    state.setAttribute("selected", "selected");
+
+    var notaryG = document.getElementById("notaryGrp").dataset.ng;
+    var state2 = document.getElementById("notaryGrp").children[notaryG-1];
+    if(notaryG>0) {
+        state2.setAttribute("selected", "selected");
+    }
+    function addAll() {
+        document.getElementById("notaryL").value = 0;
+        document.getElementById("notaryG").value = 0;
+    }
+    //console.log(notaryG);
+</script>
+<?}?>

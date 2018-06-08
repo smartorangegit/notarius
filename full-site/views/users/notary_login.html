@@ -1,0 +1,18 @@
+<section class="change-password">
+    <h2 class="section-heading change-password__section-heading">Вход</h2>
+    <form method="post" action="">
+        <label for="change-password" class="change-password__label">Логин:</label>
+        <input id="change-password__password" class="change-password__input" type="text"  name="login">
+
+        <label for="change-password__new-password" class="change-password__label">Пароль:</label>
+        <input id="change-password__new-password" class="change-password__input change-password__input_margin" type="password" name="password">
+
+        <button type="submit" class="site-button change-password__button">Войти</button>
+    </form>
+    <form method="post" action="/notary/users/recovery">
+        <button class="site-button change-password__button">Забыл пароль</button>
+    </form>
+    <form  method="post" action="/notary/users/register">
+        <button class="site-button change-password__button">Регистрация</button>
+    </form>
+</section>

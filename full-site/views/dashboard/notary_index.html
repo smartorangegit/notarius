@@ -1,0 +1,114 @@
+<?php
+header('Cache-Control: no-cache, no-store, must-revalidate'); // HTTP 1.1.
+header('Pragma: no-cache'); // HTTP 1.0.
+header('Expires: 0');?>
+<!--/в файле notaryDash.php сделать подобие функции getDeal() но передавая параметр с dashboard notary_index() -->
+<section id="orders" class="сlient-page-orders">
+
+    <div class="container">
+        <div id="res" class="notary-available"></div>
+    </div>
+
+    <div class="container">
+        <h2 class="section-heading client-page__section-heading сlient-page-orders__section-heading">Мои заказы</h2>
+        <div class="notary-page-orders">
+            <ul class="order-table-head order-table__row notary-all-order-thead">
+                <li class="order-table-head__item notary-all-order-thead-col-1">услуга</li>
+                <li class="order-table-head__item notary-all-order-thead-col-2">дата</li>
+                <li class="order-table-head__item notary-all-order-thead-col-3">вермя</li>
+                <li class="order-table-head__item notary-all-order-thead-col-4">сумма</li>
+                <li class="order-table-head__item notary-all-order-thead-col-5">статус</li>
+                <li class="order-table-head__item notary-all-order-thead-col-6">оплата</li>
+            </ul>
+            <div class="notary-page-orders-padding">
+                <div class="order-table-wrap notary-page-orders-scroll">
+                    <table  class="order-table">
+                        <tbody class="order-table-body">
+                        <?php foreach($data['getDeal'] as $item) {?>
+                        <tr class="order-table__row">
+                            <td class="order-table__cell order-table__cell_wide">
+                                <a href="/notary/dashboard/deal/<?=$item['deID']?>/"><?=$item['name']?></a>
+                            </td>
+                            <td class="order-table__cell order-table__cell_middle">
+                                <a href="/notary/dashboard/deal/<?=$item['deID']?>/"><?=$item['dateOf']?></a>
+                            </td>
+                            <td class="order-table__cell order-table__cell_middle">
+                                <a href="/notary/dashboard/deal/<?=$item['deID']?>/"><?=$item['timeOf']?></a>
+                            </td>
+                            <td class="order-table__cell order-table__cell_middle">
+                                <a href="/notary/dashboard/deal/<?=$item['deID']?>/"><?=$item['finalCost']?></a>
+                            </td>
+                            <td data-status="1" class="order-status order-table__cell order-table__cell_narrow">
+                                <?if($item['transactionStatus']==1){?>
+                                <a href='/notary/dashboard/deal/".$item["deID"]."/'>Новая</a><?
+                              }
+                            elseif($item['transactionStatus']==2){?>
+                                <a href='/notary/dashboard/deal/".$item["deID"]."/'>Обработаная</a><?
+                            }
+
+                            elseif($item['transactionStatus']==3){?>
+                                <a href='/notary/dashboard/deal/".$item["deID"]."/'>Назначено</a><?
+                            }
+
+                            elseif($item['transactionStatus']==4){?>
+                                <a href='/notary/dashboard/deal/".$item["deID"]."/'>Состоялась</a><?
+                            }
+
+                            elseif($item['transactionStatus']==5){?>
+                                <a href='/notary/dashboard/deal/".$item["deID"]."/'>Отменена</a><?
+                            }?>
+                            </td>
+                                <?if($item['onlinePayment']!=0 || $item['livePayment']!=0){?>
+                                <td class="order-table__cell order-table__cell_narrow">
+                                    <a href="/notary/dashboard/deal/<?=$item['deID']?>/">Оплачено</a>
+                                </td>
+                            <?}else{?>
+                                <td class="order-table__cell order-table__cell_narrow">
+                                    <a href="/notary/dashboard/deal/<?=$item['deID']?>/">Ожидается оплата</a>
+                                </td>
+                            <?}?>
+                        </tr>
+                        <?}?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    var deID = document.getElementById("homeCheck");
+    if(deID) {
+        if (deID.getAttribute('value') == 1) {
+            document.getElementById('homeCheck').checked = true;
+        }
+    }
+
+    $( document ).ready(function() {
+
+        var param1 = '<?php echo json_encode($data["notary"]); ?>';
+        var obj = JSON.parse(param1);
+        //console.log(obj.id);
+        timerId;
+    });
+
+    var timerId = setInterval(function() {
+        var param1 = '<?php echo json_encode($data["notaryDash"]); ?>';
+        var obj = JSON.parse(param1);
+        var param2 = obj;
+        $.ajax({
+            type: "POST",
+            url: "/webroot/notaryDash.php",
+            data: param2,
+            success: function(data){
+                //console.log(data);
+                $('#res').html(data);
+
+            }
+
+        });
+    }, 1000);
+
+
+</script>

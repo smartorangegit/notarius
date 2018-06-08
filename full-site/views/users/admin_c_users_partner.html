@@ -1,0 +1,71 @@
+<?php
+header('Cache-Control: no cache');
+$param = App::getRouter()->getParams();
+if($param){
+?>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3>Информация о партнере пользователя </h3>
+    </div>
+    <div class="panel-body">
+        <form  method="post" action="" style="    margin: 0 0 50px 0;">
+            <input type="hidden" class="form-control" name="id" value="<?=$data['user']['id'];?>" >
+
+            <div class="form-group col-sm-4">
+                <label for="fName">fName</label>
+                <input type="text" class="form-control" name="fName" value="<?=$data['user']['fName'];?>">
+            </div>
+            <div class="form-group col-sm-4">
+                <label for="sName">sName</label>
+                <input type="text" class="form-control" name="sName" value="<?=$data['user']['sName'];?>">
+            </div>
+            <div class="form-group col-sm-4">
+                <label for="mName">mName</label>
+                <input type="text" class="form-control" name="mName" value="<?=$data['user']['mName'];?>">
+            </div>
+            <div class="form-group col-sm-4">
+                <label for="birthdayDate">birthdayDate</label>
+                <input type="text" class="form-control" name="birthdayDate" value="<?=$data['user']['birthdayDate'];?>">
+            </div>
+            <div class="foem-group col-sm-4">
+                <label for="citizenship">citizenship</label>
+                <input type="text" class="form-control" name="citizenship" value="<?=$data['user']['citizenship'];?>">
+            </div>
+            <div class="form-group col-sm-4">
+                <label for="passportInfo">passportInfo</label>
+                <input type="text" class="form-control" name="passportInfo" value="<?=$data['user']['passportInfo'];?>">
+            </div>
+            <div class="form-group col-sm-4">
+                <label for="passportIB">passportIB</label>
+                <input type="text" class="form-control" name="passportIB" value="<?=$data['user']['passportIB'];?>">
+            </div>
+            <div class="form-group col-sm-4">
+                <label for="PassportDate">PassportDate</label>
+                <input type="text" class="form-control" name="PassportDate" value="<?=$data['user']['PassportDate'];?>">
+            </div>
+            <div class="form-group col-sm-4">
+                <label for="residence">residence</label>
+                <input type="text" class="form-control" name="residence" value="<?=$data['user']['residence'];?>">
+            </div>
+            <div class="form-group col-sm-4">
+                <label id="INN">INN</label>
+                <input type="text" class="form-control" name="INN" value="<?=$data['user']['INN'];?>">
+            </div>
+            <div class="form-group col-sm-4">
+                <label id="marriage">marriage</label>
+                <input type="text" class="form-control" name="marriage" value="<?=$data['user']['marriage'];?>">
+            </div>
+            
+            <div class="col-sm-12">
+                <div class="form-group col-sm-6">
+                    <input class="btn btn-primary btn-block" type="button" onclick="history.back()" value="Назад">
+                </div>
+                <div class="form-group col-sm-6">
+                    <input onclick="myFunction()" type="submit" class="btn btn-success btn-block" value="Редактировать"/>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<?}?>

@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/datapick-classic.time.css" rel="stylesheet">
+    <link href="css/datapick-classic.date.css" rel="stylesheet">
+    <link href="css/datapick-classic.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css"/>
+    <link href="css/style.css" rel="stylesheet">
+    <!-- <link href="css/anim-class-test.css" rel="stylesheet"> -->
+    <link rel="import" href="symbol-defs.html">
+    <title>main</title>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <!-- include SVG-sprite -->
+    <div w3-include-html="include/sprite.html"></div>  
+  	<!-- /// -->
+
+    <!-- HEAD -->
+    <section class="head">
+      <div class="head-content">
+        <div class="header-wrap">
+          <div class="header-container">
+            <header class="header">
+              <svg class="hamburger-open""><use xlink:href="#menu"></use></svg>
+              <a href="#" class="header__link"><img src="img/zavireno.png" alt="image" class="header__image"></a>
+              <div class="hamburger-content">
+                <ul class="menu header__menu">
+                  <li class="menu__item">
+                    <a href="" class="menu__link">о нас</a>
+                  </li>
+                  <li class="menu__item menu__item-drop">
+                    <a href="#" class="menu__link menu__link-drop">как это работает</a>
+                    <ul class="menu-drop">
+                     <li class="menu-drop__item">
+                        <a href="tutorial-heading" name="tutorial-heading" class="menu-drop__link">для клиентов</a>
+                      </li>
+                      <li class="menu-drop__item">
+                        <a href="" class="menu-drop__link">для нотариусов</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="menu__item">
+                    <a href="" class="menu__link">преимущества</a>
+                  </li>
+                  <li class="menu__item">
+                    <a href="services.html" class="menu__link">услуги</a>
+                  </li>
+                  <li class="menu__item">
+                    <a href="" class="menu__link">нотариусы</a>
+                  </li>
+                  <li class="menu__item">
+                    <a href="" class="menu__link">вопросы</a>
+                  </li>
+                  <li class="menu__item">
+                    <a href="contact.html" class="menu__link">контакты</a>
+                  </li>
+                </ul>
+                <button class="header__button header__button-question">подобрать нотариуса</button>
+                <div class="social header__social">
+                  <ul class="social-list">
+                    <li class="social-list__item">
+                      <a href="#" class="social-list__link">
+                        <svg class="social-list__icon social-list__icon_white social-list__icon_viber"><use xlink:href="#viber"></use></svg>
+                      </a>
+                    </li>
+                    <li class="social-list__item">
+                      <a href="#" class="social-list__link">
+                      <svg class="social-list__icon social-list__icon_white social-list__icon_facebook"><use xlink:href="#facebook"></use></svg>
+                      </a>
+                    </li>
+                    <li class="social-list__item">
+                      <a href="#" class="social-list__link">
+                        <svg class="social-list__icon social-list__icon_white social-list__icon_telegram"><use xlink:href="#telegram"></use></svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <svg class="hamburger-cansel"><use xlink:href="#cancel"></use></svg>
+              </div>
+              <button class="header__button header__button-enter">Вход</button>
+
+              <div class="sign-in header__sign-in">
+                <div class="sign-in__button-wrap">
+                  <button class="sign-in__button sign-in-user__button sign-in__button_active">Клиент</button>
+                  <button class="sign-in-notary__button sign-in__button">Нотариус</button>
+                </div>
+
+                <div class="sign-in-user-form-wrap">
+                  <label for="sign-in-login" class="sign-in__label">Логин</label>
+                  <input id="sign-in-login" class="sign-in__input" type="text">
+
+                  <label for="sign-in-login" class="sign-in__label">Пароль</label>
+                  <input id="sign-in-login" class="sign-in__input" type="text">
+                </div>
+
+                <div class="sign-in-notary-form-wrap">
+                  <label for="sign-in-login" class="sign-in__label">Логин</label>
+                  <input id="sign-in-login" class="sign-in__input" type="text">
+
+                  <label for="sign-in-login" class="sign-in__label">Пароль</label>
+                  <input id="sign-in-login" class="sign-in__input" type="text">
+                </div>
+                <div class="sign-in-regist">
+                  <button class="site-button sign-in-regist__button">Войти</button>
+                  <a href="#" class="sign-in-regist__link">или зарегестрироватся</a>
+                </div>
+
+                <a href="password.html" class="sign-in__link">Забыли пароль?</a>
+              </div>
+
+              <div class="log-in">
+                <div class="log-in__button-wrap">
+                  <button class="log-in__button log-in__button_active">Клиент</button>
+                  <button class="log-in__button"><a href="http://notarius.smarto.com.ua/">Нотариус</a></button>
+                </div>
+
+                <label for="log-in-login" class="log-in__label">Логин</label>
+                <input id="log-in-login" class="log-in__input" type="text">
+
+                <label for="log-in-login" class="log-in__label">Пароль</label>
+                <input id="log-in-login" class="log-in__input" type="text">
+                  
+                <div class="log-in-regist">
+                  <button class="site-button log-in-regist__button">Регистрация</button>
+                </div>
+              </div>
+            </header>
+          </div>
+        </div>
+        <div class="head__container">
+        <div class="container">
+          <h1 class="head__heading">Профессиональный <br> <span class="head__heading_bold">подбор нотариуса</span>. <br> В офисе или с выездом к Вам</h1>
+          <div id="head__form-wrap" class="form-wrap head__form-wrap">
+            <form action="" class="form head__form">
+              <div class="form-container">
+                <div class="form__select-wrap">
+                  <input type="text" id="select" name="service" class="form__input form__select-info" placeholder="Выберите услугу" style="display: none">
+                  <a href="#head__form-wrap" class="form__anchor"><input id="form__select-label" type="text" class="form__input form__select" placeholder="Выберите услугу">
+                  <label for="form__select-label" class="form__label"></label></a>
+                  <!-- <input id="form__select-label" type="text" class="form__input form__select" placeholder="Выберите услугу">
+                  <label for="form__select-label" class="form__label"></label> -->
+                </div>
+                <div class="form__date-wrap">
+                  <input id="form__date-label" class="form__input form__date" type="date" placeholder="Выберите дату">
+                  <label for="form__date-label" class="form__label"></label>
+                </div>
+                <div class="form__time-wrap">
+                  <input id="form__time-label" class="form__input form__time" type="time" placeholder="Выберите время">
+                  <label for="form__time-label" class="form__label"></label>
+                </div>
+                <input class="form__input form__phone" type="text" placeholder="Укажите Ваш телефон">
+              </div>
+              <div class="form__checkbox-wrap">
+                <input type="checkbox" id="form__checkbox" class="form__checkbox">
+                <label for="form__checkbox" class="form__checkbox-label"></label>
+                <p class="form__text">С виездом</p>
+              </div>
+              <button class="form__button" type="submit">Подобрать<br>нотариуса</button>
+            </form>
+            <div class="select-menu form-select-menu">
+              <ul class="select-menu-list">
+                <li class="select-menu-list__item select-menu-list__item_active" id="s1">
+                  Удостоверение договора
+                </li>
+                <li class="select-menu-list__item" id="s2">
+                  Удостоверение доверенности
+                </li>
+                <li class="select-menu-list__item" id="s3">
+                  Наследство
+                </li>
+                <li class="select-menu-list__item" id="s4">
+                  Завещания
+                </li>
+                <li class="select-menu-list__item" id="s5">
+                  Свидетельствование достоверности подписи на документах
+                </li>
+                <li class="select-menu-list__item" id="s6">
+                  Другие нотариальные действия
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+    <!-- END__HEAD -->
+
+    <!-- TUTORIAL -->
+    <section class="tutorial">
+      <div class="tutorial-header">
+        <div class="container tutorial-header-container">
+          <img src="img/main/cogwheel-outline copy.png" alt="icon" class="tutorial-header__icon">
+          <h2 id="tutorial-heading" class="tutorial-header__heading">
+             Как это работает
+          </h2>
+        </div>
+      </div>
+      <div class="container">
+        <ul class="tutorial-list">
+          <li class="tutorial-list__item tutorial-list__item_1 animation-js slide-bottom">
+            <div class="tutorial-list__icon-wrap">
+              <svg class="tutorial-list__icon"><use xlink:href="#quiz"></use></svg>
+            </div>
+            <p class="tutorial-list__text"><span class="font-style_normal">Выберите услугу, для которой Вам нужен нотариус.</span> <br> 
+            Например, оформление доверенности или продажа </p>
+          </li>
+          <li class="tutorial-list__item tutorial-list__item_2 animation-js slide-bottom">
+            <div class="tutorial-list__icon-wrap">
+              <svg class="tutorial-list__icon"><use xlink:href="#calendar"></use></svg>
+            </div>
+            <p class="tutorial-list__text"><span class="font-style_normal">Выберите дату и место проведения.</span> <br>
+            Мы подберем удобную локацию, куда Вам удобно приехать или нотариус может выехать к Вам в офис.</p>
+          </li>
+          <li class="tutorial-list__item tutorial-list__item_3 animation-js slide-bottom">
+            <div class="tutorial-list__icon-wrap">
+              <svg class="tutorial-list__icon"><use xlink:href="#class-reward"></use></svg>
+            </div>
+            <p class="tutorial-list__text">Ожидайте звонка от специалиста 'ZAVIRENO'. Нашы менеджеры подберут лучшего нотариуса для Вас.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- END__TUTORIAL -->
+
+    <!-- WORKERS -->
+    <section class="workers">
+      <div class="container">
+        <h2 class="section-heading workers__section-heading">Наши лучшие нотариусы</h2>
+        <div class="workers-slider-wrap animation-js fade">
+          <ul class="workers-slider">
+            <li class="workers-slider__item clearfix">
+              <div class="workers-slider__photo-wrap">
+                <img src="img/main/Photo.jpg" alt="" class="workers-slider__photo">
+              </div>
+              <div class="workers-slider-info-wrap">
+                <p class="workers-slider-info__name">
+                  Нотариусов Натариус Нотарисович
+                </p>
+                <div class="workers-slider-info">
+                  <ul class="workers-slider-info-list">
+                    <li class="workers-slider-info-list__item">
+                      <!-- <img src="img/main/star.png" alt="icon" class="workers-slider-info-list__icon"> -->
+                      <svg class="workers-slider-info-list__icon"><use xlink:href="#star_main_page"></use></svg>
+                      <p class="workers-slider-info-list__text"><span class="workers-slider-info-list__text_medium">Рейтинг:</span> 5/5</p>
+                    </li>
+                    <li class="workers-slider-info-list__item">
+                      <!-- <img src="img/main/car.png" alt="icon" class="workers-slider-info-list__icon"> -->
+                      <svg class="workers-slider-info-list__icon"><use xlink:href="#car"></use></svg>
+                      <p class="workers-slider-info-list__text"><span class="workers-slider-info-list__text_medium">Возможность выезда:</span> <br> да</p>
+                    </li>
+                    <li class="workers-slider-info-list__item">
+                      <!-- <img src="img/main/point.png" alt="icon" class="workers-slider-info-list__icon"> -->
+                      <svg class="workers-slider-info-list__icon"><use xlink:href="#point"></use></svg>
+                      <p class="workers-slider-info-list__text">м.Лыбедская</p>
+                    </li>
+                  </ul>
+                </div>
+                <button class="workers-slider__button">смотреть отзывы</button>
+              </div>
+              <!-- <div class="workers-slider__footer">Нотариусов Натариус Нотарисович</div> -->
+            </li>
+
+            <li class="workers-slider__item clearfix">
+              <div class="workers-slider__photo-wrap">
+                <img src="img/main/Photo.jpg" alt="" class="workers-slider__photo">
+              </div>
+              <div class="workers-slider-info-wrap">
+                <p class="workers-slider-info__name">
+                  Нотариусов Натариус Нотарисович
+                </p>
+                <div class="workers-slider-info">
+                  <ul class="workers-slider-info-list">
+                    <li class="workers-slider-info-list__item">
+                      <!-- <img src="img/main/star.png" alt="icon" class="workers-slider-info-list__icon"> -->
+                      <svg class="workers-slider-info-list__icon"><use xlink:href="#star_main_page"></use></svg>
+                      <p class="workers-slider-info-list__text"><span class="workers-slider-info-list__text_medium">Рейтинг:</span> 5/5</p>
+                    </li>
+                    <li class="workers-slider-info-list__item">
+                      <!-- <img src="img/main/car.png" alt="icon" class="workers-slider-info-list__icon"> -->
+                      <svg class="workers-slider-info-list__icon"><use xlink:href="#car"></use></svg>
+                      <p class="workers-slider-info-list__text"><span class="workers-slider-info-list__text_medium">Возможность выезда:</span> <br> да</p>
+                    </li>
+                    <li class="workers-slider-info-list__item">
+                      <!-- <img src="img/main/point.png" alt="icon" class="workers-slider-info-list__icon"> -->
+                      <svg class="workers-slider-info-list__icon"><use xlink:href="#point"></use></svg>
+                      <p class="workers-slider-info-list__text">м.Лыбедская</p>
+                    </li>
+                  </ul>
+                </div>
+                <button class="workers-slider__button">смотреть отзывы</button>
+              </div>
+              <!-- <div class="workers-slider__footer">Нотариусов Натариус Нотарисович</div> -->
+            </li>
+
+            <li class="workers-slider__item clearfix">
+              <div class="workers-slider__photo-wrap">
+                <img src="img/main/Photo.jpg" alt="" class="workers-slider__photo">
+              </div>
+              <div class="workers-slider-info-wrap">
+                <p class="workers-slider-info__name">
+                  Нотариусов Натариус Нотарисович
+                </p>
+                <div class="workers-slider-info">
+                  <ul class="workers-slider-info-list">
+                    <li class="workers-slider-info-list__item">
+                      <!-- <img src="img/main/star.png" alt="icon" class="workers-slider-info-list__icon"> -->
+                      <svg class="workers-slider-info-list__icon"><use xlink:href="#star_main_page"></use></svg>
+                      <p class="workers-slider-info-list__text"><span class="workers-slider-info-list__text_medium">Рейтинг:</span> 5/5</p>
+                    </li>
+                    <li class="workers-slider-info-list__item">
+                      <!-- <img src="img/main/car.png" alt="icon" class="workers-slider-info-list__icon"> -->
+                      <svg class="workers-slider-info-list__icon"><use xlink:href="#car"></use></svg>
+                      <p class="workers-slider-info-list__text"><span class="workers-slider-info-list__text_medium">Возможность выезда:</span> <br> да</p>
+                    </li>
+                    <li class="workers-slider-info-list__item">
+                      <!-- <img src="img/main/point.png" alt="icon" class="workers-slider-info-list__icon"> -->
+                      <svg class="workers-slider-info-list__icon"><use xlink:href="#point"></use></svg>
+                      <p class="workers-slider-info-list__text">м.Лыбедская</p>
+                    </li>
+                  </ul>
+                </div>
+                <button class="workers-slider__button">смотреть отзывы</button>
+              </div>
+              <!-- <div class="workers-slider__footer">Нотариусов Натариус Нотарисович</div> -->
+            </li>
+
+            <li class="workers-slider__item clearfix">
+              <div class="workers-slider__photo-wrap">
+                <img src="img/main/Photo.jpg" alt="" class="workers-slider__photo">
+              </div>
+              <div class="workers-slider-info-wrap">
+                <p class="workers-slider-info__name">
+                  Нотариусов Натариус Нотарисович
+                </p>
+                <div class="workers-slider-info">
+                  <ul class="workers-slider-info-list">
+                    <li class="workers-slider-info-list__item">
+                      <!-- <img src="img/main/star.png" alt="icon" class="workers-slider-info-list__icon"> -->
+                      <svg class="workers-slider-info-list__icon"><use xlink:href="#star_main_page"></use></svg>
+                      <p class="workers-slider-info-list__text"><span class="workers-slider-info-list__text_medium">Рейтинг:</span> 5/5</p>
+                    </li>
+                    <li class="workers-slider-info-list__item">
+                      <!-- <img src="img/main/car.png" alt="icon" class="workers-slider-info-list__icon"> -->
+                      <svg class="workers-slider-info-list__icon"><use xlink:href="#car"></use></svg>
+                      <p class="workers-slider-info-list__text"><span class="workers-slider-info-list__text_medium">Возможность выезда:</span> <br> да</p>
+                    </li>
+                    <li class="workers-slider-info-list__item">
+                      <!-- <img src="img/main/point.png" alt="icon" class="workers-slider-info-list__icon"> -->
+                      <svg class="workers-slider-info-list__icon"><use xlink:href="#point"></use></svg>
+                      <p class="workers-slider-info-list__text">м.Лыбедская</p>
+                    </li>
+                  </ul>
+                </div>
+                <button class="workers-slider__button">смотреть отзывы</button>
+              </div>
+              <!-- <div class="workers-slider__footer">Нотариусов Натариус Нотарисович</div> -->
+            </li>
+          </ul>
+          <button class="workers-slider-nav workers-slider-nav__next">
+            <img src="img/main/workers-slider-next.png" alt="next" class="workers-slider-nav__image">
+          </button>
+          <button class="workers-slider-nav workers-slider-nav__prev">
+            <img src="img/main/workers-slider-next.png" alt="next" class="workers-slider-nav__image">
+          </button>
+        </div>
+
+        <button class="site-button workers__button">Вы нотариус?</button>
+        <a href="#" class="section-link workers__section-link">Все 4004 нотариуса</a>
+      </div>
+    </section>
+    <!-- END__WORKERS -->
+
+    <!-- ADVANTAGES -->
+    <section class="advantages">
+      <h2 class="section-heading advantages__section-heading">Преимущества</h2>
+      <div class="container advantages__container">
+        <div class="advantages__left animation-js slide-left">
+          <ul class="advantages-list">
+            <li class="advantages-list__item">
+              <!-- <img src="img/main/stopwatch.png" alt="icon" class="advantages-list__icon"> -->
+              <svg class="advantages-list__icon"><use xlink:href="#stopwatch"></use></svg>
+              <p class="advantages-list__text"><span class="font-style_normal">Оперативность.</span> Поиск нотариуса для Ваших нужд. Вы сможете провести сделку уже через 2 часа.</p>
+            </li>
+            <li class="advantages-list__item">
+              <!-- <img src="img/main/clock-on-road.png" alt="icon" class="advantages-list__icon"> -->
+              <svg class="advantages-list__icon"><use xlink:href="#clock_travel"></use></svg>
+              <p class="advantages-list__text"><span class="font-style_normal">Экономия времени.</span> Нотариус может приехать к Вам в офис. Не тратьте время на пробки.</p>
+            </li>
+            <li class="advantages-list__item">
+              <!-- <img src="img/main/shield-3.png" alt="icon" class="advantages-list__icon"> -->
+              <svg class="advantages-list__icon"><use xlink:href="#shield"></use></svg>
+              <p class="advantages-list__text"><span class="font-style_normal">Фиксированная цена.</span> Услуги нашего сайта для Вас бесплатны. Вы платите такую же цену, как если бы сами пошли к нотариусу.</p>
+            </li>
+            <li class="advantages-list__item">
+              <!-- <img src="img/main/user.png" alt="icon" class="advantages-list__icon"> -->
+              <svg class="advantages-list__icon"><use xlink:href="#user"></use></svg>
+              <p class="advantages-list__text"><span class="font-style_normal">Надежность.</span> Нотариусы проверяются нашими специалистами. Также пользователи сайта оценивают нотариусов на сайте.</p>
+            </li>
+          </ul>
+        </div>
+        <div class="advantages__right animation-js slide-right">
+          <!-- <img src="img/main/like-thumb.png" alt="icon" class="advantages__icon"> -->
+          <svg class="advantages__icon"><use xlink:href="#thumb_up"></use></svg>
+          <p class="advantages__text">Преимущества <br> работы с нами</p>
+        </div>
+      </div>
+    </section>
+    <!-- END__ADVANTAGES -->
+
+    <!-- SHARE -->
+    <section class="share">
+      <div class="container">
+        <h2 class="section-heading share__section-heading">Акции и скидки</h2>
+        <div class="share-slider-wrap animation-js fade">
+          <ul class="share-slider">
+            <li class="share-slider__item">
+              <!-- <img src="img/main/slider2-image.jpg" alt="image" class="share-slider__image"> -->
+              <div class="slider-content share-slider-content">
+                <p class="share-slider__title">500 грн</p>
+                <p class="share-slider__descript">Скидки на все нотариальные услуги <br> 15% при условии заказа не менее...</p>
+                <div class="share-slider__discounts">15%</div>
+                <a href="#" class="share-slider__link">Получить скидку</a>
+              </div>
+            </li>
+            <li class="share-slider__item">
+              <!-- <img src="img/main/slider2-image.jpg" alt="image" class="share-slider__image"> -->
+              <div class="slider-content share-slider-content">
+                <p class="share-slider__title">500 грн</p>
+                <p class="share-slider__descript">Скидки на все нотариальные услуги <br> 15% при условии заказа не менее...</p>
+                <div class="share-slider__discounts">15%</div>
+                <a href="#" class="share-slider__link">Получить скидку</a>
+              </div>
+            </li>
+            <li class="share-slider__item">
+              <!-- <img src="img/main/slider2-image.jpg" alt="image" class="share-slider__image"> -->
+              <div class="slider-content share-slider-content">
+                <p class="share-slider__title">500 грн</p>
+                <p class="share-slider__descript">Скидки на все нотариальные услуги <br> 15% при условии заказа не менее...</p>
+                <div class="share-slider__discounts">15%</div>
+                <a href="#" class="share-slider__link">Получить скидку</a>
+              </div>
+            </li>
+          </ul>
+
+          <button class="share-slider-nav share-slider-nav__next">
+            <img src="img/main/slider-white-nav.png" alt="next" class="workers-slider-nav__image">
+          </button>
+          <button class="share-slider-nav share-slider-nav__prev">
+            <img src="img/main/slider-white-nav.png" alt="next" class="workers-slider-nav__image">
+          </button>
+        </div>
+        <a href="#" class="section-link share__section-link">Все акции и скидки</a>
+      </div>
+    </section>
+    <!-- END__SHARE -->
+
+    <!-- SERVICES -->
+    <section class="services">
+        <h2 class="section-heading services__section-heading">Услуги</h2>
+        <div class="container">
+          <div class="services-slider-wrap animation-js fade">
+            <ul class="services-slider">
+              <li class="services-slider__item">
+                <img src="img/main/services-slider-image.jpg" alt="image" class="services-slider__image">
+                <div class="slider-content services-slider-content">
+                  <div class="services-slider-descript">
+                    <p class="services-slider-descript__text">Свидетельство верности копий документов</p>
+                    <a href="#" class="services-slider-descript__link">Смотреть подробнее</a>
+                  </div>
+                </div>
+              </li>
+              <li class="services-slider__item">
+                <img src="img/main/services-slider-image.jpg" alt="image" class="services-slider__image">
+                <div class="slider-content services-slider-content">
+                  <div class="services-slider-descript">
+                    <p class="services-slider-descript__text">Свидетельство верности копий документов</p>
+                    <a href="#" class="services-slider-descript__link">Смотреть подробнее</a>
+                  </div>
+                </div>
+              </li>
+              <li class="services-slider__item">
+                <img src="img/main/services-slider-image.jpg" alt="image" class="services-slider__image">
+                <div class="slider-content services-slider-content">
+                  <div class="services-slider-descript">
+                    <p class="services-slider-descript__text">Свидетельство верности копий документов</p>
+                    <a href="#" class="services-slider-descript__link">Смотреть подробнее</a>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="container">
+          <a href="#" class="section-link services__section-link">Смотреть все 202 нотариальные услуги</a>
+        </div>
+    </section>
+    <!-- END__SERVICES -->
+
+    <!-- CATEGORIES -->
+    <section class="categories">
+      <div class="container categories-container">
+        <h2 class="section-heading categories__section-heading">Категории нотариальных услуг</h2>
+        <div class="categories-animation-wrap animation-js slide-top">
+          <ul class="categories-type">
+            <li class="categories-type__item">
+              <svg class="categories-type__icon" style="fill: #333"><use xlink:href="#icon-1"></use></svg>
+              <a href="#" class="categories-type__link categories-type__link_active">Удостоверение договора</a>
+            </li>
+            <li class="categories-type__item">
+              <svg class="categories-type__icon"><use xlink:href="#icon-2"></use></svg>
+              <a href="#" class="categories-type__link">Удостоверение доверенности</a>
+            </li>
+            <li class="categories-type__item">
+              <svg class="categories-type__icon"><use xlink:href="#icon-3"></use></svg>
+              <a href="#" class="categories-type__link">Наследство</a>
+            </li>
+            <li class="categories-type__item">
+              <svg class="categories-type__icon"><use xlink:href="#icon-4"></use></svg>
+              <a href="#" class="categories-type__link">Свидетельствование <br>подлинности подписи на документах</a>
+            </li>
+            <li class="categories-type__item">
+              <svg class="categories-type__icon"><use xlink:href="#icon-5"></use></svg>
+              <a href="#" class="categories-type__link">Завещания, в том числе <br>совместное завещание супругов</a>
+            </li>
+            <li class="categories-type__item">
+              <svg class="categories-type__icon"><use xlink:href="#icon-6"></use></svg>
+              <a href="#" class="categories-type__link">Другие нотариальные действия</a>
+            </li>
+          </ul>
+
+          <ul class="categories-subspecies-wrap">
+            <li class="categories-subspecies-wrap__item categories-subspecies-wrap__item_active" >
+              <ul class="categories-subspecies">
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">купли-продажи, дарения, мены... <br> недвижемого имущества</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">купли-продажи, <br> дарения транспортных средств</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">наследственных договоров</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">аренды недвижемого имущества</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">учредительных договоров</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">раздела имущества</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">ипотеки, залога</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">пожизненного содержания (досмотра)</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">управления имуществом</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">аренды транспортных средств</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">займа</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">другие</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="categories-subspecies-wrap__item">
+              <ul class="categories-subspecies">
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">купли-продажи, дарения, мены... <br> недвижемого имущества</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">купли-продажи, <br> дарения транспортных средств</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">наследственных договоров</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">аренды недвижемого имущества</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">учредительных договоров</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">раздела имущества</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">ипотеки, залога</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">пожизненного содержания (досмотра)</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">управления имуществом</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">аренды транспортных средств</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">займа</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">другие</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="categories-subspecies-wrap__item">
+              <ul class="categories-subspecies">
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">купли-продажи, дарения, мены... <br> недвижемого имущества</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">купли-продажи, <br> дарения транспортных средств</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">наследственных договоров</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">аренды недвижемого имущества</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">учредительных договоров</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">раздела имущества</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">ипотеки, залога</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">пожизненного содержания (досмотра)</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">управления имуществом</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">аренды транспортных средств</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">займа</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">другие</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="categories-subspecies-wrap__item">
+              <ul class="categories-subspecies">
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">купли-продажи, дарения, мены... <br> недвижемого имущества</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">купли-продажи, <br> дарения транспортных средств</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">наследственных договоров</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">аренды недвижемого имущества</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">учредительных договоров</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">раздела имущества</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">ипотеки, залога</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">пожизненного содержания (досмотра)</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">управления имуществом</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">аренды транспортных средств</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">займа</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">другие</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="categories-subspecies-wrap__item">
+              <ul class="categories-subspecies">
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">купли-продажи, дарения, мены... <br> недвижемого имущества</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">купли-продажи, <br> дарения транспортных средств</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">наследственных договоров</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">аренды недвижемого имущества</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">учредительных договоров</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">раздела имущества</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">ипотеки, залога</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">пожизненного содержания (досмотра)</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">управления имуществом</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">аренды транспортных средств</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">займа</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">другие</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="categories-subspecies-wrap__item">
+              <ul class="categories-subspecies">
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">купли-продажи, дарения, мены... <br> недвижемого имущества</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">купли-продажи, <br> дарения транспортных средств</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">наследственных договоров</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">аренды недвижемого имущества</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">учредительных договоров</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">раздела имущества</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">ипотеки, залога</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">пожизненного содержания (досмотра)</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">управления имуществом</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">аренды транспортных средств</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">займа</a>
+                </li>
+                <li class="categories-subspecies__item">
+                  <a href="#" class="categories-subspecies__link">другие</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- END__CATEGORIES -->
+    
+
+    <!-- QUESTION -->
+     <section class="questions">
+      <div class="container">
+        <h2 class="section-heading questions__section-heading">Часто задаваемые вопросы</h2>
+        <ul class="questions-list animation-js slide-top">
+          <li class="questions-list__item">
+            <p class="questions-list__heading">Как подобрать грамотного нотариуса?</p>
+            <p class="questions-list__descript">
+              Идейные соображения высшего порядка, а также укрепление и развитие структуры способствует подготовки и реализации системы обучения кадров, соответствует насущным потребностям. Разнообразный и богатый опыт рамки и место обучения кадров способствует подготовки и реализации позиций, занимаемых участниками в отношении поставленных задач. Товарищи! укрепление и развитие структуры представляет собой интересный эксперимент проверки соответствующий условий.
+            </p>
+            <div class="questions-list__triangle"></div>
+          </li>
+          <li class="questions-list__item">
+            <p class="questions-list__heading">Как подобрать грамотного нотариуса?</p>
+            <p class="questions-list__descript">
+              Идейные соображения высшего порядка, а также укрепление и развитие структуры способствует подготовки и реализации системы обучения кадров, соответствует насущным потребностям. Разнообразный и богатый опыт рамки и место обучения кадров способствует подготовки и реализации позиций, занимаемых участниками в отношении поставленных задач. Товарищи! укрепление и развитие структуры представляет собой интересный эксперимент проверки соответствующий условий.
+            </p>
+            <div class="questions-list__triangle"></div>
+          </li>
+          <li class="questions-list__item">
+            <p class="questions-list__heading">Как подобрать грамотного нотариуса?</p>
+            <p class="questions-list__descript">
+              Идейные соображения высшего порядка, а также укрепление и развитие структуры способствует подготовки и реализации системы обучения кадров, соответствует насущным потребностям. Разнообразный и богатый опыт рамки и место обучения кадров способствует подготовки и реализации позиций, занимаемых участниками в отношении поставленных задач. Товарищи! укрепление и развитие структуры представляет собой интересный эксперимент проверки соответствующий условий.
+            </p>
+            <div class="questions-list__triangle"></div>
+          </li>
+          <li class="questions-list__item">
+            <p class="questions-list__heading">Как подобрать грамотного нотариуса?</p>
+            <p class="questions-list__descript">
+              Идейные соображения высшего порядка, а также укрепление и развитие структуры способствует подготовки и реализации системы обучения кадров, соответствует насущным потребностям. Разнообразный и богатый опыт рамки и место обучения кадров способствует подготовки и реализации позиций, занимаемых участниками в отношении поставленных задач. Товарищи! укрепление и развитие структуры представляет собой интересный эксперимент проверки соответствующий условий.
+            </p>
+            <div class="questions-list__triangle"></div>
+          </li>
+          <li class="questions-list__item">
+            <p class="questions-list__heading">Как подобрать грамотного нотариуса?</p>
+            <p class="questions-list__descript">
+              Идейные соображения высшего порядка, а также укрепление и развитие структуры способствует подготовки и реализации системы обучения кадров, соответствует насущным потребностям. Разнообразный и богатый опыт рамки и место обучения кадров способствует подготовки и реализации позиций, занимаемых участниками в отношении поставленных задач. Товарищи! укрепление и развитие структуры представляет собой интересный эксперимент проверки соответствующий условий.
+            </p>
+            <div class="questions-list__triangle"></div>
+          </li>
+          <li class="questions-list__item">
+            <p class="questions-list__heading">Как подобрать грамотного нотариуса?</p>
+            <p class="questions-list__descript">
+              Идейные соображения высшего порядка, а также укрепление и развитие структуры способствует подготовки и реализации системы обучения кадров, соответствует насущным потребностям. Разнообразный и богатый опыт рамки и место обучения кадров способствует подготовки и реализации позиций, занимаемых участниками в отношении поставленных задач. Товарищи! укрепление и развитие структуры представляет собой интересный эксперимент проверки соответствующий условий.
+            </p>
+            <div class="questions-list__triangle"></div>
+          </li>
+          <li class="questions-list__item">
+            <p class="questions-list__heading">Как подобрать грамотного нотариуса?</p>
+            <p class="questions-list__descript">
+              Идейные соображения высшего порядка, а также укрепление и развитие структуры способствует подготовки и реализации системы обучения кадров, соответствует насущным потребностям. Разнообразный и богатый опыт рамки и место обучения кадров способствует подготовки и реализации позиций, занимаемых участниками в отношении поставленных задач. Товарищи! укрепление и развитие структуры представляет собой интересный эксперимент проверки соответствующий условий.
+            </p>
+            <div class="questions-list__triangle"></div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- END__QUESTION -->
+
+    <!-- ENTRY -->
+    <section class="entry">
+      <div class="slider-content entry-content">
+        <p class="entry__text animation-js bounce">С нами удобно!</p>
+        <p class="entry__text entry__text-complex animation-js bounce">
+          до
+          <span class="entry__text_big animation-js bounce">30%</span>
+          <span class="entry__text_height animation-js bounce">скидка при записи <br> через ZAVIRENO</span>
+        </p>
+        <ul class="entry-icon-list animation-js bounce">
+          <li class="entry-icon-list__item">
+            <!-- <div class="entry-icon-list-sprite entry-icon-list-sprite__icon1"></div> -->
+            <svg class="entry-icon-list-sprite"><use xlink:href="#cellphone"></use></svg>
+            <p class="entry-icon-list__text">звонить не <br> нужно</p>
+          </li>
+          <li class="entry-icon-list__item">
+            <!-- <div class="entry-icon-list-sprite entry-icon-list-sprite__icon2"></div> -->
+            <svg class="entry-icon-list-sprite"><use xlink:href="#sms"></use></svg>
+            <p class="entry-icon-list__text">СМС подтверждение и <br> напоминание о записи</p>
+          </li>
+          <li class="entry-icon-list__item">
+            <!-- <div class="entry-icon-list-sprite entry-icon-list-sprite__icon3"></div> -->
+            <svg class="entry-icon-list-sprite"><use xlink:href="#calendar_2"></use></svg>
+            <p class="entry-icon-list__text">выбор удобной даты и времени онлайн</p>
+          </li>
+        </ul>
+        <button class="site-button entry__button">Записаться со скидкой</button>
+      </div>
+    </section>
+    <!-- END__ENTRY -->
+
+    <!-- ORDER -->
+    <section class="order">
+      <div class="container">
+        <h2 class="section-heading order__section-heading">Закажите услугу нотариуса прямо сейчас</h2>
+        <div class="form-wrap order-form-wrap">
+            <form action="" class="form">
+              <div class="form-container">
+                <div class="form__select-wrap">
+                  <input type="text" id="select" name="service" class="form__input form__select-info" placeholder="Выберите услугу" style="display: none">
+                  <input type="text" class="form__input form__select" placeholder="Выберите услугу">
+                </div>
+                <div class="form__date-wrap">
+                  <input class="form__input form__date" type="date" placeholder="Выберите дату">
+                </div>
+                <input class="form__input form__phone" type="text" placeholder="Укажите Ваш телефон">
+              </div>
+              <input type="checkbox" id="form__checkbox" class="form__checkbox">
+              <label for="form__checkbox" class="form__label">С виездом</label>
+              <button class="form__button" type="submit">Подобрать<br>нотариуса</button>
+            </form>
+            <div class="select-menu form-select-menu">
+              <ul class="select-menu-list">
+                <li class="select-menu-list__item select-menu-list__item_active" id="s1">
+                  Удостоверение договора
+                </li>
+                <li class="select-menu-list__item" id="s2">
+                  Удостоверение доверенности
+                </li>
+                <li class="select-menu-list__item" id="s3">
+                  Наследство
+                </li>
+                <li class="select-menu-list__item" id="s4">
+                  Завещания
+                </li>
+                <li class="select-menu-list__item" id="s5">
+                  Свидетельствование достоверности подписи на документах
+                </li>
+                <li class="select-menu-list__item" id="s6">
+                  Другие нотариальные действия
+                </li>
+              </ul>
+            </div>
+          </div>
+          <button class="site-button workers__button order__button">Вы нотариус?</button>
+      </div>
+    </section>
+    <!-- END__ORDER -->
+
+    <section class="popup-form">
+      <div class="form-wrap popup-form-wrap">
+            <form action="" class="form form_vertical">
+              <div class="form-container popup-form-container">
+                <div class="form__select-wrap popup-form-input">
+                  <input type="text" id="select" name="service" class="form__input form__select-info" placeholder="Выберите услугу" style="display: none">
+                  <input type="text" class="form__input form__select popup-form-input__input" placeholder="Выберите услугу">
+                </div>
+                <div class="form__date-wrap popup-form-input">
+                  <input class="form__input form__date popup-form-input__input" type="date" placeholder="Выберите дату">
+                </div>
+                <div class="form__time-wrap popup-form-input">
+                  <input class="form__input form__time popup-form-input__input" type="time" placeholder="Выберите время">
+                </div>
+                <input class="form__input form__phone popup-form-input popup-form-input__phone" type="text" placeholder="Укажите Ваш телефон">
+              </div>
+              <div class="popup-form__checkbox-wrap">
+                <input type="checkbox" id="popup-form__checkbox" class="popup-form__checkbox form__checkbox">
+                <label for="popup-form__checkbox" class="form__label"></label>
+                <p class="form__text">С виездом</p>
+              </div>
+              <button class="form__button popup-form__button" type="submit">Подобрать нотариуса</button>
+            </form>
+            <div class="select-menu form-select-menu popup-form-select-menu">
+              <ul class="select-menu-list">
+                <li class="select-menu-list__item select-menu-list__item_active" id="s1">
+                  Удостоверение договора
+                </li>
+                <li class="select-menu-list__item" id="s2">
+                  Удостоверение доверенности
+                </li>
+                <li class="select-menu-list__item" id="s3">
+                  Наследство
+                </li>
+                <li class="select-menu-list__item" id="s4">
+                  Завещания
+                </li>
+                <li class="select-menu-list__item" id="s5">
+                  Свидетельствование достоверности подписи на документах
+                </li>
+                <li class="select-menu-list__item" id="s6">
+                  Другие нотариальные действия
+                </li>
+              </ul>
+            </div>
+            <img src="img/cancel.png" alt="cansel" class="popup-form__icon">
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <div class="footer-clear"></div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-list-wrap">
+          <ul class="footer-list footer-services-list">
+            <li class="footer-list__item footer-list__heading footer-services-list__heading">
+              Сервис
+            </li>
+            <li class="footer-list__item">
+              <a href="#" class="footer-list__link">О нас</a>
+            </li>
+            <li class="footer-list__item">
+              <a href="#" class="footer-list__link">О рейтинге</a>
+            </li>
+            <li class="footer-list__item">
+              <a href="#" class="footer-list__link">Партнерам</a>
+            </li>
+            <li class="footer-list__item">
+              <a href="#" class="footer-list__link">Правила сервиса</a>
+            </li>
+            <li class="footer-list__item">
+              <a href="#" class="footer-list__link">Политика конфиденциальности</a>
+            </li>
+          </ul>
+
+          <ul class="footer-list footer-client-list">
+            <li class="footer-list__item footer-list__heading footer-client-list__heading">
+              Клентам
+            </li>
+            <li class="footer-list__item">
+              <a href="#" class="footer-list__link">Нотариусы</a>
+            </li>
+            <li class="footer-list__item">
+              <a href="#" class="footer-list__link">Акции и скидки</a>
+            </li>
+            <li class="footer-list__item">
+              <a href="#" class="footer-list__link">Нотариальные услуги</a>
+            </li>
+          </ul>
+
+          <ul class="footer-list footer-phone-list">
+            <li class="footer-list__item footer-list__heading footer-phone-list__heading">
+              Звоните нам
+            </li>
+            <li class="footer-list__item">
+              С  Пн.-Вс. с 9:00 до 20:00
+            </li>
+            <li class="footer-list__item">
+              <a href="tel:+3 8 (044) 990 60 08" class="footer-list__link footer-phone-list__link">+3 8 (044) 990 60 08</a>
+              <a href="tel:+3 8 (097) 555 99 99" class="footer-list__link">+3 8 (097) 555 99 99</a>
+            </li>
+            <li class="footer-list__item">
+              <a href="tel:+3 8 (093) 555 99 99" class="footer-list__link footer-phone-list__link">+3 8 (093) 555 99 99</a>
+              <a href="tel:+38 (095) 555 99 99" class="footer-list__link">+3 8 (095) 555 99 99</a>
+            </li>
+          </ul>
+        </div>
+
+        <p class="footer__text">Использование материалов разрешено только при наличии активной ссылки на источник</p>
+        <p class="footer__copyright">Zavireno, 2018 Все права защищены.</p>
+        <div class="smart-orange">
+          <p class="smart-orange__text">Сайт разработан компанией</p>
+          <a href="http://smartorange.com.ua/" target="_blanc" class="smart-orange__link">
+            <img src="img/logo1.svg" alt="smart-orange" class="smart-orange__image">
+          </a>
+        </div>
+      </div>
+    </footer>
+    <!-- END__FOOTER -->
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/libraries/datapicker/picker.js"></script>
+    <script src="js/libraries/datapicker/picker.time.js"></script>
+    <script src="js/libraries/datapicker/picker.date.js"></script>
+    <script src="js/libraries/datapicker/ru_RU.js"></script>
+    <script src="js/libraries/slick.min.js"></script>
+    <script src="js/libraries/jquery.maskedinput.min.js"></script>
+    <script src="js/w3-html-include.js"></script>
+    <script src="js/main.js"></script>
+    <!-- <script src="js/animation-js-test.js"></script> -->
+  </body>
+</html>

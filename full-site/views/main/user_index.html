@@ -1,0 +1,256 @@
+<?php
+header('Cache-Control: no-cache, no-store, must-revalidate'); // HTTP 1.1.
+header('Pragma: no-cache'); // HTTP 1.0.
+header('Expires: 0');
+
+$log = $_SESSION['login'];
+?>
+
+<?if($_SESSION['recMess'] != ''){?>
+<div id="recMess">
+    <h3><?=$_SESSION['recMess'];?></h3>
+</div>
+<?}?>
+<section class="personal-data-wrap">
+    <div class="container container_border-bottom">
+        <h2 class="section-heading client-page__section-heading personal-data__section-heading">Личные данные</h2>
+        <div class="personal-data">
+            <ul class="client-menu personal-data__client-menu">
+                <li class="client-menu__item">
+                    <a href="/user/" class="client-menu__link">Личные данные</a>
+                </li>
+                <li class="client-menu__item">
+                    <a href="/user/#document" class="client-menu__link">Мои документы</a>
+                </li>
+                <li class="client-menu__item">
+                    <a href="/user/dashboard/" class="client-menu__link">Мои заказы</a>
+                </li>
+                <li class="client-menu__item">
+                    <a href="/user/#my-notary" class="client-menu__link">Мои нотариусы</a>
+                </li>
+                <li class="client-menu__item">
+                    <a href="/user/reviews/" class="client-menu__link">Мои отзывы</a>
+                </li>
+            </ul>
+<form action="" method="post">
+            <div class="editing personal-data__editing">
+                <p class="personal-data__subheading editing__subheading">Редактирование личных данных</p>
+                <div class="editing-name">
+                    <input type="hidden" name="editUserData" value="1">
+                    <label for="editing-name" class="editing-name__label editing__label">Имя: </label>
+                    <input id="editing-name" class="editing-name__input editing__input" type="text" placeholder="Имя"
+                       name="fName"  value="<?=$data['userInfo']['fName'];?>">
+                    <svg class="editing__icon"><use xlink:href="#pencil"></use></svg>
+                </div>
+                <div class="editing-name">
+                    <input type="hidden" name="editUserData" value="1">
+                    <label for="editing-name" class="editing-name__label editing__label">Фамилия: </label>
+                    <input id="editing-sname" class="editing-name__input editing__input" type="text" placeholder="Имя"
+                           name="sName" value="<?=$data['userInfo']['sName'];?>">
+                    <svg class="editing__icon"><use xlink:href="#pencil"></use></svg>
+                </div>
+                <div class="editing-name">
+                    <input type="hidden" name="editUserData" value="1">
+                    <label for="editing-name" class="editing-name__label editing__label">Отчество: </label>
+                    <input id="editing-mname" class="editing-name__input editing__input" type="text" placeholder="Имя"
+                           name="mName" value="<?=$data['userInfo']['mName'];?>">
+                    <svg class="editing__icon"><use xlink:href="#pencil"></use></svg>
+                </div>
+
+                <div class="editing-date">
+                    <label for="editing-date" class="editing-date__label editing__label">Дата рождения: </label>
+                    <input id="editing-date" class="editing-date__input editing__input" type="date" placeholder="1980-04-11"
+                           name="birthdayDate" value="<?=$data['userInfo']['birthdayDate'];?>">
+                    <svg class="editing__icon"><use xlink:href="#pencil"></use></svg>
+                </div>
+                <div class="editing-gender">
+                    <span class="editing-gender__label editing__label">Пол: <span class="editing__label_thin">мужской</span></span>
+                    <svg class="editing-gender__icon editing__icon"><use xlink:href="#pencil"></use></svg>
+                    <div class="editing-gender-radio__male"> М
+                        <input id="editing-gender__male" class="editing-gender-radio__input" type="radio" name="sex"
+                            <?if($data['userInfo']['sex']==0){echo 'checked';}?> >
+                        <label for="editing-gender__male" class="editing-gender-radio__label"></label>
+                    </div>
+                    <div class="editing-gender-radio__female"> Ж
+                        <input id="editing-gender__female" class="editing-gender-radio__input" type="radio" name="sex"
+                            <?if($data['userInfo']['sex']==1){echo 'checked';}?> >
+                        <label for="editing-gender__female" class="editing-gender-radio__label"></label>
+                    </div>
+                </div>
+                <div class="editing-mail">
+                    <label for="editing-mail" class="editing-mail__label editing__label">Email: </label>
+                    <input id="editing-mail" class="editing-mail__input editing__input" type="text" placeholder="alex.sobko@gmail.com"
+                           name="email" value="<?=$data['userInfo']['email'];?>">
+                    <svg class="editing__icon"><use xlink:href="#pencil"></use></svg>
+                </div>
+                <div class="editing-phone">
+                    <label for="editing-phone" class="editing-phone__label editing__label">Телефон: </label>
+                    <input id="editing-phone" class="editing-phone__input editing__input" type="text" placeholder="+3 8 (099) 999-9999"
+                           name="mainPhone" value="<?=$data['userInfo']['mainPhone'];?>">
+                    <svg class="editing__icon"><use xlink:href="#pencil"></use></svg>
+                </div>
+                <button type="submit" class="site-button personal-data__button">Сохранить</button>
+            </div>
+</form>
+            <div class="personal-data-password">
+            <form action="" method="post">
+                <input type="hidden" name="editUserPass" value="1">
+                <p class="personal-data__subheading personal-data-password__subheading">Смена пароля</p>
+                <label for="personal-data-password__old" class="personal-data-password__old personal-data-password__label">Логин: </label>
+                <input id="personal-data-password__old" class="personal-data-password__old personal-data-password__input" type="text"
+                       name="login"  value="<?=$_SESSION['login'];?>" >
+
+                <label for="personal-data-password__new" class="personal-data-password__new personal-data-password__label">Новый пароль: </label>
+                <input id="personal-data-password__new" class="personal-data-password__new personal-data-password__input personal-data-password__confirm" type="password"
+                       name="password">
+
+                <button type="submit" class="site-button personal-data__button">Сохранить</button>
+            </form>
+            </div>
+            <a href="/user/users/logout" class="personal-data__link">Выход</a>
+        </div>
+
+    </div>
+</section>
+<section id="document" class="document">
+    <div class="container">
+        <h2 class="section-heading client-page__section-heading document__section-heading">Мои документы</h2>
+        <div class="document-container">
+            <div class="document-add">
+                <ul class="document-add-list">
+                    <!--<li class="document-add-list__item">-->
+                        <!--<div class="document-add-list__name-wrap">-->
+                            <!--<span class="document-add-list__name">Документы для нотариуса для нотариуса</span>-->
+                            <!--<img src="img/client-page/remove.png" alt="remove" class="document-add-list__icon">-->
+                        <!--</div>-->
+                        <!--<p class="document-add-list__size">1 Кб .png</p>-->
+                    <!--</li>-->
+                </ul>
+                <div class="document-add-buttons">
+                    <form action="" method="post" enctype="multipart/form-data" class="fallback">
+                    <div class="document-add-buttons__add">
+                        <label for="document-add__file" class="document-add-buttons__label"></label>
+                        <input id="document-add__file" class="document-add-buttons__input" id="image" name="image[]" type="file" multiple="">
+                        <p class="document-add-buttons__text"><span class="document-add-buttons__text_regular">Добавить  файл</span> <br> до 2 Гб</p>
+                    </div>
+                    <button type="submit" class="site-button document-add-buttons__load">Загрузить</button>
+                    </form>
+                </div>
+            </div>
+            <div class="document-show">
+                <ul class="document-show-list">
+                    <?
+                    $dir = ROOT.DS.'webroot/uploads/'.$log.'/';
+                    $files = scandir($dir,1);
+                    $countFiles = count($files)-2;
+                    for($i=0;$i<$countFiles;$i++)
+                    {
+                    ?>
+                    <li class="document-show-list__item">
+                        <div class="document-show-list-image">
+                            <div class="document-show-list-image-background">
+                                <svg class="document-show-list-image-background__icon"><use xlink:href="#magnifying"></use></svg>
+                            </div>
+                            <!--<img src="/img/client-page/doc2.jpg" alt="doc-image" class="document-show-list-image__image">-->
+                            <embed src="/webroot/uploads/<?=$log.'/'.$files[$i];?>" class="document-show-list-image__image">
+                        </div>
+                        <form action="" method="post">
+                            <input type="hidden" value="<?=$files[$i];?>" name="dellName">
+                            <!--<input type='submit' value="Удалить" >-->
+                            <input type="submit" class="document-show-list__input" value="Удалить">
+                        </form>
+                        <!--<button type="submit" class="document-show-list__button">Документ</button>-->
+                    </li>
+                    <?}?>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="my-notary" class="my-notary">
+    <div class="container">
+        <h2 class="section-heading client-page__section-heading my-notary__section-heading">Мои нотариусы</h2>
+        <div class="pagination-wrap-js">
+            <ul class="my-notary-list">
+                <? foreach($data['myNotary'] as $myNotary){?>
+                <li data-star="<?=$myNotary['rating']?>" class="my-notary-list__item">
+                    <div class="my-notary-info">
+                        <div class="my-notary-info__photo-wrap">
+                            <img src="/uploads/<?=$myNotary['login']?>/photo/<?=$myNotary['profPhoto']?>" alt="photo" class="my-natary-info__photo">
+                        </div>
+                        <p class="my-notary-info__name"><?=$myNotary['nFio']?></p>
+                        <div class="my-notary-info-rating">
+                            <p class="my-notary-info-rating__text">Рейтинг: </p>
+                            <div class="star my-notary-info-rating__star">
+                                <div class="star__block star__white"></div>
+                                <div class="star__block star__color"></div>
+                            </div>
+                        </div>
+                        <a href="#" class="my-natary-info__location">м. <?=$myNotary['metroName']?></a>
+                    </div>
+                    <div class="my-notary-order-info">
+                        <p class="my-notary-order-info__title">Оказанная услуга:</p>
+                        <a href="#" class="my-notary-order-info__link"><?=$myNotary['name']?></a>
+                        <p class="my-notary-order-info__date"><?=$myNotary['dateOf']?></p>
+                        <p class="my-notary-order-info__price">Стоимость: <?=$myNotary['cost']?> грн</p>
+                        <button class="site-button my-notary-order-info__button">Заказать услугу еще раз</button>
+                        <form action="/user/dashboard/deal/<?=$myNotary['dID']?>/" method="post">
+                            <button type="submit" class="site-button my-notary-order-info__button-feedback my-notary-order-info__button">Оставить отзыв</button>
+                        </form>
+                    </div>
+                </li>
+                <?}?>
+            </ul>
+
+            <div class="pagination my-notary-pagination">
+                <a href="#" class="pagination__nav pagination__nav_prev my-notary-pagination__nav_prev">
+                    <svg class="pagination__nav-icon pagination__nav-icon_rotate"><use xlink:href="#right-arrow"></use></svg>
+                    <span class="pagination__nav-text">предыдущие 4</span>
+                </a>
+                <ul class="pagination-num my-notary-pagination-num">
+                    <li class="pagination-num__item pagination-num__item_active">
+                        1
+                    </li>
+                </ul>
+                <a href="#" class="pagination__nav pagination__nav_next my-notary-pagination__nav_next">
+                    <span class="pagination__nav-text">следующие 4</span>
+                    <svg class="pagination__nav-icon"><use xlink:href="#right-arrow"></use></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="document-full">
+    <div class="container">
+        <div class="document-full-container">
+            <div class="document-full-slider-wrap">
+                <div class="document-full-slider-nav-wrap">
+                    <button class="document-full-slider-nav document-full-slider-nav__prev">
+                        <img src="/img/main/slider-white-nav.png" alt="next" class="document-full-slider-nav__image">
+                    </button>
+                    <button class="document-full-slider-nav document-full-slider-nav__next">
+                        <img src="/img/main/slider-white-nav.png" alt="next" class="document-full-slider-nav__image">
+                    </button>
+                </div>
+                <div class="document-full-slider-cansel">
+                    <a href="#" download class="document-full-slider-cansel__link">
+                        <img src="/img/client-page/download.png" alt="download" class="document-full-slider-cansel__icon">
+                    </a>
+                    <img src="/img/client-page/cansel.png" alt="download" class="document-full-slider-cansel__icon document-full-slider-cansel__cansel">
+                </div>
+                <div class="document-full-slider-zoom">
+                    <img src="/img/client-page/zoom-.png" alt="download" class="document-full-slider-zoom__icon document-full-slider-zoom__minus">
+                    <img src="/img/client-page/zoom+.png" alt="download" class="document-full-slider-zoom__icon document-full-slider-zoom__plus">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    $("#recMess").click(function() {
+        $( "#recMess" ).remove();
+    });
+</script>
+

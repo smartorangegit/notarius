@@ -1,0 +1,208 @@
+<?php
+header('Cache-Control: no-cache, no-store, must-revalidate'); // HTTP 1.1.
+header('Pragma: no-cache'); // HTTP 1.0.
+header('Expires: 0');
+?>
+
+<section id="orders" class="сlient-page-orders">
+    <div class="container">
+        <h2 class="section-heading client-page__section-heading сlient-page-orders__section-heading">Мои заказы</h2>
+        <div class="form-wrap сlient-page-orders__form-wrap card-order__form-wrap">
+            <form action="" class="form" method="post">
+              <div class="form-container">
+                <div class="form__select-wrap">
+                    <input type="text" id="select" name="services" class="form__input form__select-info" placeholder="Выберите услугу" style="display: none">
+                    <input id="form__select-label" type="text" class="form__input form__select" placeholder="Выберите услугу" required disabled>
+                    <label for="form__select-label" class="form__label"></label>
+                </div>
+                <div class="form__date-wrap">
+                    <input id="form__date-label" class="form__input form__date" type="date" placeholder="Выберите дату" name="date" required>
+                    <label for="form__date-label" class="form__label"></label>
+                </div>
+                <div class="form__time-wrap">
+                    <input id="form__time-label" class="form__input form__time" type="time" placeholder="Выберите время" name="time" required>
+                    <label for="form__time-label" class="form__label"></label>
+                </div>
+                <input class="form__input form__phone" type="text" placeholder="Укажите Ваш телефон" name="regNum" required>
+              </div>
+              <div class="form__checkbox-wrap">
+                <input type="checkbox" id="form__checkbox" class="form__checkbox" name="homeCheck">
+                <label for="form__checkbox" class="form__checkbox-label"></label>
+                <p class="form__text">С выездом</p>
+              </div>
+              <button class="form__button" type="submit">Подобрать<br>нотариуса</button>
+            </form>
+            <div class="select-menu form-select-menu ">
+                <ul class="select-menu-list">
+                    <?foreach($data['servicesList'] as $item){?>
+                        <li id="<?=$item['id'];?>" class="select-menu-list__item">
+                            <?=$item['name'];?>
+                        </li>
+                    <?}?>
+                </ul>
+            </div>
+        </div>
+
+        <ul class="orders-name-list">
+            <li class="orders-name-list__item orders-name-list__item_active">
+                <a href="#" class="orders-name-list__link orders-name-list__link_active">Все</a>
+            </li>
+            <li class="orders-name-list__item">
+                <a href="#" class="orders-name-list__link">Назначенные</a>
+            </li>
+        </ul>
+
+        <ul class="order-table-list">
+            <li class="order-table-list__item order-table-list__item_active">
+                <ul class="order-table-head order-table__row">
+                    <li class="order-table-head__item order-table-head__item_wide">услуга</li>
+                    <li class="order-table-head__item order-table-head__item_middle">дата</li>
+                    <li class="order-table-head__item order-table-head__item_middle">вермя</li>
+                    <li class="order-table-head__item order-table-head__item_middle">сумма</li>
+                    <li class="order-table-head__item order-table-head__item_small">статус</li>
+                    <!-- <li class="order-table-head__item order-table-head__item_small">отзыв</li> -->
+                </ul>
+                <div class="order-table-wrap">
+                    <table  class="order-table">
+                        <tbody class="order-table-body">
+                        <?php foreach($data['userAll'] as $itemAL) { ?>
+                        <tr class="order-table__row">
+                            <td class="order-table__cell order-table__cell_wide"><?=$itemAL['name']?></td>
+                            <td class="order-table__cell order-table__cell_middle"><?=$itemAL['dateOf']?></td>
+                            <td class="order-table__cell order-table__cell_middle"><?=$itemAL['timeOf']?></td>
+                            <td class="order-table__cell order-table__cell_middle"><?=$itemAL['finalCost']?> грн.</td>
+                            <td data-status="<?=$itemAL['transactionStatus']?>" class="order-status order-table__cell order-table__cell_narrow">
+                                <?if($itemAL['transactionStatus']==1){echo "Новая";}
+                            elseif($itemAL['transactionStatus']==2){echo "Обработана";}
+                            elseif($itemAL['transactionStatus']==3){echo "Назначено";}
+                            elseif($itemAL['transactionStatus']==4){echo "Состоялась";}
+                            elseif($itemAL['transactionStatus']==5){echo "Отменена";}
+                            ?>
+                            </td>
+                        </tr>
+                        <?}?>
+                        </tbody>
+                    </table>
+                </div>
+            </li>
+            <li class="order-table-list__item order-table-list__item_scroll">
+                <ul class="order-table-head order-table__row big-table-head">
+                    <li class="order-table-head__item order-table__cell_1">услуга</th>
+                    <li class="order-table-head__item order-table__cell_2">дата</th>
+                    <li class="order-table-head__item order-table__cell_3">вермя</th>
+                    <li class="order-table-head__item order-table__cell_4">сумма</th>
+                    <li class="order-table-head__item order-table__cell_5">оплата</th>
+                    <li class="order-table-head__item order-table__cell_6">исполнитель</th>
+                    <li class="order-table-head__item order-table__cell_7">статус</th>
+                    <li class="order-table-head__item order-table__cell_8">Календарь</th>
+                    <li class="order-table-head__item order-table__cell_9">Комментарий</th>
+                </ul>
+                <div class="order-table-wrap order-table-wrap_scroll">
+                    <table  class="order-table">
+                        <tbody class="order-table-body">
+                        <?php foreach($data['userDeal'] as $item) {
+                                $a = explode('-',$item['dateOf']);
+                                $b = explode(':',$item['timeOf']);
+                                $c = $b[0]-2;
+                                if($c<10){
+                                 $c = str_pad($c, 2, '0', STR_PAD_LEFT);
+                                }
+                                $calenDat = $a[0].$a[1].$a[2].'T'.$c.$b[1].$b[2].'Z';?>
+                        <tr class="order-table__row">
+                            <td class="order-table__cell order-table__cell_wide"><?=$item['name']?></td>
+                            <td class="order-table__cell order-table__cell_small"><?=$item['dateOf']?></td>
+                            <td class="order-table__cell order-table__cell_small"><?=$item['timeOf']?></td>
+                            <td class="order-table__cell order-table__cell_small"><?=$item['finalCost']?> грн.</td>
+                            <td class="order-table__cell order-table__cell_pay order-table__cell_middle">
+                                <?if($item['onlinePayment']== 1 || $item['livePayment']==1){?>
+                                оплачено
+                                <?}else{?>
+                                <?
+                            $order = "order_id_".$item['deID'];
+                            $url = $_SERVER['HTTP_HOST'].'/user/dashboard/';
+                            $liqpay = new LiqPay(i58469097750, FbA01tLfSXpQ99jti8eCtwel7tlCU5dqGJEq6ziM);
+                            $html = $liqpay->cnb_form(array(
+                                'action'         => 'pay',
+                                'amount'         => $item['finalCost'],
+                                'currency'       => 'UAH',
+                                'description'    => $item['name'],
+                                'order_id'       => $order,
+                                'version'        => '3',
+                                'sandbox'        => '1',
+                                'result_url'     => $url
+                                ));
+
+                                $res = $liqpay->api("request", array(
+                                'action'        => 'status',
+                                'version'       => '3',
+                                'order_id'      => $order
+                                ));
+                                if($res->result=='ok'){
+                                ?>
+                                <script>
+                                    var updPay = {
+                                        id: "<?=$item['deID']?>",
+                                        cost: "<?=$item['finalCost']?>",
+                                        userID: "<?=$item['userID']?>" ,
+                                        notaryID: "<?=$item['notaryID']?>" ,
+                                        serviceID: "<?=$item['serviceID']?>" ,
+                                        ajax_data: '1'
+                                    };
+                                    // для отправки данных в контроллер и получанеия ответа в js/json формате отправляем
+                                    // методом гет, дабы он обошел рендер станицы и вернул только данные с контроллера
+                                    $.ajax({
+                                        data: updPay,
+                                        url: '/dashboard/user_index',
+                                        method: 'GET', // or GET
+                                        success: function (msg) {
+                                            console.log(msg);
+                                            location.reload();
+                                            //var T = JSON.parse(msg);
+                                        }
+                                    });
+                                </script>
+                                <?}?>
+                                <?=$html?>
+                                <?}?>
+                            </td>
+                            <td class="order-table__cell order-table__cell_wide">
+                                <a href="/notaries/profile/<?=$item['nID']?>/" class="order-table__link"><?=$item['nFio']?></a>
+                            </td>
+                            <td data-status="<?=$item['transactionStatus']?>" class="order-status order-table__cell order-table__cell_green order-table__cell_narrow">
+                                <?if($item['transactionStatus']==1){echo "Новая";}
+                            elseif($item['transactionStatus']==2){echo "Обработана";}
+                            elseif($item['transactionStatus']==3){echo "Назначено";}
+                            elseif($item['transactionStatus']==4){echo "Состоялась";}
+                            elseif($item['transactionStatus']==5){echo "Отменена";}
+                            ?>
+                            </td>
+                            <td class="order-status order-table__cell order-table__cell_green order-table__cell_narrow">
+                                <a href="https://calendar.google.com/calendar/r/eventedit?
+											text=Zavireno24 - сделка
+											&dates=<?=$calenDat?>/<?=$calenDat?>
+											&details=информация о сделке&
+											location=<?=$item['geolocation']?>"
+                                   target="_blank" rel="nofollow">В календарь</a>
+                            </td>
+                            <?if($item['transactionStatus']==4){?>
+                            <td class="order-status order-table__cell order-table__cell_green order-table__cell_narrow">
+                                <?if($item['userComment']==''){?><a href="/user/dashboard/deal/<?=$item['deID']?>" class="btn btn-primary">Оставить отзыв</a>
+                                <?}else{?>
+                                <a href="/user/dashboard/deal/<?=$item['deID']?>" class="btn btn-primary">Редактировать отзыв</a>
+                            </td>
+                            <?}}else{?>
+                            <td class="order-status order-table__cell order-table__cell_green order-table__cell_narrow">Доступен после сделки</td>
+                            <?}?>
+                        </tr>
+                        <?}?>
+                        </tbody>
+                    </table>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+

@@ -1,0 +1,9 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    <FilesMatch "(get|post|getN|getLoc).php">
+        RewriteEngine off
+    </FilesMatch>
+    RewriteRule ^(.*)$ index.php [PT,L]
+</IfModule>

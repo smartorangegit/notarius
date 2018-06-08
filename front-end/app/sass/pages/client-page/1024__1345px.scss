@@ -1,0 +1,89 @@
+
+@media screen and (min-width: 1024px) and (max-width: 1344px) {
+	.personal-data {
+		&__client-menu {
+			margin-right: 3%;
+			width: 21.5%;		}
+
+		&__editing {
+			margin-right: 3%;
+		}
+
+		&-password {
+			width: 33%;
+			margin-right: 3%;
+			margin-bottom: 10px;
+
+			&__input {
+				width: 90%;
+			}
+		}
+
+		&__button {
+			width: 100%;
+			margin-bottom: 0;
+		}
+	}
+
+	.my-notary {
+		&-info {
+			&-rating {
+				display: block;
+			}
+		} 
+	}
+
+	.my-notary-list__item {
+		height: 345px;
+	}
+
+	.my-notary-order-info__button {
+		font-size: 0.9rem;
+		height: 40px;
+	}
+
+	.my-feedback {
+		&-info {
+			display: flex;
+			align-items: flex-start;
+			flex-direction: column;
+
+			&__date {
+				margin-bottom: 5px;
+			}
+
+			&__order-name {
+				margin-bottom: 5px;
+			}
+
+			&-rating {
+				margin-bottom: 7px;
+			}
+
+			&__button {
+				width: 50%;
+			}
+		}
+
+		&__text-icon {
+				right: 0;
+				bottom: 8px;
+			}
+	}
+	a.my-feedback-info__link {
+		font-size: 1rem;
+	}
+
+	.comment__heading {
+		background-color: #fff;
+		color: $dark-gray;
+		text-align: center;
+		font-size: 1.6rem;
+		height: 70px;
+		margin-bottom: 20px;
+	}
+
+	.comment-content {
+		padding: 15px 0;
+	}
+}

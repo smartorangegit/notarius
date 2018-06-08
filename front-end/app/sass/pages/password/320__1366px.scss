@@ -1,0 +1,38 @@
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+	.password__section-heading {
+		background-color: #fff;
+		color: $dark-gray;
+		text-align: center;
+	}
+	.password {
+		width: 95%;
+		margin-top: 10px;
+
+		&__input {
+			font-size: 0.9rem;
+		}
+
+		&__button {
+			width: 70%;
+		}
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+	.password {
+		width: 50%;
+	}
+}
+
+@media screen and (max-width: 1366px) {
+	.password__section-heading {
+		font-size: 1.8rem;
+	}
+}
+
+// @media screen and (min-height: 900px) {
+// 	.password {
+// 		margin-top: 6%;
+// 	}
+// }

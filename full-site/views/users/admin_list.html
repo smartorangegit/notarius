@@ -1,0 +1,207 @@
+<?php
+header('Cache-Control: no cache');
+$uri = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+$params = explode('/',$uri);
+if($params[6]=='') {
+echo "<pre>";
+print_r($data['list']);
+echo "</pre>";
+?>
+
+<form action="" method="post">
+    <button type="submit" name="table" value="notary">Список нотариусов</button>
+    <button type="submit" name="table" value="user">Список пользователей</button>
+</form>
+<?if($_POST['table']=='user' || $_POST['table']==''){
+    echo "<h3>Список пользователей</h3>";
+}else{
+    echo "<h3>Список нотариусов</h3>";
+}
+?>
+<table class="table table-striped" style="width: 100%;">
+    <tr>
+        <td style="width: 5%;">#</td>
+        <td style="width: 10%;">Name</td>
+        <td style="width: 25%;">Login</td>
+        <td style="width: 50%;">Email</td>
+    </tr>
+    <?php foreach($data['list'] as $item) {
+    if($item['role'] == 'user'){
+        $role = 'common_user';
+    }
+    elseif($item['role'] == 'notary'){
+        $role = 'notary';
+    }?>
+    <tr>
+        <td><?=$item['id']?></td>
+        <td><?=$item['name']?></td>
+        <td><a href="<?=$role.'/'.$item['id'];?>"><?=$item['login'];?></a></td>
+        <td><?=$item['email']?></td>
+    </tr>
+    <?php } ?>
+</table>
+<?php
+foreach($data['list'] as $item){
+     if($item['role'] == 'user'){
+        $role = 'common_user';
+    }
+    elseif($item['role'] == 'notary'){
+        $role = 'notary';
+    }
+}}
+else{
+print_r($data['params']);
+if($data['params'] == 'common_user'){
+?>
+<form>
+    <label id="id">ID</label>
+        <input type="text" class="form-control" name="id" value="<?=$data['user']['id'];?>" >
+    <label id="userID">userID</label>
+        <input type="text" class="form-control" name="userID" value="<?=$data['user']['userID'];?>">
+    <label id="fName">fName</label>
+        <input type="text" class="form-control" name="fName" value="<?=$data['user']['fName'];?>">
+    <label id="sName">sName</label>
+        <input type="text" class="form-control" name="sName" value="<?=$data['user']['sName'];?>">
+    <label id="mName">mName</label>
+        <input type="text" class="form-control" name="mName" value="<?=$data['user']['mName'];?>">
+    <label id="mainPhone">mainPhone</label>
+        <input type="text" class="form-control" name="mainPhone" value="<?=$data['user']['mainPhone'];?>">
+    <label id="messPhone">messPhone</label>
+        <input type="text" class="form-control" name="messPhone" value="<?=$data['user']['messPhone'];?>">
+    <label id="messenger">messenger</label>
+        <input type="text" class="form-control" name="messenger" value="<?=$data['user']['messenger'];?>">
+    <label id="email">email</label>
+        <input type="text" class="form-control" name="email" value="<?=$data['user']['email'];?>">
+    <label id="birthdayDate">birthdayDate</label>
+        <input type="text" class="form-control" name="birthdayDate" value="<?=$data['user']['birthdayDate'];?>">
+    <label id="citizenship">citizenship</label>
+        <input type="text" class="form-control" name="citizenship" value="<?=$data['user']['citizenship'];?>">
+    <label id="passportInfo">passportInfo</label>
+        <input type="text" class="form-control" name="passportInfo" value="<?=$data['user']['passportInfo'];?>">
+    <label id="passportIB">passportIB</label>
+        <input type="text" class="form-control" name="passportIB" value="<?=$data['user']['passportIB'];?>">
+    <label id="PassportDate">PassportDate</label>
+        <input type="text" class="form-control" name="PassportDate" value="<?=$data['user']['PassportDate'];?>">
+    <label id="residence">residence</label>
+        <input type="text" class="form-control" name="residence" value="<?=$data['user']['residence'];?>">
+    <label id="INN">INN</label>
+        <input type="text" class="form-control" name="INN" value="<?=$data['user']['INN'];?>">
+    <label id="marriage">marriage</label>
+        <input type="text" class="form-control" name="marriage" value="<?=$data['user']['marriage'];?>">
+    <label id="marriageLink">marriageLink</label>
+        <input type="text" class="form-control" name="marriageLink" value="<?=$data['user']['marriageLink'];?>">
+    <label id="docs">docs</label>
+        <input type="text" class="form-control" name="docs" value="<?=$data['user']['docs'];?>">
+    <label id="marriafeInfo">marriafeInfo</label>
+        <input type="text" class="form-control" name="marriafeInfo" value="<?=$data['user']['marriafeInfo'];?>">
+    <label id="sms">sms</label>
+        <input type="text" class="form-control" name="sms" value="<?=$data['user']['sms'];?>">
+    <label id="promotions">promotions</label>
+        <input type="text" class="form-control" name="promotions" value="<?=$data['user']['promotions'];?>">
+    <label id="rating">rating</label>
+        <input type="text" class="form-control" name="rating" value="<?=$data['user']['rating'];?>">
+    <label id="orders">orders</label>
+        <input type="text" class="form-control" name="orders" value="<?=$data['user']['orders'];?>">
+    <label id="lastOrder">lastOrder</label>
+        <input type="text" class="form-control" name="lastOrder" value="<?=$data['user']['lastOrder'];?>">
+
+</form>
+<?}
+elseif($data['params']  == 'notary' ){?>
+    <form>
+        <label id="userID">userID</label>
+        <input type="text" class="form-control" name="userID" value="<?=$data['user']['userID'];?>">
+        <label id="login">login</label>
+        <input type="text" class="form-control" name="login" value="<?=$data['user']['login'];?>">
+        <label id="email">email</label>
+        <input type="text" class="form-control" name="email" value="<?=$data['user']['email'];?>">
+        <label id="fName">fName</label>
+        <input type="text" class="form-control" name="fName" value="<?=$data['user']['fName'];?>">
+        <label id="sName">sName</label>
+        <input type="text" class="form-control" name="sName" value="<?=$data['user']['sName'];?>">
+        <label id="mName">mName</label>
+        <input type="text" class="form-control" name="mName" value="<?=$data['user']['mName'];?>">
+        <label id="sex">sex</label>
+        <input type="text" class="form-control" name="sex" value="<?=$data['user']['sex'];?>">
+        <label id="license">license</label>
+        <input type="text" class="form-control" name="license" value="<?=$data['user']['license'];?>">
+        <label id="dateOfRegLicense">dateOfRegLicense</label>
+        <input type="text" class="form-control" name="dateOfRegLicense" value="<?=$data['user']['dateOfRegLicense'];?>">
+        <label id="aboutNotary">aboutNotary</label>
+        <input type="text" class="form-control" name="aboutNotary" value="<?=$data['user']['aboutNotary'];?>">
+
+        <label id="role">role</label>
+        <input type="text" class="form-control" name="role" value="<?=$data['user']['role'];?>">
+        <label id="password">password</label>
+        <input type="text" class="form-control" name="password" value="<?=$data['user']['password'];?>">
+        <label id="token">token</label>
+        <input type="text" class="form-control" name="token" value="<?=$data['user']['token'];?>">
+        <label id="is_active">is_active</label>
+        <input type="text" class="form-control" name="is_active" value="<?=$data['user']['is_active'];?>">
+        <label id="city">city</label>
+        <input type="text" class="form-control" name="city" value="<?=$data['user']['city'];?>">
+        <label id="area">area</label>
+        <input type="text" class="form-control" name="area" value="<?=$data['user']['area'];?>">
+        <label id="street">street</label>
+        <input type="text" class="form-control" name="street" value="<?=$data['user']['street'];?>">
+        <label id="house">house</label>
+        <input type="text" class="form-control" name="house" value="<?=$data['user']['house'];?>">
+        <label id="entrance">entrance</label>
+        <input type="text" class="form-control" name="entrance" value="<?=$data['user']['entrance'];?>">
+        <label id="floor">floor</label>
+        <input type="text" class="form-control" name="floor" value="<?=$data['user']['floor'];?>">
+
+        <label id="room">room</label>
+        <input type="text" class="form-control" name="room" value="<?=$data['user']['room'];?>">
+        <label id="doorphoneCode">doorphoneCode</label>
+        <input type="text" class="form-control" name="doorphoneCode" value="<?=$data['user']['doorphoneCode'];?>">
+        <label id="metro">metro</label>
+        <input type="text" class="form-control" name="metro" value="<?=$data['user']['metro'];?>">
+        <label id="arrayName">arrayName</label>
+        <input type="text" class="form-control" name="arrayName" value="<?=$data['user']['arrayName'];?>">
+        <label id="geolocation">geolocation</label>
+        <input type="text" class="form-control" name="geolocation" value="<?=$data['user']['geolocation'];?>">
+        <label id="offiePhoto">offiePhoto</label>
+        <input type="text" class="form-control" name="offiePhoto" value="<?=$data['user']['offiePhoto'];?>">
+        <label id="poweredByExit">poweredByExit</label>
+        <input type="text" class="form-control" name="poweredByExit" value="<?=$data['user']['poweredByExit'];?>">
+        <label id="stWeekday">stWeekday</label>
+        <input type="text" class="form-control" name="stWeekday" value="<?=$data['user']['stWeekday'];?>">
+        <label id="etWeekday">etWeekday</label>
+        <input type="text" class="form-control" name="etWeekday" value="<?=$data['user']['etWeekday'];?>">
+        <label id="wSaturday">wSaturday</label>
+        <input type="text" class="form-control" name="wSaturday" value="<?=$data['user']['wSaturday'];?>">
+
+        <label id="wSunday">wSunday</label>
+        <input type="text" class="form-control" name="wSunday" value="<?=$data['user']['wSunday'];?>">
+        <label id="wHolidays">wHolidays</label>
+        <input type="text" class="form-control" name="wHolidays" value="<?=$data['user']['wHolidays'];?>">
+        <label id="stSaturday">stSaturday</label>
+        <input type="text" class="form-control" name="stSaturday" value="<?=$data['user']['stSaturday'];?>">
+        <label id="etSaturday">etSaturday</label>
+        <input type="text" class="form-control" name="etSaturday" value="<?=$data['user']['etSaturday'];?>">
+        <label id="stSunday">stSunday</label>
+        <input type="text" class="form-control" name="stSunday" value="<?=$data['user']['stSunday'];?>">
+        <label id="etSunday">etSunday</label>
+        <input type="text" class="form-control" name="etSunday" value="<?=$data['user']['etSunday'];?>">
+        <label id="stHolidays">stHolidays</label>
+        <input type="text" class="form-control" name="stHolidays" value="<?=$data['user']['stHolidays'];?>">
+        <label id="etHolidays">etHolidays</label>
+        <input type="text" class="form-control" name="etHolidays" value="<?=$data['user']['etHolidays'];?>">
+        <label id="cityPhone">cityPhone</label>
+        <input type="text" class="form-control" name="cityPhone" value="<?=$data['user']['cityPhone'];?>">
+        <label id="nameOfAssistant">nameOfAssistant</label>
+        <input type="text" class="form-control" name="nameOfAssistant" value="<?=$data['user']['nameOfAssistant'];?>">
+
+        <label id="assistantPhone">assistantPhone</label>
+        <input type="text" class="form-control" name="assistantPhone" value="<?=$data['user']['assistantPhone'];?>">
+        <label id="emailAssistant">emailAssistant</label>
+        <input type="text" class="form-control" name="emailAssistant" value="<?=$data['user']['emailAssistant'];?>">
+    </form>
+<?}
+  echo "<pre>";
+    print_r($data['user']);
+  echo "</pre>";
+    ?>
+<input type="button" class="btn" onclick="history.back()" value="Назад">
+<?}?>

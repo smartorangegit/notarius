@@ -1,0 +1,48 @@
+
+.services-page-head {
+	padding-top: 20px;
+	background-image: none;
+	border-top: 1px solid #fff;
+	background-color: #fff;
+	height: auto;
+}
+
+.services-page-header {
+	margin-bottom: 10px;
+}
+
+.services-page-categories {
+	padding-top: 15px;
+	padding-bottom: 40px;
+	box-shadow: none;
+
+	&__section-heading {
+		margin-bottom: 25px;
+	}
+}
+
+.services-page-form-wrap {
+	width: 100%;
+	margin-top: 35px;
+	margin-bottom: 0;
+}
+
+@media screen and (min-width: 320px) and (max-width: 599px) {
+
+	.services-page-categories {
+		padding: 0 0 20px 0;
+
+		&__section-heading {
+			background-color: #fff;
+			color: $dark-gray;
+			margin-bottom: 15px;
+			text-align: center;
+			margin-top: 5px;
+		}
+	}
+
+	.services-page-form-wrap {
+		margin-top: 10px;
+	}
+
+}

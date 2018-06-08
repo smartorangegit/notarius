@@ -1,0 +1,66 @@
+<?php
+header('Cache-Control: no cache');
+if(!$data['params']){
+?>
+
+<div class="service-add">
+    <h3 class="section-heading">Добавление даных для локации</h3>
+    <form action="" method="post" class="form-group">
+        <div class="row">
+            <div class="form-group col-sm-3">
+                <input type="hidden" name="addCity" value="1">
+                <input type="text" class="form-control" name="cityName" placeholder="Название района">
+            </div>
+            <button class="btn btn-primary col-sm-2" type="submit">Добавить</button>
+        </div>
+    </form>
+</div>
+
+<h3 class="section-heading">Таблица с добавлеными районами</h3>
+
+<div class="limiter queries_margin_top">
+    <div class="container-table100">
+        <div class="wrap-table100">
+
+            <div class="table100 ver6 m-b-110">
+                <table data-vertable="ver6">
+                    <thead>
+                        <tr class="row100 head">
+                            <th class="column100 column1 user-list-th" data-column="column1">#</th>
+                            <th class="column100 column2 user-list-th" data-column="column2">Название</th>
+                            </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach($data['getArea'] as $item) { ?>
+                            <tr class="row100">
+                                <td class="column100 column1 admin-serv-td" data-column="column1">
+                                    <a class='cell__link' href="/admin/users/area/<?=$item['id']?>"><?=$item['id']?></a>
+                                </td>
+
+                                <td class="column100 column2 admin-serv-td" data-column="column2">
+                                    <a class='cell__link' href="/admin/users/area/<?=$item['id']?>"><?=$item['areaName']?></a>
+                                </td>
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+                 </table>
+            </div>
+                
+        </div>
+    </div>
+</div>
+
+<?}else{?>
+<div class="col-sm-6 col-sm-offset-3 mtop20">
+    <div>
+        <form action="" method="post">
+            <input type="hidden" name="updArea" value="<?=$data['getArea'][0]['id']?>">
+            <input type="text" class="form-control" name="areaName" value="<?=$data['getArea'][0]['areaName']?>" placeholder="Название района"><br>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Изменить</button>
+        </form>
+    </div>
+    <div>
+    </div>
+</div>
+<input type="button" class="btn" onclick="history.back()" value="Назад">
+<?}?>

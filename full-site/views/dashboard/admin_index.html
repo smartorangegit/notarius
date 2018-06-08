@@ -1,0 +1,445 @@
+<?php //print_r($data['notaryGroups']);?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!--
+<form id="getNL" method="post" action="javascript:void(null);" onsubmit="getNotary()" style="width:1100px; max-width: 1200px; display: flex;" >
+    <div class="form-group">
+        <label for="fio">ФИО</label>
+        <input id="fio" name="fio" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="area">Район</label>
+        <select id="area" name="area" class="form-control">
+            <option value=""></option>
+            <option value="Шевченковский">Шевченковский</option>
+            <option value="Днепровский">Днепровский</option>
+        </select>
+    </div>
+    <div class="form-group">
+            <label for="limX">От</label>
+            <input id="limX" name="limX" type="time" class="form-control">
+    </div>
+    <div class="form-group">
+            <label for="limY">До</label>
+            <input id="limY" name="limY" type="time" class="form-control">
+    </div>
+    <div class="form-group" style="    width: 95px;">
+        <label for="sb"> будни</label>
+        <input id="week" name="week" type="checkbox" class="form-control">
+    </div>
+    <div class="form-group" style="    width: 95px;">
+        <label for="sb"> в субботу</label>
+        <input id="sb" name="sb" type="checkbox" class="form-control">
+    </div>
+    <div class="form-group" style="    width: 105px;">
+        <label for="vskr"> в воскресение</label>
+        <input id="vskr" name="vskr" type="checkbox" class="form-control">
+    </div>
+    <div class="form-group" style="margin: 24px 0 0 0;">
+        <input type="submit" class="btn btn-success" value="Search">
+    </div>
+</form>
+<div class="form-group">
+    <form id="setNL"  action="javascript:void(null);" onsubmit="setNotary()">
+        <select id="nL" multiple='multiple' size="3">
+        </select>
+        <input type="submit" class="btn btn-success" value="Choose">
+    </form>
+</div>
+
+<form  method="post" id="list" action="javascript:void(null);" onsubmit="call()" style="width:1150px; max-width: 1200px; display: flex;">
+    <div class="form-group">
+        <label for="servicesName">Услуга</label>
+        <input type="text" id="servicesName" name="servicesName" class="form-control" readonly>
+        <input type="hidden" name="serviceID" id="serviceID">
+        <input type="hidden" name="deID" id="deID">
+    </div>
+    <div class="form-group">
+        <label for="date">Дата</label>
+        <input type="date" id="date" name="date" class="form-control" readonly>
+    </div>
+    <div class="form-group">
+        <label for="time">Время</label>
+        <input type="time" id="time" name="time" class="form-control" readonly>
+    </div>
+    <div class="form-group" style="width: 100px;">
+        <label for="sum">Сумма</label>
+        <input name="sum" id="sum" class="form-control" type="number" required>
+    </div>
+    <div class="form-group">
+        <label for="fSum">Финальная сумма</label>
+        <input name="fSum" id="fSum" class="form-control" type="number" required>
+    </div>
+    <div class="form-group">
+        <label for="homeCheck">На дом</label>
+        <input name="homeCheck" id="homeCheck" class="form-control" type="checkbox" style="width: 55px; margin: 0;"  disabled="disabled" >
+    </div>
+    <div class="form-group">
+        <label for="state">Статус</label>
+    <select name="state" id="state" class="form-control">
+        <option value="1">Новая</option>
+        <option value="2">Назначено</option>
+        <option value="3">Состоялась</option>
+        <option value="4">Отменена</option>
+    </select>
+    </div>
+    <div class="form-group">
+        <label for="notaryL">Нотариус</label>
+        <input id="notaryL" name="notaryL" type="text" class="form-control" readonly>
+    </div>
+    <div class="form-group">
+        <label for="notaryG">Группа нотариусов</label>
+    <select name="notaryG"  onchange="myFunction()" id="notaryG" class="form-control">
+        <?foreach($data['notaryGroups'] as $item){?>
+        <option value="<?=$item['id']?>"><?=$item['name'];?></option>
+        <?}?>
+    </select>
+    </div>
+    <!--<div class="form-group" style=" margin: 24px 0 0 0;">-->
+        <!--<input type="submit" class="btn btn-success" value="GO">-->
+    <!--</div>
+    <div class="form-group" style=" margin: 24px 0 0 0;">
+        <a href="#" id="detail" class="btn btn-primary">Deal</a>
+    </div>
+</form>
+-->
+<div id="res" class="row list-group"></div>
+<span id="mo"></span>
+<p id="demo"></p>
+<script>
+    function myFunction() {
+        var x = document.getElementById("notaryG").value;
+        document.getElementById("demo").innerHTML = "You selected: " + x;
+    }
+var i=0;
+function call() {
+    var msg   = $('#list').serialize();
+    $.ajax({
+        url: '/webroot/post.php',
+        type: "POST",
+        data: msg,
+        success: function onAjaxSuccess(data)
+        {
+            //$( "input" ).remove();
+            // Здесь мы получаем данные, отправленные сервером и выводим их на экран.
+            //alert(data);
+        }
+    });
+
+}
+function getNotary() {
+    var msg   = $('#getNL').serialize();
+    $.ajax({
+        url: '/webroot/getN.php',
+        type: "POST",
+        data: msg,
+        success: function onAjaxSuccess(data)
+        {
+            //alert(data);
+            $('#nL').html(data);
+        }
+    });
+
+}
+function setNotary() {
+    var result = [];
+    $('#nL option').each(function(index, option) {
+        if(option.selected) {
+            result.push(option.value);
+        }
+    });
+    //var snl   = $('#setNL').serialize();
+    var notaryL = document.getElementById("notaryL");
+    notaryL.setAttribute('value', result);
+    console.log(result);
+
+}
+    var timeCtrl = (function(){
+
+        var dealDate;
+
+        function setDealDate(day, time) {
+            var temp1 = day.split('-');
+            var temp2 = time.split(':');
+            var year = parseInt(temp1[0]);
+            var month = parseInt(temp1[1]) - 1;
+            var date = parseInt(temp1[2]);
+            var hours =  parseInt(temp2[0]);
+            var minutes = parseInt(temp2[1]);
+            var seconds = temp2[2]|| 0;
+            dealDate = new Date(year, month, date, hours, minutes, seconds)
+        };
+
+        function msToTime(ms) {
+            return new Date(ms).toISOString().slice(11, -5);
+        };
+
+        function getTimeDifference() {
+            var nowMil = Date.now();
+            var dealDateMil = dealDate.getTime();
+            var timeDiff = Math.abs(nowMil - dealDateMil);
+            return msToTime(timeDiff);
+
+        };
+
+        function getDaysDifference() {
+            return new Date().getDate() - dealDate.getDate();
+        };
+
+        return {
+            setDealDate: setDealDate,
+            getTimeDifference: getTimeDifference,
+            getDaysDifference: getDaysDifference
+        }
+    })();
+$( document ).ready(function() {
+    timerId;
+});
+var request = new XMLHttpRequest();
+
+function reqReadyStateChange() {
+    if (request.readyState == 4) {
+        var status = request.status;
+        if (status == 200) {
+            //console.log(request);
+            if (request.responseText != "") {
+                var obj = JSON.parse(request.responseText);
+                if (obj.msg_info[0]) {
+                    //console.log(obj.msg_info);
+                    var form = '';
+                    var idsArr = [];
+                    obj.msg_info.forEach(function(res) {
+                        idsArr.push(res.deID);
+                        if(res.place==1) {
+                            var homeCheck = true;
+                        } else {
+                            var homeCheck = false;
+                        }
+                        var stateNum = res.transactionStatus;
+
+                        if(stateNum == 1) {
+                            var status = '<p>Новая</p>'
+                        } else if(stateNum == 2) {
+                            var status = '<p>Отправлена</p>'
+                        } else if(stateNum == 3) {
+                            var status = '<p>Назначено</p>'
+                        } else if(stateNum == 4) {
+                            var status = '<p>Состоялась</p>'
+                        } else if(stateNum == 5) {
+                            var status = '<p>Отменена</p>'
+                        } 
+
+
+                        var dealDate = new Date(res.dateOf);
+                        var appDate =  new Date(res.appDate);
+                        var dateString = ("0" + dealDate.getUTCDate()).slice(-2) +"/"+ ("0" + (dealDate.getUTCMonth()+1)).slice(-2) +"/"+ ("0" + dealDate.getUTCFullYear()).slice(-2);
+                        var dateString2 = ("0" + appDate.getUTCDate()).slice(-2) +"/"+ ("0" + (appDate.getUTCMonth()+1)).slice(-2) +"/"+ ("0" + appDate.getUTCFullYear()).slice(-2);
+
+                        var timeDiff;
+                        var dateDiff;
+
+                        if(res.reacTime === '00:00:00'){
+                            timeCtrl.setDealDate(res.appDate, res.appTime)
+                            timeDiff = timeCtrl.getTimeDifference();
+                        } else {
+                            timeDiff = 'Обработана админом';
+                        }
+                        if(res.reacDate === '0000-00-00'){
+                         timeCtrl.getDaysDifference();
+                         dateDiff = timeCtrl.getDaysDifference();
+                        }
+                        else {
+                            dateDiff = 'Обработана админом';
+                        }
+
+                        // data-title="'+ res.fName + res.sName + res.mName + '"
+
+                        // body table in cycle
+                        var formOne =
+                            '<tbody>' +
+                                '<tr class="row100 deal">' +
+                                    '<td class="column100 column2 admin-serv-td dashboard-tooltip" data-column="column2">' +
+                                        '<a class="cell__link" href="/admin/dashboard/new/'+res.deID+'/"id="detail">' + res.userName +'</a>'+
+                                        '<div class="dashboard-hover-name"><p>' + res.fName + '<br>' + res.sName + '<br>' + res.mName + '</p></div>' +
+                                    '</td>' +
+
+                                    '<td class="column100 column3 admin-serv-td" data-column="column3">' +
+                                        '<a class="cell__link" href="/admin/dashboard/new/'+res.deID+'/"id="detail">' + res.name +'</a>'+
+                                        '<input type="hidden" name="serviceID" id="serviceID" value="'+ res.serviceID +'">' +
+                                        '<input type="hidden" name="deID" id="deID" value="'+ res.deID +'">' +
+                                    '</td>' +
+
+                                    '<td class="column100 column4 admin-serv-td admin-serv-col-4" data-column="column4">' +
+                                        '<a class="cell__link" href="/admin/dashboard/new/'+res.deID+'/"id="detail">' + dateString +'</a>'+
+                                    '</td>' +
+                                    '<td class="column100 column1 admin-serv-td" data-column="column1">' +
+                                        '<a class="cell__link" href="/admin/dashboard/new/'+res.deID+'/"id="detail">' + res.timeOf + '</a>'+
+                                    '</td>' +
+
+                                    '<td class="column100 column2 admin-serv-td" data-column="column2">' +
+                                        '<a class="cell__link" href="/admin/dashboard/new/'+res.deID+'/"id="detail">' + res.appTime + '</a>'+
+                                    '</td>' +
+                                    '<td class="column100 column1 admin-serv-td" data-column="column1">' +
+                                        '<a class="cell__link" href="/admin/dashboard/new/'+res.deID+'/"id="detail">' + dateString2 +'</a>'+
+                                    '</td>' +
+
+                                    '<td class="column100 column2 admin-serv-td" data-column="column2">' +
+                                        '<a class="cell__link" href="/admin/dashboard/new/'+res.deID+'/"id="detail">' + timeDiff + '</a>'+
+                                    '</td>' +
+                                    '<td class="column100 column1 admin-serv-td" data-column="column1">' +
+                                        '<a class="cell__link" href="/admin/dashboard/new/'+res.deID+'/"id="detail">' + dateDiff + '</a>'+
+                                    '</td>' +
+
+                                    '<td class="column100 column2 admin-serv-td" data-column="column2">' +
+                                        '<a class="cell__link" href="/admin/dashboard/new/'+res.deID+'/"id="detail">' + res.cost + '</a>'+
+                                    '</td>' +
+                                    '<td class="column100 column1 admin-serv-td" data-column="column1">' +
+                                        '<a class="cell__link" href="/admin/dashboard/new/'+res.deID+'/"id="detail">' + res.finalCost + '</a>'+
+                                    '</td>' +
+
+                                    '<td class="column100 column2 admin-serv-td" data-column="column2">' +
+                                        '<a class="cell__link" href="/admin/dashboard/new/'+res.deID+'/"id="detail">' +
+                                            '<input name="homeCheck" id="homeCheck" type="checkbox" '+ (homeCheck ? 'checked':'') +'  disabled="disabled" >' +
+                                            '</a>'+
+                                    '</td>' +
+
+                                    '<td class="column100 column1 admin-serv-td" data-column="column1">' +
+                                        status +
+                                    '</td>' +
+                                '</tr>' +
+                            '</tbody>';
+
+                        form+=formOne;
+
+
+
+                    });
+
+
+    // head table outside cycle
+    var heading = '<h3 class="section-heading">Новые заявки</h3>';
+    var topTable = '<div class="limiter queries_margin_top">' + 
+        '<div class="container-table100">' + 
+            '<div class="wrap-table100">' + 
+                '<div class="table100 ver6 m-b-110">' + 
+                    '<table data-vertable="ver6">' + 
+                        '<thead>' + 
+                            '<tr class="row100 head">' + 
+                                // '<th class="column100 column1 user-list-th" data-column="column1">Пользователь</th>' + 
+                                '<th class="column100 column2 user-list-th" data-column="column2">Номер</th>' + 
+                                '<th class="column100 column3 user-list-th" data-column="column3">Услуга</th>' +
+                                '<th class="column100 column4 user-list-th" data-column="column4">Дата сделки</th>' +
+                                '<th class="column100 column1 user-list-th" data-column="column1">Время</th>' + 
+                                '<th class="column100 column2 user-list-th" data-column="column2">Заявка пришла(время)</th>' + 
+                                '<th class="column100 column3 user-list-th" data-column="column3">Заявка пришла(дата)</th>' +
+                                '<th class="column100 column4 user-list-th" data-column="column4">Заявка ожидает</th>' + 
+                                '<th class="column100 column2 user-list-th" data-column="column2">Дней в ожидании</th>' + 
+                                '<th class="column100 column4 user-list-th" data-column="column4">Сумма</th>' +
+                                '<th class="column100 column1 user-list-th" data-column="column1">Фин. сумма</th>' + 
+                                '<th class="column100 column2 user-list-th" data-column="column2">На дом</th>' + 
+                                '<th class="column100 column3 user-list-th" data-column="column3">Статус</th>' + 
+                            '</tr>' +
+                        '</thead>';
+
+
+
+    var bottomTable =   '</table>' +
+                    '</div>' +
+                '</div>' +
+            '</div>' +
+        '</div>';
+
+
+
+    $('#res').html(heading + topTable + form + bottomTable);
+
+
+
+// script for tooltip
+    $('.dashboard-tooltip').hover(
+    function(){
+      $(this).find('.dashboard-hover-name').show();
+    },
+    function(){
+      $('.dashboard-hover-name').hide();
+    });
+// END__script for tooltip
+
+
+
+// Test
+                    //var time = "08:34:45";
+                    //var day = "25/03/18";
+
+
+/*
+                    var detail = document.getElementById("detail");
+                    detail.setAttribute('href', '/admin/dashboard/new/'+obj.msg_info[0]['deID']+'/');
+
+                    var deID = document.getElementById("deID");
+                    deID.setAttribute('value', obj.msg_info[0]['deID']);
+
+                    var nameID = document.getElementById("serviceID");
+                    nameID.setAttribute('value', obj.msg_info[0]['serviceID']);
+
+                    var nameS = document.getElementById("servicesName");
+                    nameS.setAttribute('value', obj.msg_info[0]['name']);
+
+                    var dateOf = document.getElementById("date");
+                    dateOf.setAttribute('value', obj.msg_info[0]['dateOf']);
+
+                    var timeOf = document.getElementById("time");
+                    timeOf.setAttribute('value', obj.msg_info[0]['timeOf']);
+
+                    var cost = document.getElementById("sum");
+                    cost.setAttribute('value', obj.msg_info[0]['cost']);
+
+                    var costF = document.getElementById("fSum");
+                    costF.setAttribute('value', obj.msg_info[0]['finalCost']);
+
+                    if(obj.msg_info[0]['place']==1) {
+                        document.getElementById('homeCheck').checked = true;
+                    }
+                    var stateNum = obj.msg_info[0]['transactionStatus']-1;
+                    var state = document.getElementById("state").children[stateNum];
+                    state.setAttribute("selected", "selected");
+*/
+                    var audio = new Audio();
+                    audio.src = '/webroot/audio/korabelnyy_gudok.mp3';
+                    // console.log(obj.change);
+                    var firstDeal = $('.deal')[0];
+                    // firstDeal.classList.add("newDeal");
+                    if(obj.change==1){
+                        audio.play();
+                        firstDeal.classList.add("newDeal");
+                        
+                    }
+
+
+                    //timer();
+                }
+                else {
+                    //$('#res').html(request.responseText); - строка для дебага вывовода в dashboard
+                    $('#res').html("Новых заявок нет");
+                }
+            }
+        }
+    }
+}
+
+var timerId = setInterval(function() {
+    request.open("GET", "/webroot/get.php");
+    request.onreadystatechange = reqReadyStateChange;
+    request.send();
+}, 2500);
+function timer()
+{
+    i++;
+    timeR=setTimeout("timer()", 1000);
+    document.getElementById('mo').innerHTML=i;
+    //if(i>=10){i=0;}
+}
+
+</script>
+
+</body>
+</html>

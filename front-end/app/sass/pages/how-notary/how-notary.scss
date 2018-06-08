@@ -1,0 +1,333 @@
+.how-notary-page-head {
+	padding-top: 5px;
+	margin-bottom: 25px;
+	background-image: none;
+	border-top: 1px solid #fff;
+	background-color: #fff;
+	height: auto;
+}
+
+.how-notary-page-header {
+	margin-bottom: 30px;
+}
+
+.how-notary-reg {
+	width: 100%;
+	height: 530px;
+	margin-top: 25px;
+	padding: 20px 0 20px 0;
+	background-color: $gray;
+	box-sizing: border-box;
+
+	&__heading {
+		float: left;
+		width: 100%;
+		margin-left: 80/1200*100%;
+		margin-bottom: 20px;
+		color: #fff;
+		font: 30/16*1rem Roboto-Thin, Arial, sans-serif;
+	}
+
+	&-form {
+		float: left;
+		width: 405/1200*100%;
+		margin-right: 180/1200*100%;
+		margin-left: 80/1200*100%;
+		padding: 35px 40/1200*100% 35px 40/1200*100%;
+		background-color: #fff;
+		border-radius: 3px;
+		box-sizing: border-box;
+
+		&__input {
+			width: 100%;
+			height: 25px;
+			margin-top: 8px;
+			margin-bottom: 12px;
+			border: 1px solid #9D9FA6;
+			border-radius: 3px;
+			box-sizing: border-box;
+		}
+
+		&__label {
+			color: $dark-gray;
+			font: 1rem Roboto-Thin, Arial, sans-serif;
+			// font-weight: 600;
+		}
+
+		&__button {
+			position: relative;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 70%;
+			height: 35px;
+			margin-top: 12px;
+			margin-bottom: 14px;
+			background-color: $dark-blue;
+			color: #fff;
+			font: 1rem Roboto-Light, Arial, sans-serif;
+			transition: all 0.2s;
+
+			&:hover {
+				background-color: $btn-hover;
+			}
+		}
+
+		&__text {
+			text-align: center;
+			color: $dark-gray;
+			font: 12/16*1rem Roboto-Light, Arial, sans-serif;
+			
+			&_blue {
+				color: #0073C0;
+				cursor: pointer;
+				font-weight: 600;
+			}
+		}
+	}
+
+	&__banner {
+		position: relative;
+		display: inline-block;
+		margin-top: 85px;
+		margin-bottom: 45px;
+		color: #fff;
+		font: 36/16*1em Roboto-Thin, Arial, sans-serif;
+
+		&:before {
+			position: absolute;
+			left: -35/410*100%;
+			top: 50%;
+			transform: translateY(-50%);
+			background-color: #fff;
+			content: " ";
+			width: 1px;
+			height: 120%;
+		}
+	}
+
+	&__button {
+		position: relative;
+		left: 205/1200*100%;
+		width: 90px;
+		height: 90px;
+		border: 1px solid #fff;
+		border-radius: 50%;
+		background-color: transparent;
+		outline: none;
+		@include flex(center, center);
+	}
+}
+
+.how-notary-advantages {
+	padding: 30px 0 45px 0;
+
+	&__section-heading {
+		margin-bottom: 75px;
+	}
+
+	&-content {
+		width: 100%;
+		@include flex(center, space-between);
+	}
+
+	&-list {
+		position: relative;
+		width: 100%;
+		@include flex(flex-start, space-between);
+
+		&:before {
+			position: absolute;
+			top: 0;
+			left: 33%;
+			width: 1px;
+			height: 155px;
+			content: " ";
+			background-color: $dark-gray; 
+		}
+
+		&:after {
+			position: absolute;
+			top: 0;
+			right: 33%;
+			width: 1px;
+			height: 155px;
+			content: " ";
+			background-color: $dark-gray; 
+		}
+
+		&__item {
+			position: relative;
+			width: 33%;
+		}
+
+		&__icon {
+			width: 92px;
+			height: 92px;
+			margin: 15px auto 0 auto;
+			position: relative;
+			left: 50%;
+			transform: translateX(-50%);
+			margin-bottom: 40px;
+			fill: $blue;
+			// background: url(../img/how-notary/badge1.png);
+
+			// &_2 {
+			// 	background-position-x: 495px; 
+			// 	background-position-y: -15px;
+
+			// }
+
+			// &_3 {
+			// 	background-position-x: 92px; 
+			// }
+		}
+
+		&__text {
+			width: 265/430*100%;
+			text-align: center;
+			margin: 0 auto;
+			color: $dark-gray;
+			font: 1em Roboto-Thin, Arial, sans-serif;
+			line-height: 1.5;
+
+			&_center {
+				text-align: center;
+			}
+		}
+	}
+}
+
+.how-notary-steps {
+	&-container {
+		padding: 55px 0 38px 0;
+		box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.08);
+		@include flex(center, space-between);
+	}
+
+	&__heading {
+		width: 50%;
+		color: $dark-gray;
+		font: 36/16*1em Roboto-Thin, Arial, sans-serif;
+		text-align: center;
+	}
+
+	&-list {
+		position: relative;
+		width: 50%;
+		@include flex(center, space-between);
+		flex-direction: column;
+
+		&__item {
+			width: 467/600*100%;
+			margin-bottom: 40px;
+			display: flex;
+			align-items: center;
+
+			&:last-child {
+				margin-bottom: 0; 
+			}
+		}
+
+		&__icon {
+			width: 47px;
+			height: 47px;
+			margin-right: 34/467*100%;
+			fill: $blue;
+			// background: url(../img/how-notary/calendar.png);
+
+			// &_2 {
+			// 	background-position-y: 192px;
+			// }
+
+			// &_3 {
+			// 	background-position-y: 123px; 
+			// }
+
+			// &_4 {
+			// 	background-position-y: 47px; 
+			// }
+		}
+
+		&__text {
+			width: 80%;
+			color: $dark-gray;
+			font: 18/16*1em Roboto-Thin, Arial, sans-serif;
+		}
+
+		&:before {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+			content: " ";
+			width: 1px;
+			height: 225/275*100%;
+			background-color: $dark-gray;
+		}
+	}
+}
+
+
+.how-notary-profile-steps {
+	padding: 35px 0 40px 0;
+
+	&__section-heading {
+		margin-bottom: 25px;
+	}
+
+	&-list {
+		width: 100%;
+		@include flex(center, space-around);
+
+		&__item {
+			width: 312/1200*100%;
+			@include flex(center, flex-start);
+		}
+
+		&__number {
+			margin-right: 35/312*100%;	
+			color: $blue;
+			font: 150/16*1em Roboto-Thin, Arial, sans-serif;
+		}
+
+		&__text {
+			color: $dark-gray;
+			font: 1em Roboto-Thin, Arial, sans-serif;
+
+			&_underline {
+				border-bottom: 1px solid $dark-gray;
+			}
+		}
+	}
+}
+
+.how-notary-popup {
+	display: block;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	&-wrap {
+		display: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		height: 100vh;
+		background-color: rgba(0, 0, 0, 0.7);
+	}
+
+	&__button {
+		width: 100%;
+		background-color: $dark-blue; 
+		color: #fff;
+	}
+
+	&-regist__button {
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+		margin-top: 0;
+	}
+}

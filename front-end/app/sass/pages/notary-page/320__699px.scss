@@ -1,0 +1,227 @@
+
+@media screen and (min-width: 320px) and (max-width: 699px) {
+	.personal-data {
+		padding: 0 10px;
+		flex-wrap: wrap;
+		box-sizing: border-box;
+
+		&__notary-menu {
+			display: none;
+		}
+
+	}
+
+	.notary-page-editing {
+		width: 100%;
+		margin-right: 0;
+
+		&__subheading {
+			margin-bottom: 15px;
+		}
+	}
+
+	.notary-page-password {
+		margin-top: 20px;
+		padding: 20px 10px;
+		box-sizing: border-box;
+	}
+
+	.notary-data-wrapper {
+		width: 100%;
+	}
+
+	.notary-page-editing__subheading
+
+	.editing__label, .editing__input {
+		font-size: 0.9rem;
+	}
+	
+
+	.notary-video-container {
+		justify-content: flex-start;
+		padding-left: 20px;
+		box-sizing: border-box;
+	}
+
+	.notary-video-list-wrap {
+		width: 70%;
+	}
+
+	.notary-video-list__video {
+		height: 150px;
+	}
+
+	.notary-video-list-del {
+		right: 7%;
+	}
+
+	.notary-page-services-select-wrap {
+		width: 100%;
+		margin-right: 0;
+	}
+
+	.notary-page-services-selected-wrap {
+		width: 100%;
+		margin-right: 0;
+	}
+
+	.notary-page-services-selected__heading {
+		display: none;
+	}
+
+	.notary-page-services-selected__button {
+		width: 70%;
+	}
+
+
+	.notary-page-services-table {
+		&-wrap {
+			width: 310px;
+			margin: 0 auto;
+		}
+	}
+	.notary-page-services-table_scroll {
+		padding: 0;
+	}
+	.notary-page-services-table_padding {
+		padding: 0 3px;
+	}
+	.notary-page-services-table-head {
+		padding: 0 3px;
+		
+		&__cell {
+			font-size: 0.6rem;
+			
+			&_wide {
+				width: 57%;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 320px) and (max-width: 400px) {
+	.notary-all-order-thead {
+		padding: 0 6px;
+		box-sizing: border-box;
+	}
+
+	.notary-all-order-thead-col-1 {
+		width: 20%;
+	}
+	.notary-all-order-thead-col-2 {
+		width: 16%;
+	}
+	.notary-all-order-thead-col-3 {
+		width: 16%;	
+	}
+	.notary-all-order-thead-col-4 {
+		width: 16%;	
+	}
+	.notary-all-order-thead-col-5 {
+		width: 10%;	
+	}
+	.notary-all-order-thead-col-6 {
+		width: 19%;
+	}
+}
+
+@media screen and (min-width: 400px) and (max-width: 500px) {
+	.notary-all-order-thead {
+		padding: 0 6px;
+		box-sizing: border-box;
+	}
+
+	.notary-all-order-thead-col-1 {
+		width: 22%;
+	}
+	.notary-all-order-thead-col-2 {
+		width: 17%;
+	}
+	.notary-all-order-thead-col-3 {
+		width: 17%;	
+	}
+	.notary-all-order-thead-col-4 {
+		width: 17%;	
+	}
+	.notary-all-order-thead-col-5 {
+		width: 9%;	
+	}
+	.notary-all-order-thead-col-6 {
+		width: 18%;
+	}
+}
+@media screen and (min-width: 500px) and (max-width: 600px) {
+	.notary-all-order-thead {
+		padding: 0 12px;
+		box-sizing: border-box;
+	}
+
+	.notary-all-order-thead-col-1 {
+		width: 23%;
+	}
+	.notary-all-order-thead-col-2 {
+		width: 19%;
+	}
+	.notary-all-order-thead-col-3 {
+		width: 19%;	
+	}
+	.notary-all-order-thead-col-4 {
+		width: 19%;	
+	}
+	.notary-all-order-thead-col-5 {
+		width: 9%;	
+	}
+	.notary-all-order-thead-col-6 {
+		width: 12%;
+	}
+}
+
+@media screen and (min-width: 320px) and (max-width: 800px) {
+	.notary-available-order {
+		overflow-x: scroll; 
+	}
+
+	.notary-available-order-thead {
+		width: 800px;
+	}
+
+	.notary-available-order-scroll {
+		width: 800px;
+	}
+
+	.notary-available-order-thead-col-1 {
+		font-size: 0.6rem;
+		width: 22%;
+	}
+	.notary-available-order-thead-col-2 {
+		font-size: 0.6rem;
+		width: 16%;
+	}
+	.notary-available-order-thead-col-3 {
+		font-size: 0.6rem;
+		width: 8.5%;
+	}
+	.notary-available-order-thead-col-4 {
+		font-size: 0.6rem;
+		width: 8.5%;
+	}
+	.notary-available-order-thead-col-5 {
+		font-size: 0.6rem;
+		width: 8.5%;
+	}
+	.notary-available-order-thead-col-6 {
+		font-size: 0.6rem;
+		width: 8.5%;
+	}
+	.notary-available-order-thead-col-7 {
+		font-size: 0.6rem;
+	}
+	.notary-available-order-thead-col-8 {
+		font-size: 0.6rem;
+		width: 6.5%;
+	}
+
+	.notary-available-order__input {
+		font-size: 0.7rem;
+	}
+}

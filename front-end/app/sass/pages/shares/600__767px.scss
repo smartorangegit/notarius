@@ -1,0 +1,99 @@
+
+@media screen and (min-width: 600px) and (max-width: 900px) {
+	.shares-form-wrap {
+		margin-top: 0;
+		padding: 20px 30/360*100%;
+		box-sizing: border-box;
+	}
+	
+	.shares-form {
+		flex-wrap: wrap;
+		padding-bottom: 38px;
+
+		&-container {
+			width: 100%;
+			height: auto;
+			padding: 0 20px;
+			box-sizing: border-box;
+		}
+
+		&__offer-wrap {
+			width: 100%;
+			margin: 0;
+			padding: 0;
+			padding: 20px 0;
+			border-bottom: 1px solid $dark-gray;
+		}
+
+		&__search-wrap {
+			width: 100%;
+			margin-right: 0;
+			padding: 20px 0;
+			border: none;
+			border-bottom: 1px solid $dark-gray;
+			box-sizing: content-box;
+		}
+
+		&__district-wrap {
+			margin-right: 0;
+			margin-bottom: 38px;
+			width: 100%;
+			padding: 20px 0;
+			border-bottom: 1px solid $dark-gray;
+
+			&:after {
+				right: 15px;
+			}
+		}
+
+		&__button {
+			width: 150/305*100%;
+			height: 32px;
+			margin: 0 auto;
+		}
+	}
+
+	.shares-select-menu {
+		max-width: 250px;
+		left: -36px;
+	}
+
+	.shares-page-share {
+		margin-bottom: 0;
+		padding-bottom: 8px;
+
+		&__text {
+			margin-top: 50px;
+			text-align: center;
+		}
+	}
+
+	.shares-list {
+		margin-bottom: 30px;
+
+		&__item {
+			padding: 0 10px;
+		}
+
+		&-title {
+			&__name {
+				font-size: 20/16*1rem;
+				font-weight: 400;
+				margin-top: 0;
+				margin-bottom: 30px;
+			}
+		}
+
+		&-title-meta {
+			&__zavireno {
+				width: 47%;
+				font-size: 0.7rem;
+			}
+		}
+	}
+
+	.shares-list-notary__button {
+		font-size: 1rem;
+		height: 53px;
+	}
+}

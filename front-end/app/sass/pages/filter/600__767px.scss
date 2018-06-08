@@ -1,0 +1,92 @@
+
+@media screen and (min-width: 600px) and (max-width: 767px) {
+	.filter-result__heading {
+		background-color: #fff;
+		color: $dark-gray;
+		text-align: center;
+		margin-bottom: 25px;
+	}
+
+	.filter-mobile-open__button {
+		display: flex;
+	}
+
+	.filter-container {
+		flex-direction: column;
+	}
+
+	.sidebar {
+		display: none;
+		width: 100%;
+		margin-right: 0;
+		padding: 0 15px;
+		box-sizing: border-box;
+	}
+
+	.filter-result {
+		width: 100%;
+
+		&__heading {
+			display: none;
+
+			&-mobile {
+				display: block;
+			}
+		}
+	}
+
+	.filter-meta {
+		padding-bottom: 37px;
+		margin-bottom: 20px;
+
+		&-text {
+			display: none;
+		}
+
+		&-button-list__item {
+			max-width: 40%;
+		}
+
+		&__button {
+			bottom: 14px;
+			right: 30px;
+		}
+	}
+
+	.filter-content {
+		&-map {
+			height: 350px;
+			margin-bottom: 25px;
+		} 
+	}
+
+	.filter-notary-list {
+		&__item {
+			width: 48%;
+
+			&:nth-child(4n) {
+				margin-right: 30/903*100%;
+			}
+
+			&:nth-child(2n) {
+				margin-right: 0;	
+			}
+		}
+
+		&__image-wrap {
+			height: 300px;
+		}
+
+		&__name {
+			height: 30px;
+		}
+	}
+}
+
+
+@media screen and (min-width: 600px) and (max-width: 1023px) {
+	.filter-notary-list__button {
+		font-size: 0.9rem;
+	}
+}
+

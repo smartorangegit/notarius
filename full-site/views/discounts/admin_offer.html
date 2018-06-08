@@ -1,0 +1,44 @@
+<div class="col-sm-12 text-center">
+    <div class="col-sm-6 col-sm-offset-3">
+        <h3>Добавление Акционанного предложения:</h3>
+        <form action="" method="post">
+            <div>
+                <input type="hidden" name="id" value="<?=$data['info'][0]?>">
+                <input type="hidden" name="discount_upd" value="1">
+                <label>Услуга:</label>
+                <select name="servID">
+                    <? foreach($data['sList'] as $sL){?>
+                    <option <?if($data['listOfDiscounts']['serviceID'] == $sL['id']){?>selected<?}?> value="<?=$sL['id']?>"><?=$sL['name'];?></option>
+                    <?}?>
+                </select>
+            </div>
+            <div>
+                <label>Нотариус:</label>
+                <select name="notaryID">
+                    <? foreach($data['nList'] as $nL){?>
+                    <option <?if($data['listOfDiscounts']['notaryID'] == $nL['id']){?>selected<?}?>
+                    value="<?=$nL['id']?>"><?=$nL['fName'].' '.$nL['sName'].' '.$nL['mName']?></option>
+                    <?}?>
+                </select>
+            </div>
+            <div>
+                <label>Цена:</label>
+                <input type="number" name="cost" value="<?=$data['listOfDiscounts']['cost']?>" required>
+            </div>
+            <div>
+                <label>% Скидки:</label>
+                <input type="number" name="discount" value="<?=$data['listOfDiscounts']['discount']?>" required>
+            </div>
+            <div>
+                <label>Дата окончания:</label>
+                <input type="date" name="expiration_date" value="<?=$data['listOfDiscounts']['expiration_date']?>" required>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Добавить</button>
+        </form>
+        </div>
+    <form action="" method="post">
+        <input type="hidden" name="discount_delete" value="1">
+        <input type="hidden" name="id" value="<?=$data['info'][0]?>">
+        <button class="btn btn-danger" type="submit">Удалить</button>
+    </form>
+</div>

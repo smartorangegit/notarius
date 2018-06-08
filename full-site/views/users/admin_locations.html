@@ -1,0 +1,151 @@
+<?php
+header('Cache-Control: no cache');
+if(!$data['params']){
+?>
+<div class="service-add">
+    <h3 class="section-heading">Добавление даных для локации</h3>
+    <form action="" method="post" class="form-group">
+        <div class="row">
+            <div class="form-group col-sm-3">
+                <input type="hidden" name="addCity" value="1">
+                <input type="text" class="form-control" name="cityName" placeholder="Название города">
+            </div>
+            <button class="btn btn-primary col-sm-2" type="submit">Добавить</button>
+        </div>
+    </form>
+</div>
+
+<h3 class="section-heading">Таблица с добавлеными городами</h3>
+
+<div class="limiter queries_margin_top">
+    <div class="container-table100">
+        <div class="wrap-table100">
+
+            <div class="table100 ver6 m-b-110">
+                <table data-vertable="ver6">
+                    <thead>
+                        <tr class="row100 head">
+                            <th class="column100 column1 user-list-th" data-column="column1">#</th>
+                            <th class="column100 column2 user-list-th" data-column="column2">Название</th>
+                            </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach($data['getCitys'] as $item) { ?>
+                            <tr class="row100">
+                                <td class="column100 column1 admin-serv-td" data-column="column1">
+                                    <a class='cell__link' href="/admin/users/locations/<?=$item['id']?>"><?=$item['id']?></a>
+                                </td>
+
+                                <td class="column100 column2 admin-serv-td" data-column="column2">
+                                    <a class='cell__link' href="/admin/users/locations/<?=$item['id']?>"><?=$item['cityName']?></a>
+                                </td>
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+                 </table>
+            </div>
+                
+        </div>
+    </div>
+</div>
+
+<?}else{?>
+<h1>Редактирование данных города</h1>
+<div class="col-sm-12">
+<div class="col-sm-6 col-sm-offset-3">
+    <form action="" method="post">
+        <?$cit = $data['params']['0']-1;?>
+        <input type="hidden" name="updCity" value="<?=$data['getCitys'][$cit]['id']?>">
+        <div class="form-group">
+            <label>Город</label>
+            <input type="text" class="form-control" name="cityName" value="<?=$data['getCitys'][$cit]['cityName']?>" placeholder="Название города">
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Изменить название</button>
+    </form>
+</div>
+<div class="loc col-sm-4">
+    <form action="" method="post">
+        <div class="form-group">
+            <label>Список всех  районов</label>
+            <select name="areaItemAdd" size="5" class="form-control">
+                <?foreach($data['getArea'] as $area){?>
+                <option value="<?=$area['id']?>"><?=$area['areaName']?></option>
+                <?}?>
+            </select>
+        </div>
+        <button class="btn btn-lg btn-success btn-block" type="submit">Добавить к этому городу</button>
+    </form>
+</div>
+<div class="loc col-sm-4">
+    <form action="" method="post">
+    <div class="form-group">
+        <label>Список всех микро районов</label>
+        <select name="mAreaItemAdd" size="5" class="form-control">
+            <?foreach($data['getmArea'] as $mArea){?>
+            <option value="<?=$mArea['id']?>"><?=$mArea['mAreaName']?></option>
+            <?}?>
+        </select>
+    </div>
+        <button class="btn btn-lg btn-success btn-block" type="submit">Добавить к этому городу</button>
+    </form>
+</div>
+<div class="loc col-sm-4">
+    <form action="" method="post">
+        <div class="form-group">
+            <label>Список всех станций метро</label>
+            <select name="metroItemAdd" size="5" class="form-control">
+                <?foreach($data['getMetro'] as $metro){?>
+                <option value="<?=$metro['id']?>"><?=$metro['metroName']?></option>
+                <?}?>
+            </select>
+        </div>
+        <button class="btn btn-lg btn-success btn-block" type="submit">Добавить к этому городу</button>
+    </form>
+</div>
+</div>
+
+<div class="col-sm-12">
+    <div class="col-sm-4">
+        <form action="" method="post">
+            <div class="form-group">
+                <label for="">
+                        Районы этого города
+                </label>
+                <select name="areaDellfCt" size="5" class="form-control">
+                    <?foreach($data['getArfrCt'] as $lafc){?>
+                    <option value="<?=$lafc['areaID']?>"><?=$lafc['areaName']?></option>
+                    <?}?>
+                </select>
+            </div>
+            <button class="btn btn-lg btn-danger btn-block" type="submit">Убрать</button>
+        </form>
+    </div>
+    <div class="col-sm-4">
+        <form action="" method="post">
+            <div class="form-group">
+                <label>Микро  районы  этого города</label>
+                <select name="mAreaDellfCt" size="5" class="form-control">
+                    <?foreach($data['getmArfrCt'] as $lmafc){?>
+                    <option value="<?=$lmafc['mAreaID']?>"><?=$lmafc['mAreaName']?></option>
+                    <?}?>
+                </select>
+            </div>
+            <button class="btn btn-lg btn-danger btn-block" type="submit">Убрать</button>
+        </form>
+    </div>
+    <div class="col-sm-4">
+        <form action="" method="post">
+            <div class="form-group">
+                <label>Станиции метро этого города</label>
+                <select name="metroDellfCt" size="5" class="form-control">
+                    <?foreach($data['getMfrCt'] as $lmfc){?>
+                    <option value="<?=$lmfc['metroID']?>"><?=$lmfc['metroName']?></option>
+                    <?}?>
+                </select>
+            </div>
+            <button class="btn btn-lg btn-danger btn-block" type="submit">Убрать</button>
+        </form>
+    </div>
+</div>
+<input type="button" class="btn" onclick="history.back()" value="Назад">
+<?}?>

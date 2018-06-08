@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/datapick-classic.time.css" rel="stylesheet">
+    <link href="css/datapick-classic.date.css" rel="stylesheet">
+    <link href="css/datapick-classic.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css"/>
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="import" href="symbol-defs.html">
+    <title>services</title>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <!-- include SVG-sprite -->
+    <div w3-include-html="include/sprite.html"></div>  
+    <!-- /// -->
+
+    <section class="head gray-head">
+        <div class="container head-container">
+          <header class="header services-page-header gray-header">
+            <svg class="hamburger-open hamburger-open_gray""><use xlink:href="#menu"></use></svg>
+            <a href="#" class="header__link"><img src="img/zavireno_gray.png" alt="image" class="header__image"></a>
+            <div class="hamburger-content">
+              <button class="header__button header__button_gray header__button-question">Подобрать нотариуса</button>
+              <div class="social header__social">
+                <ul class="social-list">
+                  <li class="social-list__item">
+                    <a href="#" class="social-list__link">
+                      <svg class="social-list__icon social-list__icon_white social-list__icon_viber"><use xlink:href="#viber"></use></svg>
+                    </a>
+                  </li>
+                  <li class="social-list__item">
+                    <a href="#" class="social-list__link">
+                    <svg class="social-list__icon social-list__icon_white social-list__icon_facebook"><use xlink:href="#facebook"></use></svg>
+                    </a>
+                  </li>
+                  <li class="social-list__item">
+                    <a href="#" class="social-list__link">
+                      <svg class="social-list__icon social-list__icon_white social-list__icon_telegram"><use xlink:href="#telegram"></use></svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <ul class="menu header__menu">
+                <li class="menu__item">
+                  <a href="" class="menu__link menu__link_gray">о нас</a>
+                </li>
+                <li class="menu__item menu__item-drop">
+                  <a href="#" class="menu__link menu__link-drop menu__link_gray">как это работает</a>
+                  <ul class="menu-drop menu-drop_border_gray">
+                   <li class="menu-drop__item">
+                      <a href="tutorial-heading" name="tutorial-heading" class="menu-drop__link menu__link_gray">для клиентов</a>
+                    </li>
+                    <li class="menu-drop__item">
+                      <a href="" class="menu-drop__link menu__link_gray">для нотариусов</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="menu__item">
+                  <a href="" class="menu__link menu__link_gray">преимущества</a>
+                </li>
+                <li class="menu__item">
+                  <a href="services.html" class="menu__link menu__link_gray">услуги</a>
+                </li>
+                <li class="menu__item">
+                  <a href="" class="menu__link menu__link_gray">нотариусы</a>
+                </li>
+                <li class="menu__item">
+                  <a href="" class="menu__link menu__link_gray">вопросы</a>
+                </li>
+                <li class="menu__item">
+                  <a href="contact.html" class="menu__link menu__link_gray">контакты</a>
+                </li>
+              </ul>
+              <svg class="hamburger-cansel"><use xlink:href="#cancel"></use></svg>
+
+            </div>
+            <div class="head-client">
+               <p class="client-name">Александ Собко</p>
+               <ul class="client-menu head__client-menu">
+                 <li class="client-menu__item">
+                  <a href="" class="client-menu__link">Личные данные</a>
+                </li>
+                 <li class="client-menu__item">
+                  <a href="#document" class="client-menu__link">Мои документы</a>
+                </li>
+                <li class="client-menu__item">
+                  <a href="#notary-video" class="client-menu__link">Мои видео</a>
+                </li>
+                <li class="client-menu__item">
+                  <a href="#notary-services" class="client-menu__link">Мои услуги</a>
+                </li>
+                <li class="client-menu__item">
+                  <a href="#orders" class="client-menu__link">Мои заказы</a>
+                </li>
+                 <li class="client-menu__item ">
+                  <a href="" class="client-menu__link client-menu__exit">Выход</a>
+                </li>
+               </ul>
+             </div>
+          </header>
+          <ul class="page-name page-name_long">
+            <li class="page-name__item">услуги</li>
+            <li class="page-name__item">нотариусы</li>
+            <li class="page-name__item page-name__item_long page-name__item_font_regular">Нотариусов Нотариус Нотариусович</li>
+          </ul>
+        </div>
+      </section>
+      
+      <h2 class="section-heading filter-result__heading filter-result__heading-mobile">Нотариусы</h2>
+      <div class="filter-mobile-open__button">
+        <img src="img/filter/metka.png" alt="icon" class="filter-mobile-open__image">
+        <p class="filter-mobile-open__text">Фильтр</p>
+      </div>
+
+    <div class="filter-container container">
+      <aside class="sidebar">
+        <ul class="page-name filter__page-name">
+          <li class="page-name__item">'Завірено'</li>
+          <li class="page-name__item page-name__item_font_regular">нотариусы</li>
+        </ul>
+        <button class="site-button sidebar__button sidebar__button_top">Искать по:</button>
+
+        <div class="search-tag search-subway">
+          <div class="search-title search-title__subway">
+            <p class="search-title__name search-title__name_subway">Mетро</p>
+            <div class="search-title__show search-title__show_plus"></div>
+          </div>
+          <div class="search-items-wrap">
+            <input type="text" class="search-subway__input-info" style="display: none;">
+            <img src="img/client-page/remove.png" alt="remove" class="search-tag__image">
+            <p class="search-input__input search-subway__input"></p>
+          </div>
+        </div>
+
+        <div class="search-tag">
+          <div class="search-title">
+            <p class="search-title__name">Район</p>
+            <div class="search-title__show search-title__show_plus"></div>
+          </div>
+          <div class="search-items-wrap">
+            <ul class="search-items">
+              <li class="search-items__item">
+                <div class="search-items__name-wrap">
+                  <div class="search-items__show search-title__show_plus"></div>
+                  <p class="search-items__name">Голосеевский</p>
+                </div>
+                <ul class="search-items-droplist">
+                  <li class="search-items-droplist__item">
+                    <input id="microdistrict-1" type="radio" name="microdistrict1" class="search-items-droplist__input">
+                    <label for="microdistrict-1" class="search-items-droplist__label"></label>
+                    <p class="search-items-droplist__name">Голосеево</p>
+                  </li>
+                  <li class="search-items-droplist__item">
+                    <input id="microdistrict-2" type="radio" name="microdistrict1" class="search-items-droplist__input">
+                    <label for="microdistrict-2" class="search-items-droplist__label"></label>
+                    <p class="search-items-droplist__name">Димеевка</p>
+                  </li>
+                </ul>
+              </li>
+              <li class="search-items__item">
+                <div class="search-items__name-wrap">
+                  <div class="search-items__show search-title__show_plus"></div>
+                  <p class="search-items__name">Голосеевский</p>
+                </div>
+                <ul class="search-items-droplist">
+                  <li class="search-items-droplist__item">
+                    <input id="microdistrict-3" type="radio" name="microdistrict2" class="search-items-droplist__input">
+                    <label for="microdistrict-3" class="search-items-droplist__label"></label>
+                    <p class="search-items-droplist__name">Голосеево</p>
+                  </li>
+                  <li class="search-items-droplist__item">
+                    <input id="microdistrict-4" type="radio" name="microdistrict2" class="search-items-droplist__input">
+                    <label for="microdistrict-4" class="search-items-droplist__label"></label>
+                    <p class="search-items-droplist__name">Димеевка</p>
+                  </li>
+                </ul>
+              </li>
+              <li class="search-items__item">
+                <div class="search-items__name-wrap">
+                  <div class="search-items__show search-title__show_plus"></div>
+                  <p class="search-items__name">Голосеевский</p>
+                </div>
+                <ul class="search-items-droplist">
+                  <li class="search-items-droplist__item">
+                    <input id="microdistrict-3" type="radio" name="microdistrict2" class="search-items-droplist__input">
+                    <label for="microdistrict-3" class="search-items-droplist__label"></label>
+                    <p class="search-items-droplist__name">Голосеево</p>
+                  </li>
+                  <li class="search-items-droplist__item">
+                    <input id="microdistrict-4" type="radio" name="microdistrict2" class="search-items-droplist__input">
+                    <label for="microdistrict-4" class="search-items-droplist__label"></label>
+                    <p class="search-items-droplist__name">Димеевка</p>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="search-tag">
+          <div class="search-title">
+            <p class="search-title__name">Улица</p>
+            <div class="search-title__show search-title__show_plus"></div>
+          </div>
+          <div class="search-items-wrap search-items-wrap_margin search-input">
+            <input type="text" class="search-input__input">
+            <button class="site-button search-input__button">Ок</button>
+          </div>
+        </div>
+
+        <div class="search-tag">
+          <div class="search-title">
+            <p class="search-title__name">С выездом</p>
+            <div class="search-title__show search-title__show_plus"></div>
+          </div>
+          <div class="search-items-wrap">
+            <div class="search-input__select-wrap">
+              <select name="area" class="search-input__select">
+                <option class="search-input__option" value="">Не выбран</option>
+                <option class="search-input__option" value="1">Шевченковский</option>
+                <option class="search-input__option" value="2">Троещинский</option>
+                <option class="search-input__option" value="3">Броварской</option>
+            </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="search-tag">
+          <div class="search-title">
+            <p class="search-title__name">Государственный нотариус</p>
+            <div class="search-title__show search-title__show_plus"></div>
+          </div>
+          <div class="search-items-wrap">
+            <div class="search-checkbox">
+              <input id="departure" type="checkbox" name="microdistrict1" class="search-items-droplist__input">
+              <label for="departure" class="search-items-droplist__label"></label>
+              <p class="search-items-droplist__name">Да</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="search-tag">
+          <div class="search-title">
+            <p class="search-title__name">Рейтинг нотариуса</p>
+            <div class="search-title__show search-title__show_plus"></div>
+          </div>
+          <div class="search-items-wrap search-range">
+            <label for="search-range-cost-min" class="search-range__label search-range__label_min">от: </label>
+            <input id="search-range-cost-min" type="text" class="search-input__input search-range__input search-range__input_min" placeholder="1">
+            
+            <label for="search-range-cost-min" class="search-range__label">до: </label>
+            <input id="search-range-cost-min" type="text" class="search-input__input search-range__input" placeholder="5">
+            <button class="site-button search-input__button">Ок</button>
+          </div>
+        </div>
+
+        <div class="search-tag">
+          <div class="search-title">
+            <p class="search-title__name">Режим работы</p>
+            <div class="search-title__show search-title__show_plus"></div>
+          </div>
+          <div class="search-items-wrap search-range">
+            <label for="search-range-cost-min" class="search-range__label search-range__label_min">от: </label>
+            <input id="search-range-cost-min" type="text" class="work-time-min search-input__input search-range__input search-range__input_min">
+            
+            <label for="search-range-cost-min" class="search-range__label">до: </label>
+            <input id="search-range-cost-min" type="text" class="work-time-max search-input__input search-range__input">
+            <button class="site-button search-input__button">Ок</button>
+          </div>
+        </div>
+
+        <div class="search-tag">
+          <div class="search-title">
+            <p class="search-title__name">ФИО нотариуса</p>
+            <div class="search-title__show search-title__show_plus"></div>
+          </div>
+          <div class="search-items-wrap search-input">
+            <input type="text" class="search-input__input">
+            <button class="site-button search-input__button">Ок</button>
+          </div>
+        </div>
+
+        <div class="search-tag">
+          <div class="search-title">
+            <p class="search-title__name">Услуга</p>
+            <div class="search-title__show search-title__show_plus"></div>
+          </div>
+          <div class="search-items-wrap">
+            <ul class="search-items">
+              <li class="search-items__item">
+                <div class="search-items__name-wrap">
+                  <div class="search-items__show search-title__show_plus"></div>
+                  <p class="search-items__name">Удостоверение договора</p>
+                </div>
+                <ul class="search-items-droplist">
+                  <li class="search-items-droplist__item">
+                    <input id="microdistrict-1" type="radio" name="microdistrict1" class="search-items-droplist__input">
+                    <label for="microdistrict-1" class="search-items-droplist__label"></label>
+                    <p class="search-items-droplist__name">Купли-продажи недвижемого имущества</p>
+                  </li>
+                  <li class="search-items-droplist__item">
+                    <input id="microdistrict-2" type="radio" name="microdistrict1" class="search-items-droplist__input">
+                    <label for="microdistrict-2" class="search-items-droplist__label"></label>
+                    <p class="search-items-droplist__name">Мены недвижемого имущества</p>
+                  </li>
+                </ul>
+              </li>
+              <li class="search-items__item">
+                <div class="search-items__name-wrap">
+                  <div class="search-items__show search-title__show_plus"></div>
+                  <p class="search-items__name">Kill people</p>
+                </div>
+                <ul class="search-items-droplist">
+                  <li class="search-items-droplist__item">
+                    <input id="microdistrict-3" type="radio" name="microdistrict2" class="search-items-droplist__input">
+                    <label for="microdistrict-3" class="search-items-droplist__label"></label>
+                    <p class="search-items-droplist__name">Yes</p>
+                  </li>
+                  <li class="search-items-droplist__item">
+                    <input id="microdistrict-4" type="radio" name="microdistrict2" class="search-items-droplist__input">
+                    <label for="microdistrict-4" class="search-items-droplist__label"></label>
+                    <p class="search-items-droplist__name">No</p>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="search-tag">
+          <div class="search-title">
+            <p class="search-title__name">Рабочий выходной</p>
+            <div class="search-title__show search-title__show_plus"></div>
+          </div>
+          <div class="search-items-wrap search-range">
+            <div class="search-range-input-wrap">
+              <p class="search-range-input__heading">Субота</p>
+              <label for="search-range-cost-min" class="search-range__label search-range__label_min">от: </label>
+              <input id="search-range-cost-min" type="text" class="work-time-min search-input__input search-range__input search-range__input_min">
+                
+              <label for="search-range-cost-min" class="search-range__label">до: </label>
+              <input id="search-range-cost-min" type="text" class="work-time-max search-input__input search-range__input">
+            </div>
+            <div class="search-range-input-wrap">
+              <p class="search-range-input__heading">Воскресение</p>
+              <label for="search-range-cost-min" class="search-range__label search-range__label_min">от: </label>
+              <input id="search-range-cost-min" type="text" class="search-input__input search-range__input search-range__input_min work-time-min">
+                
+              <label for="search-range-cost-min" class="search-range__label">до: </label>
+              <input id="search-range-cost-min" type="text" class="search-input__input search-range__input work-time-max">
+            </div>
+            <button class="site-button search-input__button">Ок</button>
+          </div>
+        </div>
+
+        <div class="search-tag search-tag_margin">
+          <div class="search-title">
+            <p class="search-title__name">Стоимость услуги</p>
+            <div class="search-title__show search-title__show_plus"></div>
+          </div>
+          <div class="search-items-wrap search-range">
+            <label for="search-range-cost-min" class="search-range__label search-range__label_min">от: </label>
+            <input id="search-range-cost-min" type="text" class="search-input__input search-range__input search-range__input_min">
+            
+            <label for="search-range-cost-min" class="search-range__label">до: </label>
+            <input id="search-range-cost-min" type="text" class="search-input__input search-range__input">
+            <button class="site-button search-input__button">Ок</button>
+          </div>
+        </div>
+        <button class="site-button sidebar__button">Поиск</button>
+      </aside>
+
+
+      <section class="filter-result">
+        <h2 class="section-heading filter-result__heading">Нотариусы</h2>
+        <div class="filter-meta">
+          <div class="filter-meta-text">
+            <span class="filter-meta-text__text">Найдено <span class="filter-meta-text__text_blue">35</span> нотариусов по запросу:</span>
+          </div>
+          <ul class="filter-meta-button-list">
+            <li class="filter-meta-button-list__item">
+              <p class="filter-meta-button-list__text">удостоверение...мены недвижемого имущества</p>
+              <img src="img/filter/remove.png" alt="del" class="filter-meta-button-list__icon">
+            </li>
+            <li class="filter-meta-button-list__item">
+              <p class="filter-meta-button-list__text">Демеевка</p>
+              <img src="img/filter/remove.png" alt="del" class="filter-meta-button-list__icon">
+            </li>
+          </ul>  
+          <button class="filter-meta__button">oчистить все</button>
+        </div>
+        <div class="filter-content">
+          <div class="filter-content-map">
+            <img src="img/filter/map.jpg" alt="map">
+          </div>
+          
+          <div class="pagination-wrap-js">
+            <ul class="filter-notary-list">
+              <li class="filter-notary-list__item">
+                <div class="filter-notary-list__image-wrap">
+                  <img src="img/filter/dfv.png" alt="photo" class="filter-notary-list__image">  
+                </div>
+                <p class="filter-notary-list__name">Беляев Алексей Геннадиевич</p>
+                <div data-star="3" class="star filter-notary-list__rating">
+                  <div class="star__block star__white"></div>
+                  <div class="star__block star__color"></div>
+                </div>
+                <a href="#" class="filter-notary-list__subway filter-notary-list__link">
+                  м.Вокзальная
+                </a>
+                <a href="#" class="filter-notary-list__feedback filter-notary-list__link">
+                  15 отзывов
+                </a>
+                <button class="site-button filter-notary-list__button">
+                  Подробнее
+                </button>
+              </li>
+              <li class="filter-notary-list__item">
+                <div class="filter-notary-list__image-wrap">
+                  <img src="img/filter/dfv.png" alt="photo" class="filter-notary-list__image">  
+                </div>
+                <p class="filter-notary-list__name">Беляев Алексей Геннадиевич</p>
+                <div data-star="3" class="star filter-notary-list__rating">
+                  <div class="star__block star__white"></div>
+                  <div class="star__block star__color"></div>
+                </div>
+                <a href="#" class="filter-notary-list__subway filter-notary-list__link">
+                  м.Вокзальная
+                </a>
+                <a href="#" class="filter-notary-list__feedback filter-notary-list__link">
+                  15 отзывов
+                </a>
+                <button class="site-button filter-notary-list__button">
+                  Подробнее
+                </button>
+              </li>
+              <li class="filter-notary-list__item">
+                <div class="filter-notary-list__image-wrap">
+                  <img src="img/filter/dfv.png" alt="photo" class="filter-notary-list__image">  
+                </div>
+                <p class="filter-notary-list__name">Беляев Алексей Геннадиевич</p>
+                <div data-star="3" class="star filter-notary-list__rating">
+                  <div class="star__block star__white"></div>
+                  <div class="star__block star__color"></div>
+                </div>
+                <a href="#" class="filter-notary-list__subway filter-notary-list__link">
+                  м.Вокзальная
+                </a>
+                <a href="#" class="filter-notary-list__feedback filter-notary-list__link">
+                  15 отзывов
+                </a>
+                <button class="site-button filter-notary-list__button">
+                  Подробнее
+                </button>
+              </li>
+              <li class="filter-notary-list__item">
+                <div class="filter-notary-list__image-wrap">
+                  <img src="img/filter/dfv.png" alt="photo" class="filter-notary-list__image">  
+                </div>
+                <p class="filter-notary-list__name">Беляев Алексей Геннадиевич</p>
+                <div data-star="3" class="star filter-notary-list__rating">
+                  <div class="star__block star__white"></div>
+                  <div class="star__block star__color"></div>
+                </div>
+                <a href="#" class="filter-notary-list__subway filter-notary-list__link">
+                  м.Вокзальная
+                </a>
+                <a href="#" class="filter-notary-list__feedback filter-notary-list__link">
+                  15 отзывов
+                </a>
+                <button class="site-button filter-notary-list__button">
+                  Подробнее
+                </button>
+              </li>
+              <li class="filter-notary-list__item">
+                <div class="filter-notary-list__image-wrap">
+                  <img src="img/filter/dfv.png" alt="photo" class="filter-notary-list__image">  
+                </div>
+                <p class="filter-notary-list__name">Беляев Алексей Геннадиевич</p>
+                <div data-star="3" class="star filter-notary-list__rating">
+                  <div class="star__block star__white"></div>
+                  <div class="star__block star__color"></div>
+                </div>
+                <a href="#" class="filter-notary-list__subway filter-notary-list__link">
+                  м.Вокзальная
+                </a>
+                <a href="#" class="filter-notary-list__feedback filter-notary-list__link">
+                  15 отзывов
+                </a>
+                <button class="site-button filter-notary-list__button">
+                  Подробнее
+                </button>
+              </li>
+              
+            </ul>
+
+            <div class="pagination filter-pagination">
+              <ul class="pagination-num filter-pagination-num">
+                <li class="pagination-num__item filter-pagination-num__item">
+                  <a href="#" class="pagination-num__link filter-pagination-num__link pagination-num__link_active">1</a>
+                </li>
+                <li class="pagination-num__item filter-pagination-num__item">
+                  <a href="#" class="pagination-num__link filter-pagination-num__link">2</a>
+                </li>
+                <li class="pagination-num__item filter-pagination-num__item">
+                  <a href="#" class="pagination-num__link filter-pagination-num__link">3</a>
+                </li>
+                <li class="pagination-num__item filter-pagination-num__item">
+                  <a href="#" class="pagination-num__link filter-pagination-num__link">4</a>
+                </li>
+                <li class="pagination-num__item filter-pagination-num__item">
+                  <a href="#" class="pagination-num__link filter-pagination-num__link">5</a>
+                </li>
+                <li class="pagination-num__item filter-pagination-num__item">
+                  <a href="#" class="pagination-num__link filter-pagination-num__link">8</a>
+                </li>
+                <li class="pagination-num__item filter-pagination-num__item">
+                  <a href="#" class="pagination-num__link filter-pagination-num__link">9</a>
+                </li>
+                <li class="pagination-num__item filter-pagination-num__item">
+                  <a href="#" class="pagination-num__link filter-pagination-num__link">10</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+
+    <section class="metro-map-wrap">
+        <div class="metro-map">
+          <img src="img/filter/close.png" alt="close" class="metro-map__close">
+          <h2 class="section-heading metro-map__heading">Выберите подходящую (- ее) станцию ( - и) метро:</h2>
+          <div class="metro-map__map">
+            <div id="red">
+              <label id="mr1" class="metro-map__label color-red color-red-1" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Академгородок</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label id="mr2" class="metro-map__label color-red color-red-2" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Житомирская</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label id="mr3" class="metro-map__label color-red color-red-3" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Святошин</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-4" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Нивки</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-5" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Берестейская</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-6" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Шулявская</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-7" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Политехнический институт</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-8" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Вокзальная</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-9" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Университет</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-10" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Театральная</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-11" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Крещатик</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-12" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Арсенальная</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-13" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Днепр</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-14" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Гидропарк</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-15" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Левобережная</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-16" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Дарница</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-17" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Черниговская</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-18" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Лесная</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+
+
+              <label class="metro-map__label color-red color-red-19" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Героев Днепра</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-20" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Минская</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-21" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Оболонь</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-22" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Почайна</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-23" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Тараса Шевченко</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-24" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Контрактовая площадь</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-25" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Почтовая площадь </span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-26" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Майдан Независимости</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-27" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Площадь Льва Толстого</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-28" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Олимпийская</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-29" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Дворец Украина</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-30" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Лыбедская</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-31" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Демиевская</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-32" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Голосеевская</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-33" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Васильковская</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-34" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Выставочный центр</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-35" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Ипподром</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-36" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Теремки</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+
+
+              <label class="metro-map__label color-red color-red-37" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Сырец</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-38" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Дорогожичи</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-39" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Лукьяновская</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-40" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Золотые ворота</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red 41" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Дворец спорта</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-42" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Кловская</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-43" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Печерская</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-44" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Дружбы народов</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-45" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Выдубичи</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-46" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Славутич</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-47" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Осокорки</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-48" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Позняки</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-49" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Харьковская</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-50" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Вырлица</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-51" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Бориспольская</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-52" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Красный хутор</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+            </div>
+          </div>
+          <div class="metro-map-button">
+            <button class="site-button metro-map-button__button metro-map-button__clear">
+              Сбросить
+            </button>
+            <button class="site-button metro-map-button__button metro-map-button__send">
+              Выбрать
+            </button>
+          </div>          
+        </div>
+    </section>
+
+    <section class="metro-map-wrap_mobile">
+        <div class="metro-map">
+          <img src="img/filter/close.png" alt="close" class="metro-map__close">
+          <h2 class="section-heading metro-map__heading">Выберите подходящую (- ее) станцию ( - и) метро:</h2>
+          <div class="metro-map__map">
+            <div id="red" class="red">
+              <label id="mr1" class="metro-map__label color-red color-red-1" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Академгородок</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label id="mr2" class="metro-map__label color-red color-red-2" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Житомирская</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label id="mr3" class="metro-map__label color-red color-red-3" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Святошин</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+
+              <label class="metro-map__label color-red color-red-4" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Нивки</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-5" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Берестейская</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-6" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Шулявская</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-7" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Политехнический институт</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-8" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Вокзальная</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-9" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Университет</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-10" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Театральная</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-11" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Крещатик</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-12" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Арсенальная</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-13" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Днепр</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-14" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Гидропарк</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-15" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Левобережная</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-16" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Дарница</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-17" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Черниговская</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-red color-red-18" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Лесная</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+            </div>
+
+            <div id="blue" class="blue">
+              <label class="metro-map__label color-blue color-blue-1" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Героев Днепра</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-blue color-blue-2" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Минская</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-blue color-blue-3" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Оболонь</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-blue color-blue-4" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Почайна</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-blue color-blue-5" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Тараса Шевченко</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-blue color-blue-6" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Контрактовая площадь</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-blue color-blue-7" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Почтовая площадь </span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-blue color-blue-8" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Площадь Независимости</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-blue color-blue-9" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Площадь Льва Толстого</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-blue color-blue-10" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Олимпийская</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-blue color-blue-11" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Дворец Украина</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-blue color-blue-12" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Лыбедская</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-blue color-blue-13" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Демиевская</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-blue color-blue-14" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Голосеевская</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-blue color-blue-15" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Васильковская</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-blue color-blue-16" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Выставочный центр</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-blue color-blue-17" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Ипподром</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-blue color-blue-18" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Теремки</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+            </div>
+
+            <div id="green" class="green">
+              <label class="metro-map__label color-green color-green-1" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Сырец</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-green color-green-2" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Дорогожичи</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-green color-green-3" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Лукьяновская</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-green color-green-4" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Золотые ворота</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-green color-green-5" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Дворец спорта</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-green color-green-6" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Кловская</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-green color-green-7" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Печерская</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-green color-green-8" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Дружбы народов</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-green color-green-9" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Выдубичи</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-green color-green-10" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Славутич</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-green color-green-11" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Осокорки</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-green color-green-12" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Позняки</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-green color-green-13" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Харьковская</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-green color-green-14" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Вырлица</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-green color-green-15" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Бориспольская</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+              <label class="metro-map__label color-green color-green-16" data-value="akademgorodok">
+                <input class="metro-map__input" type="checkbox">
+                <span class="metro-map__text">Красный хутор</span>
+                <img src="img/cancel.png" alt="cansel" class="metro-map__icon">
+              </label>
+            </div>
+          </div>
+          <div class="metro-map-button">
+            <button class="site-button metro-map-button__button metro-map-button__clear">
+              Сбросить
+            </button>
+            <button class="site-button metro-map-button__button metro-map-button__send">
+              Выбрать
+            </button>
+          </div>          
+        </div>
+    </section>
+
+
+     <div class="footer-clear"></div>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-list-wrap">
+          <ul class="footer-list footer-services-list">
+            <li class="footer-list__item footer-list__heading footer-services-list__heading">
+              Сервис
+            </li>
+            <li class="footer-list__item">
+              <a href="#" class="footer-list__link">О нас</a>
+            </li>
+            <li class="footer-list__item">
+              <a href="#" class="footer-list__link">О рейтинге</a>
+            </li>
+            <li class="footer-list__item">
+              <a href="#" class="footer-list__link">Партнерам</a>
+            </li>
+            <li class="footer-list__item">
+              <a href="#" class="footer-list__link">Правила сервиса</a>
+            </li>
+            <li class="footer-list__item">
+              <a href="#" class="footer-list__link">Политика конфиденциальности</a>
+            </li>
+          </ul>
+
+          <ul class="footer-list footer-client-list">
+            <li class="footer-list__item footer-list__heading footer-client-list__heading">
+              Клентам
+            </li>
+            <li class="footer-list__item">
+              <a href="#" class="footer-list__link">Нотариусы</a>
+            </li>
+            <li class="footer-list__item">
+              <a href="#" class="footer-list__link">Акции и скидки</a>
+            </li>
+            <li class="footer-list__item">
+              <a href="#" class="footer-list__link">Нотариальные услуги</a>
+            </li>
+          </ul>
+
+          <ul class="footer-list footer-phone-list">
+            <li class="footer-list__item footer-list__heading footer-phone-list__heading">
+              Звоните нам
+            </li>
+            <li class="footer-list__item">
+              С  Пн.-Вс. с 9:00 до 20:00
+            </li>
+            <li class="footer-list__item">
+              <a href="tel:+3 8 (044) 990 60 08" class="footer-list__link footer-phone-list__link">+3 8 (044) 990 60 08</a>
+              <a href="tel:+3 8 (097) 555 99 99" class="footer-list__link">+3 8 (097) 555 99 99</a>
+            </li>
+            <li class="footer-list__item">
+              <a href="tel:+3 8 (093) 555 99 99" class="footer-list__link footer-phone-list__link">+3 8 (093) 555 99 99</a>
+              <a href="tel:+38 (095) 555 99 99" class="footer-list__link">+3 8 (095) 555 99 99</a>
+            </li>
+          </ul>
+        </div>
+
+        <p class="footer__text">Использование материалов разрешено только при наличии активной ссылки на источник</p>
+        <p class="footer__copyright">Zavireno, 2018 Все права защищены.</p>
+        <div class="smart-orange">
+          <p class="smart-orange__text">Сайт разработан компанией</p>
+          <a href="http://smartorange.com.ua/" target="_blanc" class="smart-orange__link">
+            <img src="img/logo1.svg" alt="smart-orange" class="smart-orange__image">
+          </a>
+        </div>
+      </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/libraries/datapicker/picker.js"></script>
+    <script src="js/libraries/datapicker/picker.time.js"></script>
+    <script src="js/libraries/datapicker/picker.date.js"></script>
+    <script src="js/libraries/slick.min.js"></script>
+    <script src="js/libraries/jquery.maskedinput.min.js"></script>
+    <script src="js/w3-html-include.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/filter.js"></script>
+  </body>
+</html>

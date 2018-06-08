@@ -1,0 +1,46 @@
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+	.call {
+		margin-top: 0;
+		flex-wrap: wrap;
+		width: 97%;
+		margin: 0 auto;
+		margin-bottom: 20px;
+
+		&-input {
+			width: 100%;
+			border-right: 0;
+			margin-bottom: 25px;
+
+			&__input {
+				width: 80%;
+			}
+
+			&__button {
+				width: 50%;
+			}
+		}
+
+		&-phone {
+			width: 100%;
+			text-align: center;
+		}
+	}
+
+	.call-phone-list__heading {
+		display: inline-block;
+		margin: 0 auto;
+		margin-bottom: 7px;
+		text-align: center;
+	}
+
+	.call-phone-list__item {
+		font-size: 0.9rem;
+	}
+}
+
+// @media screen and (min-height: 900px) {
+// 	.call {
+// 		margin-top: 9%;
+// 	}
+// }

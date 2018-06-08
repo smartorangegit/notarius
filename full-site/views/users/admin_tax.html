@@ -1,0 +1,138 @@
+<?php
+header('Cache-Control: no cache');
+$param = App::getRouter()->getParams();
+if(!$param){
+?>
+<!-- <h1 class="page-header">Страница добавления налога</h1> -->
+
+<div class="service-add">
+    <h3 class="section-heading">Добавление нового налога</h3>
+    <form action="" method="post" class="form-group">
+        <div class="row">
+            <div class="form-group col-sm-2">
+                <input type="text" id="name" name="name" value="" class="form-control" required="required" placeholder="Название"/>
+            </div>
+            <div class="form-group col-sm-2">
+                <input type="text" id="taxSize" name="taxSize" value="" class="form-control" required="required" placeholder="Размер налога"/>
+            </div>
+            <div class="form-group col-sm-2">
+                <input type="text" id="taxRate" name="taxRate" value="" class="form-control" required="required" placeholder="Ставка налога"/>
+            </div>
+            <div class="form-group col-sm-2">
+                <input type="text" id="payMen" name="payMen" value="" class="form-control" required="required" placeholder="Кто платит"/>
+            </div>
+            <div class="form-group col-sm-2">
+                <input type="text" id="taxationBase" name="taxationBase" value="" class="form-control" required="required" placeholder="База налогообложения"/>
+            </div>
+            <div class="form-group col-sm-2">
+                <input type="text" id="taxType" name="taxType" value="" class="form-control" required="required" placeholder="Вид налога"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm-4">
+                <textarea name="description" id="description"  class="form-control" required="required" placeholder="Комментарий"></textarea>
+            </div>
+            <a  href="/admin/users/tax/<?=$data['id']?>"><button class="btn btn-success col-sm-1">Добавить</button></a>
+        </div>
+    </form>
+</div>
+
+<h3 class="section-heading">Таблица со списком созданных налогов</h3>
+
+<div class="limiter queries_margin_top">
+    <div class="container-table100">
+        <div class="wrap-table100">
+
+            <div class="table100 ver6 m-b-110">
+                <table data-vertable="ver6">
+                    <thead>
+                        <tr class="row100 head">
+                            <th class="column100 column1 user-list-th" data-column="column1">Название</th>
+                            <th class="column100 column2 user-list-th" data-column="column2">Размер налога</th>
+                            <th class="column100 column3 user-list-th" data-column="column3">Ставка налога</th>
+                            <th class="column100 column4 user-list-th" data-column="column4">Коментарий</th>
+                            <th class="column100 column5 user-list-th" data-column="column5">Кто платит</th>
+                            <th class="column100 column6 user-list-th" data-column="column6">Без налогообложения</th>
+                            <th class="column100 column7 user-list-th" data-column="column7">Вид налога</th>
+                            
+
+                            </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach($data['getTaxList'] as $item) {?>
+                            <tr class="row100">
+                                <td class="column100 column1 admin-serv-td" data-column="column1">
+                                    <a class='cell__link' href="/admin/users/tax/<?=$item['id'];?>"><?=$item['name']?></a>
+                                </td>
+
+                                <td class="column100 column2 admin-serv-td" data-column="column2">
+                                    <a class='cell__link' href="/admin/users/tax/<?=$item['id'];?>"><?=$item['taxSize'];?></a>
+                                </td>
+
+                                <td class="column100 column3 admin-serv-td" data-column="column3">
+                                   <a class='cell__link' href="/admin/users/tax/<?=$item['id'];?>"><?=$item['taxRate']?></a>
+                                </td>
+
+                                <td class="column100 column4 admin-serv-td admin-serv-col-4" data-column="column4">
+                                    <a class='cell__link' href="/admin/users/tax/<?=$item['id'];?>"><?=$item['description']?></a>
+                                </td>
+
+                                <td class="column100 column5 admin-serv-td admin-serv-col-5" data-column="column4">
+                                    <a class='cell__link' href="/admin/users/tax/<?=$item['id'];?>"><?=$item['payMen']?></a>
+                                </td>
+
+                                <td class="column100 column6 admin-serv-td admin-serv-col-6" data-column="column4">
+                                    <a class='cell__link' href="/admin/users/tax/<?=$item['id'];?>"><?=$item['taxationBase']?></a>
+                                </td>
+
+                                <td class="column100 column7 admin-serv-td admin-serv-col-7" data-column="column4">
+                                    <a class='cell__link' href="/admin/users/tax/<?=$item['id'];?>"><?=$item['taxType']?></a>
+                                </td>
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+                 </table>
+            </div>
+                
+        </div>
+    </div>
+</div>
+
+
+<?}else{?>
+<div class="col-sm-6 col-sm-offset-3">
+    <form method="post"  action="">
+        <input type="hidden" name="id" value="<?=$data['getTaxbyID']['id']?>">
+        <div class="form-group">
+            <label for="name">Название</label>
+            <input type="text" id="name" name="name" value="<?=$data['getTaxbyID']['name'];?>" class="form-control" required="required"/>
+        </div>
+        <div class="form-group">
+            <label for="taxSize">Размер налога</label>
+            <input type="text" id="taxSize" name="taxSize" value="<?=$data['getTaxbyID']['taxSize'];?>" class="form-control" required="required"/>
+        </div>
+        <div class="form-group">
+            <label for="taxRate">Ставка налога</label>
+            <input type="text" id="taxRate" name="taxRate" value="<?=$data['getTaxbyID']['taxRate'];?>" class="form-control" required="required"/>
+        </div>
+        <div class="form-group">
+            <label for="description">Комментарий</label>
+            <textarea name="description" id="description"  class="form-control" required="required"><?=$data['getTaxbyID']['description'];?></textarea>
+        </div>
+        <div class="form-group">
+            <label for="payMen">Кто платит</label>
+            <input type="text" id="payMen" name="payMen" value="<?=$data['getTaxbyID']['payMen'];?>" class="form-control" required="required"/>
+        </div>
+        <div class="form-group">
+            <label for="taxationBase">База налогообложения</label>
+            <input type="text" id="taxationBase" name="taxationBase" value="<?=$data['getTaxbyID']['taxationBase'];?>" class="form-control" required="required"/>
+        </div>
+        <div class="form-group">
+            <label for="taxType">Вид налога</label>
+            <input type="text" id="taxType" name="taxType" value="<?=$data['getTaxbyID']['taxType'];?>" class="form-control" required="required"/>
+        </div>
+        <a class="btn btn-primary" href="javascript:history.back()">Вернуться назад</a>
+        <a  href="/admin/users/tax/<?=$data['getTaxbyID']['id']?>"><button class="btn btn-success">Добавить</button></a></br></br>
+    </form>
+</div>
+<?}?>
