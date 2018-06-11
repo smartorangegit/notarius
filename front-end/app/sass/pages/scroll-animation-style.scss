@@ -71,9 +71,9 @@
 	animation: page_load_bottom 2s 0.2s forwards;
 }
 
-.head__heading {
-	animation: page_load_left 2s 0.2s forwards;
-}
+// .head__heading {
+// 	animation: page_load_left 2s 0.2s forwards;
+// }
 
 .head__form-wrap {
 	animation: page_load_fade 3s 0.5s forwards;
@@ -81,7 +81,7 @@
 
 @keyframes page_load_left {
 	0% {
-		transform: translateX(-50%);
+		transform: translateX(-15%);
 		opacity: 0;
 	}
 

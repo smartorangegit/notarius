@@ -1696,9 +1696,7 @@ a.footer-list__link {
     margin-top: 200px;
     margin-right: 2.91667%;
     font: 2.625rem Roboto-Light, Arial, sans-serif;
-    clear: both;
-    transform: translateX(-50%);
-    opacity: 0; }
+    clear: both; }
     .head__heading:before {
       position: absolute;
       top: 0;
@@ -8117,15 +8115,12 @@ a.comment__exit-button {
 .header-wrap {
   animation: page_load_bottom 2s 0.2s forwards; }
 
-.head__heading {
-  animation: page_load_left 2s 0.2s forwards; }
-
 .head__form-wrap {
   animation: page_load_fade 3s 0.5s forwards; }
 
 @keyframes page_load_left {
   0% {
-    transform: translateX(-50%);
+    transform: translateX(-15%);
     opacity: 0; }
   100% {
     transform: translateX(0);
